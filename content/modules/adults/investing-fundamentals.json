@@ -1,0 +1,77 @@
+{
+  "slug": "investing-fundamentals",
+  "track": "adults",
+  "order": 4,
+  "difficulty": "beginner",
+  "estimatedHours": 4,
+  "translations": [
+    {
+      "locale": "en",
+      "title": "Investing fundamentals",
+      "summary": "Risk, return, asset classes and diversification."
+    },
+    {
+      "locale": "ta",
+      "title": "முதலீட்டு அடிப்படைகள்",
+      "summary": "ஆபத்து, வருமானம், சொத்து வகைகள் மற்றும் பன்முகப்படுத்தல்."
+    }
+  ],
+  "chapters": [
+    {
+      "slug": "risk-and-return",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Risk and return",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    },
+    {
+      "slug": "asset-classes",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "The asset classes",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    },
+    {
+      "slug": "asset-allocation",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Asset allocation",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    },
+    {
+      "slug": "diversification",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Diversification",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    }
+  ]
+}

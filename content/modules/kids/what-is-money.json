@@ -1,0 +1,99 @@
+{
+  "slug": "what-is-money",
+  "track": "kids",
+  "order": 1,
+  "difficulty": "beginner",
+  "estimatedHours": 1,
+  "translations": [
+    {
+      "locale": "en",
+      "title": "What is money and where does it come from",
+      "summary": "Coins, notes, UPI and the idea of exchange, told as a story."
+    },
+    {
+      "locale": "ta",
+      "title": "பணம் என்றால் என்ன, அது எங்கிருந்து வருகிறது",
+      "summary": "நாணயங்கள், நோட்டுகள், UPI மற்றும் பரிமாற்றத்தின் யோசனை, ஒரு கதையாக."
+    }
+  ],
+  "chapters": [
+    {
+      "slug": "the-story-of-money",
+      "readingMinutes": 6,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "The story of money",
+          "excerpt": "Before money, people swapped things. Here is why that stopped working.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Long ago, if Meera had mangoes and Arjun had a goat, Meera could only get the goat if Arjun wanted mangoes. Most days he did not. So villages agreed on one thing everyone would accept: shells, then metal coins, then paper notes. That thing is money."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Three jobs money does"
+            },
+            {
+              "type": "list",
+              "items": [
+                "It lets you swap: mangoes for money, money for a goat.",
+                "It keeps score: 10 rupees is always 10 rupees.",
+                "It can wait: you can save it for later."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Money today"
+            },
+            {
+              "type": "paragraph",
+              "text": "Today a lot of money is numbers on a screen. When your parent pays with UPI, no note moves, but the bank changes two numbers: theirs goes down, the shop's goes up. It is still money, because everyone agrees it is."
+            },
+            {
+              "type": "activity",
+              "text": "Draw three things you would swap for a bicycle if there were no money. Ask a grown-up what they would want in return. Was it easy to agree?"
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "Money is something everyone agrees to accept.",
+                "It swaps, keeps score and can wait.",
+                "Screen money is real money."
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "Why did people stop swapping things directly?",
+                  "options": [
+                    "Things were too heavy",
+                    "The other person often did not want what you had",
+                    "Swapping was against the rules"
+                  ],
+                  "answer": 1
+                },
+                {
+                  "q": "When a shop is paid by UPI, what happens?",
+                  "options": [
+                    "A note is posted to the shop",
+                    "Two bank numbers change",
+                    "Nothing, it is free"
+                  ],
+                  "answer": 1
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": false,
+          "publishedAt": "2026-10-10"
+        }
+      ]
+    }
+  ],
+  "level": "8-11"
+}

@@ -1,0 +1,50 @@
+{
+  "slug": "career-breaks",
+  "track": "women",
+  "order": 3,
+  "difficulty": "intermediate",
+  "estimatedHours": 2,
+  "translations": [
+    {
+      "locale": "en",
+      "title": "Career breaks, re-entry and income protection",
+      "summary": "Planning for a pause, returning stronger, and protecting the income you have."
+    },
+    {
+      "locale": "ta",
+      "title": "தொழில் இடைவெளிகள், மீண்டும் நுழைதல் மற்றும் வருமானப் பாதுகாப்பு",
+      "summary": "இடைவெளிக்குத் திட்டமிடுதல், வலுவாகத் திரும்புதல், இருக்கும் வருமானத்தைப் பாதுகாத்தல்."
+    }
+  ],
+  "chapters": [
+    {
+      "slug": "planning-a-break",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Planning a career break",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    },
+    {
+      "slug": "re-entry",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Re-entry",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    }
+  ],
+  "checkupDimension": "emergency"
+}

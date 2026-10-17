@@ -1,0 +1,77 @@
+{
+  "slug": "mutual-funds-and-sips",
+  "track": "adults",
+  "order": 5,
+  "difficulty": "beginner",
+  "estimatedHours": 4,
+  "translations": [
+    {
+      "locale": "en",
+      "title": "Mutual funds and SIPs",
+      "summary": "How funds work, what to look at, and why the SIP is the default tool."
+    },
+    {
+      "locale": "ta",
+      "title": "மியூச்சுவல் ஃபண்டுகள் மற்றும் SIP",
+      "summary": "ஃபண்டுகள் எப்படி வேலை செய்கின்றன, எதைப் பார்க்க வேண்டும், SIP ஏன் இயல்புநிலைக் கருவி."
+    }
+  ],
+  "chapters": [
+    {
+      "slug": "what-is-a-mutual-fund",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "What is a mutual fund",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    },
+    {
+      "slug": "what-is-a-sip",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "What is a SIP",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    },
+    {
+      "slug": "index-funds",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Index funds",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    },
+    {
+      "slug": "reading-a-fund-factsheet",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Reading a fund factsheet",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    }
+  ]
+}

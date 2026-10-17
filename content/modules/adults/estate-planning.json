@@ -1,0 +1,63 @@
+{
+  "slug": "estate-planning",
+  "track": "adults",
+  "order": 11,
+  "difficulty": "intermediate",
+  "estimatedHours": 2,
+  "translations": [
+    {
+      "locale": "en",
+      "title": "Estate planning",
+      "summary": "Wills, nominations and succession."
+    },
+    {
+      "locale": "ta",
+      "title": "சொத்துத் திட்டமிடல்",
+      "summary": "உயில், பரிந்துரை மற்றும் வாரிசுரிமை."
+    }
+  ],
+  "chapters": [
+    {
+      "slug": "nominations",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Nominations",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    },
+    {
+      "slug": "wills",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Writing a will",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    },
+    {
+      "slug": "succession",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Succession basics",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    }
+  ]
+}

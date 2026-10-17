@@ -1,0 +1,50 @@
+{
+  "slug": "safety-nets",
+  "track": "women",
+  "order": 8,
+  "difficulty": "intermediate",
+  "estimatedHours": 2,
+  "translations": [
+    {
+      "locale": "en",
+      "title": "Widowhood, divorce and financial safety nets",
+      "summary": "What to do in the first 90 days, and what to have in place before."
+    },
+    {
+      "locale": "ta",
+      "title": "விதவை நிலை, விவாகரத்து மற்றும் நிதிப் பாதுகாப்பு வலைகள்",
+      "summary": "முதல் 90 நாட்களில் என்ன செய்வது, முன்பே என்ன தயாராக இருக்க வேண்டும்."
+    }
+  ],
+  "chapters": [
+    {
+      "slug": "first-90-days",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "The first 90 days",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    },
+    {
+      "slug": "before",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "What to have in place before",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    }
+  ],
+  "checkupDimension": "emergency"
+}

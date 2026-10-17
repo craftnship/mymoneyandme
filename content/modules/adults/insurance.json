@@ -1,0 +1,77 @@
+{
+  "slug": "insurance",
+  "track": "adults",
+  "order": 3,
+  "difficulty": "beginner",
+  "estimatedHours": 3,
+  "translations": [
+    {
+      "locale": "en",
+      "title": "Insurance",
+      "summary": "Term life, health, motor, and the policies to avoid."
+    },
+    {
+      "locale": "ta",
+      "title": "காப்பீடு",
+      "summary": "டெர்ம் லைஃப், உடல்நலம், வாகனம், மற்றும் தவிர்க்க வேண்டிய பாலிசிகள்."
+    }
+  ],
+  "chapters": [
+    {
+      "slug": "why-insure",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Why insure, and what not to insure",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    },
+    {
+      "slug": "term-life",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Term life cover",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    },
+    {
+      "slug": "health-insurance",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Health insurance",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    },
+    {
+      "slug": "policies-to-avoid",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Endowment, ULIP and other mixes to avoid",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    }
+  ]
+}

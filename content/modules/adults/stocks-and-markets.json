@@ -1,0 +1,63 @@
+{
+  "slug": "stocks-and-markets",
+  "track": "adults",
+  "order": 6,
+  "difficulty": "intermediate",
+  "estimatedHours": 4,
+  "translations": [
+    {
+      "locale": "en",
+      "title": "Stocks and markets basics",
+      "summary": "What a share is, how exchanges work, and what moves prices."
+    },
+    {
+      "locale": "ta",
+      "title": "பங்குகள் மற்றும் சந்தை அடிப்படைகள்",
+      "summary": "பங்கு என்றால் என்ன, பரிமாற்றங்கள் எப்படி வேலை செய்கின்றன, விலைகளை நகர்த்துவது எது."
+    }
+  ],
+  "chapters": [
+    {
+      "slug": "what-is-a-share",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "What is a share",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    },
+    {
+      "slug": "how-exchanges-work",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "How exchanges work",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    },
+    {
+      "slug": "reading-company-numbers",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Reading company numbers",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    }
+  ]
+}

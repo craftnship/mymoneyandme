@@ -1,0 +1,50 @@
+{
+  "slug": "needs-wants-and-saving",
+  "track": "kids",
+  "order": 2,
+  "difficulty": "beginner",
+  "estimatedHours": 1,
+  "translations": [
+    {
+      "locale": "en",
+      "title": "Needs vs wants, saving jars and pocket money",
+      "summary": "Sorting what we need from what we want, and the three-jar method."
+    },
+    {
+      "locale": "ta",
+      "title": "தேவைகள் vs விருப்பங்கள், சேமிப்பு ஜாடிகள் மற்றும் பாக்கெட் மணி",
+      "summary": "தேவையானதை விரும்புவதிலிருந்து பிரித்தல், மற்றும் மூன்று ஜாடி முறை."
+    }
+  ],
+  "chapters": [
+    {
+      "slug": "needs-and-wants",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Needs and wants",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    },
+    {
+      "slug": "three-jars",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "The three jars",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    }
+  ],
+  "level": "8-11"
+}

@@ -1,0 +1,64 @@
+{
+  "slug": "planning-for-family",
+  "track": "women",
+  "order": 7,
+  "difficulty": "intermediate",
+  "estimatedHours": 2,
+  "translations": [
+    {
+      "locale": "en",
+      "title": "Planning for children, elderly parents and single-parent households",
+      "summary": "Goals, cover and cash flow when you are the planner for others."
+    },
+    {
+      "locale": "ta",
+      "title": "குழந்தைகள், வயதான பெற்றோர் மற்றும் ஒற்றைப் பெற்றோர் குடும்பங்களுக்குத் திட்டமிடுதல்",
+      "summary": "மற்றவர்களுக்குத் திட்டமிடுபவர் நீங்கள் என்றால் இலக்குகள், காப்பீடு மற்றும் பணப்புழக்கம்."
+    }
+  ],
+  "chapters": [
+    {
+      "slug": "children-goals",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Children's goals",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    },
+    {
+      "slug": "elderly-parents",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Elderly parents",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    },
+    {
+      "slug": "single-parent",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Single-parent households",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    }
+  ],
+  "checkupDimension": "goals"
+}

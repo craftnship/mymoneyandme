@@ -1,0 +1,43 @@
+{
+  "id": "art-004",
+  "slug": "retirement-planning-in-your-30s",
+  "sourceLocale": "en",
+  "category": "personalFinance",
+  "format": "explainer",
+  "tags": ["retirement", "SIP", "compounding"],
+  "author": "My Money & Me",
+  "publishedAt": "2026-10-01",
+  "relatedCalculator": "retirement-corpus",
+  "relatedChapter": "adults/retirement-planning/how-much-is-enough",
+  "translations": [
+    {
+      "locale": "en",
+      "title": "Retirement planning in your 30s: the decade that does the heavy lifting",
+      "excerpt": "Money invested at 30 has thirty years to compound. The same rupee invested at 45 has fifteen. That gap is the whole argument.",
+      "state": "published",
+      "aiDraft": false,
+      "publishedAt": "2026-10-01",
+      "blocks": [
+        { "type": "paragraph", "text": "At 30, retirement feels like someone else's problem. It is, in a sense: the person you will be at 60 depends on what you do now, and they cannot vote. Here is the case for starting this year." },
+        { "type": "heading", "level": 2, "text": "The cost of waiting" },
+        { "type": "paragraph", "text": "A ₹10,000 monthly SIP at {return_equity} a year grows to about ₹3.5 crore over 30 years. Start five years later and it reaches roughly ₹1.9 crore. The five missed years cost more than every rupee you would have invested in them." },
+        { "type": "calculator", "slug": "cost-of-delay" },
+        { "type": "heading", "level": 2, "text": "How much is enough" },
+        { "type": "paragraph", "text": "Take today's monthly expenses, inflate them at {inflation_default} to your retirement age, and plan for a corpus that can pay that amount, rising with inflation, until about 85. The retirement corpus calculator does the maths and tells you the SIP that closes the gap." },
+        { "type": "calculator", "slug": "retirement-corpus" },
+        { "type": "heading", "level": 2, "text": "The order of operations" },
+        { "type": "list", "ordered": true, "items": [
+          "Max the employer EPF match; it is the only guaranteed 100% return you will see.",
+          "Add NPS if your employer offers it, for the extra {nps_80ccd1b_limit} deduction under 80CCD(1B) in the old regime.",
+          "Then equity index funds through SIPs, stepped up with every salary hike."
+        ] },
+        { "type": "callout", "tone": "info", "text": "Equity-heavy in your 30s is appropriate because you have three decades to ride out downturns. The mix moves toward debt as retirement approaches." },
+        { "type": "takeaways", "items": [
+          "Start now; the first decade compounds longest.",
+          "Target a corpus, not a round number.",
+          "EPF match first, then NPS, then equity SIPs with annual step-ups."
+        ] }
+      ]
+    }
+  ]
+}

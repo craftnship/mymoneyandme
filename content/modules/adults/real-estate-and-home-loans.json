@@ -1,0 +1,63 @@
+{
+  "slug": "real-estate-and-home-loans",
+  "track": "adults",
+  "order": 10,
+  "difficulty": "intermediate",
+  "estimatedHours": 3,
+  "translations": [
+    {
+      "locale": "en",
+      "title": "Real estate and home loans",
+      "summary": "Rent or buy, borrowing well, and owning without regret."
+    },
+    {
+      "locale": "ta",
+      "title": "ரியல் எஸ்டேட் மற்றும் வீட்டுக் கடன்",
+      "summary": "வாடகையா வாங்குவதா, நன்றாகக் கடன் வாங்குவது, வருத்தமின்றி சொந்தமாக்குவது."
+    }
+  ],
+  "chapters": [
+    {
+      "slug": "rent-or-buy",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Rent or buy",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    },
+    {
+      "slug": "before-you-borrow",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Before you borrow",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    },
+    {
+      "slug": "owning-a-home",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Owning a home",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    }
+  ]
+}

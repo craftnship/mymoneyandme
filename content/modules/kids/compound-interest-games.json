@@ -1,0 +1,36 @@
+{
+  "slug": "compound-interest-games",
+  "track": "kids",
+  "order": 5,
+  "difficulty": "beginner",
+  "estimatedHours": 1,
+  "translations": [
+    {
+      "locale": "en",
+      "title": "Compound interest with games",
+      "summary": "The doubling game and why starting early wins."
+    },
+    {
+      "locale": "ta",
+      "title": "விளையாட்டுகளுடன் கூட்டு வட்டி",
+      "summary": "இரட்டிப்பு விளையாட்டு மற்றும் ஆரம்பத்தில் தொடங்குவது ஏன் வெல்கிறது."
+    }
+  ],
+  "chapters": [
+    {
+      "slug": "doubling-game",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "The doubling game",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    }
+  ],
+  "level": "8-11"
+}

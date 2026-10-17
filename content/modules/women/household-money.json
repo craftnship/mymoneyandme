@@ -1,0 +1,50 @@
+{
+  "slug": "household-money",
+  "track": "women",
+  "order": 2,
+  "difficulty": "beginner",
+  "estimatedHours": 2,
+  "translations": [
+    {
+      "locale": "en",
+      "title": "Managing household money and a joint budget",
+      "summary": "One budget, two voices, no surprises."
+    },
+    {
+      "locale": "ta",
+      "title": "வீட்டுப் பணம் மற்றும் கூட்டு பட்ஜெட்டை நிர்வகித்தல்",
+      "summary": "ஒரு பட்ஜெட், இரு குரல்கள், ஆச்சரியங்கள் இல்லை."
+    }
+  ],
+  "chapters": [
+    {
+      "slug": "joint-budget",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "The joint budget",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    },
+    {
+      "slug": "money-conversations",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Money conversations",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    }
+  ],
+  "checkupDimension": "cashflow"
+}

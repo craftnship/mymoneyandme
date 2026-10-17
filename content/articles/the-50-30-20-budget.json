@@ -1,0 +1,73 @@
+{
+  "id": "art-001",
+  "slug": "the-50-30-20-budget",
+  "sourceLocale": "en",
+  "category": "personalFinance",
+  "format": "howTo",
+  "tags": ["budgeting", "beginner"],
+  "author": "My Money & Me",
+  "publishedAt": "2026-10-10",
+  "pinned": true,
+  "relatedCalculator": "50-30-20-budget",
+  "relatedChapter": "adults/money-basics/budgeting",
+  "translations": [
+    {
+      "locale": "en",
+      "title": "The 50/30/20 budget, explained for Indian households",
+      "excerpt": "Half for needs, a third for wants, a fifth for your future. One rule that fits a first salary and a family of four alike.",
+      "state": "published",
+      "aiDraft": false,
+      "publishedAt": "2026-10-10",
+      "blocks": [
+        { "type": "paragraph", "text": "A budget is not a punishment. It is a plan for money that has already arrived. The 50/30/20 rule gives every rupee of take-home pay one of three jobs, and it works because you only need to track three numbers." },
+        { "type": "heading", "level": 2, "text": "The three buckets" },
+        { "type": "list", "items": [
+          "Needs (50%): rent or EMI, groceries, electricity, transport to work, school fees, insurance premiums, minimum loan payments.",
+          "Wants (30%): eating out, subscriptions, travel, gadgets, the upgraded phone plan.",
+          "Savings and debt repayment (20%): emergency fund, SIPs, PPF, extra loan prepayment."
+        ] },
+        { "type": "callout", "tone": "tip", "text": "Count the 20% first. Set up an auto-debit for savings on salary day, then live on the rest. Budgets built on leftovers rarely survive the month." },
+        { "type": "heading", "level": 2, "text": "A worked example" },
+        { "type": "paragraph", "text": "On a take-home of ₹60,000 a month: ₹30,000 covers needs, ₹18,000 goes to wants and ₹12,000 is saved. If rent alone is ₹25,000, needs will overshoot; that is the signal to trim wants, not savings." },
+        { "type": "calculator", "slug": "50-30-20-budget" },
+        { "type": "heading", "level": 2, "text": "When the split does not fit" },
+        { "type": "paragraph", "text": "In a metro with a home loan, needs can run to 60% or more. That is fine for a year or two as long as the savings bucket does not drop below 10%. If it does, the fix is structural: a cheaper home, a longer loan tenure or a second income." },
+        { "type": "paragraph", "text": "Under the current rules, up to {section_80c_limit} of savings in PPF, ELSS or EPF also reduce taxable income under the old regime, so the 20% bucket can do double duty." },
+        { "type": "takeaways", "items": [
+          "Needs 50%, wants 30%, savings 20% of take-home pay.",
+          "Automate the 20% on salary day.",
+          "If needs exceed 60% for more than two years, change something structural."
+        ] }
+      ]
+    },
+    {
+      "locale": "ta",
+      "title": "50/30/20 பட்ஜெட்: இந்தியக் குடும்பங்களுக்கான விளக்கம்",
+      "excerpt": "பாதி தேவைகளுக்கு, மூன்றில் ஒரு பங்கு விருப்பங்களுக்கு, ஐந்தில் ஒரு பங்கு எதிர்காலத்திற்கு. முதல் சம்பளத்திற்கும் நான்கு பேர் குடும்பத்திற்கும் பொருந்தும் ஒரே விதி.",
+      "state": "published",
+      "aiDraft": true,
+      "publishedAt": "2026-10-10",
+      "blocks": [
+        { "type": "paragraph", "text": "பட்ஜெட் என்பது தண்டனை அல்ல. ஏற்கனவே வந்துவிட்ட பணத்திற்கான திட்டம். 50/30/20 விதி, கையில் கிடைக்கும் ஒவ்வொரு ரூபாய்க்கும் மூன்று வேலைகளில் ஒன்றைக் கொடுக்கிறது; மூன்று எண்களை மட்டுமே கண்காணித்தால் போதும் என்பதால் இது வேலை செய்கிறது." },
+        { "type": "heading", "level": 2, "text": "மூன்று பிரிவுகள்" },
+        { "type": "list", "items": [
+          "தேவைகள் (50%): வாடகை அல்லது EMI, மளிகை, மின்சாரம், வேலைக்குச் செல்லும் பயணம், பள்ளிக் கட்டணம், காப்பீட்டுப் பிரீமியம், கடனின் குறைந்தபட்சத் தவணை.",
+          "விருப்பங்கள் (30%): வெளியே சாப்பிடுவது, சந்தாக்கள், பயணம், கேஜெட்டுகள், உயர்ந்த மொபைல் திட்டம்.",
+          "சேமிப்பு மற்றும் கடன் திருப்பிச் செலுத்துதல் (20%): அவசர நிதி, SIP, PPF, கூடுதல் கடன் முன்பணம்."
+        ] },
+        { "type": "callout", "tone": "tip", "text": "20% ஐ முதலில் எண்ணுங்கள். சம்பள நாளில் சேமிப்புக்கு ஆட்டோ-டெபிட் அமைத்து, மீதியில் வாழுங்கள். மீதமாகும் பணத்தில் கட்டப்படும் பட்ஜெட் மாத இறுதி வரை நீடிப்பது அரிது." },
+        { "type": "heading", "level": 2, "text": "ஒரு உதாரணம்" },
+        { "type": "paragraph", "text": "மாதம் ₹60,000 கையில் கிடைத்தால்: ₹30,000 தேவைகளுக்கு, ₹18,000 விருப்பங்களுக்கு, ₹12,000 சேமிப்பு. வாடகை மட்டுமே ₹25,000 என்றால் தேவைகள் அதிகமாகும்; அது விருப்பங்களைக் குறைக்க வேண்டிய அறிகுறி, சேமிப்பை அல்ல." },
+        { "type": "calculator", "slug": "50-30-20-budget" },
+        { "type": "heading", "level": 2, "text": "பிரிவு பொருந்தாதபோது" },
+        { "type": "paragraph", "text": "வீட்டுக் கடனுடன் பெருநகரத்தில் வாழ்ந்தால் தேவைகள் 60% அல்லது அதற்கு மேல் செல்லலாம். சேமிப்புப் பிரிவு 10% க்குக் கீழே போகாத வரை ஓரிரு ஆண்டுகளுக்கு அது பரவாயில்லை. கீழே போனால் தீர்வு கட்டமைப்பு ரீதியானது: மலிவான வீடு, நீண்ட கடன் காலம் அல்லது இரண்டாவது வருமானம்." },
+        { "type": "paragraph", "text": "தற்போதைய விதிகளின்படி, PPF, ELSS அல்லது EPF இல் {section_80c_limit} வரை சேமிப்பு பழைய வரி முறையில் வரிக்குட்பட்ட வருமானத்தையும் குறைக்கும்; எனவே 20% பிரிவு இரட்டை வேலை செய்யும்." },
+        { "type": "takeaways", "items": [
+          "கையில் கிடைக்கும் சம்பளத்தில் தேவைகள் 50%, விருப்பங்கள் 30%, சேமிப்பு 20%.",
+          "சம்பள நாளில் 20% ஐ தானியங்கியாக்குங்கள்.",
+          "தேவைகள் இரண்டு ஆண்டுகளுக்கு மேல் 60% ஐத் தாண்டினால், கட்டமைப்பில் ஏதாவது மாற்றுங்கள்."
+        ] }
+      ]
+    }
+  ]
+}

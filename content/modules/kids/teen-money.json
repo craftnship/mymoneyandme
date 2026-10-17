@@ -1,0 +1,78 @@
+{
+  "slug": "teen-money",
+  "track": "kids",
+  "order": 8,
+  "difficulty": "intermediate",
+  "estimatedHours": 3,
+  "translations": [
+    {
+      "locale": "en",
+      "title": "Teen level: first job, UPI, budgeting and intro to investing",
+      "summary": "For 12 to 16: earning, paying, planning and the first SIP."
+    },
+    {
+      "locale": "ta",
+      "title": "டீன் நிலை: முதல் வேலை, UPI, பட்ஜெட் மற்றும் முதலீட்டு அறிமுகம்",
+      "summary": "12 முதல் 16 வரை: சம்பாதித்தல், செலுத்துதல், திட்டமிடல் மற்றும் முதல் SIP."
+    }
+  ],
+  "chapters": [
+    {
+      "slug": "first-job",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Your first job",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    },
+    {
+      "slug": "upi-and-payments",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "UPI and digital payments",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    },
+    {
+      "slug": "teen-budget",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "A teen budget",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    },
+    {
+      "slug": "first-investment",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Your first investment",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    }
+  ],
+  "level": "12-16"
+}

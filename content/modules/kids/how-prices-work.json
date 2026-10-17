@@ -1,0 +1,36 @@
+{
+  "slug": "how-prices-work",
+  "track": "kids",
+  "order": 4,
+  "difficulty": "beginner",
+  "estimatedHours": 1,
+  "translations": [
+    {
+      "locale": "en",
+      "title": "How prices work: inflation for kids",
+      "summary": "Why the same ice cream costs more every year."
+    },
+    {
+      "locale": "ta",
+      "title": "விலைகள் எப்படி வேலை செய்கின்றன: குழந்தைகளுக்கான பணவீக்கம்",
+      "summary": "ஒரே ஐஸ்கிரீம் ஏன் ஒவ்வொரு ஆண்டும் அதிகமாகிறது."
+    }
+  ],
+  "chapters": [
+    {
+      "slug": "prices",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Prices and inflation",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    }
+  ],
+  "level": "8-11"
+}

@@ -1,0 +1,77 @@
+{
+  "slug": "tax-planning",
+  "track": "adults",
+  "order": 9,
+  "difficulty": "intermediate",
+  "estimatedHours": 4,
+  "translations": [
+    {
+      "locale": "en",
+      "title": "Tax planning for individuals",
+      "summary": "Regimes, deductions, capital gains and filing."
+    },
+    {
+      "locale": "ta",
+      "title": "தனிநபர்களுக்கான வரித் திட்டமிடல்",
+      "summary": "வரி முறைகள், விலக்குகள், மூலதன ஆதாயம் மற்றும் தாக்கல்."
+    }
+  ],
+  "chapters": [
+    {
+      "slug": "old-vs-new-regime",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Old vs new regime",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    },
+    {
+      "slug": "deductions",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Deductions that matter",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    },
+    {
+      "slug": "capital-gains",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Capital gains",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    },
+    {
+      "slug": "filing",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Filing your return",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "slug": "women-entrepreneurs",
+  "track": "women",
+  "order": 9,
+  "difficulty": "advanced",
+  "estimatedHours": 3,
+  "translations": [
+    {
+      "locale": "en",
+      "title": "Women entrepreneurs: separating business and personal money",
+      "summary": "Accounts, salary to self, GST basics and the loans available to women-led businesses."
+    },
+    {
+      "locale": "ta",
+      "title": "பெண் தொழில்முனைவோர்: வணிக மற்றும் தனிப்பட்ட பணத்தைப் பிரித்தல்",
+      "summary": "கணக்குகள், தனக்கே சம்பளம், GST அடிப்படைகள் மற்றும் பெண்கள் தலைமையிலான வணிகங்களுக்கான கடன்கள்."
+    }
+  ],
+  "chapters": [
+    {
+      "slug": "separate-accounts",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Separate accounts",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    },
+    {
+      "slug": "paying-yourself",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Paying yourself",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    },
+    {
+      "slug": "business-loans",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Loans for women-led businesses",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    }
+  ],
+  "checkupDimension": "debt"
+}

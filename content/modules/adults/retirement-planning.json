@@ -1,0 +1,63 @@
+{
+  "slug": "retirement-planning",
+  "track": "adults",
+  "order": 8,
+  "difficulty": "intermediate",
+  "estimatedHours": 4,
+  "translations": [
+    {
+      "locale": "en",
+      "title": "Retirement planning",
+      "summary": "How much is enough, EPF, NPS, and the withdrawal years."
+    },
+    {
+      "locale": "ta",
+      "title": "ஓய்வூதியத் திட்டமிடல்",
+      "summary": "எவ்வளவு போதும், EPF, NPS, மற்றும் பணம் எடுக்கும் ஆண்டுகள்."
+    }
+  ],
+  "chapters": [
+    {
+      "slug": "how-much-is-enough",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "How much is enough",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    },
+    {
+      "slug": "epf-and-nps",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "EPF and NPS",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    },
+    {
+      "slug": "withdrawal-years",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "The withdrawal years",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    }
+  ]
+}

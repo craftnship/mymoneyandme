@@ -1,0 +1,64 @@
+{
+  "slug": "legal-and-tax-rights",
+  "track": "women",
+  "order": 6,
+  "difficulty": "intermediate",
+  "estimatedHours": 3,
+  "translations": [
+    {
+      "locale": "en",
+      "title": "Legal and tax rights",
+      "summary": "Property, inheritance, maintenance, nominations and tax points specific to women."
+    },
+    {
+      "locale": "ta",
+      "title": "சட்ட மற்றும் வரி உரிமைகள்",
+      "summary": "சொத்து, வாரிசுரிமை, பராமரிப்பு, பரிந்துரை மற்றும் பெண்களுக்கான வரி அம்சங்கள்."
+    }
+  ],
+  "chapters": [
+    {
+      "slug": "property-and-inheritance",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Property and inheritance",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    },
+    {
+      "slug": "maintenance",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Maintenance",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    },
+    {
+      "slug": "tax-points",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Tax points for women",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    }
+  ],
+  "checkupDimension": "hygiene"
+}
