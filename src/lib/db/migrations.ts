@@ -165,4 +165,12 @@ export const MIGRATIONS: Migration[] = [
       )`,
     ],
   },
+  {
+    // Two check-ups run within the same second must still order correctly for
+    // "latest" and "what changed", so the timestamp keeps milliseconds.
+    id: "0002_checkups_created_at_ms",
+    statements: [
+      `ALTER TABLE checkups MODIFY created_at DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3)`,
+    ],
+  },
 ];
