@@ -36,7 +36,7 @@ export function confirmationEmail(sub: Subscriber, confirmUrl: string) {
 }
 
 export function smtpConfigured() {
-  return Boolean(process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS && process.env.NEWSLETTER_FROM);
+  return Boolean(process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS);
 }
 
 export async function getMailer(): Promise<Mailer | undefined> {
@@ -48,7 +48,10 @@ export async function getMailer(): Promise<Mailer | undefined> {
     secure: (process.env.SMTP_SECURE ?? "true") !== "false",
     auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS },
   });
-  const from = process.env.NEWSLETTER_FROM!;
+  // A bare address is fine in NEWSLETTER_FROM (hosting panels can choke on "<" and "&" in values);
+  // the display name is added here unless the value already carries one.
+  const raw = process.env.NEWSLETTER_FROM || process.env.SMTP_USER!;
+  const from = raw.includes("<") ? raw : `"My Money & Me" <${raw}>`;
   return {
     async sendConfirmation(sub, confirmUrl) {
       const m = confirmationEmail(sub, confirmUrl);
