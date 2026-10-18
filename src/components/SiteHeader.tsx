@@ -29,9 +29,7 @@ export async function SiteHeader() {
         </nav>
         <div className="ms-auto flex items-center gap-2">
           <LanguageSwitcher />
-          <span className="hidden sm:inline-flex items-center rounded-lg border border-border px-3 py-1.5 text-sm text-fg-muted" title={t("comingSoon")}>
-            {t("signIn")}
-          </span>
+          {/* "Sign in" returns here with the Phase 3 member app; a placeholder that does nothing only confuses readers. */}
         </div>
       </div>
     </header>
