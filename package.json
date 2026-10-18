@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "css": "tailwindcss -i src/styles/app.css -o src/app/globals.css",
-    "dev": "concurrently -k -n css,next \"pnpm css --watch\" \"next dev\"",
-    "build": "pnpm css --minify && next build",
+    "dev": "concurrently -k -n css,next \"tailwindcss -i src/styles/app.css -o src/app/globals.css --watch\" \"next dev\"",
+    "build": "tailwindcss -i src/styles/app.css -o src/app/globals.css --minify && next build",
     "start": "next start",
     "lint": "eslint",
     "typecheck": "next typegen && tsc --noEmit",
