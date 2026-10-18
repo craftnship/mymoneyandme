@@ -40,28 +40,30 @@ export async function BlockRenderer({ blocks, kids = false }: { blocks: Block[];
             return <CalculatorEmbed key={i} slug={b.slug} />;
           case "takeaways":
             return (
-              <aside key={i} className="rounded-card border border-accent/30 bg-accent-soft p-5">
+              <section key={i} className="rounded-card border border-accent/30 bg-accent-soft p-5">
                 <p className="font-semibold">{t("article.takeaways")}</p>
                 <ul className="mt-2 list-disc ps-5 space-y-1">{b.items.map((it, k) => <li key={k}>{p(it)}</li>)}</ul>
-              </aside>
+              </section>
             );
           case "glossary":
             return (
-              <dl key={i} className="rounded-card border border-border p-5 grid gap-3">
+              <section key={i} className="rounded-card border border-border p-5">
                 <p className="font-semibold">{t("article.glossary")}</p>
-                {b.terms.map((g, k) => (
-                  <div key={k}><dt className="font-medium">{g.term}</dt><dd className="text-fg-muted">{p(g.definition)}</dd></div>
-                ))}
-              </dl>
+                <dl className="mt-3 grid gap-3">
+                  {b.terms.map((g, k) => (
+                    <div key={k}><dt className="font-medium">{g.term}</dt><dd className="text-fg-muted">{p(g.definition)}</dd></div>
+                  ))}
+                </dl>
+              </section>
             );
           case "quiz":
             return <Quiz key={i} questions={b.questions} />;
           case "activity":
             return (
-              <aside key={i} className="rounded-card border-2 border-dashed border-warn/50 bg-warn-soft p-5">
+              <section key={i} className="rounded-card border-2 border-dashed border-warn/50 bg-warn-soft p-5">
                 <p className="font-semibold">{t("learn.activity")}</p>
                 <p className="mt-1">{p(b.text)}</p>
-              </aside>
+              </section>
             );
           case "faq":
             return (

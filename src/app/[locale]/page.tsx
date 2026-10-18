@@ -26,7 +26,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             <Link href="/check-up" className="rounded-lg border border-border px-5 py-2.5 font-medium hover:bg-accent-soft">{t("runCheckup")}</Link>
           </div>
         </div>
-        {hero ? <ArticleCard article={hero} locale={locale} large /> : null}
+        {hero ? <ArticleCard article={hero} locale={locale} large heading="h2" /> : null}
       </section>
 
       <section>

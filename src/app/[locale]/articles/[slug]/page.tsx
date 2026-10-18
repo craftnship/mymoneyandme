@@ -93,7 +93,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ locale
       </div>
 
       {(article.relatedCalculator || article.relatedChapter) ? (
-        <aside className="mt-10 rounded-card border border-border p-5">
+        <section className="mt-10 rounded-card border border-border p-5">
           <p className="font-semibold">{t("related")}</p>
           <ul className="mt-2 space-y-1 text-sm">
             {article.relatedCalculator ? (
@@ -104,7 +104,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ locale
               return <li><Link href={`/learn/${track}/${mod}/${chapter}`} className="underline underline-offset-4">{t("relatedChapter")}</Link></li>;
             })() : null}
           </ul>
-        </aside>
+        </section>
       ) : null}
     </article>
   );

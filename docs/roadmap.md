@@ -19,7 +19,7 @@ Phases follow section 20 of the feature document. Months are indicative for a so
 | Home feed | Done (hero, latest, tracks, featured calculators); article search and category filters done; digest and newsletter pending (needs an email provider) |
 | Learning hub, 3 modules per track in English + one Indian language | Done for the gate: the first three modules of each track (22 chapters) have full English bodies and Tamil AI drafts; the remaining 20 modules are listed as coming soon. A content test enforces that every translation mirrors its source block by block |
 | 46 calculators passing reference tests | 60 definitions, all run on defaults; 8 reference cases pinned. Needs more reference cases per family and a review of the simplified NPS, take-home and capital-gains rules |
-| WCAG AA audit, Core Web Vitals | Keyboard-operable inputs, labels and focus styles in place; no audit run yet |
+| WCAG AA audit, Core Web Vitals | axe-core WCAG 2.1 AA + best-practice audit run on 14 page types in English and Tamil (home, feed, article, hub, chapters, calculators, check-up before and after scoring, legal): all clean after fixing the heading outline, nested landmarks, glossary markup and a duplicated navigation landmark. Core Web Vitals not yet measured on a deployed host |
 | Legal pages live | Draft text live in both languages; legal review deferred per decision log |
 
 Next steps, in order:
