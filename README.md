@@ -1,0 +1,1 @@
+Deploy artifact branch: app.zip is a git archive of the commit named in COMMIT, uploaded to Hostinger through a Git clone because direct uploads are blocked from the build session. Replace this with a GitHub connection in hPanel for push-to-deploy.
