@@ -535,7 +535,7 @@
       "age": "Your age",
       "monthlyIncome": "Household monthly take-home income",
       "monthlyExpenses": "Monthly expenses, including EMIs",
-      "emergencySavings": "Savings you could reach within a day",
+      "emergencySavings": "Emergency savings (bank balance, FDs, liquid funds)",
       "monthlyEmi": "Total monthly EMIs and card payments",
       "hasTermCover": "Do you have term life insurance of at least 10× your annual income?",
       "hasHealthCover": "Does every family member have health insurance beyond the employer plan?",
