@@ -19,29 +19,439 @@
   "chapters": [
     {
       "slug": "earning",
-      "readingMinutes": 10,
+      "readingMinutes": 5,
       "translations": [
         {
           "locale": "en",
           "title": "Earning",
-          "excerpt": "",
-          "blocks": [],
-          "state": "draft",
-          "aiDraft": false
+          "excerpt": "Where does money come from? Kavya finds out that most of it is earned by working, and some by lending or saving.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Kavya is nine. One evening she asks her appa, 'Where does the money in your phone come from?' He laughs and shows her his pay slip. Every month, the hospital where he works as a nurse sends his salary to his bank account. Her amma runs a small tailoring shop and gets paid by customers, often on UPI. Money does not appear. Someone earns it."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Ways money comes in"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Salary: a fixed amount every month for doing a job, like a teacher, a driver or a nurse.",
+                "Business: selling things or services, like the kirana shop uncle or Kavya's amma.",
+                "Pocket money: a small amount parents give you to learn to handle money.",
+                "Small jobs: extra work for extra money, like helping an aunt sort her shop stock in the holidays."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Chores and small jobs"
+            },
+            {
+              "type": "paragraph",
+              "text": "Some families give pocket money without any conditions. Some link a part of it to chores. In Kavya's house, making her bed and keeping her school bag ready are just things everyone does, with no pay. But washing the car on Sunday or helping her amma fold forty blouses before Deepavali is extra work, and she earns ₹50 for it. The lesson is the same either way: money comes from effort and time."
+            },
+            {
+              "type": "callout",
+              "tone": "tip",
+              "text": "Parents: keep the difference clear between family duties that nobody is paid for and extra jobs that earn. Children learn that money is tied to work, not to asking nicely."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Money that works while you wait"
+            },
+            {
+              "type": "paragraph",
+              "text": "There is a second way money comes in, and it is quieter. If you lend money or keep it in a bank, the person or bank who uses it pays you a little extra for waiting. That extra is called interest. Kavya's thatha keeps money in a fixed deposit and the bank pays him interest every year. His money is working while he reads the newspaper. You will learn more about this in the next chapter."
+            },
+            {
+              "type": "activity",
+              "text": "Sit with a parent and make a list of five people you know, like a teacher, an auto driver, a shopkeeper or a doctor. Next to each name write how they earn money: a salary, a business, or something else. Then ask your parent which of their own earnings is salary and which is anything else."
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "Money does not appear; someone earns it by working.",
+                "Salaries, businesses, pocket money and small jobs are all ways money comes in.",
+                "Some chores are family duties; extra jobs can earn extra money.",
+                "Money kept in a bank or lent out earns a little extra called interest."
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "Where does Kavya's appa's salary come from?",
+                  "options": [
+                    "It appears in his phone by itself",
+                    "The hospital pays him for his work as a nurse",
+                    "The bank gives it to him as a gift"
+                  ],
+                  "answer": 1,
+                  "explanation": "A salary is money paid for work. The hospital pays him every month."
+                },
+                {
+                  "q": "What is the extra money a bank pays you for keeping your money with it?",
+                  "options": [
+                    "Pocket money",
+                    "Interest",
+                    "A fee"
+                  ],
+                  "answer": 1,
+                  "explanation": "Interest is the bank paying you a little extra to wait."
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": false,
+          "publishedAt": "2026-10-18"
+        },
+        {
+          "locale": "ta",
+          "title": "சம்பாதித்தல்",
+          "excerpt": "பணம் எங்கிருந்து வருகிறது? பெரும்பாலானது வேலை செய்து சம்பாதிக்கப்படுகிறது, சிலது கடன் கொடுத்தோ சேமித்தோ வருகிறது என்று காவ்யா கண்டுபிடிக்கிறாள்.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "காவ்யாவுக்கு ஒன்பது வயது. ஒரு மாலை அவள் அப்பாவிடம் கேட்கிறாள், 'உங்க போன்ல இருக்கிற பணம் எங்கேயிருந்து வருது?' அவர் சிரித்துக்கொண்டே தன் சம்பளச் சீட்டைக் காட்டுகிறார். ஒவ்வொரு மாதமும், அவர் நர்ஸாக வேலை செய்யும் மருத்துவமனை அவர் சம்பளத்தை வங்கிக் கணக்குக்கு அனுப்புகிறது. அவள் அம்மா ஒரு சிறிய தையல் கடை நடத்துகிறார், வாடிக்கையாளர்கள் பெரும்பாலும் UPI மூலம் பணம் கொடுக்கிறார்கள். பணம் தானாகத் தோன்றுவதில்லை. யாரோ அதைச் சம்பாதிக்கிறார்கள்."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "பணம் வரும் வழிகள்"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "சம்பளம்: ஆசிரியர், டிரைவர் அல்லது நர்ஸ் போல ஒரு வேலை செய்வதற்கு ஒவ்வொரு மாதமும் ஒரு நிலையான தொகை.",
+                "தொழில்: கிரானா கடை மாமா அல்லது காவ்யாவின் அம்மா போலப் பொருட்களையோ சேவைகளையோ விற்பது.",
+                "பாக்கெட் மணி: பணத்தைக் கையாளக் கற்றுக்கொள்ள பெற்றோர் உங்களுக்குக் கொடுக்கும் சிறிய தொகை.",
+                "சிறிய வேலைகள்: விடுமுறையில் அத்தையின் கடைச் சரக்குகளை அடுக்க உதவுவது போல கூடுதல் பணத்திற்காகக் கூடுதல் வேலை."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "வீட்டு வேலைகளும் சிறிய வேலைகளும்"
+            },
+            {
+              "type": "paragraph",
+              "text": "சில குடும்பங்கள் எந்த நிபந்தனையும் இல்லாமல் பாக்கெட் மணி கொடுக்கின்றன. சில குடும்பங்கள் அதில் ஒரு பகுதியை வீட்டு வேலைகளுடன் இணைக்கின்றன. காவ்யாவின் வீட்டில், படுக்கையைச் சரி செய்வதும் பள்ளிப் பையைத் தயாராக வைப்பதும் எல்லோரும் செய்யும் வேலைகள், அதற்குப் பணம் இல்லை. ஆனால் ஞாயிறு காரைக் கழுவுவது அல்லது தீபாவளிக்கு முன் அம்மாவுக்கு நாற்பது ப்ளவுஸ்களை மடிக்க உதவுவது கூடுதல் வேலை, அதற்கு அவள் ₹50 சம்பாதிக்கிறாள். எப்படியிருந்தாலும் பாடம் ஒன்றுதான்: பணம் உழைப்பிலிருந்தும் நேரத்திலிருந்தும் வருகிறது."
+            },
+            {
+              "type": "callout",
+              "tone": "tip",
+              "text": "பெற்றோர்களே: யாருக்கும் பணம் கொடுக்கப்படாத குடும்பக் கடமைகளுக்கும், சம்பாதிக்கும் கூடுதல் வேலைகளுக்கும் இடையிலான வித்தியாசத்தைத் தெளிவாக வையுங்கள். பணம் அன்பாகக் கேட்பதோடு அல்ல, வேலையோடு இணைந்தது என்று குழந்தைகள் கற்றுக்கொள்வார்கள்."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "நீங்கள் காத்திருக்கும்போது வேலை செய்யும் பணம்"
+            },
+            {
+              "type": "paragraph",
+              "text": "பணம் வர இரண்டாவது ஒரு வழி உள்ளது, அது அமைதியானது. நீங்கள் பணத்தைக் கடன் கொடுத்தாலோ வங்கியில் வைத்தாலோ, அதைப் பயன்படுத்தும் நபரோ வங்கியோ காத்திருந்ததற்காக உங்களுக்குக் கொஞ்சம் கூடுதலாகக் கொடுக்கிறார்கள். அந்தக் கூடுதல் பணத்திற்கு வட்டி (interest) என்று பெயர். காவ்யாவின் தாத்தா பணத்தை ஒரு ஃபிக்ஸட் டெபாசிட்டில் வைத்திருக்கிறார், வங்கி ஒவ்வொரு ஆண்டும் அவருக்கு வட்டி கொடுக்கிறது. அவர் செய்தித்தாள் படிக்கும்போது அவர் பணம் வேலை செய்கிறது. அடுத்த அத்தியாயத்தில் இதைப் பற்றி மேலும் கற்றுக்கொள்வீர்கள்."
+            },
+            {
+              "type": "activity",
+              "text": "பெற்றோருடன் அமர்ந்து ஆசிரியர், ஆட்டோ டிரைவர், கடைக்காரர் அல்லது டாக்டர் போல உங்களுக்குத் தெரிந்த ஐந்து பேரின் பட்டியல் தயாரியுங்கள். ஒவ்வொரு பெயருக்கும் பக்கத்தில் அவர்கள் எப்படிச் சம்பாதிக்கிறார்கள் என்று எழுதுங்கள்: சம்பளம், தொழில், அல்லது வேறு ஏதாவது. பிறகு பெற்றோரின் சொந்த வருமானத்தில் எது சம்பளம், எது மற்றது என்று கேளுங்கள்."
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "பணம் தானாகத் தோன்றுவதில்லை; யாரோ வேலை செய்து சம்பாதிக்கிறார்கள்.",
+                "சம்பளம், தொழில், பாக்கெட் மணி, சிறிய வேலைகள் எல்லாம் பணம் வரும் வழிகள்.",
+                "சில வீட்டு வேலைகள் குடும்பக் கடமைகள்; கூடுதல் வேலைகள் கூடுதல் பணம் சம்பாதிக்கலாம்.",
+                "வங்கியில் வைத்த அல்லது கடன் கொடுத்த பணம் வட்டி என்ற கொஞ்சம் கூடுதல் பணத்தைச் சம்பாதிக்கிறது."
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "காவ்யாவின் அப்பாவின் சம்பளம் எங்கிருந்து வருகிறது?",
+                  "options": [
+                    "அது தானாக அவர் போனில் தோன்றுகிறது",
+                    "நர்ஸாக அவர் செய்யும் வேலைக்கு மருத்துவமனை பணம் கொடுக்கிறது",
+                    "வங்கி அதைப் பரிசாகக் கொடுக்கிறது"
+                  ],
+                  "answer": 1,
+                  "explanation": "சம்பளம் என்பது வேலைக்காகக் கொடுக்கப்படும் பணம். மருத்துவமனை ஒவ்வொரு மாதமும் அவருக்குக் கொடுக்கிறது."
+                },
+                {
+                  "q": "உங்கள் பணத்தை வங்கியில் வைத்திருப்பதற்காக வங்கி உங்களுக்குக் கொடுக்கும் கூடுதல் பணம் என்ன?",
+                  "options": [
+                    "பாக்கெட் மணி",
+                    "வட்டி",
+                    "கட்டணம்"
+                  ],
+                  "answer": 1,
+                  "explanation": "வட்டி என்பது காத்திருப்பதற்காக வங்கி உங்களுக்குக் கொஞ்சம் கூடுதலாகக் கொடுப்பது."
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": true,
+          "publishedAt": "2026-10-18"
         }
       ]
     },
     {
       "slug": "first-bank-account",
-      "readingMinutes": 10,
+      "readingMinutes": 5,
       "translations": [
         {
           "locale": "en",
           "title": "A first bank account",
-          "excerpt": "",
-          "blocks": [],
-          "state": "draft",
-          "aiDraft": false
+          "excerpt": "Rohan opens a minor savings account with his amma, learns what interest is, and why a PIN is never shared.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Rohan's save jar has reached ₹2,000 after a year of pocket money and two festivals. His amma says it should live somewhere safer than a jar under the bed. On Saturday they go to the bank near the bus stand in Coimbatore and open a minor savings account."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "What is a minor savings account?"
+            },
+            {
+              "type": "paragraph",
+              "text": "A minor is anyone under 18. Many banks let a child have a savings account in their own name, with a parent as guardian who signs the forms and watches over it. Rohan gets a passbook, a small book where the bank prints every deposit and withdrawal. Some banks also give a card or app with limits set by the parent."
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "You need: the child's birth certificate or Aadhaar, the parent's ID and address proof, and a photo.",
+                "The parent decides how much can be taken out and how.",
+                "At 18 the account becomes a normal account in the child's own name."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "The bank pays you to wait"
+            },
+            {
+              "type": "paragraph",
+              "text": "Rohan's ₹2,000 does not just sit in the bank. The bank lends savers' money to other people, and in return pays savers a little extra every few months. That extra is interest. If the bank pays ₹3 for every ₹100 in a year, Rohan's ₹2,000 becomes about ₹2,060 after a year without him doing anything. Small, but it grows every year, and bigger amounts earn more."
+            },
+            {
+              "type": "table",
+              "header": [
+                "Money in the account",
+                "Interest in a year at ₹3 per ₹100"
+              ],
+              "rows": [
+                [
+                  "₹1,000",
+                  "₹30"
+                ],
+                [
+                  "₹2,000",
+                  "₹60"
+                ],
+                [
+                  "₹10,000",
+                  "₹300"
+                ]
+              ]
+            },
+            {
+              "type": "callout",
+              "tone": "info",
+              "text": "Rates change from bank to bank and year to year. Ask what your bank pays on a savings account today, then do the sum together."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Keep the secrets secret"
+            },
+            {
+              "type": "paragraph",
+              "text": "When Rohan's amma checks the account on her phone, the bank sends a one-time password, an OTP, by SMS. That number and the card PIN are the keys to the money. The bank never calls to ask for them. Anyone who calls or messages asking for an OTP or PIN is trying to steal, even if they sound polite or say they are from the bank."
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Never say your PIN or OTP out loud, not even to a friend.",
+                "Never type it into a link that came by message.",
+                "If someone asks for it, tell a parent straight away."
+              ]
+            },
+            {
+              "type": "activity",
+              "text": "Ask a parent to show you their passbook or bank app, balance covered if they like. Find three things together: a deposit, a withdrawal and an interest line. Then practise saying 'I will ask my parent' out loud, the right answer to anyone who asks for an OTP."
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "A minor savings account is in your name, with a parent as guardian.",
+                "The bank pays you interest for keeping money with it.",
+                "A passbook or app shows every rupee in and out.",
+                "PIN and OTP are secrets. The bank never asks for them."
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "Why does the bank pay Rohan interest?",
+                  "options": [
+                    "Because he is a child",
+                    "For letting the bank use his money while he waits",
+                    "Because he visits the branch"
+                  ],
+                  "answer": 1,
+                  "explanation": "The bank lends savers' money to others and shares a little of what it earns as interest."
+                },
+                {
+                  "q": "Someone phones and says they are from the bank and need your OTP. What do you do?",
+                  "options": [
+                    "Read out the OTP",
+                    "Hang up and tell a parent",
+                    "Send it by message instead"
+                  ],
+                  "answer": 1,
+                  "explanation": "The bank never asks for an OTP. Stop and tell a parent."
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": false,
+          "publishedAt": "2026-10-18"
+        },
+        {
+          "locale": "ta",
+          "title": "முதல் வங்கிக் கணக்கு",
+          "excerpt": "ரோகன் அம்மாவுடன் ஒரு மைனர் சேமிப்புக் கணக்கைத் திறந்து, வட்டி என்றால் என்ன, PIN ஐ ஏன் யாரிடமும் சொல்லக் கூடாது என்று கற்றுக்கொள்கிறான்.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "ஒரு வருடப் பாக்கெட் மணியும் இரண்டு பண்டிகைகளும் முடிந்து ரோகனின் சேமிப்பு ஜாடி ₹2,000 ஐ எட்டியுள்ளது. படுக்கைக்கு அடியில் உள்ள ஜாடியை விடப் பாதுகாப்பான இடத்தில் அது இருக்க வேண்டும் என்று அம்மா சொல்கிறார். சனிக்கிழமை அவர்கள் கோயம்புத்தூரில் பஸ் ஸ்டாண்டுக்கு அருகில் உள்ள வங்கிக்குப் போய் ஒரு மைனர் சேமிப்புக் கணக்கைத் திறக்கிறார்கள்."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "மைனர் சேமிப்புக் கணக்கு என்றால் என்ன?"
+            },
+            {
+              "type": "paragraph",
+              "text": "மைனர் (minor) என்றால் 18 வயதுக்குக் கீழே உள்ள யார் வேண்டுமானாலும். பல வங்கிகள் ஒரு குழந்தையின் சொந்தப் பெயரில், படிவங்களில் கையெழுத்திட்டுக் கணக்கைக் கவனித்துக்கொள்ளும் பெற்றோரைக் காப்பாளராக (guardian) வைத்து, சேமிப்புக் கணக்கைத் திறக்க அனுமதிக்கின்றன. ரோகனுக்கு ஒரு பாஸ்புக் கிடைக்கிறது, அது ஒவ்வொரு டெபாசிட்டையும் எடுப்பையும் வங்கி அச்சிடும் ஒரு சிறிய புத்தகம். சில வங்கிகள் பெற்றோர் வரம்பு நிர்ணயிக்கும் ஒரு கார்டையோ ஆப்பையோ கொடுக்கின்றன."
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "தேவையானவை: குழந்தையின் பிறப்புச் சான்றிதழ் அல்லது ஆதார், பெற்றோரின் ஐடி மற்றும் முகவரிச் சான்று, ஒரு புகைப்படம்.",
+                "எவ்வளவு எடுக்கலாம், எப்படி எடுக்கலாம் என்று பெற்றோர் முடிவு செய்கிறார்.",
+                "18 வயதில் கணக்கு குழந்தையின் சொந்தப் பெயரில் சாதாரணக் கணக்காக மாறுகிறது."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "காத்திருப்பதற்கு வங்கி உங்களுக்குப் பணம் கொடுக்கிறது"
+            },
+            {
+              "type": "paragraph",
+              "text": "ரோகனின் ₹2,000 வங்கியில் சும்மா உட்கார்ந்திருப்பதில்லை. வங்கி சேமிப்பாளர்களின் பணத்தை மற்றவர்களுக்குக் கடன் கொடுக்கிறது, பதிலுக்குச் சில மாதங்களுக்கு ஒருமுறை சேமிப்பாளர்களுக்குக் கொஞ்சம் கூடுதலாகக் கொடுக்கிறது. அந்தக் கூடுதல்தான் வட்டி (interest). ஒரு வருடத்தில் ஒவ்வொரு ₹100 க்கும் வங்கி ₹3 கொடுத்தால், ரோகன் எதுவும் செய்யாமலேயே அவன் ₹2,000 ஒரு வருடத்தில் சுமார் ₹2,060 ஆகிறது. சிறியது, ஆனால் ஒவ்வொரு ஆண்டும் வளர்கிறது, பெரிய தொகைகள் அதிகம் சம்பாதிக்கின்றன."
+            },
+            {
+              "type": "table",
+              "header": [
+                "கணக்கில் உள்ள பணம்",
+                "₹100 க்கு ₹3 வீதம் ஒரு வருட வட்டி"
+              ],
+              "rows": [
+                [
+                  "₹1,000",
+                  "₹30"
+                ],
+                [
+                  "₹2,000",
+                  "₹60"
+                ],
+                [
+                  "₹10,000",
+                  "₹300"
+                ]
+              ]
+            },
+            {
+              "type": "callout",
+              "tone": "info",
+              "text": "விகிதங்கள் வங்கிக்கு வங்கி, வருடத்துக்கு வருடம் மாறும். சேமிப்புக் கணக்குக்கு உங்கள் வங்கி இன்று என்ன கொடுக்கிறது என்று கேட்டு, பிறகு சேர்ந்து கணக்குப் போடுங்கள்."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "ரகசியங்களை ரகசியமாக வையுங்கள்"
+            },
+            {
+              "type": "paragraph",
+              "text": "ரோகனின் அம்மா போனில் கணக்கைப் பார்க்கும்போது, வங்கி SMS மூலம் ஒரு ஒன்-டைம் பாஸ்வேர்ட், அதாவது OTP, அனுப்புகிறது. அந்த எண்ணும் கார்டு PIN உம் பணத்திற்கான சாவிகள். வங்கி ஒருபோதும் போன் செய்து அவற்றைக் கேட்காது. OTP அல்லது PIN கேட்டு போன் செய்பவர் அல்லது மெசேஜ் அனுப்புபவர் யாராக இருந்தாலும் திருட முயற்சிக்கிறார்கள், அவர்கள் பணிவாகப் பேசினாலும், வங்கியிலிருந்து வருவதாகச் சொன்னாலும் சரி."
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "உங்கள் PIN அல்லது OTP ஐ ஒருபோதும் சத்தமாகச் சொல்லாதீர்கள், நண்பரிடம் கூட.",
+                "மெசேஜில் வந்த லிங்கில் அதை ஒருபோதும் டைப் செய்யாதீர்கள்.",
+                "யாராவது கேட்டால், உடனே பெற்றோரிடம் சொல்லுங்கள்."
+              ]
+            },
+            {
+              "type": "activity",
+              "text": "பெற்றோரின் பாஸ்புக்கையோ வங்கி ஆப்பையோ காட்டச் சொல்லுங்கள், வேண்டுமானால் பேலன்ஸை மறைத்துக்கொள்ளலாம். சேர்ந்து மூன்று விஷயங்களைக் கண்டுபிடியுங்கள்: ஒரு டெபாசிட், ஒரு எடுப்பு, ஒரு வட்டி வரி. பிறகு 'நான் என் பெற்றோரிடம் கேட்கிறேன்' என்று சத்தமாகச் சொல்லிப் பழகுங்கள், OTP கேட்கும் யாருக்கும் இதுதான் சரியான பதில்."
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "மைனர் சேமிப்புக் கணக்கு உங்கள் பெயரில், பெற்றோர் காப்பாளராக இருக்கும்.",
+                "பணத்தை வங்கியில் வைத்திருப்பதற்கு வங்கி உங்களுக்கு வட்டி கொடுக்கிறது.",
+                "பாஸ்புக் அல்லது ஆப் உள்ளே வரும், வெளியே போகும் ஒவ்வொரு ரூபாயையும் காட்டுகிறது.",
+                "PIN உம் OTP உம் ரகசியங்கள். வங்கி ஒருபோதும் அவற்றைக் கேட்காது."
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "வங்கி ஏன் ரோகனுக்கு வட்டி கொடுக்கிறது?",
+                  "options": [
+                    "அவன் குழந்தை என்பதால்",
+                    "அவன் காத்திருக்கும்போது வங்கி அவன் பணத்தைப் பயன்படுத்த அனுமதித்ததற்காக",
+                    "அவன் கிளைக்கு வருவதால்"
+                  ],
+                  "answer": 1,
+                  "explanation": "வங்கி சேமிப்பாளர்களின் பணத்தை மற்றவர்களுக்குக் கடன் கொடுத்து, சம்பாதிப்பதில் கொஞ்சத்தை வட்டியாகப் பகிர்கிறது."
+                },
+                {
+                  "q": "யாரோ போன் செய்து வங்கியிலிருந்து பேசுவதாகவும் உங்கள் OTP வேண்டும் என்றும் சொல்கிறார்கள். என்ன செய்வீர்கள்?",
+                  "options": [
+                    "OTP ஐச் சொல்லுவேன்",
+                    "போனை வைத்துவிட்டுப் பெற்றோரிடம் சொல்லுவேன்",
+                    "அதற்குப் பதிலாக மெசேஜில் அனுப்புவேன்"
+                  ],
+                  "answer": 1,
+                  "explanation": "வங்கி ஒருபோதும் OTP கேட்காது. நிறுத்தி பெற்றோரிடம் சொல்லுங்கள்."
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": true,
+          "publishedAt": "2026-10-18"
         }
       ]
     }

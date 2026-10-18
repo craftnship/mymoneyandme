@@ -19,57 +19,1217 @@
   "chapters": [
     {
       "slug": "bank-accounts",
-      "readingMinutes": 10,
+      "readingMinutes": 5,
       "translations": [
         {
           "locale": "en",
           "title": "Bank accounts and UPI",
-          "excerpt": "",
-          "blocks": [],
-          "state": "draft",
-          "aiDraft": false
+          "excerpt": "Which account you need, the charges that hide in minimum balances, UPI safety, nomination and the ₹5 lakh deposit cover.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "A bank account is the first financial product most people own and the one they think about least. Yet the type of account you hold, the balance you keep in it, and a form you may have skipped on the day you opened it decide whether you lose money to charges, and whether your family can reach the money if something happens to you."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Savings, salary and current accounts"
+            },
+            {
+              "type": "table",
+              "header": [
+                "Account",
+                "Who it is for",
+                "Interest",
+                "Minimum balance"
+              ],
+              "rows": [
+                [
+                  "Savings",
+                  "Individuals, for everyday money",
+                  "Yes, typically 2.5% to 4% a year; a few banks pay more",
+                  "Usually ₹1,000 to ₹10,000, depending on bank and branch"
+                ],
+                [
+                  "Salary",
+                  "Employees whose company pays into it",
+                  "Same as savings",
+                  "Zero while salary keeps arriving; often converts to a regular savings account if no salary for about three months"
+                ],
+                [
+                  "Current",
+                  "Businesses and professionals with many transactions",
+                  "None",
+                  "Higher, often ₹10,000 to ₹25,000 or more"
+                ]
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Most people need only a savings account, and perhaps a second one to park the emergency fund away from daily spending. If your employer opens a salary account, it is a savings account with the minimum-balance condition waived. When you change jobs, either ask the new employer to pay into it or close it before the bank starts charging. And charging is easy to miss: banks charge a penalty when your average monthly balance drops below the minimum. The penalty is deducted automatically, and on a small balance it can quietly take more than the interest you earn. Also watch for charges on cheque books, SMS alerts, debit card annual fees and cash withdrawals beyond the free limit. The schedule of charges is on every bank's website; read it once a year."
+            },
+            {
+              "type": "callout",
+              "tone": "info",
+              "text": "A Basic Savings Bank Deposit Account (BSBDA), which includes Jan Dhan accounts, has no minimum balance by RBI rule. If you cannot keep a balance, ask for one instead of paying penalties."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "UPI: the account in your pocket"
+            },
+            {
+              "type": "paragraph",
+              "text": "UPI links your bank account to a phone number and a UPI ID. A payment moves money from your account to the shop's in seconds, with no charge to you. The same speed works for a scammer, so three habits matter."
+            },
+            {
+              "type": "list",
+              "items": [
+                "You enter your UPI PIN only to pay. You never need a PIN to receive money. Anyone who says otherwise is running a scam.",
+                "Never share the PIN, the OTP or your screen with a caller, even one who claims to be from the bank or a delivery company.",
+                "Treat every \"collect request\" from an unknown name as a trap; decline it. Check the receiver's name on screen before you confirm a payment."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Two protections: nomination and DICGC"
+            },
+            {
+              "type": "paragraph",
+              "text": "A nomination names the person the bank will hand the money to if you die. It is the form most people skip. Without one, your family must produce a succession or legal-heir certificate, a process that can take months and cost money. Adding a nominee takes one form, online or at the branch, and can be changed at any time. Check every account, FD and locker, name a nominee for each, and tell that person."
+            },
+            {
+              "type": "paragraph",
+              "text": "The second protection covers the bank itself failing. Deposits in every bank licensed by RBI, including cooperative banks, are insured by the Deposit Insurance and Credit Guarantee Corporation (DICGC) up to ₹5 lakh per depositor per bank. That covers principal plus interest across savings, current, FD and RD held in the same bank in the same capacity. If you hold more than ₹5 lakh in one bank, spreading it across two or three banks keeps every rupee covered. A joint account, or an account you hold in a different capacity such as a partner in a firm, is counted separately."
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "One savings account for daily money and one for the emergency fund is enough for most people.",
+                "Know your minimum balance; a BSBDA has none.",
+                "The UPI PIN is for paying, never for receiving.",
+                "Nominate on every account and tell the nominee.",
+                "DICGC covers up to ₹5 lakh per depositor per bank."
+              ]
+            },
+            {
+              "type": "glossary",
+              "terms": [
+                {
+                  "term": "Average monthly balance",
+                  "definition": "The sum of your closing balance on each day of the month divided by the number of days; this is what the minimum-balance rule is tested against."
+                },
+                {
+                  "term": "Nominee",
+                  "definition": "The person the bank pays the balance to on your death, so your family does not need a court certificate."
+                },
+                {
+                  "term": "DICGC",
+                  "definition": "Deposit Insurance and Credit Guarantee Corporation, an RBI subsidiary that insures bank deposits up to ₹5 lakh per depositor per bank."
+                },
+                {
+                  "term": "BSBDA",
+                  "definition": "Basic Savings Bank Deposit Account: a no-minimum-balance savings account every bank must offer."
+                }
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "DICGC deposit insurance covers up to how much per depositor per bank?",
+                  "options": [
+                    "₹1 lakh",
+                    "₹5 lakh",
+                    "₹25 lakh"
+                  ],
+                  "answer": 1,
+                  "explanation": "The cover is ₹5 lakh including interest, per depositor in each bank."
+                },
+                {
+                  "q": "When do you need to enter your UPI PIN?",
+                  "options": [
+                    "To pay",
+                    "To receive money",
+                    "Both"
+                  ],
+                  "answer": 0,
+                  "explanation": "Receiving never needs a PIN. A request to enter one 'to receive' is a scam."
+                },
+                {
+                  "q": "What usually happens to a salary account if no salary is credited for a few months?",
+                  "options": [
+                    "It is closed",
+                    "It becomes a regular savings account with a minimum balance",
+                    "Nothing changes"
+                  ],
+                  "answer": 1
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": false,
+          "publishedAt": "2026-10-18"
+        },
+        {
+          "locale": "ta",
+          "title": "வங்கிக் கணக்குகள் மற்றும் UPI",
+          "excerpt": "உங்களுக்கு எந்தக் கணக்கு தேவை, குறைந்தபட்ச இருப்பில் மறைந்திருக்கும் கட்டணங்கள், UPI பாதுகாப்பு, நாமினேஷன் மற்றும் ₹5 லட்சம் டெபாசிட் காப்பீடு.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "வங்கிக் கணக்கு என்பது பெரும்பாலானோர் வைத்திருக்கும் முதல் நிதித் தயாரிப்பு; அதே நேரம் அவர்கள் மிகக் குறைவாக யோசிக்கும் ஒன்றும் கூட. ஆனால் நீங்கள் வைத்திருக்கும் கணக்கின் வகை, அதில் வைத்திருக்கும் இருப்பு, கணக்கு திறந்த நாளில் நீங்கள் தவிர்த்திருக்கக்கூடிய ஒரு படிவம், இவைதான் கட்டணங்களால் பணம் இழக்கிறீர்களா என்பதையும், உங்களுக்கு ஏதாவது நேர்ந்தால் உங்கள் குடும்பம் அந்தப் பணத்தை அடைய முடியுமா என்பதையும் தீர்மானிக்கின்றன."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "சேமிப்பு, சம்பளம் மற்றும் நடப்புக் கணக்குகள்"
+            },
+            {
+              "type": "table",
+              "header": [
+                "கணக்கு",
+                "யாருக்கு",
+                "வட்டி",
+                "குறைந்தபட்ச இருப்பு"
+              ],
+              "rows": [
+                [
+                  "சேமிப்பு (Savings)",
+                  "தனிநபர்கள், அன்றாடப் பணத்திற்கு",
+                  "ஆம், பொதுவாக ஆண்டுக்கு 2.5% முதல் 4%; சில வங்கிகள் அதிகம் தரும்",
+                  "வங்கி மற்றும் கிளையைப் பொறுத்து பொதுவாக ₹1,000 முதல் ₹10,000"
+                ],
+                [
+                  "சம்பளம் (Salary)",
+                  "நிறுவனம் சம்பளம் செலுத்தும் ஊழியர்கள்",
+                  "சேமிப்புக் கணக்கைப் போலவே",
+                  "சம்பளம் வந்துகொண்டிருக்கும் வரை பூஜ்யம்; சுமார் மூன்று மாதங்கள் சம்பளம் வரவில்லை என்றால் பெரும்பாலும் சாதாரண சேமிப்புக் கணக்காக மாறும்"
+                ],
+                [
+                  "நடப்பு (Current)",
+                  "அதிக பரிவர்த்தனைகள் உள்ள தொழில்கள் மற்றும் தொழில் வல்லுநர்கள்",
+                  "இல்லை",
+                  "அதிகம், பெரும்பாலும் ₹10,000 முதல் ₹25,000 அல்லது அதற்கு மேல்"
+                ]
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "பெரும்பாலானோருக்கு ஒரு சேமிப்புக் கணக்கு மட்டுமே தேவை; அன்றாடச் செலவிலிருந்து தள்ளி அவசர நிதியை வைக்க ஒருவேளை இரண்டாவது ஒன்று. உங்கள் நிறுவனம் சம்பளக் கணக்கு திறந்தால், அது குறைந்தபட்ச இருப்பு நிபந்தனை தளர்த்தப்பட்ட ஒரு சேமிப்புக் கணக்குதான். வேலை மாறும்போது, புதிய நிறுவனத்தை அதில் சம்பளம் செலுத்தச் சொல்லுங்கள், அல்லது வங்கி கட்டணம் விதிக்கத் தொடங்கும் முன் அதை மூடிவிடுங்கள். கட்டணங்களைக் கவனிக்காமல் விடுவது எளிது: உங்கள் சராசரி மாத இருப்பு குறைந்தபட்சத்திற்குக் கீழே போனால் வங்கிகள் அபராதம் விதிக்கின்றன. அபராதம் தானாகவே பிடிக்கப்படும்; சிறிய இருப்பில் அது நீங்கள் ஈட்டும் வட்டியை விட அதிகமாக அமைதியாக எடுத்துவிடலாம். காசோலைப் புத்தகம், SMS எச்சரிக்கைகள், டெபிட் கார்டு ஆண்டுக் கட்டணம், இலவச வரம்பைத் தாண்டிய பண எடுப்புகள் ஆகியவற்றுக்கான கட்டணங்களையும் கவனியுங்கள். கட்டணப் பட்டியல் ஒவ்வொரு வங்கியின் இணையதளத்திலும் உள்ளது; ஆண்டுக்கு ஒருமுறை படியுங்கள்."
+            },
+            {
+              "type": "callout",
+              "tone": "info",
+              "text": "ஜன் தன் கணக்குகள் உள்ளிட்ட அடிப்படை சேமிப்பு வங்கி டெபாசிட் கணக்கிற்கு (BSBDA) RBI விதிப்படி குறைந்தபட்ச இருப்பு இல்லை. இருப்பு வைத்திருக்க முடியாவிட்டால், அபராதம் கட்டுவதற்குப் பதிலாக அதைக் கேளுங்கள்."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "UPI: உங்கள் பாக்கெட்டில் இருக்கும் கணக்கு"
+            },
+            {
+              "type": "paragraph",
+              "text": "UPI உங்கள் வங்கிக் கணக்கை ஒரு தொலைபேசி எண்ணுடனும் ஒரு UPI ID உடனும் இணைக்கிறது. ஒரு பணம் செலுத்துதல் உங்கள் கணக்கிலிருந்து கடைக்காரரின் கணக்கிற்கு நொடிகளில், உங்களுக்கு எந்தக் கட்டணமும் இன்றி, பணத்தை நகர்த்துகிறது. அதே வேகம் ஒரு மோசடிக்காரருக்கும் வேலை செய்யும்; எனவே மூன்று பழக்கங்கள் முக்கியம்."
+            },
+            {
+              "type": "list",
+              "items": [
+                "UPI PIN ஐ பணம் செலுத்தும்போது மட்டுமே உள்ளிடுவீர்கள். பணம் பெற PIN ஒருபோதும் தேவையில்லை. வேறுவிதமாகச் சொல்லும் எவரும் மோசடி செய்கிறார்கள்.",
+                "PIN, OTP அல்லது உங்கள் திரையை, வங்கியிலிருந்து அல்லது டெலிவரி நிறுவனத்திலிருந்து என்று சொல்லிக்கொள்ளும் அழைப்பாளருக்குக் கூட, ஒருபோதும் பகிராதீர்கள்.",
+                "தெரியாத பெயரிலிருந்து வரும் ஒவ்வொரு \"கலெக்ட் ரிக்வெஸ்ட்\" ஐயும் ஒரு பொறியாகக் கருதுங்கள்; நிராகரியுங்கள். பணம் செலுத்த உறுதிப்படுத்தும் முன் திரையில் பெறுநரின் பெயரைச் சரிபாருங்கள்."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "இரண்டு பாதுகாப்புகள்: நாமினேஷன் மற்றும் DICGC"
+            },
+            {
+              "type": "paragraph",
+              "text": "நாமினேஷன் (nomination) என்பது நீங்கள் இறந்தால் வங்கி பணத்தை யாரிடம் ஒப்படைக்கும் என்பதைப் பெயரிடுவது. பெரும்பாலானோர் தவிர்க்கும் படிவம் இதுதான். அது இல்லாவிட்டால், உங்கள் குடும்பம் வாரிசுச் சான்றிதழ் அல்லது சட்டப்பூர்வ வாரிசுச் சான்றிதழைக் காட்ட வேண்டும்; அது மாதங்கள் எடுக்கக்கூடிய, செலவு பிடிக்கும் ஒரு செயல்முறை. நாமினியைச் சேர்க்க ஆன்லைனில் அல்லது கிளையில் ஒரே ஒரு படிவம் போதும்; எப்போது வேண்டுமானாலும் மாற்றலாம். ஒவ்வொரு கணக்கு, FD மற்றும் லாக்கரையும் சரிபார்த்து, ஒவ்வொன்றுக்கும் ஒரு நாமினியைப் பெயரிட்டு, அந்த நபரிடம் சொல்லுங்கள்."
+            },
+            {
+              "type": "paragraph",
+              "text": "இரண்டாவது பாதுகாப்பு வங்கியே தோல்வியடையும் நிலையை உள்ளடக்குகிறது. கூட்டுறவு வங்கிகள் உட்பட RBI உரிமம் பெற்ற ஒவ்வொரு வங்கியிலும் உள்ள டெபாசிட்டுகள், டெபாசிட் இன்சூரன்ஸ் அண்ட் கிரெடிட் கேரண்டி கார்ப்பரேஷன் (DICGC) மூலம் ஒரு வங்கிக்கு ஒரு டெபாசிட்டருக்கு ₹5 லட்சம் வரை காப்பீடு செய்யப்பட்டுள்ளன. அது ஒரே வங்கியில் ஒரே தகுதியில் வைத்திருக்கும் சேமிப்பு, நடப்பு, FD மற்றும் RD முழுவதும் அசல் மற்றும் வட்டியைச் சேர்த்து உள்ளடக்கும். ஒரு வங்கியில் ₹5 லட்சத்திற்கு மேல் வைத்திருந்தால், அதை இரண்டு அல்லது மூன்று வங்கிகளில் பரப்பினால் ஒவ்வொரு ரூபாயும் காப்பீட்டில் இருக்கும். ஒரு கூட்டுக் கணக்கு, அல்லது ஒரு நிறுவனத்தின் பங்குதாரர் போன்ற வேறு தகுதியில் நீங்கள் வைத்திருக்கும் கணக்கு, தனியாகக் கணக்கிடப்படும்."
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "அன்றாடப் பணத்திற்கு ஒரு சேமிப்புக் கணக்கும் அவசர நிதிக்கு ஒன்றும் பெரும்பாலானோருக்குப் போதும்.",
+                "உங்கள் குறைந்தபட்ச இருப்பைத் தெரிந்துகொள்ளுங்கள்; BSBDA க்கு அது இல்லை.",
+                "UPI PIN பணம் செலுத்துவதற்கு மட்டுமே, பெறுவதற்கு ஒருபோதும் அல்ல.",
+                "ஒவ்வொரு கணக்கிலும் நாமினேஷன் செய்து, நாமினியிடம் சொல்லுங்கள்.",
+                "DICGC ஒரு வங்கிக்கு ஒரு டெபாசிட்டருக்கு ₹5 லட்சம் வரை காப்பீடு செய்கிறது."
+              ]
+            },
+            {
+              "type": "glossary",
+              "terms": [
+                {
+                  "term": "சராசரி மாத இருப்பு (Average monthly balance)",
+                  "definition": "மாதத்தின் ஒவ்வொரு நாளின் இறுதி இருப்பின் கூட்டுத்தொகையை நாட்களின் எண்ணிக்கையால் வகுத்தது; குறைந்தபட்ச இருப்பு விதி இதைக் கொண்டே சோதிக்கப்படுகிறது."
+                },
+                {
+                  "term": "நாமினி (Nominee)",
+                  "definition": "நீங்கள் இறந்தால் வங்கி இருப்புத் தொகையைச் செலுத்தும் நபர்; இதனால் உங்கள் குடும்பத்திற்கு நீதிமன்றச் சான்றிதழ் தேவைப்படாது."
+                },
+                {
+                  "term": "DICGC",
+                  "definition": "டெபாசிட் இன்சூரன்ஸ் அண்ட் கிரெடிட் கேரண்டி கார்ப்பரேஷன், ஒரு வங்கிக்கு ஒரு டெபாசிட்டருக்கு ₹5 லட்சம் வரை வங்கி டெபாசிட்டுகளைக் காப்பீடு செய்யும் RBI துணை நிறுவனம்."
+                },
+                {
+                  "term": "BSBDA",
+                  "definition": "அடிப்படை சேமிப்பு வங்கி டெபாசிட் கணக்கு: ஒவ்வொரு வங்கியும் வழங்க வேண்டிய, குறைந்தபட்ச இருப்பு இல்லாத சேமிப்புக் கணக்கு."
+                }
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "DICGC டெபாசிட் காப்பீடு ஒரு வங்கிக்கு ஒரு டெபாசிட்டருக்கு எவ்வளவு வரை உள்ளடக்கும்?",
+                  "options": [
+                    "₹1 லட்சம்",
+                    "₹5 லட்சம்",
+                    "₹25 லட்சம்"
+                  ],
+                  "answer": 1,
+                  "explanation": "ஒவ்வொரு வங்கியிலும் ஒரு டெபாசிட்டருக்கு, வட்டி உட்பட, ₹5 லட்சம் காப்பீடு."
+                },
+                {
+                  "q": "UPI PIN ஐ எப்போது உள்ளிட வேண்டும்?",
+                  "options": [
+                    "பணம் செலுத்த",
+                    "பணம் பெற",
+                    "இரண்டிற்கும்"
+                  ],
+                  "answer": 0,
+                  "explanation": "பணம் பெற ஒருபோதும் PIN தேவையில்லை. 'பெறுவதற்காக' PIN உள்ளிடச் சொல்லும் கோரிக்கை ஒரு மோசடி."
+                },
+                {
+                  "q": "சில மாதங்கள் சம்பளம் வரவு வைக்கப்படாவிட்டால் சம்பளக் கணக்கிற்கு பொதுவாக என்ன நடக்கும்?",
+                  "options": [
+                    "அது மூடப்படும்",
+                    "அது குறைந்தபட்ச இருப்புடன் கூடிய சாதாரண சேமிப்புக் கணக்காக மாறும்",
+                    "எதுவும் மாறாது"
+                  ],
+                  "answer": 1
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": true,
+          "publishedAt": "2026-10-18"
         }
       ]
     },
     {
       "slug": "credit-score",
-      "readingMinutes": 10,
+      "readingMinutes": 5,
       "translations": [
         {
           "locale": "en",
           "title": "Your credit score",
-          "excerpt": "",
-          "blocks": [],
-          "state": "draft",
-          "aiDraft": false
+          "excerpt": "What the CIBIL number means, the five habits that move it, and how to check and correct your report for free.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Every loan and credit card you have ever held is written down in a file with your name on it. Lenders read that file before they say yes, and the three-digit summary at the top, your credit score, decides whether you get the loan and at what rate. The good news is that the score is built from a handful of habits you control."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "What the number means"
+            },
+            {
+              "type": "paragraph",
+              "text": "In India four bureaus keep credit files: TransUnion CIBIL, Experian, Equifax and CRIF High Mark. CIBIL is the one most lenders quote, so \"CIBIL score\" has become shorthand for all of them. Scores run from 300 to 900."
+            },
+            {
+              "type": "table",
+              "header": [
+                "CIBIL score",
+                "What lenders see"
+              ],
+              "rows": [
+                [
+                  "750 to 900",
+                  "Strong. Best rates, fast approvals, higher card limits."
+                ],
+                [
+                  "700 to 749",
+                  "Good. Most loans approved; the rate may be slightly higher."
+                ],
+                [
+                  "650 to 699",
+                  "Fair. Approval possible, often at a higher rate or with conditions."
+                ],
+                [
+                  "Below 650",
+                  "Weak. Many lenders decline or ask for a guarantor or collateral."
+                ],
+                [
+                  "NA or NH",
+                  "No history. You have never borrowed, so there is nothing to score."
+                ]
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "\"No history\" is not a bad score, but it slows down a first home loan. A secured credit card against a small FD, or a small loan repaid on time, builds a file within a year."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "What moves the score"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Payment history, the biggest factor. One EMI or card bill paid 30 days late can knock off 50 to 100 points and stays on the report for years.",
+                "Credit utilisation: the share of your total card limit you are using. Keep it under 30%. A ₹1 lakh limit with ₹80,000 outstanding looks like stress even if you pay in full.",
+                "Age of credit: older accounts help. Do not close your oldest card just because you use a newer one.",
+                "Credit mix: a secured loan such as a home or car loan alongside unsecured credit such as a card scores better than only unsecured credit.",
+                "Hard enquiries: every loan or card application is logged. Several within a few months look like desperation. Apply only where you are likely to be approved."
+              ]
+            },
+            {
+              "type": "callout",
+              "tone": "warning",
+              "text": "Settling a loan for less than you owe is recorded as \"settled\", which is not the same as \"closed\". A settled flag hurts for years. If you possibly can, pay the full amount and collect a no-dues letter."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Check it for free and fix the mistakes"
+            },
+            {
+              "type": "paragraph",
+              "text": "Each bureau must give you one free full credit report a year. Check all four, because lenders report to each separately and the errors differ. Look for loans you never took, a closed loan still showing as open, or a wrong \"settled\" tag. Raise a dispute on the bureau's website; the bureau and the lender have 30 days to respond. Checking your own score is a soft enquiry and does not affect it."
+            },
+            {
+              "type": "paragraph",
+              "text": "A note on guarantors. When you guarantee a friend's or relative's loan, it appears on your report, and if they miss payments your score falls with theirs. Say yes only if you could comfortably repay the whole loan yourself."
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "750 and above gets the best rates.",
+                "Pay every bill on time; one 30-day late mark costs the most.",
+                "Keep card utilisation under 30% of the limit.",
+                "Check all four bureau reports once a year and dispute errors."
+              ]
+            },
+            {
+              "type": "glossary",
+              "terms": [
+                {
+                  "term": "Credit bureau",
+                  "definition": "A company licensed by RBI to collect your borrowing history from lenders and turn it into a report and a score."
+                },
+                {
+                  "term": "Credit utilisation",
+                  "definition": "Outstanding card balance divided by total card limit, as a percentage."
+                },
+                {
+                  "term": "Hard enquiry",
+                  "definition": "A lender pulling your report because you applied for credit; it is logged and can lower the score slightly."
+                },
+                {
+                  "term": "Settled",
+                  "definition": "A loan closed by paying less than the full amount owed; it stays on the report as a negative mark."
+                }
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "Which single factor affects your credit score the most?",
+                  "options": [
+                    "Your salary",
+                    "Paying EMIs and card bills on time",
+                    "The number of bank accounts you hold"
+                  ],
+                  "answer": 1,
+                  "explanation": "Payment history carries the most weight; salary is not part of the score at all."
+                },
+                {
+                  "q": "Your card limit is ₹2 lakh. To keep utilisation healthy, your outstanding balance should stay under:",
+                  "options": [
+                    "₹60,000",
+                    "₹1 lakh",
+                    "₹1.5 lakh"
+                  ],
+                  "answer": 0,
+                  "explanation": "30% of ₹2 lakh is ₹60,000."
+                },
+                {
+                  "q": "Checking your own credit score:",
+                  "options": [
+                    "Lowers it slightly each time",
+                    "Does not affect it",
+                    "Raises it"
+                  ],
+                  "answer": 1
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": false,
+          "publishedAt": "2026-10-18"
+        },
+        {
+          "locale": "ta",
+          "title": "உங்கள் கடன் மதிப்பெண் (Credit score)",
+          "excerpt": "CIBIL எண் எதைக் குறிக்கிறது, அதை நகர்த்தும் ஐந்து பழக்கங்கள், உங்கள் அறிக்கையை இலவசமாகச் சரிபார்த்துத் திருத்துவது எப்படி.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "நீங்கள் இதுவரை வைத்திருந்த ஒவ்வொரு கடனும் கிரெடிட் கார்டும் உங்கள் பெயரில் உள்ள ஒரு கோப்பில் எழுதப்பட்டுள்ளன. கடன் வழங்குநர்கள் சரி என்று சொல்லும் முன் அந்தக் கோப்பைப் படிக்கிறார்கள்; அதன் மேலே உள்ள மூன்று இலக்கச் சுருக்கம், உங்கள் கடன் மதிப்பெண், கடன் கிடைக்குமா, எந்த வட்டியில் என்பதைத் தீர்மானிக்கிறது. நல்ல செய்தி என்னவென்றால், இந்த மதிப்பெண் உங்கள் கட்டுப்பாட்டில் உள்ள சில பழக்கங்களிலிருந்தே கட்டப்படுகிறது."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "எண் எதைக் குறிக்கிறது"
+            },
+            {
+              "type": "paragraph",
+              "text": "இந்தியாவில் நான்கு பீரோக்கள் கடன் கோப்புகளை வைத்திருக்கின்றன: டிரான்ஸ்யூனியன் CIBIL, எக்ஸ்பீரியன், ஈக்விஃபாக்ஸ் மற்றும் CRIF ஹை மார்க். பெரும்பாலான கடன் வழங்குநர்கள் குறிப்பிடுவது CIBIL; எனவே \"CIBIL ஸ்கோர்\" என்பது அனைத்திற்கும் சுருக்கப் பெயராகிவிட்டது. மதிப்பெண்கள் 300 முதல் 900 வரை."
+            },
+            {
+              "type": "table",
+              "header": [
+                "CIBIL மதிப்பெண்",
+                "கடன் வழங்குநர்கள் பார்ப்பது"
+              ],
+              "rows": [
+                [
+                  "750 முதல் 900",
+                  "வலுவானது. சிறந்த வட்டி விகிதங்கள், விரைவான ஒப்புதல், அதிக கார்டு வரம்பு."
+                ],
+                [
+                  "700 முதல் 749",
+                  "நல்லது. பெரும்பாலான கடன்கள் ஒப்புதல் பெறும்; வட்டி சற்று அதிகமாக இருக்கலாம்."
+                ],
+                [
+                  "650 முதல் 699",
+                  "சுமார். ஒப்புதல் சாத்தியம், பெரும்பாலும் அதிக வட்டியில் அல்லது நிபந்தனைகளுடன்."
+                ],
+                [
+                  "650 க்குக் கீழ்",
+                  "பலவீனம். பல கடன் வழங்குநர்கள் மறுப்பார்கள் அல்லது உத்தரவாததாரர் அல்லது பிணையம் கேட்பார்கள்."
+                ],
+                [
+                  "NA அல்லது NH",
+                  "வரலாறு இல்லை. நீங்கள் ஒருபோதும் கடன் வாங்கவில்லை; எனவே மதிப்பிட எதுவும் இல்லை."
+                ]
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "\"வரலாறு இல்லை\" என்பது மோசமான மதிப்பெண் அல்ல; ஆனால் அது முதல் வீட்டுக் கடனை மெதுவாக்கும். ஒரு சிறிய FD க்கு எதிரான பிணைய கிரெடிட் கார்டு, அல்லது சரியான நேரத்தில் திருப்பிச் செலுத்தப்பட்ட ஒரு சிறிய கடன், ஒரு ஆண்டுக்குள் ஒரு கோப்பை உருவாக்கும்."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "மதிப்பெண்ணை நகர்த்துவது எது"
+            },
+            {
+              "type": "list",
+              "items": [
+                "செலுத்தும் வரலாறு, மிகப்பெரிய காரணி. 30 நாட்கள் தாமதமாகச் செலுத்தப்பட்ட ஒரே ஒரு EMI அல்லது கார்டு பில் 50 முதல் 100 புள்ளிகளைக் குறைக்கலாம்; அது ஆண்டுகளாக அறிக்கையில் இருக்கும்.",
+                "கிரெடிட் பயன்பாடு (credit utilisation): உங்கள் மொத்த கார்டு வரம்பில் நீங்கள் பயன்படுத்தும் பங்கு. 30% க்குக் கீழ் வைத்திருங்கள். ₹1 லட்சம் வரம்பில் ₹80,000 நிலுவை, முழுவதும் செலுத்தினாலும் நெருக்கடியாகத் தெரியும்.",
+                "கடனின் வயது: பழைய கணக்குகள் உதவும். புதிய ஒன்றைப் பயன்படுத்துகிறீர்கள் என்பதற்காக உங்கள் பழைய கார்டை மூடாதீர்கள்.",
+                "கடன் கலவை: வீடு அல்லது கார் கடன் போன்ற பிணையக் கடன், கார்டு போன்ற பிணையமற்ற கடனுடன் சேர்ந்திருந்தால், பிணையமற்ற கடன் மட்டும் இருப்பதை விட நல்ல மதிப்பெண் கிடைக்கும்.",
+                "ஹார்ட் என்குயரிகள்: ஒவ்வொரு கடன் அல்லது கார்டு விண்ணப்பமும் பதிவு செய்யப்படும். சில மாதங்களுக்குள் பல விண்ணப்பங்கள் அவசரநிலை போலத் தெரியும். ஒப்புதல் கிடைக்க வாய்ப்புள்ள இடத்தில் மட்டும் விண்ணப்பியுங்கள்."
+              ]
+            },
+            {
+              "type": "callout",
+              "tone": "warning",
+              "text": "நீங்கள் கடன்பட்டதை விடக் குறைவாகச் செலுத்தி ஒரு கடனை முடிப்பது \"செட்டில்டு\" (settled) என்று பதிவாகும்; அது \"குளோஸ்டு\" (closed) போன்றது அல்ல. செட்டில்டு குறி ஆண்டுகளாகப் பாதிக்கும். முடிந்தால், முழுத் தொகையையும் செலுத்தி நிலுவை இல்லை என்ற கடிதத்தை (no-dues letter) பெறுங்கள்."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "இலவசமாகச் சரிபார்த்து, தவறுகளைத் திருத்துங்கள்"
+            },
+            {
+              "type": "paragraph",
+              "text": "ஒவ்வொரு பீரோவும் ஆண்டுக்கு ஒரு முழு கடன் அறிக்கையை இலவசமாகத் தர வேண்டும். நான்கையும் சரிபாருங்கள்; ஏனெனில் கடன் வழங்குநர்கள் ஒவ்வொன்றுக்கும் தனித்தனியாகத் தகவல் அனுப்புகிறார்கள், தவறுகளும் வேறுபடும். நீங்கள் வாங்காத கடன்கள், மூடப்பட்ட கடன் இன்னும் திறந்திருப்பதாகக் காட்டுவது, அல்லது தவறான \"செட்டில்டு\" குறி ஆகியவற்றைத் தேடுங்கள். பீரோவின் இணையதளத்தில் புகார் (dispute) பதிவு செய்யுங்கள்; பீரோவும் கடன் வழங்குநரும் 30 நாட்களுக்குள் பதிலளிக்க வேண்டும். உங்கள் சொந்த மதிப்பெண்ணைச் சரிபார்ப்பது ஒரு சாஃப்ட் என்குயரி; அது மதிப்பெண்ணைப் பாதிக்காது."
+            },
+            {
+              "type": "paragraph",
+              "text": "உத்தரவாததாரர்கள் பற்றி ஒரு குறிப்பு. நண்பர் அல்லது உறவினரின் கடனுக்கு நீங்கள் உத்தரவாதம் அளித்தால், அது உங்கள் அறிக்கையில் தோன்றும்; அவர்கள் தவணை தவறினால் உங்கள் மதிப்பெண்ணும் அவர்களுடன் சேர்ந்து விழும். முழுக் கடனையும் நீங்களே வசதியாகத் திருப்பிச் செலுத்த முடிந்தால் மட்டுமே சரி என்று சொல்லுங்கள்."
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "750 மற்றும் அதற்கு மேல் சிறந்த வட்டி விகிதங்கள் கிடைக்கும்.",
+                "ஒவ்வொரு பில்லையும் சரியான நேரத்தில் செலுத்துங்கள்; 30 நாள் தாமதக் குறி ஒன்றே அதிக விலை கொண்டது.",
+                "கார்டு பயன்பாட்டை வரம்பில் 30% க்குக் கீழ் வைத்திருங்கள்.",
+                "ஆண்டுக்கு ஒருமுறை நான்கு பீரோ அறிக்கைகளையும் சரிபார்த்து, தவறுகளுக்குப் புகார் செய்யுங்கள்."
+              ]
+            },
+            {
+              "type": "glossary",
+              "terms": [
+                {
+                  "term": "கடன் பீரோ (Credit bureau)",
+                  "definition": "கடன் வழங்குநர்களிடமிருந்து உங்கள் கடன் வரலாற்றைச் சேகரித்து அறிக்கையாகவும் மதிப்பெண்ணாகவும் மாற்ற RBI உரிமம் பெற்ற நிறுவனம்."
+                },
+                {
+                  "term": "கிரெடிட் பயன்பாடு (Credit utilisation)",
+                  "definition": "கார்டு நிலுவைத் தொகையை மொத்த கார்டு வரம்பால் வகுத்தது, சதவீதமாக."
+                },
+                {
+                  "term": "ஹார்ட் என்குயரி (Hard enquiry)",
+                  "definition": "நீங்கள் கடனுக்கு விண்ணப்பித்ததால் ஒரு கடன் வழங்குநர் உங்கள் அறிக்கையை எடுப்பது; இது பதிவாகும், மதிப்பெண்ணைச் சற்றுக் குறைக்கலாம்."
+                },
+                {
+                  "term": "செட்டில்டு (Settled)",
+                  "definition": "முழுத் தொகையை விடக் குறைவாகச் செலுத்தி மூடப்பட்ட கடன்; அது எதிர்மறைக் குறியாக அறிக்கையில் இருக்கும்."
+                }
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "உங்கள் கடன் மதிப்பெண்ணை மிகவும் பாதிக்கும் ஒரே காரணி எது?",
+                  "options": [
+                    "உங்கள் சம்பளம்",
+                    "EMI மற்றும் கார்டு பில்களைச் சரியான நேரத்தில் செலுத்துவது",
+                    "நீங்கள் வைத்திருக்கும் வங்கிக் கணக்குகளின் எண்ணிக்கை"
+                  ],
+                  "answer": 1,
+                  "explanation": "செலுத்தும் வரலாறுக்கே அதிக எடை; சம்பளம் மதிப்பெண்ணின் பகுதியே அல்ல."
+                },
+                {
+                  "q": "உங்கள் கார்டு வரம்பு ₹2 லட்சம். பயன்பாட்டை ஆரோக்கியமாக வைக்க, உங்கள் நிலுவைத் தொகை எதற்குக் கீழ் இருக்க வேண்டும்:",
+                  "options": [
+                    "₹60,000",
+                    "₹1 லட்சம்",
+                    "₹1.5 லட்சம்"
+                  ],
+                  "answer": 0,
+                  "explanation": "₹2 லட்சத்தில் 30% என்பது ₹60,000."
+                },
+                {
+                  "q": "உங்கள் சொந்த கடன் மதிப்பெண்ணைச் சரிபார்ப்பது:",
+                  "options": [
+                    "ஒவ்வொரு முறையும் சற்றுக் குறைக்கும்",
+                    "அதைப் பாதிக்காது",
+                    "அதை உயர்த்தும்"
+                  ],
+                  "answer": 1
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": true,
+          "publishedAt": "2026-10-18"
         }
       ]
     },
     {
       "slug": "credit-cards",
-      "readingMinutes": 10,
+      "readingMinutes": 5,
       "translations": [
         {
           "locale": "en",
           "title": "Credit cards without the trap",
-          "excerpt": "",
-          "blocks": [],
-          "state": "draft",
-          "aiDraft": false
+          "excerpt": "How the billing cycle works, why 3% a month is 42% a year, and the minimum-due habit that keeps people in debt.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "A credit card is either a 45-day interest-free loan or a 40% a year loan, and the only thing that decides which one you hold is whether you pay the full bill on the due date. Used the first way, it builds your credit score and earns a little in rewards. Used the second way, it is the most expensive debt an ordinary household can carry."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "How the billing cycle works"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Statement date: the card closes a month of spending into one bill.",
+                "Due date: about 15 to 20 days later. Pay the full statement amount by then and you pay no interest at all.",
+                "Interest-free period: from the day of a purchase to the due date, up to 45 to 50 days if you buy just after a statement.",
+                "Miss the full payment and interest runs from the purchase date, not the due date, on every transaction. The interest-free period also disappears on new purchases until you clear the balance."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Card interest is quoted monthly, usually 3% to 3.5%, which sounds small. Over a year it is 36% to 42%, four to five times a home loan and roughly double a personal loan. Cash withdrawals on a card are worse still: interest starts the same day, plus a withdrawal fee."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "The minimum-due trap"
+            },
+            {
+              "type": "paragraph",
+              "text": "Every statement shows a \"minimum amount due\", usually about 5% of the balance. Paying it keeps the card active and avoids a late fee, but interest keeps running on the whole balance. Suppose you owe ₹1 lakh at 3.5% a month and pay only the minimum. Interest in the first month alone is ₹3,500, so the ₹5,000 you paid cleared just ₹1,500 of what you owe. It takes years to clear the balance, and the interest paid can approach or exceed the original amount."
+            },
+            {
+              "type": "calculator",
+              "slug": "credit-card-minimum-due"
+            },
+            {
+              "type": "callout",
+              "tone": "warning",
+              "text": "The minimum due is designed to keep you borrowing, not to help you repay. Treat it as an emergency option for one month, never as a habit."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Rules that keep the card working for you"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Pay the full statement amount every month. Set the auto-debit for the full amount, not the minimum.",
+                "Spend only what is already in your bank account; the card is a payment method, not extra income.",
+                "Keep the balance under 30% of your limit, for the sake of your credit score.",
+                "Avoid cash withdrawals, EMI conversions you did not ask for, and \"no-cost\" EMIs with a processing fee hidden in the price.",
+                "If you already carry a balance, stop using the card, pay it down first among all your debts, or move it to a personal loan at a far lower rate."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "A word on annual fees and rewards. Many cards waive the annual fee if you spend above a threshold in the year. Chase that threshold only if you would have spent the money anyway. Rewards worth 1% of spending never justify debt at 40%."
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "Pay in full by the due date and the card costs nothing.",
+                "Card interest is 36% to 42% a year.",
+                "The minimum due keeps the interest meter running.",
+                "Set the auto-debit for the full amount, not the minimum."
+              ]
+            },
+            {
+              "type": "glossary",
+              "terms": [
+                {
+                  "term": "Statement date",
+                  "definition": "The day each month when the card totals your spending into a bill."
+                },
+                {
+                  "term": "Minimum amount due",
+                  "definition": "The smallest payment, usually about 5% of the balance, that avoids a late fee; the rest keeps attracting interest."
+                },
+                {
+                  "term": "Interest-free period",
+                  "definition": "The days between a purchase and the due date, during which no interest applies if the full bill is paid."
+                },
+                {
+                  "term": "Revolving balance",
+                  "definition": "The unpaid part of a bill that rolls over to the next month and attracts interest from the purchase date."
+                }
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "You pay the full statement amount on the due date every month. How much interest do you pay?",
+                  "options": [
+                    "About 3% a month",
+                    "None",
+                    "About 1% a month"
+                  ],
+                  "answer": 1,
+                  "explanation": "Paying in full by the due date keeps the interest-free period intact."
+                },
+                {
+                  "q": "Credit card interest of 3.5% a month works out to roughly how much a year?",
+                  "options": [
+                    "12%",
+                    "24%",
+                    "42%"
+                  ],
+                  "answer": 2
+                },
+                {
+                  "q": "Paying only the minimum due each month:",
+                  "options": [
+                    "Clears the debt in a few months",
+                    "Avoids a late fee but interest keeps running on the full balance",
+                    "Improves your credit score fastest"
+                  ],
+                  "answer": 1,
+                  "explanation": "The minimum covers little more than that month's interest, so the balance barely moves."
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": false,
+          "publishedAt": "2026-10-18"
+        },
+        {
+          "locale": "ta",
+          "title": "பொறியில்லாமல் கிரெடிட் கார்டுகள்",
+          "excerpt": "பில்லிங் சுழற்சி எப்படி வேலை செய்கிறது, மாதம் 3% ஏன் ஆண்டுக்கு 42%, மக்களைக் கடனில் வைத்திருக்கும் மினிமம் டியூ பழக்கம்.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "கிரெடிட் கார்டு என்பது 45 நாள் வட்டியில்லாக் கடன் அல்லது ஆண்டுக்கு 40% வட்டிக் கடன், இந்த இரண்டில் எது உங்களிடம் இருக்கிறது என்பதைத் தீர்மானிப்பது ஒரே ஒரு விஷயம்: காலக்கெடு தேதியில் முழு பில்லையும் செலுத்துகிறீர்களா என்பது. முதல் வழியில் பயன்படுத்தினால், அது உங்கள் கடன் மதிப்பெண்ணைக் கட்டமைக்கிறது, சிறிது ரிவார்டுகளையும் ஈட்டுகிறது. இரண்டாவது வழியில் பயன்படுத்தினால், ஒரு சாதாரண குடும்பம் சுமக்கக்கூடிய மிக விலையுயர்ந்த கடன் அது."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "பில்லிங் சுழற்சி எப்படி வேலை செய்கிறது"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "ஸ்டேட்மென்ட் தேதி: கார்டு ஒரு மாதச் செலவை ஒரே பில்லாக மூடுகிறது.",
+                "காலக்கெடு தேதி (due date): சுமார் 15 முதல் 20 நாட்கள் கழித்து. அதற்குள் முழு ஸ்டேட்மென்ட் தொகையையும் செலுத்தினால் வட்டியே இல்லை.",
+                "வட்டியில்லாக் காலம்: வாங்கிய நாளிலிருந்து காலக்கெடு தேதி வரை; ஸ்டேட்மென்ட் வந்த உடனே வாங்கினால் 45 முதல் 50 நாட்கள் வரை.",
+                "முழுத் தொகையைச் செலுத்தத் தவறினால், ஒவ்வொரு பரிவர்த்தனைக்கும் காலக்கெடு தேதியிலிருந்து அல்ல, வாங்கிய தேதியிலிருந்தே வட்டி ஓடும். நிலுவையை அடைக்கும் வரை புதிய வாங்குதல்களுக்கு வட்டியில்லாக் காலமும் மறைந்துவிடும்."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "கார்டு வட்டி மாதத்திற்கு, பொதுவாக 3% முதல் 3.5% என்று சொல்லப்படுகிறது; அது சிறியதாகத் தெரிகிறது. ஆண்டுக்கு அது 36% முதல் 42%; வீட்டுக் கடனை விட நான்கு முதல் ஐந்து மடங்கு, தனிநபர் கடனை விட ஏறத்தாழ இரண்டு மடங்கு. கார்டில் பணம் எடுப்பது இன்னும் மோசம்: அன்றே வட்டி தொடங்கும், கூடவே எடுப்புக் கட்டணமும்."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "மினிமம் டியூ பொறி"
+            },
+            {
+              "type": "paragraph",
+              "text": "ஒவ்வொரு ஸ்டேட்மென்ட்டும் ஒரு \"குறைந்தபட்ச செலுத்த வேண்டிய தொகை\" (minimum amount due) காட்டுகிறது; பொதுவாக நிலுவையில் சுமார் 5%. அதைச் செலுத்தினால் கார்டு செயலில் இருக்கும், தாமதக் கட்டணம் தவிர்க்கப்படும்; ஆனால் முழு நிலுவைக்கும் வட்டி ஓடிக்கொண்டே இருக்கும். நீங்கள் மாதம் 3.5% வட்டியில் ₹1 லட்சம் கடன்பட்டு, மினிமம் மட்டும் செலுத்துகிறீர்கள் என்று வைத்துக்கொள்ளுங்கள். முதல் மாத வட்டியே ₹3,500; எனவே நீங்கள் செலுத்திய ₹5,000 இல், கடனில் வெறும் ₹1,500 மட்டுமே குறைந்தது. நிலுவையை அடைக்க ஆண்டுகள் ஆகும்; செலுத்திய வட்டி அசல் தொகையை நெருங்கலாம் அல்லது தாண்டலாம்."
+            },
+            {
+              "type": "calculator",
+              "slug": "credit-card-minimum-due"
+            },
+            {
+              "type": "callout",
+              "tone": "warning",
+              "text": "மினிமம் டியூ உங்களைத் திருப்பிச் செலுத்த உதவ அல்ல, தொடர்ந்து கடன்பட வைக்கவே வடிவமைக்கப்பட்டுள்ளது. அதை ஒரு மாதத்திற்கான அவசரத் தேர்வாகக் கருதுங்கள், ஒருபோதும் பழக்கமாக அல்ல."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "கார்டு உங்களுக்காக வேலை செய்ய வைக்கும் விதிகள்"
+            },
+            {
+              "type": "list",
+              "items": [
+                "ஒவ்வொரு மாதமும் முழு ஸ்டேட்மென்ட் தொகையையும் செலுத்துங்கள். ஆட்டோ-டெபிட்டை மினிமத்திற்கு அல்ல, முழுத் தொகைக்கு அமையுங்கள்.",
+                "ஏற்கனவே உங்கள் வங்கிக் கணக்கில் இருப்பதை மட்டுமே செலவிடுங்கள்; கார்டு ஒரு பணம் செலுத்தும் முறை, கூடுதல் வருமானம் அல்ல.",
+                "உங்கள் கடன் மதிப்பெண்ணுக்காக, நிலுவையை வரம்பில் 30% க்குக் கீழ் வைத்திருங்கள்.",
+                "பண எடுப்புகள், நீங்கள் கேட்காத EMI மாற்றங்கள், விலையில் மறைந்திருக்கும் செயலாக்கக் கட்டணத்துடன் கூடிய \"நோ-காஸ்ட்\" EMI களைத் தவிருங்கள்.",
+                "ஏற்கனவே நிலுவை இருந்தால், கார்டைப் பயன்படுத்துவதை நிறுத்துங்கள்; உங்கள் எல்லா கடன்களிலும் அதை முதலில் அடையுங்கள், அல்லது மிகக் குறைந்த வட்டியில் ஒரு தனிநபர் கடனுக்கு மாற்றுங்கள்."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "ஆண்டுக் கட்டணம் மற்றும் ரிவார்டுகள் பற்றி ஒரு வார்த்தை. ஆண்டில் ஒரு வரம்புக்கு மேல் செலவிட்டால் பல கார்டுகள் ஆண்டுக் கட்டணத்தைத் தள்ளுபடி செய்கின்றன. அந்தப் பணத்தை எப்படியும் செலவிட்டிருப்பீர்கள் என்றால் மட்டுமே அந்த வரம்பைத் துரத்துங்கள். செலவில் 1% மதிப்புள்ள ரிவார்டுகள் 40% வட்டிக் கடனை ஒருபோதும் நியாயப்படுத்தாது."
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "காலக்கெடு தேதிக்குள் முழுவதும் செலுத்தினால் கார்டுக்குச் செலவே இல்லை.",
+                "கார்டு வட்டி ஆண்டுக்கு 36% முதல் 42%.",
+                "மினிமம் டியூ வட்டி மீட்டரை ஓட விடுகிறது.",
+                "ஆட்டோ-டெபிட்டை மினிமத்திற்கு அல்ல, முழுத் தொகைக்கு அமையுங்கள்."
+              ]
+            },
+            {
+              "type": "glossary",
+              "terms": [
+                {
+                  "term": "ஸ்டேட்மென்ட் தேதி (Statement date)",
+                  "definition": "ஒவ்வொரு மாதமும் கார்டு உங்கள் செலவைக் கூட்டி ஒரு பில்லாக்கும் நாள்."
+                },
+                {
+                  "term": "குறைந்தபட்ச செலுத்த வேண்டிய தொகை (Minimum amount due)",
+                  "definition": "தாமதக் கட்டணத்தைத் தவிர்க்கும் மிகச் சிறிய செலுத்துதல், பொதுவாக நிலுவையில் சுமார் 5%; மீதிக்கு வட்டி தொடர்ந்து சேரும்."
+                },
+                {
+                  "term": "வட்டியில்லாக் காலம் (Interest-free period)",
+                  "definition": "வாங்கிய நாளுக்கும் காலக்கெடு தேதிக்கும் இடையிலான நாட்கள்; முழு பில்லும் செலுத்தப்பட்டால் இதில் வட்டி இல்லை."
+                },
+                {
+                  "term": "ரிவால்விங் நிலுவை (Revolving balance)",
+                  "definition": "அடுத்த மாதத்திற்கு நகரும் பில்லின் செலுத்தப்படாத பகுதி; இதற்கு வாங்கிய தேதியிலிருந்து வட்டி சேரும்."
+                }
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "ஒவ்வொரு மாதமும் காலக்கெடு தேதியில் முழு ஸ்டேட்மென்ட் தொகையையும் செலுத்துகிறீர்கள். எவ்வளவு வட்டி செலுத்துவீர்கள்?",
+                  "options": [
+                    "மாதம் சுமார் 3%",
+                    "ஒன்றும் இல்லை",
+                    "மாதம் சுமார் 1%"
+                  ],
+                  "answer": 1,
+                  "explanation": "காலக்கெடு தேதிக்குள் முழுவதும் செலுத்துவது வட்டியில்லாக் காலத்தை அப்படியே வைத்திருக்கும்."
+                },
+                {
+                  "q": "மாதம் 3.5% கிரெடிட் கார்டு வட்டி ஆண்டுக்கு ஏறத்தாழ எவ்வளவு?",
+                  "options": [
+                    "12%",
+                    "24%",
+                    "42%"
+                  ],
+                  "answer": 2
+                },
+                {
+                  "q": "ஒவ்வொரு மாதமும் மினிமம் டியூ மட்டும் செலுத்துவது:",
+                  "options": [
+                    "சில மாதங்களில் கடனை அடைக்கும்",
+                    "தாமதக் கட்டணத்தைத் தவிர்க்கும், ஆனால் முழு நிலுவைக்கும் வட்டி ஓடிக்கொண்டே இருக்கும்",
+                    "உங்கள் கடன் மதிப்பெண்ணை மிக வேகமாக உயர்த்தும்"
+                  ],
+                  "answer": 1,
+                  "explanation": "மினிமம் அந்த மாத வட்டியை விடச் சற்றே அதிகமாக மட்டுமே அடைக்கும்; எனவே நிலுவை அரிதாகவே நகரும்."
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": true,
+          "publishedAt": "2026-10-18"
         }
       ]
     },
     {
       "slug": "loans-and-emis",
-      "readingMinutes": 10,
+      "readingMinutes": 5,
       "translations": [
         {
           "locale": "en",
           "title": "Loans and EMIs",
-          "excerpt": "",
-          "blocks": [],
-          "state": "draft",
-          "aiDraft": false
+          "excerpt": "What sits inside an EMI, why flat rates mislead, when prepayment saves the most, and how much loan your salary can carry.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "An EMI looks like one simple number, but inside it are two moving parts: interest and principal. Knowing how they shift over the life of a loan tells you when prepaying helps most, why a \"flat rate\" offer costs more than it looks, and how much loan your salary can safely carry."
+            },
+            {
+              "type": "paragraph",
+              "text": "EMI stands for equated monthly instalment: the same amount every month for the whole tenure. In the early months most of the EMI is interest, because the outstanding balance is large. As the balance falls, the interest part shrinks and the principal part grows. On a ₹30 lakh home loan at 8.5% for 20 years the EMI is about ₹26,000. In the first month roughly ₹21,250 of that is interest and only about ₹4,800 is principal. Ten years in, the two are close to equal."
+            },
+            {
+              "type": "calculator",
+              "slug": "emi"
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Reducing balance versus flat rate"
+            },
+            {
+              "type": "paragraph",
+              "text": "Banks charge home, car and personal loans on a reducing balance: interest each month is worked out only on what you still owe. Some dealers and lenders quote a \"flat rate\" instead, where interest is calculated on the original amount for the full tenure, as if you had never repaid anything. A 10% flat rate on a two-year loan costs about the same as 18% on a reducing balance. Always ask for the reducing-balance rate, or the annual percentage rate, before you compare offers."
+            },
+            {
+              "type": "table",
+              "header": [
+                "Loan",
+                "Typical rate (reducing balance)",
+                "Typical tenure"
+              ],
+              "rows": [
+                [
+                  "Home loan",
+                  "8% to 10%",
+                  "15 to 30 years"
+                ],
+                [
+                  "Car loan",
+                  "9% to 12%",
+                  "3 to 7 years"
+                ],
+                [
+                  "Education loan",
+                  "9% to 13%",
+                  "5 to 15 years after the course"
+                ],
+                [
+                  "Personal loan",
+                  "11% to 24%",
+                  "1 to 5 years"
+                ],
+                [
+                  "Credit card balance",
+                  "36% to 42%",
+                  "Revolving"
+                ]
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Prepayment: when it helps most"
+            },
+            {
+              "type": "paragraph",
+              "text": "Because early EMIs are interest-heavy, a prepayment in the first third of the tenure saves far more than the same amount paid later. On that ₹30 lakh loan, prepaying ₹2 lakh at the end of year two cuts about two and a half years off the tenure and saves roughly ₹6 lakh in interest. Ask the bank to reduce the tenure, not the EMI, when you prepay; that is where the saving comes from. By RBI rule, banks cannot charge a prepayment penalty on floating-rate loans to individuals; fixed-rate loans may carry one, so check the sanction letter."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "How much loan you can carry"
+            },
+            {
+              "type": "paragraph",
+              "text": "Lenders check your fixed-obligation-to-income ratio, or FOIR: all EMIs, including the new one, as a share of take-home pay. Most banks cap it near 50%; a safer personal cap is 35% to 40%. On a take-home of ₹80,000 a month that means total EMIs of ₹28,000 to ₹32,000. Beyond this, one gap between jobs or one hospital bill forces a missed EMI, and that mark follows your credit score for years."
+            },
+            {
+              "type": "callout",
+              "tone": "tip",
+              "text": "Before a big loan, run the EMI through your cash-flow sheet with the rate 2 percentage points higher than quoted. Floating rates rise, and when they do your EMI or your tenure rises with them."
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "Early EMIs are mostly interest; later ones are mostly principal.",
+                "Compare reducing-balance rates, never flat rates.",
+                "Prepay early and cut the tenure, not the EMI.",
+                "Keep all EMIs under 35% to 40% of take-home pay."
+              ]
+            },
+            {
+              "type": "glossary",
+              "terms": [
+                {
+                  "term": "EMI",
+                  "definition": "Equated monthly instalment: a fixed monthly payment that covers that month's interest plus a slice of principal."
+                },
+                {
+                  "term": "Reducing balance",
+                  "definition": "Interest calculated each month only on the amount still owed; the standard method for bank loans."
+                },
+                {
+                  "term": "Flat rate",
+                  "definition": "Interest calculated on the original loan amount for the whole tenure; it understates the true cost by almost half."
+                },
+                {
+                  "term": "FOIR",
+                  "definition": "Fixed-obligation-to-income ratio: all monthly EMIs divided by take-home pay."
+                },
+                {
+                  "term": "Floating rate",
+                  "definition": "An interest rate that moves with the bank's benchmark, so the EMI or tenure can change during the loan."
+                }
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "In the first year of a 20-year home loan, most of each EMI goes towards:",
+                  "options": [
+                    "Principal",
+                    "Interest",
+                    "Processing fees"
+                  ],
+                  "answer": 1,
+                  "explanation": "The outstanding balance is largest at the start, so the interest part is largest too."
+                },
+                {
+                  "q": "A 10% flat-rate loan over two years costs roughly the same as a reducing-balance rate of:",
+                  "options": [
+                    "5%",
+                    "10%",
+                    "18%"
+                  ],
+                  "answer": 2
+                },
+                {
+                  "q": "You prepay ₹2 lakh on a home loan. To save the most interest, ask the bank to:",
+                  "options": [
+                    "Reduce the EMI and keep the tenure",
+                    "Reduce the tenure and keep the EMI",
+                    "Convert the loan to a flat rate"
+                  ],
+                  "answer": 1,
+                  "explanation": "A shorter tenure means fewer months of interest; a lower EMI only eases cash flow."
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": false,
+          "publishedAt": "2026-10-18"
+        },
+        {
+          "locale": "ta",
+          "title": "கடன்களும் EMI களும்",
+          "excerpt": "EMI க்குள் என்ன இருக்கிறது, ஃபிளாட் ரேட் ஏன் தவறாக வழிநடத்துகிறது, முன்கூட்டியே செலுத்துவது எப்போது அதிகம் மிச்சப்படுத்தும், உங்கள் சம்பளம் எவ்வளவு கடனைத் தாங்கும்.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "EMI ஒரே ஒரு எளிய எண்ணாகத் தெரிகிறது; ஆனால் அதற்குள் இரண்டு நகரும் பகுதிகள் உள்ளன: வட்டியும் அசலும். கடனின் காலம் முழுவதும் அவை எப்படி மாறுகின்றன என்று தெரிந்தால், முன்கூட்டியே செலுத்துவது எப்போது அதிகம் உதவும், \"ஃபிளாட் ரேட்\" (flat rate) சலுகை ஏன் தெரிவதை விட அதிகம் செலவாகும், உங்கள் சம்பளம் எவ்வளவு கடனைப் பாதுகாப்பாகத் தாங்கும் என்பது புரியும்."
+            },
+            {
+              "type": "paragraph",
+              "text": "EMI என்றால் ஈக்வேட்டட் மந்த்லி இன்ஸ்டால்மென்ட்: முழுக் காலத்திற்கும் ஒவ்வொரு மாதமும் ஒரே தொகை. தொடக்க மாதங்களில் EMI யின் பெரும்பகுதி வட்டி; ஏனெனில் நிலுவை அசல் பெரியது. நிலுவை குறையக் குறைய, வட்டிப் பகுதி சுருங்கி அசல் பகுதி வளர்கிறது. 8.5% வட்டியில் 20 ஆண்டுகளுக்கு ₹30 லட்சம் வீட்டுக் கடனுக்கு EMI சுமார் ₹26,000. முதல் மாதத்தில் அதில் ஏறத்தாழ ₹21,250 வட்டி, வெறும் ₹4,800 மட்டுமே அசல். பத்து ஆண்டுகளுக்குப் பிறகு இரண்டும் ஏறக்குறைய சமமாகும்."
+            },
+            {
+              "type": "calculator",
+              "slug": "emi"
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "குறைந்துவரும் நிலுவை (reducing balance) மற்றும் ஃபிளாட் ரேட்"
+            },
+            {
+              "type": "paragraph",
+              "text": "வங்கிகள் வீடு, கார் மற்றும் தனிநபர் கடன்களுக்கு குறைந்துவரும் நிலுவையில் வட்டி விதிக்கின்றன: ஒவ்வொரு மாதமும் நீங்கள் இன்னும் கடன்பட்டிருப்பதற்கு மட்டுமே வட்டி கணக்கிடப்படும். சில டீலர்களும் கடன் வழங்குநர்களும் அதற்குப் பதிலாக \"ஃபிளாட் ரேட்\" சொல்கிறார்கள்; அதில் நீங்கள் எதையும் திருப்பிச் செலுத்தாதது போல, முழுக் காலத்திற்கும் அசல் தொகை மீது வட்டி கணக்கிடப்படும். இரண்டு ஆண்டுக் கடனில் 10% ஃபிளாட் ரேட், குறைந்துவரும் நிலுவையில் 18% க்கு ஏறத்தாழ சமம். சலுகைகளை ஒப்பிடும் முன், எப்போதும் குறைந்துவரும் நிலுவை விகிதத்தையோ ஆண்டு சதவீத விகிதத்தையோ (APR) கேளுங்கள்."
+            },
+            {
+              "type": "table",
+              "header": [
+                "கடன்",
+                "பொதுவான வட்டி (குறைந்துவரும் நிலுவை)",
+                "பொதுவான காலம்"
+              ],
+              "rows": [
+                [
+                  "வீட்டுக் கடன்",
+                  "8% முதல் 10%",
+                  "15 முதல் 30 ஆண்டுகள்"
+                ],
+                [
+                  "கார் கடன்",
+                  "9% முதல் 12%",
+                  "3 முதல் 7 ஆண்டுகள்"
+                ],
+                [
+                  "கல்விக் கடன்",
+                  "9% முதல் 13%",
+                  "படிப்புக்குப் பிறகு 5 முதல் 15 ஆண்டுகள்"
+                ],
+                [
+                  "தனிநபர் கடன்",
+                  "11% முதல் 24%",
+                  "1 முதல் 5 ஆண்டுகள்"
+                ],
+                [
+                  "கிரெடிட் கார்டு நிலுவை",
+                  "36% முதல் 42%",
+                  "ரிவால்விங்"
+                ]
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "முன்கூட்டியே செலுத்துதல் (prepayment): எப்போது அதிகம் உதவும்"
+            },
+            {
+              "type": "paragraph",
+              "text": "தொடக்க EMI கள் வட்டி அதிகம் கொண்டவை என்பதால், காலத்தின் முதல் மூன்றில் ஒரு பகுதியில் முன்கூட்டியே செலுத்துவது, பிறகு அதே தொகையைச் செலுத்துவதை விட மிக அதிகம் மிச்சப்படுத்தும். அந்த ₹30 லட்சம் கடனில், இரண்டாம் ஆண்டு இறுதியில் ₹2 லட்சம் முன்கூட்டியே செலுத்தினால் காலத்தில் சுமார் இரண்டரை ஆண்டுகள் குறையும், ஏறத்தாழ ₹6 லட்சம் வட்டி மிச்சமாகும். முன்கூட்டியே செலுத்தும்போது EMI ஐ அல்ல, காலத்தைக் குறைக்கச் சொல்லுங்கள்; மிச்சம் அங்கிருந்துதான் வரும். RBI விதிப்படி, தனிநபர்களுக்கான ஃப்ளோட்டிங் ரேட் கடன்களில் வங்கிகள் முன்கூட்டியே செலுத்தும் அபராதம் விதிக்க முடியாது; ஃபிக்ஸட் ரேட் கடன்களில் இருக்கலாம், எனவே சான்க்ஷன் கடிதத்தைச் சரிபாருங்கள்."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "எவ்வளவு கடனை நீங்கள் தாங்க முடியும்"
+            },
+            {
+              "type": "paragraph",
+              "text": "கடன் வழங்குநர்கள் உங்கள் நிலையான கடமை-வருமான விகிதத்தை (FOIR) சரிபார்க்கிறார்கள்: புதியது உட்பட எல்லா EMI களும், கையில் கிடைக்கும் சம்பளத்தில் எவ்வளவு பங்கு. பெரும்பாலான வங்கிகள் அதை 50% அருகில் வரம்பிடுகின்றன; பாதுகாப்பான தனிப்பட்ட வரம்பு 35% முதல் 40%. மாதம் ₹80,000 கையில் கிடைத்தால், அதாவது மொத்த EMI ₹28,000 முதல் ₹32,000. இதற்கு மேல் போனால், வேலைகளுக்கு இடையிலான ஒரு இடைவெளி அல்லது ஒரு மருத்துவமனை பில் ஒரு EMI ஐத் தவற வைக்கும்; அந்தக் குறி ஆண்டுகளாக உங்கள் கடன் மதிப்பெண்ணைப் பின்தொடரும்."
+            },
+            {
+              "type": "callout",
+              "tone": "tip",
+              "text": "ஒரு பெரிய கடனுக்கு முன், சொல்லப்பட்ட வட்டியை விட 2 சதவீதப் புள்ளிகள் அதிக வட்டியுடன் EMI ஐ உங்கள் பணப்புழக்கத் தாளில் ஓட்டிப் பாருங்கள். ஃப்ளோட்டிங் ரேட் உயரும்; உயரும்போது உங்கள் EMI அல்லது காலமும் அதனுடன் உயரும்."
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "தொடக்க EMI கள் பெரும்பாலும் வட்டி; பிந்தையவை பெரும்பாலும் அசல்.",
+                "குறைந்துவரும் நிலுவை விகிதங்களை ஒப்பிடுங்கள், ஃபிளாட் ரேட்டை ஒருபோதும் அல்ல.",
+                "முன்கூட்டியே செலுத்தி, EMI ஐ அல்ல, காலத்தைக் குறையுங்கள்.",
+                "எல்லா EMI களையும் கையில் கிடைக்கும் சம்பளத்தில் 35% முதல் 40% க்குக் கீழ் வைத்திருங்கள்."
+              ]
+            },
+            {
+              "type": "glossary",
+              "terms": [
+                {
+                  "term": "EMI",
+                  "definition": "ஈக்வேட்டட் மந்த்லி இன்ஸ்டால்மென்ட்: அந்த மாத வட்டியையும் அசலின் ஒரு பகுதியையும் உள்ளடக்கிய நிலையான மாதாந்திரச் செலுத்துதல்."
+                },
+                {
+                  "term": "குறைந்துவரும் நிலுவை (Reducing balance)",
+                  "definition": "ஒவ்வொரு மாதமும் இன்னும் கடன்பட்டிருக்கும் தொகைக்கு மட்டுமே கணக்கிடப்படும் வட்டி; வங்கிக் கடன்களுக்கான நிலையான முறை."
+                },
+                {
+                  "term": "ஃபிளாட் ரேட் (Flat rate)",
+                  "definition": "முழுக் காலத்திற்கும் அசல் கடன் தொகை மீது கணக்கிடப்படும் வட்டி; உண்மையான செலவை ஏறத்தாழ பாதியாகக் குறைத்துக் காட்டும்."
+                },
+                {
+                  "term": "FOIR",
+                  "definition": "நிலையான கடமை-வருமான விகிதம்: எல்லா மாதாந்திர EMI களையும் கையில் கிடைக்கும் சம்பளத்தால் வகுத்தது."
+                },
+                {
+                  "term": "ஃப்ளோட்டிங் ரேட் (Floating rate)",
+                  "definition": "வங்கியின் அடிப்படை விகிதத்துடன் நகரும் வட்டி விகிதம்; எனவே கடனின் போது EMI அல்லது காலம் மாறலாம்."
+                }
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "20 ஆண்டு வீட்டுக் கடனின் முதல் ஆண்டில், ஒவ்வொரு EMI யின் பெரும்பகுதி எதற்குப் போகிறது:",
+                  "options": [
+                    "அசல்",
+                    "வட்டி",
+                    "செயலாக்கக் கட்டணம்"
+                  ],
+                  "answer": 1,
+                  "explanation": "தொடக்கத்தில் நிலுவை அசல் மிகப் பெரியது; எனவே வட்டிப் பகுதியும் மிகப் பெரியது."
+                },
+                {
+                  "q": "இரண்டு ஆண்டுகளுக்கான 10% ஃபிளாட் ரேட் கடன், குறைந்துவரும் நிலுவை விகிதத்தில் ஏறத்தாழ எதற்குச் சமம்:",
+                  "options": [
+                    "5%",
+                    "10%",
+                    "18%"
+                  ],
+                  "answer": 2
+                },
+                {
+                  "q": "வீட்டுக் கடனில் ₹2 லட்சம் முன்கூட்டியே செலுத்துகிறீர்கள். அதிக வட்டியை மிச்சப்படுத்த, வங்கியிடம் கேட்க வேண்டியது:",
+                  "options": [
+                    "EMI ஐக் குறைத்து காலத்தை அப்படியே வைக்க",
+                    "காலத்தைக் குறைத்து EMI ஐ அப்படியே வைக்க",
+                    "கடனை ஃபிளாட் ரேட்டுக்கு மாற்ற"
+                  ],
+                  "answer": 1,
+                  "explanation": "குறைந்த காலம் என்றால் குறைவான வட்டி மாதங்கள்; குறைந்த EMI பணப்புழக்கத்தை மட்டுமே எளிதாக்கும்."
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": true,
+          "publishedAt": "2026-10-18"
         }
       ]
     }

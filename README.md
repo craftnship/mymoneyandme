@@ -24,7 +24,8 @@ Node 22 and pnpm 10.
 - **India rule pack** (`rulepacks/india-2025-26.v1.json`): tax slabs, scheme rates, insurance norms, scoring weights and bands, inflation and return defaults. Validated with zod on load; every calculator and check-up result records the version used.
 - **Calculator engine** (`src/lib/calculators`): formula families plus JSON-shaped definitions for 60 calculators across 9 groups. Live recalculation, sliders, shareable URLs, year-by-year tables, SVG charts, lakh/crore or international grouping.
 - **Check-up engine** (`src/lib/checkup`): eight weighted dimensions scored from declarative bands, life-stage weight adjustments, confidence indicator, and a plan builder that follows the fixed priority sequence. Exposed as the public 5-question quick check at `/check-up` via `POST /api/checkup/quick`.
-- **Content store** (`content/`): articles and 29 learning-hub modules as JSON with per-language translations, publish states, AI-draft labels and fallback rules. Four articles and five chapters have full bodies; the rest are listed as coming soon.
+- **Content store** (`content/`): articles and 29 learning-hub modules as JSON with per-language translations, publish states, AI-draft labels and fallback rules. Four articles and 22 chapters (the first three modules of each track) have full bodies in English and Tamil; the rest are listed as coming soon.
+- **Article search and category filters** as plain query-string state, so filtered views are shareable and work without JavaScript.
 - **SEO**: per-language sitemap, hreflang alternates, Article JSON-LD, robots, PWA manifest, secure headers.
 
 ## Not yet built

@@ -312,6 +312,86 @@
           "state": "published",
           "aiDraft": false,
           "publishedAt": "2026-10-10"
+        },
+        {
+          "locale": "ta",
+          "title": "அவசர நிதி (Emergency fund)",
+          "excerpt": "எத்தனை மாதங்கள், எங்கே வைப்பது, எப்போது பயன்படுத்துவது.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "அவசர நிதி என்பது நீங்களே உங்களுக்கு விற்கும் ஒரு காப்பீடு. வேலை இழப்பையோ மருத்துவமனை பில்லையோ அது ஒரு நெருக்கடியிலிருந்து ஒரு சிறு சிரமமாக மாற்றுகிறது; தவறான நேரத்தில் ஒரு நீண்டகால முதலீட்டை உடைக்க வேண்டிய அவசியம் உங்களுக்கு ஒருபோதும் வராததற்குக் காரணமும் இதுவே."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "எவ்வளவு"
+            },
+            {
+              "type": "list",
+              "items": [
+                "சார்ந்தவர்கள் இல்லாத, இருவரும் சம்பளம் பெறும் குடும்பத்திற்கு மூன்று மாத அத்தியாவசியச் செலவுகள்.",
+                "ஒருவர் மட்டும் சம்பாதித்தால் அல்லது சார்ந்தவர்கள் இருந்தால் ஆறு மாதங்கள்.",
+                "வருமானம் ஒழுங்கற்றதாக இருந்தால் ஒன்பது முதல் பன்னிரண்டு மாதங்கள்: ஃப்ரீலான்ஸ், தொழில், கமிஷன்."
+              ]
+            },
+            {
+              "type": "calculator",
+              "slug": "emergency-fund"
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "எங்கே"
+            },
+            {
+              "type": "list",
+              "items": [
+                "ஒரு மாதத் தொகை நீங்கள் தினசரி பயன்படுத்தாத ஒரு சேமிப்புக் கணக்கில்.",
+                "மீதி ஒரு ஸ்வீப்-இன் FD அல்லது லிக்விட் ஃபண்டில்: ஒரு நாளுக்குள் எடுக்கக்கூடியது, சேமிப்புக் கணக்கை விட அதிகம் ஈட்டுவது.",
+                "ஈக்விட்டி, தங்கம் அல்லது லாக்-இன் உள்ள எதிலும் ஒருபோதும் வேண்டாம்."
+              ]
+            },
+            {
+              "type": "callout",
+              "tone": "warning",
+              "text": "கிரெடிட் கார்டு அவசர நிதி அல்ல; அது ஆண்டுக்கு சுமார் 40% வட்டியில் கிடைக்கும் ஒரு அவசரக் கடன்."
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "மொத்தச் செலவை அல்ல, அத்தியாவசியங்களை வைத்து அளவிடுங்கள்.",
+                "சலிப்பானதாகவும் எளிதில் எடுக்கக்கூடியதாகவும் வைத்திருங்கள்.",
+                "பயன்படுத்திய பிறகு, முதலீடுகளை மீண்டும் தொடங்கும் முன் அதை நிரப்புங்கள்."
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "ஒழுங்கற்ற வருமானம் உள்ள ஒரு சுயதொழில் டிசைனர் எத்தனை மாத அத்தியாவசியச் செலவுகளை வைத்திருக்க வேண்டும்?",
+                  "options": [
+                    "3",
+                    "6",
+                    "9 முதல் 12"
+                  ],
+                  "answer": 2
+                },
+                {
+                  "q": "அவசர நிதிக்கு ஏற்ற இடம் எது?",
+                  "options": [
+                    "ஈக்விட்டி மியூச்சுவல் ஃபண்ட்",
+                    "லிக்விட் ஃபண்ட் அல்லது ஸ்வீப்-இன் FD",
+                    "PPF"
+                  ],
+                  "answer": 1
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": true,
+          "publishedAt": "2026-10-18"
         }
       ]
     },
@@ -384,28 +464,380 @@
           "state": "published",
           "aiDraft": false,
           "publishedAt": "2026-10-10"
+        },
+        {
+          "locale": "ta",
+          "title": "பணப்புழக்கம்: மாதாந்திரப் படம்",
+          "excerpt": "வரும் வருமானம், போகும் பணம், நீங்கள் வெல்கிறீர்களா என்று சொல்லும் ஒரே ஒரு விகிதம்.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "நிகர மதிப்பு (net worth) ஒரு புகைப்படம்; பணப்புழக்கம் (cash flow) ஒரு திரைப்படம். ஒரு குடும்பம் சொத்து வைத்திருந்தாலும், ஒவ்வொரு மாதமும் வருவதை விட அதிகம் வெளியே போனால் சிக்கலில் இருக்கலாம். மாதாந்திர பணப்புழக்க அறிக்கை நீங்கள் உருவாக்கப்போகும் மிக எளிய நிதி ஆவணம், மேலும் மிகவும் பயனுள்ளதும் கூட."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "மூன்று வரிகளில் உருவாக்குங்கள்"
+            },
+            {
+              "type": "list",
+              "items": [
+                "வருமானம்: கையில் கிடைக்கும் சம்பளம், வாடகை வருமானம், வட்டி மற்றும் டிவிடெண்ட் அனைத்தும், ஆண்டு முழுவதும் சராசரியாக.",
+                "நிலையான செலவுகள்: EMI, வாடகை, பிரீமியங்கள், பள்ளிக் கட்டணம், சந்தாக்கள்.",
+                "மாறும் செலவுகள்: உணவு, போக்குவரத்து, வாழ்க்கை முறை. வித்தியாசம்தான் உங்கள் உபரி."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "விகிதங்கள்"
+            },
+            {
+              "type": "list",
+              "items": [
+                "சேமிப்பு விகிதம் = உபரி ÷ வருமானம். இலக்கு 20% அல்லது அதற்கு மேல்.",
+                "EMI-வருமான விகிதம் = எல்லா EMI களும் ÷ வருமானம். 35% க்குக் கீழ் வைத்திருங்கள்.",
+                "அத்தியாவசியப் பங்கு = நிலையானவை மற்றும் அத்தியாவசிய மாறும் செலவுகள் ÷ வருமானம். 50% க்குக் கீழ் இருந்தால் மூச்சுவிட இடம் இருக்கும்."
+              ]
+            },
+            {
+              "type": "calculator",
+              "slug": "savings-rate"
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "பணப்புழக்கம் திரைப்படம்; நிகர மதிப்பு புகைப்படம்.",
+                "மூன்று வரிகள்: வருமானம், நிலையானவை, மாறுபவை.",
+                "சேமிப்பு விகிதம் 20%+, EMI 35% க்குக் கீழ்."
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "EMI-வருமான விகிதம் எதை அளவிடுகிறது?",
+                  "options": [
+                    "சொத்து மதிப்புக்கு எதிரான கடன் அளவு",
+                    "கையில் கிடைக்கும் சம்பளத்திற்கு எதிரான மாதாந்திரக் கடன் செலுத்துதல்கள்",
+                    "கடனின் காலம் முழுவதும் செலுத்தப்பட்ட வட்டி"
+                  ],
+                  "answer": 1
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": true,
+          "publishedAt": "2026-10-18"
         }
       ]
     },
     {
       "slug": "goal-setting",
-      "readingMinutes": 10,
+      "readingMinutes": 5,
       "translations": [
         {
           "locale": "en",
           "title": "Setting goals that money can measure",
-          "excerpt": "",
-          "blocks": [],
-          "state": "draft",
-          "aiDraft": false
+          "excerpt": "Turn wishes into an amount, a date and a monthly transfer, and match each goal to the right place to keep it.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "\"Save more\" is not a goal. It has no amount, no date and no way to tell whether you are on track. A goal money can measure has three parts: how much, by when, and what you will put aside each month to get there. Once a goal has those three parts it stops being a wish and becomes a standing instruction at your bank."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Give every goal a number and a date"
+            },
+            {
+              "type": "paragraph",
+              "text": "Start by writing down what you actually want. A two-wheeler next year. A ₹2 lakh cushion for your parents' medical bills. A house down payment of ₹15 lakh in six years. A child's college fund of ₹40 lakh in fifteen years. Then put today's cost next to each one. If you do not know the number, estimate it; a rough figure you can correct later is better than a blank you keep avoiding. Next, adjust for inflation. A college seat that costs ₹10 lakh today will not cost ₹10 lakh in fifteen years. At {inflation_default} inflation, prices roughly double every twelve years, so plan for the future price, not today's. The longer the goal, the bigger this correction."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Sort goals by distance"
+            },
+            {
+              "type": "table",
+              "header": [
+                "Horizon",
+                "Example",
+                "Where the money sits"
+              ],
+              "rows": [
+                [
+                  "Under 3 years",
+                  "Two-wheeler, a trip, a laptop",
+                  "Recurring deposit, FD or a liquid fund; no equity"
+                ],
+                [
+                  "3 to 7 years",
+                  "House down payment, car, wedding",
+                  "A mix of debt and equity funds; shift to debt as the date nears"
+                ],
+                [
+                  "Over 7 years",
+                  "Child's education, retirement",
+                  "Mostly equity through SIPs, with PPF or EPF as the stable part"
+                ]
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "The rule behind the table is simple. Money you need soon cannot afford a bad year in the stock market, so it stays in fixed-income products that cannot fall. Money you need far away can ride out bad years, and it needs growth to beat inflation, so it can take equity risk."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Work out the monthly amount"
+            },
+            {
+              "type": "paragraph",
+              "text": "Once you have a future amount and a date, the monthly figure follows. Suppose you want ₹15 lakh in six years for a down payment. At {return_debt} a year you would need to put aside roughly ₹17,000 a month. The same ₹15 lakh in fifteen years at {return_equity} takes about ₹3,000 a month. Time does most of the work, which is why the goals you write down early are the cheapest ones."
+            },
+            {
+              "type": "calculator",
+              "slug": "goal-sip"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Name the goal and the month you need the money.",
+                "Write today's cost, then inflate it to the target year.",
+                "Pick the bucket from the table above.",
+                "Set up an automatic transfer on salary day, before anything else is spent.",
+                "Review once a year; raise the amount with every salary hike.",
+                "Fund in order: emergency fund first, then any debt above 12% or so, then goals with a deadline you cannot move such as school fees, and only then the ones that can wait. Retirement is the one goal nobody will lend you money for, so it never goes to the bottom of the list."
+              ]
+            },
+            {
+              "type": "callout",
+              "tone": "tip",
+              "text": "If the monthly figure is more than you can spare, do not drop the goal. Push the date, trim the amount, or start with half and step it up every year. A smaller SIP that actually runs is worth more than a perfect one that never starts."
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "A goal needs an amount, a date and a monthly number.",
+                "Inflate today's cost to the year you will need it.",
+                "Short goals stay in debt products; long goals can use equity.",
+                "Automate the transfer and raise it with every hike."
+              ]
+            },
+            {
+              "type": "glossary",
+              "terms": [
+                {
+                  "term": "Inflation",
+                  "definition": "The yearly rise in prices. It is why a goal costs more the further away it is."
+                },
+                {
+                  "term": "SIP",
+                  "definition": "Systematic investment plan: a fixed amount invested in a mutual fund every month, automatically."
+                },
+                {
+                  "term": "Horizon",
+                  "definition": "The number of years between today and the date you need the money."
+                },
+                {
+                  "term": "Corpus",
+                  "definition": "The total amount a goal needs on its due date, after inflation."
+                }
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "Which goal is written in a way money can measure?",
+                  "options": [
+                    "Save more for the future",
+                    "₹6 lakh for a car by March 2029",
+                    "Be financially comfortable"
+                  ],
+                  "answer": 1,
+                  "explanation": "It has an amount and a date, so a monthly figure can be worked out from it."
+                },
+                {
+                  "q": "A goal that is two years away should mostly sit in:",
+                  "options": [
+                    "Equity mutual funds",
+                    "A recurring deposit or FD",
+                    "Gold jewellery"
+                  ],
+                  "answer": 1,
+                  "explanation": "Money needed soon cannot afford a bad year in the market."
+                },
+                {
+                  "q": "If the monthly SIP for a goal is more than you can afford, the best first step is to:",
+                  "options": [
+                    "Drop the goal",
+                    "Start smaller and step up yearly, or move the date",
+                    "Borrow to invest"
+                  ],
+                  "answer": 1
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": false,
+          "publishedAt": "2026-10-18"
         },
         {
           "locale": "ta",
           "title": "பணத்தால் அளவிடக்கூடிய இலக்குகளை அமைத்தல்",
-          "excerpt": "",
-          "blocks": [],
-          "state": "draft",
-          "aiDraft": false
+          "excerpt": "விருப்பங்களை ஒரு தொகை, ஒரு தேதி மற்றும் ஒரு மாதாந்திர பரிமாற்றமாக மாற்றி, ஒவ்வொரு இலக்கையும் அதற்கான சரியான இடத்துடன் பொருத்துங்கள்.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "\"அதிகமாகச் சேமிக்க வேண்டும்\" என்பது இலக்கு அல்ல. அதில் தொகை இல்லை, தேதி இல்லை, சரியான பாதையில் இருக்கிறீர்களா என்று அறியும் வழியும் இல்லை. பணத்தால் அளவிடக்கூடிய ஒரு இலக்கிற்கு மூன்று பகுதிகள் உண்டு: எவ்வளவு, எப்போதுக்குள், அதை அடைய ஒவ்வொரு மாதமும் எவ்வளவு ஒதுக்குவீர்கள். இந்த மூன்று பகுதிகளும் இருந்தால், இலக்கு ஒரு விருப்பமாக இல்லாமல் உங்கள் வங்கியில் ஒரு நிலையான உத்தரவாக (standing instruction) மாறுகிறது."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "ஒவ்வொரு இலக்கிற்கும் ஒரு எண்ணும் தேதியும் கொடுங்கள்"
+            },
+            {
+              "type": "paragraph",
+              "text": "உங்களுக்கு உண்மையில் என்ன வேண்டும் என்பதை எழுதுவதில் தொடங்குங்கள். அடுத்த ஆண்டு ஒரு இருசக்கர வாகனம். பெற்றோரின் மருத்துவச் செலவுகளுக்கு ₹2 லட்சம் பாதுகாப்புத் தொகை. ஆறு ஆண்டுகளில் ₹15 லட்சம் வீட்டு முன்பணம். பதினைந்து ஆண்டுகளில் குழந்தையின் கல்லூரிக்கு ₹40 லட்சம். பிறகு ஒவ்வொன்றுக்கும் அருகில் இன்றைய விலையை எழுதுங்கள். எண் தெரியவில்லை என்றால் மதிப்பிடுங்கள்; பிறகு திருத்தக்கூடிய ஒரு தோராய எண், தவிர்த்துக்கொண்டே இருக்கும் ஒரு வெற்றிடத்தை விடச் சிறந்தது. அடுத்து, பணவீக்கத்திற்கு (inflation) ஏற்ப சரிசெய்யுங்கள். இன்று ₹10 லட்சம் ஆகும் ஒரு கல்லூரி இடம் பதினைந்து ஆண்டுகளில் ₹10 லட்சமாக இருக்காது. {inflation_default} பணவீக்கத்தில், விலைகள் ஏறத்தாழ ஒவ்வொரு பன்னிரண்டு ஆண்டுகளுக்கும் இரட்டிப்பாகும்; எனவே இன்றைய விலைக்கு அல்ல, எதிர்கால விலைக்குத் திட்டமிடுங்கள். இலக்கு எவ்வளவு தொலைவில் இருக்கிறதோ, அவ்வளவு பெரிது இந்தத் திருத்தம்."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "இலக்குகளைத் தூரத்தின்படி வரிசைப்படுத்துங்கள்"
+            },
+            {
+              "type": "table",
+              "header": [
+                "காலம்",
+                "உதாரணம்",
+                "பணம் எங்கே இருக்கும்"
+              ],
+              "rows": [
+                [
+                  "3 ஆண்டுகளுக்குள்",
+                  "இருசக்கர வாகனம், ஒரு பயணம், ஒரு லேப்டாப்",
+                  "ரெக்கரிங் டெபாசிட், FD அல்லது லிக்விட் ஃபண்ட்; ஈக்விட்டி வேண்டாம்"
+                ],
+                [
+                  "3 முதல் 7 ஆண்டுகள்",
+                  "வீட்டு முன்பணம், கார், திருமணம்",
+                  "டெப்ட் மற்றும் ஈக்விட்டி ஃபண்டுகளின் கலவை; தேதி நெருங்கும்போது டெப்ட்டுக்கு மாற்றுங்கள்"
+                ],
+                [
+                  "7 ஆண்டுகளுக்கு மேல்",
+                  "குழந்தையின் கல்வி, ஓய்வூதியம்",
+                  "பெரும்பாலும் SIP வழியாக ஈக்விட்டி, நிலையான பகுதியாக PPF அல்லது EPF"
+                ]
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "அட்டவணையின் பின்னால் உள்ள விதி எளிது. விரைவில் தேவைப்படும் பணம் பங்குச் சந்தையின் ஒரு மோசமான ஆண்டைத் தாங்க முடியாது; எனவே அது விழ முடியாத நிலையான வருமானத் தயாரிப்புகளில் இருக்கும். வெகு தொலைவில் தேவைப்படும் பணம் மோசமான ஆண்டுகளைக் கடந்து செல்ல முடியும்; பணவீக்கத்தை வெல்ல அதற்கு வளர்ச்சி தேவை, எனவே அது ஈக்விட்டி ரிஸ்க் எடுக்கலாம்."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "மாதாந்திரத் தொகையைக் கணக்கிடுங்கள்"
+            },
+            {
+              "type": "paragraph",
+              "text": "எதிர்காலத் தொகையும் தேதியும் கிடைத்ததும், மாதாந்திர எண் தானாக வரும். முன்பணத்திற்காக ஆறு ஆண்டுகளில் ₹15 லட்சம் வேண்டும் என்று வைத்துக்கொள்ளுங்கள். ஆண்டுக்கு {return_debt} வருமானத்தில், மாதம் சுமார் ₹17,000 ஒதுக்க வேண்டியிருக்கும். அதே ₹15 லட்சம் பதினைந்து ஆண்டுகளில் {return_equity} வருமானத்தில் மாதம் சுமார் ₹3,000 மட்டுமே. பெரும்பாலான வேலையை நேரம் செய்கிறது; அதனால்தான் முன்கூட்டியே எழுதும் இலக்குகள் மிகவும் மலிவானவை."
+            },
+            {
+              "type": "calculator",
+              "slug": "goal-sip"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "இலக்கையும் பணம் தேவைப்படும் மாதத்தையும் பெயரிடுங்கள்.",
+                "இன்றைய விலையை எழுதி, இலக்கு ஆண்டுக்கு ஏற்ப பணவீக்கத்தைச் சேருங்கள்.",
+                "மேலே உள்ள அட்டவணையிலிருந்து பிரிவைத் தேர்ந்தெடுங்கள்.",
+                "வேறு எதுவும் செலவாகும் முன், சம்பள நாளில் தானியங்கி பரிமாற்றத்தை அமையுங்கள்.",
+                "ஆண்டுக்கு ஒருமுறை மறுஆய்வு செய்யுங்கள்; ஒவ்வொரு சம்பள உயர்வுடனும் தொகையை உயர்த்துங்கள்.",
+                "வரிசைப்படி நிரப்புங்கள்: முதலில் அவசர நிதி, பிறகு சுமார் 12% க்கு மேல் வட்டி உள்ள கடன்கள், பிறகு பள்ளிக் கட்டணம் போன்ற தள்ளிப்போட முடியாத காலக்கெடு உள்ள இலக்குகள், அதன் பிறகே காத்திருக்கக்கூடியவை. ஓய்வூதியத்திற்காக யாரும் உங்களுக்குக் கடன் கொடுக்க மாட்டார்கள்; எனவே அது ஒருபோதும் பட்டியலின் கடைசிக்குப் போகக்கூடாது."
+              ]
+            },
+            {
+              "type": "callout",
+              "tone": "tip",
+              "text": "மாதாந்திர எண் உங்களால் ஒதுக்கக்கூடியதை விட அதிகமாக இருந்தால், இலக்கைக் கைவிடாதீர்கள். தேதியைத் தள்ளுங்கள், தொகையைக் குறையுங்கள், அல்லது பாதியில் தொடங்கி ஒவ்வொரு ஆண்டும் உயர்த்துங்கள். உண்மையில் ஓடும் ஒரு சிறிய SIP, ஒருபோதும் தொடங்காத ஒரு சரியான SIP ஐ விட மதிப்புள்ளது."
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "ஒரு இலக்கிற்கு ஒரு தொகை, ஒரு தேதி, ஒரு மாதாந்திர எண் தேவை.",
+                "இன்றைய விலையை, பணம் தேவைப்படும் ஆண்டுக்கு ஏற்ப பணவீக்கத்துடன் கணக்கிடுங்கள்.",
+                "குறுகிய இலக்குகள் டெப்ட் தயாரிப்புகளில்; நீண்ட இலக்குகள் ஈக்விட்டியைப் பயன்படுத்தலாம்.",
+                "பரிமாற்றத்தைத் தானியங்கியாக்கி, ஒவ்வொரு சம்பள உயர்வுடனும் உயர்த்துங்கள்."
+              ]
+            },
+            {
+              "type": "glossary",
+              "terms": [
+                {
+                  "term": "பணவீக்கம் (Inflation)",
+                  "definition": "விலைகளின் ஆண்டு உயர்வு. ஒரு இலக்கு எவ்வளவு தொலைவில் இருக்கிறதோ அவ்வளவு அதிகம் செலவாவதற்கு இதுவே காரணம்."
+                },
+                {
+                  "term": "SIP",
+                  "definition": "சிஸ்டமேட்டிக் இன்வெஸ்ட்மென்ட் பிளான்: ஒவ்வொரு மாதமும் ஒரு நிலையான தொகையை மியூச்சுவல் ஃபண்டில் தானாக முதலீடு செய்வது."
+                },
+                {
+                  "term": "காலம் (Horizon)",
+                  "definition": "இன்றைக்கும் பணம் தேவைப்படும் தேதிக்கும் இடையிலான ஆண்டுகளின் எண்ணிக்கை."
+                },
+                {
+                  "term": "கார்பஸ் (Corpus)",
+                  "definition": "பணவீக்கத்திற்குப் பிறகு, இலக்கின் தேதியில் தேவைப்படும் மொத்தத் தொகை."
+                }
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "பணத்தால் அளவிடக்கூடிய வகையில் எழுதப்பட்ட இலக்கு எது?",
+                  "options": [
+                    "எதிர்காலத்திற்காக அதிகமாகச் சேமிப்பது",
+                    "2029 மார்ச்சுக்குள் காருக்கு ₹6 லட்சம்",
+                    "நிதி ரீதியாக வசதியாக இருப்பது"
+                  ],
+                  "answer": 1,
+                  "explanation": "அதில் ஒரு தொகையும் தேதியும் உள்ளன; எனவே அதிலிருந்து மாதாந்திர எண்ணைக் கணக்கிடலாம்."
+                },
+                {
+                  "q": "இரண்டு ஆண்டுகள் தொலைவில் உள்ள ஒரு இலக்கு பெரும்பாலும் எங்கே இருக்க வேண்டும்:",
+                  "options": [
+                    "ஈக்விட்டி மியூச்சுவல் ஃபண்டுகள்",
+                    "ரெக்கரிங் டெபாசிட் அல்லது FD",
+                    "தங்க நகைகள்"
+                  ],
+                  "answer": 1,
+                  "explanation": "விரைவில் தேவைப்படும் பணம் சந்தையின் ஒரு மோசமான ஆண்டைத் தாங்க முடியாது."
+                },
+                {
+                  "q": "ஒரு இலக்கிற்கான மாதாந்திர SIP உங்களால் தாங்கக்கூடியதை விட அதிகமாக இருந்தால், சிறந்த முதல் படி:",
+                  "options": [
+                    "இலக்கைக் கைவிடுவது",
+                    "சிறியதாகத் தொடங்கி ஆண்டுதோறும் உயர்த்துவது, அல்லது தேதியைத் தள்ளுவது",
+                    "முதலீடு செய்யக் கடன் வாங்குவது"
+                  ],
+                  "answer": 1
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": true,
+          "publishedAt": "2026-10-18"
         }
       ]
     }

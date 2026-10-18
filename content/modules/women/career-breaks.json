@@ -19,29 +19,625 @@
   "chapters": [
     {
       "slug": "planning-a-break",
-      "readingMinutes": 10,
+      "readingMinutes": 6,
       "translations": [
         {
           "locale": "en",
           "title": "Planning a career break",
-          "excerpt": "",
-          "blocks": [],
-          "state": "draft",
-          "aiDraft": false
+          "excerpt": "A break for a child, a parent or yourself is a financial event: how to cost it, fund it, and keep your protection alive.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Many women step out of paid work at some point: for a baby, for a parent who needs care, for a partner's transfer, for their own health. The break itself is a legitimate choice. Walking into it without a plan is what costs. A two-year break can end up costing more than two years of salary, because the money you did not invest in those years never gets the decades of compounding it would have had. This chapter treats the break as a project with a budget, a start date and a protection checklist, the same way the household check-up treats your emergency fund: as something you size in advance, not during the emergency."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "What a break really costs"
+            },
+            {
+              "type": "paragraph",
+              "text": "Take Divya, 30, earning ₹9 lakh a year with a basic salary of ₹4.5 lakh and a ₹10,000 monthly SIP, planning a two-year break. The salary she will not receive is only the first line."
+            },
+            {
+              "type": "table",
+              "header": [
+                "Cost",
+                "During the break",
+                "By age 58"
+              ],
+              "rows": [
+                [
+                  "Take-home salary not earned",
+                  "About ₹14 lakh",
+                  "₹14 lakh"
+                ],
+                [
+                  "EPF not contributed (12 percent from her, 12 percent from the employer, on basic)",
+                  "About ₹2.2 lakh",
+                  "Roughly ₹18 lakh at about 8 percent for 28 years"
+                ],
+                [
+                  "SIP paused",
+                  "₹2.4 lakh not invested",
+                  "Roughly ₹30 lakh to ₹50 lakh depending on returns"
+                ],
+                [
+                  "Re-entry pay below the old salary",
+                  "Nothing yet",
+                  "Often 20 to 30 percent lower for the first few years"
+                ]
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "The lines that hurt are the ones nobody sees on a payslip: the EPF and the SIP that stopped. Every rupee not invested at 30 is worth eight to ten rupees at 58. That is why the plan below puts so much weight on keeping even a small investment running."
+            },
+            {
+              "type": "calculator",
+              "slug": "cost-of-delay"
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Fund it before you take it"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Build a break fund that is separate from the emergency fund. Size it as months of break multiplied by the household's monthly shortfall without your salary, plus your premiums and the SIPs you intend to keep. The emergency fund stays untouched for real emergencies.",
+                "Start twelve months ahead if you can. Redirect bonuses, raise your SIP into a liquid or short-term debt fund, and cut the big variable costs early rather than in the middle of the break.",
+                "Use what the law gives you. Under the Maternity Benefit Act, a woman who has worked at least 80 days in the past twelve months for an employer with ten or more staff is entitled to 26 weeks of paid leave for the first two children, and 12 weeks after that; adoptive and commissioning mothers get 12 weeks. Women covered by ESI receive maternity benefit through ESI instead.",
+                "Ask your employer, in writing, about extended unpaid leave, sabbatical policies and whether your role is held. Keeping a job open is worth more than any fund.",
+                "Keep an account in your own name active with net banking and UPI, so you are never asking for access to your own money."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Keep the protection and the investments alive"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Term insurance: if anyone depends on you or your name is on a loan, the premium is non-negotiable. Pay it from the break fund.",
+                "Health insurance: your employer's cover ends with the salary. Hold a personal policy before the break begins, and if a baby is the reason, buy maternity cover early; its waiting period is often one to four years.",
+                "SIPs: reduce rather than stop. Most funds allow a pause of a few months, but even ₹1,000 a month keeps the habit and the compounding alive.",
+                "EPF: leave it where it is. The balance keeps earning interest at {epf_rate}, and a withdrawal before five years of continuous service is taxable. You can withdraw after two months without a job, but it is the last money to touch.",
+                "PPF and NPS: keep both active with the minimum, ₹500 a year for PPF and ₹1,000 a year for NPS, so they do not freeze.",
+                "Nominations: update them on every account and policy before the break, especially if the reason for the break is a new child."
+              ]
+            },
+            {
+              "type": "callout",
+              "tone": "tip",
+              "text": "Write the break as a twelve-line budget: income lost, break fund needed, premiums, minimum SIPs, PPF and NPS minimums, and the date you intend to return. A break with an end date and a funded budget is a plan. A break without one is drift."
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "The real cost of a break is the compounding you lose, not just the salary.",
+                "Build a separate break fund twelve months ahead; keep the emergency fund for emergencies.",
+                "Know your maternity rights: 26 weeks paid leave for the first two children.",
+                "Keep term and health cover, minimum SIPs, PPF and NPS alive through the break.",
+                "Leave EPF untouched; it keeps earning and early withdrawal is taxed."
+              ]
+            },
+            {
+              "type": "glossary",
+              "terms": [
+                {
+                  "term": "Break fund",
+                  "definition": "Money set aside before a career break to cover the household shortfall, premiums and minimum investments for the length of the break."
+                },
+                {
+                  "term": "Maternity Benefit Act",
+                  "definition": "The law that gives eligible women 26 weeks of paid maternity leave for the first two children, and 12 weeks thereafter."
+                },
+                {
+                  "term": "Compounding",
+                  "definition": "Earning returns on past returns. It is why money invested early grows far more than the same amount invested later."
+                },
+                {
+                  "term": "SIP pause",
+                  "definition": "A facility many mutual funds offer to stop instalments for a few months without cancelling the SIP."
+                }
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "Which part of a career break's cost is usually invisible on a payslip?",
+                  "options": [
+                    "The salary not received",
+                    "The EPF and SIP contributions that stopped, and their lost compounding",
+                    "The cost of travel to the office"
+                  ],
+                  "answer": 1,
+                  "explanation": "The unearned salary is obvious. The investments that stopped grow into a much larger gap by retirement."
+                },
+                {
+                  "q": "How much paid maternity leave does the Maternity Benefit Act provide for a first child, for an eligible employee?",
+                  "options": [
+                    "12 weeks",
+                    "26 weeks",
+                    "52 weeks"
+                  ],
+                  "answer": 1,
+                  "explanation": "26 weeks for the first two children, 12 weeks from the third, for women who have worked 80 days in the previous year with an employer of ten or more staff."
+                },
+                {
+                  "q": "What should happen to your EPF balance during a break?",
+                  "options": [
+                    "Withdraw it to fund the break",
+                    "Leave it; it keeps earning interest and early withdrawal is taxable",
+                    "Transfer it to a savings account"
+                  ],
+                  "answer": 1,
+                  "explanation": "EPF continues to earn interest. Withdrawing before five years of service makes it taxable, and the money is better left compounding."
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": false,
+          "publishedAt": "2026-10-18"
+        },
+        {
+          "locale": "ta",
+          "title": "தொழில் இடைவெளியைத் திட்டமிடுதல்",
+          "excerpt": "குழந்தைக்காக, பெற்றோருக்காக அல்லது உங்களுக்காக எடுக்கும் இடைவெளி ஒரு நிதி நிகழ்வு. அதன் செலவைக் கணக்கிடுவது, நிதியளிப்பது, விலகியிருக்கும்போது பாதுகாப்பையும் முதலீடுகளையும் உயிர்ப்புடன் வைப்பது.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "பல பெண்கள் எப்போதாவது ஊதிய வேலையிலிருந்து விலகுகிறார்கள்: குழந்தைக்காக, பராமரிப்பு தேவைப்படும் பெற்றோருக்காக, துணையின் இடமாற்றத்திற்காக, சொந்த உடல்நலத்திற்காக. இடைவெளி ஒரு நியாயமான தேர்வு. திட்டமில்லாமல் அதில் நுழைவதுதான் செலவாகிறது. இரண்டு ஆண்டு இடைவெளி இரண்டு ஆண்டுச் சம்பளத்தை விட அதிகம் செலவாகலாம்; ஏனெனில் அந்த ஆண்டுகளில் நீங்கள் முதலீடு செய்யாத பணம் அதற்குக் கிடைத்திருக்க வேண்டிய பல தசாப்தக் கூட்டு வளர்ச்சியை (compounding) ஒருபோதும் பெறாது. இந்த அத்தியாயம் இடைவெளியை ஒரு பட்ஜெட், தொடக்கத் தேதி, பாதுகாப்புச் சரிபார்ப்புப் பட்டியல் கொண்ட திட்டப்பணியாகக் கருதுகிறது; குடும்ப செக்-அப் உங்கள் எமர்ஜென்சி ஃபண்டைக் கருதுவது போல: அவசரநிலையின் போது அல்ல, முன்கூட்டியே அளவிடும் ஒன்றாக."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "இடைவெளிக்கு உண்மையில் என்ன செலவு"
+            },
+            {
+              "type": "paragraph",
+              "text": "திவ்யாவை எடுத்துக்கொள்ளுங்கள்: 30 வயது, ஆண்டுக்கு ₹9 லட்சம் சம்பளம், அடிப்படைச் சம்பளம் ₹4.5 லட்சம், மாதம் ₹10,000 SIP, இரண்டு ஆண்டு இடைவெளி திட்டமிடுகிறார். அவர் பெறாத சம்பளம் முதல் வரி மட்டுமே."
+            },
+            {
+              "type": "table",
+              "header": [
+                "செலவு",
+                "இடைவெளியின் போது",
+                "58 வயதுக்குள்"
+              ],
+              "rows": [
+                [
+                  "சம்பாதிக்காத கையில் கிடைக்கும் சம்பளம்",
+                  "சுமார் ₹14 லட்சம்",
+                  "₹14 லட்சம்"
+                ],
+                [
+                  "பங்களிக்காத EPF (அடிப்படைச் சம்பளத்தில் அவரிடமிருந்து 12 சதவீதம், முதலாளியிடமிருந்து 12 சதவீதம்)",
+                  "சுமார் ₹2.2 லட்சம்",
+                  "28 ஆண்டுகளுக்கு சுமார் 8 சதவீதத்தில் ஏறத்தாழ ₹18 லட்சம்"
+                ],
+                [
+                  "நிறுத்தப்பட்ட SIP",
+                  "₹2.4 லட்சம் முதலீடு செய்யப்படவில்லை",
+                  "வருமானத்தைப் பொறுத்து ஏறத்தாழ ₹30 லட்சம் முதல் ₹50 லட்சம்"
+                ],
+                [
+                  "பழைய சம்பளத்தை விடக் குறைவான மீள்நுழைவு ஊதியம்",
+                  "இன்னும் எதுவுமில்லை",
+                  "முதல் சில ஆண்டுகள் பெரும்பாலும் 20 முதல் 30 சதவீதம் குறைவு"
+                ]
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "வலிக்கும் வரிகள் சம்பளச் சீட்டில் யாரும் பார்க்காதவை: நின்றுபோன EPF-ம் SIP-ம். 30 வயதில் முதலீடு செய்யப்படாத ஒவ்வொரு ரூபாயும் 58 வயதில் எட்டு முதல் பத்து ரூபாய் மதிப்புடையது. அதனால்தான் கீழே உள்ள திட்டம் சிறிய முதலீட்டையாவது தொடர்ந்து நடத்துவதற்கு இவ்வளவு முக்கியத்துவம் தருகிறது."
+            },
+            {
+              "type": "calculator",
+              "slug": "cost-of-delay"
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "எடுப்பதற்கு முன் நிதியளியுங்கள்"
+            },
+            {
+              "type": "list",
+              "items": [
+                "எமர்ஜென்சி ஃபண்டிலிருந்து தனியான ஒரு பிரேக் ஃபண்ட் (break fund) கட்டுங்கள். இடைவெளி மாதங்களை உங்கள் சம்பளம் இல்லாமல் குடும்பத்தின் மாதாந்திரப் பற்றாக்குறையால் பெருக்கி, உங்கள் பிரீமியங்களையும் தொடர விரும்பும் SIP-களையும் சேர்த்து அளவிடுங்கள். எமர்ஜென்சி ஃபண்ட் உண்மையான அவசரநிலைகளுக்குத் தொடப்படாமல் இருக்கும்.",
+                "முடிந்தால் பன்னிரண்டு மாதங்களுக்கு முன்பே தொடங்குங்கள். போனஸ்களைத் திருப்புங்கள், லிக்விட் அல்லது குறுகிய காலக் கடன் ஃபண்டில் உங்கள் SIP-ஐ உயர்த்துங்கள், பெரிய மாறும் செலவுகளை இடைவெளியின் நடுவில் அல்ல, முன்பே குறையுங்கள்.",
+                "சட்டம் தருவதைப் பயன்படுத்துங்கள். மகப்பேறு நலச் சட்டத்தின் (Maternity Benefit Act) கீழ், பத்து அல்லது அதற்கு மேற்பட்ட ஊழியர்கள் உள்ள முதலாளியிடம் கடந்த பன்னிரண்டு மாதங்களில் குறைந்தது 80 நாட்கள் பணியாற்றிய பெண்ணுக்கு முதல் இரண்டு குழந்தைகளுக்கு 26 வார ஊதிய விடுப்பும், அதன் பிறகு 12 வாரங்களும் உரிமை; தத்தெடுக்கும் மற்றும் கமிஷனிங் தாய்மார்களுக்கு 12 வாரங்கள். ESI-யின் கீழ் உள்ள பெண்கள் மகப்பேறு நலனை ESI மூலம் பெறுவார்கள்.",
+                "நீட்டிக்கப்பட்ட ஊதியமற்ற விடுப்பு, சபாட்டிகல் கொள்கைகள், உங்கள் பணி இடம் வைத்திருக்கப்படுமா என்பது பற்றி முதலாளியிடம் எழுத்துப்பூர்வமாகக் கேளுங்கள். வேலையைத் திறந்து வைத்திருப்பது எந்த நிதியை விடவும் மதிப்புள்ளது.",
+                "உங்கள் சொந்தப் பணத்திற்கான அணுகலை ஒருபோதும் கேட்க வேண்டியிராதபடி, நெட் பேங்கிங் மற்றும் UPI-யுடன் சொந்தப் பெயரில் ஒரு கணக்கைச் செயலில் வைத்திருங்கள்."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "பாதுகாப்பையும் முதலீடுகளையும் உயிர்ப்புடன் வையுங்கள்"
+            },
+            {
+              "type": "list",
+              "items": [
+                "டெர்ம் காப்பீடு: யாராவது உங்களைச் சார்ந்திருந்தாலோ உங்கள் பெயர் கடனில் இருந்தாலோ, பிரீமியம் பேரம் பேச முடியாதது. பிரேக் ஃபண்டிலிருந்து செலுத்துங்கள்.",
+                "உடல்நலக் காப்பீடு: முதலாளியின் கவர் சம்பளத்துடன் முடிந்துவிடும். இடைவெளி தொடங்கும் முன் தனிப்பட்ட பாலிசி வைத்திருங்கள்; குழந்தையே காரணம் என்றால், மகப்பேறு கவரை முன்கூட்டியே வாங்குங்கள்; அதன் காத்திருப்புக் காலம் பெரும்பாலும் ஒன்று முதல் நான்கு ஆண்டுகள்.",
+                "SIP-கள்: நிறுத்துவதை விடக் குறையுங்கள். பெரும்பாலான ஃபண்டுகள் சில மாத இடைநிறுத்தத்தை அனுமதிக்கின்றன; ஆனால் மாதம் ₹1,000 கூட பழக்கத்தையும் கூட்டு வளர்ச்சியையும் உயிர்ப்புடன் வைக்கும்.",
+                "EPF: இருக்கும் இடத்திலேயே விடுங்கள். இருப்பு {epf_rate} வட்டியைத் தொடர்ந்து ஈட்டும்; ஐந்து ஆண்டு தொடர் சேவைக்கு முன் திரும்பப் பெறுவது வரிக்குட்பட்டது. வேலையில்லாமல் இரண்டு மாதங்களுக்குப் பிறகு திரும்பப் பெறலாம், ஆனால் அது கடைசியாகத் தொட வேண்டிய பணம்.",
+                "PPF மற்றும் NPS: இரண்டும் முடங்கிவிடாதபடி குறைந்தபட்சத்துடன், PPF-க்கு ஆண்டுக்கு ₹500, NPS-க்கு ஆண்டுக்கு ₹1,000, செயலில் வையுங்கள்.",
+                "நாமினேஷன்கள்: இடைவெளிக்கு முன் ஒவ்வொரு கணக்கிலும் பாலிசியிலும் புதுப்பியுங்கள்; குறிப்பாக இடைவெளியின் காரணம் புதிய குழந்தை என்றால்."
+              ]
+            },
+            {
+              "type": "callout",
+              "tone": "tip",
+              "text": "இடைவெளியைப் பன்னிரண்டு வரி பட்ஜெட்டாக எழுதுங்கள்: இழந்த வருமானம், தேவையான பிரேக் ஃபண்ட், பிரீமியங்கள், குறைந்தபட்ச SIP-கள், PPF மற்றும் NPS குறைந்தபட்சங்கள், திரும்ப நினைக்கும் தேதி. முடிவுத் தேதியும் நிதியளிக்கப்பட்ட பட்ஜெட்டும் உள்ள இடைவெளி ஒரு திட்டம். அவை இல்லாத இடைவெளி ஒரு சறுக்கல்."
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "இடைவெளியின் உண்மையான செலவு சம்பளம் மட்டுமல்ல, நீங்கள் இழக்கும் கூட்டு வளர்ச்சி.",
+                "பன்னிரண்டு மாதங்களுக்கு முன்பே தனியான பிரேக் ஃபண்ட் கட்டுங்கள்; எமர்ஜென்சி ஃபண்டை அவசரநிலைகளுக்கு வையுங்கள்.",
+                "உங்கள் மகப்பேறு உரிமைகளை அறியுங்கள்: முதல் இரண்டு குழந்தைகளுக்கு 26 வார ஊதிய விடுப்பு.",
+                "இடைவெளி முழுவதும் டெர்ம் மற்றும் உடல்நலக் கவர், குறைந்தபட்ச SIP, PPF, NPS ஆகியவற்றை உயிர்ப்புடன் வையுங்கள்.",
+                "EPF-ஐத் தொடாமல் விடுங்கள்; அது தொடர்ந்து ஈட்டும், முன்கூட்டியே எடுத்தால் வரி."
+              ]
+            },
+            {
+              "type": "glossary",
+              "terms": [
+                {
+                  "term": "பிரேக் ஃபண்ட் (Break fund)",
+                  "definition": "இடைவெளியின் காலத்திற்குக் குடும்பப் பற்றாக்குறை, பிரீமியங்கள், குறைந்தபட்ச முதலீடுகளை ஈடுகட்டத் தொழில் இடைவெளிக்கு முன் ஒதுக்கி வைக்கும் பணம்."
+                },
+                {
+                  "term": "மகப்பேறு நலச் சட்டம் (Maternity Benefit Act)",
+                  "definition": "தகுதியான பெண்களுக்கு முதல் இரண்டு குழந்தைகளுக்கு 26 வாரமும் அதன் பிறகு 12 வாரமும் ஊதிய மகப்பேறு விடுப்பு தரும் சட்டம்."
+                },
+                {
+                  "term": "கூட்டு வளர்ச்சி (Compounding)",
+                  "definition": "முந்தைய வருமானத்தின் மீது வருமானம் ஈட்டுவது. முன்கூட்டியே முதலீடு செய்த பணம் பின்னர் முதலீடு செய்த அதே தொகையை விட மிக அதிகமாக வளர்வதற்கு இதுவே காரணம்."
+                },
+                {
+                  "term": "SIP இடைநிறுத்தம் (SIP pause)",
+                  "definition": "SIP-ஐ ரத்து செய்யாமல் சில மாதங்களுக்குத் தவணைகளை நிறுத்த பல மியூச்சுவல் ஃபண்டுகள் வழங்கும் வசதி."
+                }
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "தொழில் இடைவெளியின் செலவில் சம்பளச் சீட்டில் பொதுவாகத் தெரியாத பகுதி எது?",
+                  "options": [
+                    "பெறாத சம்பளம்",
+                    "நின்றுபோன EPF மற்றும் SIP பங்களிப்புகளும், அவற்றின் இழந்த கூட்டு வளர்ச்சியும்",
+                    "அலுவலகத்திற்குப் பயணச் செலவு"
+                  ],
+                  "answer": 1,
+                  "explanation": "சம்பாதிக்காத சம்பளம் வெளிப்படையானது. நின்றுபோன முதலீடுகள் ஓய்வுக்குள் மிகப் பெரிய இடைவெளியாக வளர்கின்றன."
+                },
+                {
+                  "q": "தகுதியான ஊழியருக்கு முதல் குழந்தைக்கு மகப்பேறு நலச் சட்டம் எவ்வளவு ஊதிய மகப்பேறு விடுப்பு வழங்குகிறது?",
+                  "options": [
+                    "12 வாரங்கள்",
+                    "26 வாரங்கள்",
+                    "52 வாரங்கள்"
+                  ],
+                  "answer": 1,
+                  "explanation": "பத்து அல்லது அதற்கு மேற்பட்ட ஊழியர்கள் உள்ள முதலாளியிடம் முந்தைய ஆண்டில் 80 நாட்கள் பணியாற்றிய பெண்களுக்கு முதல் இரண்டு குழந்தைகளுக்கு 26 வாரங்கள், மூன்றாவதிலிருந்து 12 வாரங்கள்."
+                },
+                {
+                  "q": "இடைவெளியின் போது உங்கள் EPF இருப்புக்கு என்ன நடக்க வேண்டும்?",
+                  "options": [
+                    "இடைவெளிக்கு நிதியளிக்க திரும்பப் பெறுவது",
+                    "விட்டுவிடுவது; அது தொடர்ந்து வட்டி ஈட்டும், முன்கூட்டியே எடுத்தால் வரிக்குட்பட்டது",
+                    "சேமிப்புக் கணக்கிற்கு மாற்றுவது"
+                  ],
+                  "answer": 1,
+                  "explanation": "EPF தொடர்ந்து வட்டி ஈட்டுகிறது. ஐந்து ஆண்டு சேவைக்கு முன் திரும்பப் பெறுவது வரிக்குட்பட்டது; பணம் கூட்டு வளர்ச்சியில் விடப்படுவதே சிறந்தது."
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": true,
+          "publishedAt": "2026-10-18"
         }
       ]
     },
     {
       "slug": "re-entry",
-      "readingMinutes": 10,
+      "readingMinutes": 6,
       "translations": [
         {
           "locale": "en",
           "title": "Re-entry",
-          "excerpt": "",
-          "blocks": [],
-          "state": "draft",
-          "aiDraft": false
+          "excerpt": "Coming back after a break: keeping skills and credit alive, negotiating pay that does not punish the gap, and rebuilding the plan in ninety days.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "The gap penalty is real. Women returning after a break are often offered 20 to 30 percent below their last salary, and many accept because they feel grateful to be back at all. A lower start compounds the way a paused SIP does: every raise for the next decade is a percentage of a smaller number. Treat re-entry the way you treated the break, as a project with a timeline and a budget. Three jobs: keep your name alive while you are away, negotiate like the professional you still are, and rebuild the household's protection, which is the emergency dimension of the check-up, in the first ninety days."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Keep skills and credit history alive"
+            },
+            {
+              "type": "list",
+              "items": [
+                "One certification a year in your field, finished and listed, says more than a long explanation of the gap.",
+                "Small paid work keeps the CV continuous: a few hours of consulting, freelance projects, bookkeeping for a relative's business. Income from it is taxed as professional income; keep invoices and file your return even if the amount is small.",
+                "Many large companies in IT, banking and consulting run returnship programmes designed for women coming back after two to five years. They pay less than a lateral hire but convert to full roles.",
+                "Keep one credit card in your own name active: a small purchase every month, paid in full. A credit score with no activity for two years goes stale, and a stale score makes the home loan harder later.",
+                "Keep an account in your own name, keep your PAN linked to it, and file an income tax return every year even when the income is nil. A three-year return history is what a lender asks for.",
+                "Stay visible: a professional profile that is updated, two conversations a month with former colleagues, one industry event a quarter."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Negotiating re-entry pay"
+            },
+            {
+              "type": "paragraph",
+              "text": "Your benchmark is today's market rate for the role, not your old salary. Even your old salary is worth less than it was: ₹8 lakh three years ago at 6 percent inflation is about ₹9.5 lakh today, so accepting ₹8 lakh is already a cut before the gap penalty is applied. Run the numbers before the first call."
+            },
+            {
+              "type": "calculator",
+              "slug": "salary-hike-vs-inflation"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Do not disclose your last drawn salary; ask for the band for the role instead, and anchor to the upper half of it.",
+                "Negotiate the whole package: fixed pay, variable pay, EPF, health cover for the family, joining bonus, flexible hours, and the date of the first review.",
+                "If you accept a lower start, get a written commitment to a review at six months tied to specific outcomes, and keep a copy.",
+                "For freelance or consulting work, price by the day, not by the hour, and start from what the company would pay a full-time person for the same output divided by 200 working days.",
+                "Silence after you quote a number is normal. Do not fill it by lowering the number."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Rebuild the plan in ninety days"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Month one: restart the SIPs at the old amount, and add a catch-up SIP for the months missed. Transfer your old EPF balance to the new employer under the same UAN, so your service record stays continuous for the five-year tax rule.",
+                "Month two: refill the emergency fund to six months of essential expenses; the break fund you spent was doing that job. Re-run the household check-up with the new numbers.",
+                "Month three: review cover. Keep your personal health policy and treat the new employer's cover as the extra layer. Recheck the term cover against the new salary and any new loan. Update nominees on the new salary account and EPF.",
+                "Keep the personal account and the personal amount you had during the break. Re-entry is not a reason to fold everything back into one account."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Finally, protect the income you now have. Having rebuilt an income, insure it. A personal accident policy pays a lump sum or a weekly amount if an accident leaves you unable to work, and it costs a few hundred rupees a year per lakh of cover. A critical illness cover pays a lump sum on diagnosis of a listed illness so that treatment does not consume the emergency fund. Neither replaces term or health cover; they sit beside them, and together they mean that the next break, if there is one, is a choice and not a shock."
+            },
+            {
+              "type": "callout",
+              "tone": "info",
+              "text": "A lower offer is a starting point, not a verdict on the break. The right answer to 'you have been out for three years' is a sentence about what you did in those years and a question about the band for the role."
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "Keep skills, a credit card, a bank account and tax returns in your own name alive through the break.",
+                "Benchmark to today's market, never to your old salary or to gratitude.",
+                "Never disclose last drawn pay; negotiate the whole package and a six-month review.",
+                "First ninety days: SIPs restarted, EPF transferred, emergency fund refilled, cover rechecked.",
+                "Insure the income you rebuilt with accident and critical illness cover beside term and health."
+              ]
+            },
+            {
+              "type": "glossary",
+              "terms": [
+                {
+                  "term": "Returnship",
+                  "definition": "A paid programme, usually three to six months, that brings professionals back after a career break and often converts into a full role."
+                },
+                {
+                  "term": "UAN",
+                  "definition": "Universal Account Number, the single EPF identity that follows you across employers so balances can be transferred rather than withdrawn."
+                },
+                {
+                  "term": "Last drawn salary",
+                  "definition": "What you earned in your previous job. Disclosing it lets an employer anchor the offer to a number that inflation has already shrunk."
+                },
+                {
+                  "term": "Personal accident cover",
+                  "definition": "A policy that pays if an accident causes death, disability or loss of income; much cheaper than life cover and separate from it."
+                }
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "₹8 lakh three years ago, at 6 percent inflation, buys about as much as how much today?",
+                  "options": [
+                    "₹8 lakh",
+                    "₹9.5 lakh",
+                    "₹12 lakh"
+                  ],
+                  "answer": 1,
+                  "explanation": "Prices rise about 19 percent over three years at 6 percent a year, so the same salary buys less. Benchmark to today's market."
+                },
+                {
+                  "q": "When a recruiter asks for your last drawn salary, what is the better move?",
+                  "options": [
+                    "Tell them, with a 10 percent markup",
+                    "Ask for the salary band for the role and anchor to it",
+                    "Refuse to discuss pay at all"
+                  ],
+                  "answer": 1,
+                  "explanation": "The band for the role reflects the market today. Your old salary anchors you to a number that is already out of date."
+                },
+                {
+                  "q": "What should you do with your old EPF balance when you rejoin work?",
+                  "options": [
+                    "Withdraw it as a joining gift to yourself",
+                    "Transfer it to the new employer under the same UAN",
+                    "Leave it and open a fresh account each time"
+                  ],
+                  "answer": 1,
+                  "explanation": "Transferring under the same UAN keeps the balance compounding and the service record continuous for the five-year tax rule."
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": false,
+          "publishedAt": "2026-10-18"
+        },
+        {
+          "locale": "ta",
+          "title": "மீண்டும் நுழைதல்",
+          "excerpt": "இடைவெளிக்குப் பிறகு திரும்புதல்: திறன்களையும் கடன் வரலாற்றையும் உயிர்ப்புடன் வைப்பது, இடைவெளியைத் தண்டிக்காத ஊதியத்திற்குப் பேரம் பேசுவது, தொண்ணூறு நாட்களில் திட்டத்தை மீண்டும் கட்டுவது.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "இடைவெளித் தண்டனை உண்மையானது. இடைவெளிக்குப் பிறகு திரும்பும் பெண்களுக்குப் பெரும்பாலும் கடைசிச் சம்பளத்தை விட 20 முதல் 30 சதவீதம் குறைவாக வழங்கப்படுகிறது; திரும்ப வந்ததற்கே நன்றியுணர்வால் பலர் ஏற்றுக்கொள்கிறார்கள். குறைந்த தொடக்கம் நிறுத்தப்பட்ட SIP போலவே கூட்டாக வளரும்: அடுத்த பத்தாண்டின் ஒவ்வொரு உயர்வும் சிறிய எண்ணின் சதவீதம். இடைவெளியைக் கருதியது போலவே மீள்நுழைவையும் காலவரிசையும் பட்ஜெட்டும் உள்ள திட்டப்பணியாகக் கருதுங்கள். மூன்று வேலைகள்: விலகியிருக்கும்போது உங்கள் பெயரை உயிர்ப்புடன் வைப்பது, இன்னும் நீங்கள் இருக்கும் தொழில்முறை நபராகப் பேரம் பேசுவது, முதல் தொண்ணூறு நாட்களில் குடும்பத்தின் பாதுகாப்பை, அதாவது செக்-அப்பின் எமர்ஜென்சி பரிமாணத்தை, மீண்டும் கட்டுவது."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "திறன்களையும் கடன் வரலாற்றையும் உயிர்ப்புடன் வையுங்கள்"
+            },
+            {
+              "type": "list",
+              "items": [
+                "உங்கள் துறையில் ஆண்டுக்கு ஒரு சான்றிதழ், முடித்துப் பட்டியலிடப்பட்டது, இடைவெளி பற்றிய நீண்ட விளக்கத்தை விட அதிகம் சொல்லும்.",
+                "சிறிய ஊதிய வேலை CV-ஐத் தொடர்ச்சியாக வைக்கும்: சில மணி நேர ஆலோசனை, ஃப்ரீலான்ஸ் திட்டங்கள், உறவினரின் தொழிலுக்குக் கணக்கு வைத்தல். அதிலிருந்து வரும் வருமானம் தொழில்முறை வருமானமாக வரி விதிக்கப்படும்; இன்வாய்ஸ்களை வைத்திருந்து, தொகை சிறியதாக இருந்தாலும் வருமான வரி அறிக்கை தாக்கல் செய்யுங்கள்.",
+                "IT, வங்கி, ஆலோசனைத் துறைகளில் பல பெரிய நிறுவனங்கள் இரண்டு முதல் ஐந்து ஆண்டுகளுக்குப் பிறகு திரும்பும் பெண்களுக்காக வடிவமைக்கப்பட்ட ரிட்டர்ன்ஷிப் (returnship) திட்டங்களை நடத்துகின்றன. லேட்டரல் நியமனத்தை விடக் குறைவாகச் செலுத்தினாலும் முழுப் பணிகளாக மாறுகின்றன.",
+                "உங்கள் சொந்தப் பெயரில் ஒரு கிரெடிட் கார்டைச் செயலில் வையுங்கள்: ஒவ்வொரு மாதமும் சிறிய வாங்குதல், முழுமையாகச் செலுத்தப்பட்டது. இரண்டு ஆண்டுகள் செயல்பாடு இல்லாத கிரெடிட் ஸ்கோர் பழையதாகிவிடும்; பழைய ஸ்கோர் பின்னர் வீட்டுக் கடனைக் கடினமாக்கும்.",
+                "சொந்தப் பெயரில் ஒரு கணக்கை வைத்திருங்கள், உங்கள் PAN-ஐ அதனுடன் இணைத்து வையுங்கள், வருமானம் பூஜ்ஜியமாக இருந்தாலும் ஒவ்வொரு ஆண்டும் வருமான வரி அறிக்கை தாக்கல் செய்யுங்கள். கடன் வழங்குநர் கேட்பது மூன்று ஆண்டு அறிக்கை வரலாறு.",
+                "கண்ணில் படுங்கள்: புதுப்பிக்கப்பட்ட தொழில்முறை சுயவிவரம், மாதத்திற்கு முன்னாள் சக ஊழியர்களுடன் இரண்டு உரையாடல்கள், காலாண்டுக்கு ஒரு துறை நிகழ்வு."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "மீள்நுழைவு ஊதியத்திற்குப் பேரம் பேசுதல்"
+            },
+            {
+              "type": "paragraph",
+              "text": "உங்கள் அளவுகோல் அந்தப் பணிக்கான இன்றைய சந்தை விகிதம், உங்கள் பழைய சம்பளம் அல்ல. உங்கள் பழைய சம்பளம் கூட முன்பிருந்ததை விடக் குறைந்த மதிப்புடையது: மூன்று ஆண்டுகளுக்கு முன்பான ₹8 லட்சம் 6 சதவீதப் பணவீக்கத்தில் இன்று சுமார் ₹9.5 லட்சம்; எனவே ₹8 லட்சத்தை ஏற்பது இடைவெளித் தண்டனை பொருத்தப்படும் முன்பே ஒரு வெட்டு. முதல் அழைப்புக்கு முன் எண்களைக் கணக்கிடுங்கள்."
+            },
+            {
+              "type": "calculator",
+              "slug": "salary-hike-vs-inflation"
+            },
+            {
+              "type": "list",
+              "items": [
+                "கடைசியாகப் பெற்ற சம்பளத்தை வெளிப்படுத்தாதீர்கள்; மாறாக அந்தப் பணிக்கான சம்பள வரம்பைக் (band) கேட்டு, அதன் மேல் பாதியில் நங்கூரமிடுங்கள்.",
+                "முழு பேக்கேஜுக்கும் பேரம் பேசுங்கள்: நிலையான ஊதியம், மாறும் ஊதியம், EPF, குடும்பத்திற்கு உடல்நலக் கவர், ஜாயினிங் போனஸ், நெகிழ்வான நேரம், முதல் மதிப்பாய்வின் தேதி.",
+                "குறைந்த தொடக்கத்தை ஏற்றுக்கொண்டால், குறிப்பிட்ட விளைவுகளுடன் இணைக்கப்பட்ட ஆறு மாத மதிப்பாய்வுக்கு எழுத்துப்பூர்வ உறுதிமொழி பெற்று, நகலை வைத்திருங்கள்.",
+                "ஃப்ரீலான்ஸ் அல்லது ஆலோசனை வேலைக்கு, மணி நேரத்திற்கு அல்ல, நாளுக்கு விலை வையுங்கள்; அதே வெளியீட்டுக்கு நிறுவனம் முழுநேர நபருக்குச் செலுத்துவதை 200 வேலை நாட்களால் வகுத்து தொடங்குங்கள்.",
+                "நீங்கள் ஒரு எண்ணைச் சொன்ன பிறகு மௌனம் சாதாரணம். எண்ணைக் குறைத்து அதை நிரப்பாதீர்கள்."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "தொண்ணூறு நாட்களில் திட்டத்தை மீண்டும் கட்டுங்கள்"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "முதல் மாதம்: பழைய தொகையில் SIP-களை மீண்டும் தொடங்கி, தவறிய மாதங்களுக்கு ஒரு கேட்ச்-அப் SIP சேருங்கள். ஐந்து ஆண்டு வரி விதிக்கு உங்கள் சேவைப் பதிவு தொடர்ச்சியாக இருக்க, அதே UAN-ன் கீழ் பழைய EPF இருப்பைப் புதிய முதலாளிக்கு மாற்றுங்கள்.",
+                "இரண்டாம் மாதம்: எமர்ஜென்சி ஃபண்டை ஆறு மாத அத்தியாவசியச் செலவுக்கு மீண்டும் நிரப்புங்கள்; நீங்கள் செலவிட்ட பிரேக் ஃபண்ட் அந்த வேலையைச் செய்துகொண்டிருந்தது. புதிய எண்களுடன் குடும்ப செக்-அப்பை மீண்டும் செய்யுங்கள்.",
+                "மூன்றாம் மாதம்: கவரை மதிப்பாய்வு செய்யுங்கள். உங்கள் தனிப்பட்ட உடல்நலப் பாலிசியை வைத்துக்கொண்டு, புதிய முதலாளியின் கவரைக் கூடுதல் அடுக்காகக் கருதுங்கள். புதிய சம்பளத்திற்கும் புதிய கடனுக்கும் எதிராக டெர்ம் கவரை மீண்டும் சரிபாருங்கள். புதிய சம்பளக் கணக்கிலும் EPF-லும் நாமினிகளைப் புதுப்பியுங்கள்.",
+                "இடைவெளியின் போது இருந்த தனிப்பட்ட கணக்கையும் தனிப்பட்ட தொகையையும் வைத்துக்கொள்ளுங்கள். மீள்நுழைவு எல்லாவற்றையும் ஒரே கணக்கில் மடிக்கக் காரணம் அல்ல."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "இறுதியாக, இப்போது உள்ள வருமானத்தைப் பாதுகாக்குங்கள். வருமானத்தை மீண்டும் கட்டிய பிறகு, அதைக் காப்பீடு செய்யுங்கள். விபத்தால் வேலை செய்ய முடியாமல் போனால் தனிநபர் விபத்துப் பாலிசி (personal accident policy) மொத்தத் தொகையையோ வாராந்திரத் தொகையையோ செலுத்தும்; லட்சம் கவருக்கு ஆண்டுக்கு சில நூறு ரூபாய் செலவாகும். பட்டியலிடப்பட்ட நோய் கண்டறியப்பட்டால் கிரிட்டிகல் இல்னஸ் கவர் மொத்தத் தொகையைச் செலுத்தும்; அப்போது சிகிச்சை எமர்ஜென்சி ஃபண்டை உண்ணாது. இரண்டும் டெர்ம் அல்லது உடல்நலக் கவரை மாற்றீடு செய்யாது; அவற்றின் அருகில் அமர்கின்றன; சேர்ந்து அவை அடுத்த இடைவெளி, இருந்தால், ஒரு அதிர்ச்சி அல்ல ஒரு தேர்வு என்று பொருள்படும்."
+            },
+            {
+              "type": "callout",
+              "tone": "info",
+              "text": "குறைந்த ஆஃபர் ஒரு தொடக்கப் புள்ளி, இடைவெளி பற்றிய தீர்ப்பு அல்ல. 'நீங்கள் மூன்று ஆண்டுகள் வெளியே இருந்தீர்கள்' என்பதற்குச் சரியான பதில், அந்த ஆண்டுகளில் நீங்கள் என்ன செய்தீர்கள் என்பது பற்றிய ஒரு வாக்கியமும், அந்தப் பணிக்கான வரம்பு பற்றிய ஒரு கேள்வியும்."
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "இடைவெளி முழுவதும் திறன்கள், ஒரு கிரெடிட் கார்டு, ஒரு வங்கிக் கணக்கு, சொந்தப் பெயரில் வரி அறிக்கைகள் ஆகியவற்றை உயிர்ப்புடன் வையுங்கள்.",
+                "இன்றைய சந்தையை அளவுகோலாக்குங்கள்; பழைய சம்பளத்தையோ நன்றியுணர்வையோ ஒருபோதும் அல்ல.",
+                "கடைசியாகப் பெற்ற ஊதியத்தை ஒருபோதும் வெளிப்படுத்தாதீர்கள்; முழு பேக்கேஜுக்கும் ஆறு மாத மதிப்பாய்வுக்கும் பேரம் பேசுங்கள்.",
+                "முதல் தொண்ணூறு நாட்கள்: SIP-கள் மீண்டும் தொடங்கப்பட்டு, EPF மாற்றப்பட்டு, எமர்ஜென்சி ஃபண்ட் நிரப்பப்பட்டு, கவர் மீண்டும் சரிபார்க்கப்பட்டு.",
+                "டெர்ம் மற்றும் உடல்நலத்துடன் விபத்து மற்றும் கிரிட்டிகல் இல்னஸ் கவர் மூலம் மீண்டும் கட்டிய வருமானத்தைக் காப்பீடு செய்யுங்கள்."
+              ]
+            },
+            {
+              "type": "glossary",
+              "terms": [
+                {
+                  "term": "ரிட்டர்ன்ஷிப் (Returnship)",
+                  "definition": "தொழில் இடைவெளிக்குப் பிறகு தொழில்முறை நபர்களைத் திரும்பக் கொண்டுவரும், பொதுவாக மூன்று முதல் ஆறு மாத, ஊதியத் திட்டம்; பெரும்பாலும் முழுப் பணியாக மாறும்."
+                },
+                {
+                  "term": "UAN",
+                  "definition": "யுனிவர்சல் அக்கவுண்ட் நம்பர்; முதலாளிகள் மாறினாலும் உங்களுடன் வரும் ஒற்றை EPF அடையாளம்; இருப்புகளைத் திரும்பப் பெறாமல் மாற்ற உதவுகிறது."
+                },
+                {
+                  "term": "கடைசியாகப் பெற்ற சம்பளம் (Last drawn salary)",
+                  "definition": "முந்தைய வேலையில் நீங்கள் சம்பாதித்தது. அதை வெளிப்படுத்துவது பணவீக்கம் ஏற்கனவே சுருக்கிய எண்ணில் ஆஃபரை நங்கூரமிட முதலாளியை அனுமதிக்கிறது."
+                },
+                {
+                  "term": "தனிநபர் விபத்துக் கவர் (Personal accident cover)",
+                  "definition": "விபத்து மரணம், ஊனம் அல்லது வருமான இழப்பை ஏற்படுத்தினால் செலுத்தும் பாலிசி; ஆயுள் கவரை விட மிக மலிவு, அதிலிருந்து தனியானது."
+                }
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "மூன்று ஆண்டுகளுக்கு முன்பான ₹8 லட்சம், 6 சதவீதப் பணவீக்கத்தில், இன்று எவ்வளவுக்குச் சமமாக வாங்கும்?",
+                  "options": [
+                    "₹8 லட்சம்",
+                    "₹9.5 லட்சம்",
+                    "₹12 லட்சம்"
+                  ],
+                  "answer": 1,
+                  "explanation": "ஆண்டுக்கு 6 சதவீதத்தில் மூன்று ஆண்டுகளில் விலைகள் சுமார் 19 சதவீதம் உயர்கின்றன; எனவே அதே சம்பளம் குறைவாகவே வாங்கும். இன்றைய சந்தையை அளவுகோலாக்குங்கள்."
+                },
+                {
+                  "q": "ரிக்ரூட்டர் கடைசியாகப் பெற்ற சம்பளத்தைக் கேட்கும்போது சிறந்த நகர்வு எது?",
+                  "options": [
+                    "10 சதவீதம் கூட்டிச் சொல்வது",
+                    "அந்தப் பணிக்கான சம்பள வரம்பைக் கேட்டு அதில் நங்கூரமிடுவது",
+                    "ஊதியம் பற்றிப் பேசவே மறுப்பது"
+                  ],
+                  "answer": 1,
+                  "explanation": "பணிக்கான வரம்பு இன்றைய சந்தையைப் பிரதிபலிக்கிறது. பழைய சம்பளம் ஏற்கனவே காலாவதியான எண்ணில் உங்களை நங்கூரமிடுகிறது."
+                },
+                {
+                  "q": "மீண்டும் வேலையில் சேரும்போது பழைய EPF இருப்பை என்ன செய்ய வேண்டும்?",
+                  "options": [
+                    "உங்களுக்கே ஜாயினிங் பரிசாகத் திரும்பப் பெறுவது",
+                    "அதே UAN-ன் கீழ் புதிய முதலாளிக்கு மாற்றுவது",
+                    "விட்டுவிட்டு ஒவ்வொரு முறையும் புதிய கணக்கு திறப்பது"
+                  ],
+                  "answer": 1,
+                  "explanation": "அதே UAN-ன் கீழ் மாற்றுவது இருப்பைக் கூட்டு வளர்ச்சியில் வைத்து, ஐந்து ஆண்டு வரி விதிக்குச் சேவைப் பதிவைத் தொடர்ச்சியாக வைக்கிறது."
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": true,
+          "publishedAt": "2026-10-18"
         }
       ]
     }

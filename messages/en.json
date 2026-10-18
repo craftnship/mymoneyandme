@@ -80,7 +80,15 @@
       "news": "News",
       "howTo": "How-to",
       "story": "Story"
-    }
+    },
+    "searchLabel": "Search articles",
+    "searchPlaceholder": "Search articles, e.g. SIP, home loan, tax",
+    "searchButton": "Search",
+    "filterByCategory": "Filter by category",
+    "filterAll": "All",
+    "clearFilters": "Clear filters",
+    "noResults": "No articles match. Try a different word or clear the filters.",
+    "resultsCount": "{count, plural, =0 {No articles} one {# article} other {# articles}}"
   },
   "learn": {
     "title": "Learning hub",
@@ -88,7 +96,11 @@
     "modules": "{count, plural, one {# module} other {# modules}}",
     "chapters": "{count, plural, one {# chapter} other {# chapters}}",
     "hours": "{count, plural, one {about # hour} other {about # hours}}",
-    "difficulty": { "beginner": "Beginner", "intermediate": "Intermediate", "advanced": "Advanced" },
+    "difficulty": {
+      "beginner": "Beginner",
+      "intermediate": "Intermediate",
+      "advanced": "Advanced"
+    },
     "level": "Ages {level}",
     "comingSoon": "Coming soon",
     "chapterOf": "Chapter {index} of {total}",
@@ -105,9 +117,18 @@
     "fullyTranslated": "Available in {language}",
     "partlyTranslated": "Some chapters are shown in English until the {language} translation is ready.",
     "track": {
-      "adults": { "title": "Adults", "body": "Twelve modules from money basics to behavioural finance." },
-      "kids": { "title": "Kids", "body": "Ages 8 to 16, in two levels, with printable workbooks for every chapter." },
-      "women": { "title": "Women", "body": "Nine modules on independence, protection, rights and planning for others." }
+      "adults": {
+        "title": "Adults",
+        "body": "Twelve modules from money basics to behavioural finance."
+      },
+      "kids": {
+        "title": "Kids",
+        "body": "Ages 8 to 16, in two levels, with printable workbooks for every chapter."
+      },
+      "women": {
+        "title": "Women",
+        "body": "Nine modules on independence, protection, rights and planning for others."
+      }
     }
   },
   "calc": {
@@ -482,10 +503,23 @@
     "quickIntro": "An approximate score from five answers. The full check-up, with eight dimensions and a plan, comes with a free account.",
     "approximate": "Approximate",
     "yourScore": "Your score",
-    "grade": { "excellent": "Excellent", "good": "Good", "fair": "Fair", "needsAttention": "Needs attention" },
-    "status": { "good": "Good", "watch": "Watch", "act": "Act" },
+    "grade": {
+      "excellent": "Excellent",
+      "good": "Good",
+      "fair": "Fair",
+      "needsAttention": "Needs attention"
+    },
+    "status": {
+      "good": "Good",
+      "watch": "Watch",
+      "act": "Act"
+    },
     "confidence": "Confidence: {level}",
-    "confidenceLevel": { "high": "high", "medium": "medium", "low": "low" },
+    "confidenceLevel": {
+      "high": "high",
+      "medium": "medium",
+      "low": "low"
+    },
     "dimensions": "Dimensions",
     "strengths": "Strengths",
     "risks": "Top risks",
@@ -509,14 +543,38 @@
       "no": "No"
     },
     "dim": {
-      "cashflow": { "title": "Cash flow and budgeting", "why": "A savings rate of 20% or more is what funds every other goal." },
-      "emergency": { "title": "Emergency fund", "why": "Six months of essentials keeps a bad month from forcing bad decisions." },
-      "debt": { "title": "Debt", "why": "EMIs under 35% of income and no revolving card debt leave room to invest." },
-      "insurance": { "title": "Insurance protection", "why": "Term cover of 10 to 15× income and adequate health cover protect the plan itself." },
-      "investments": { "title": "Investments and allocation", "why": "An age-appropriate equity share and no idle cash make money work." },
-      "retirement": { "title": "Retirement readiness", "why": "Projected corpus against what retirement will actually cost." },
-      "goals": { "title": "Goal readiness", "why": "Share of goal value funded on the current trajectory." },
-      "hygiene": { "title": "Tax and hygiene", "why": "Nominations and a will make sure the money reaches the right people." }
+      "cashflow": {
+        "title": "Cash flow and budgeting",
+        "why": "A savings rate of 20% or more is what funds every other goal."
+      },
+      "emergency": {
+        "title": "Emergency fund",
+        "why": "Six months of essentials keeps a bad month from forcing bad decisions."
+      },
+      "debt": {
+        "title": "Debt",
+        "why": "EMIs under 35% of income and no revolving card debt leave room to invest."
+      },
+      "insurance": {
+        "title": "Insurance protection",
+        "why": "Term cover of 10 to 15× income and adequate health cover protect the plan itself."
+      },
+      "investments": {
+        "title": "Investments and allocation",
+        "why": "An age-appropriate equity share and no idle cash make money work."
+      },
+      "retirement": {
+        "title": "Retirement readiness",
+        "why": "Projected corpus against what retirement will actually cost."
+      },
+      "goals": {
+        "title": "Goal readiness",
+        "why": "Share of goal value funded on the current trajectory."
+      },
+      "hygiene": {
+        "title": "Tax and hygiene",
+        "why": "Nominations and a will make sure the money reaches the right people."
+      }
     },
     "items": {
       "fixOverspend": "Bring expenses under income: you are spending about ₹{gap} a month more than you earn.",
