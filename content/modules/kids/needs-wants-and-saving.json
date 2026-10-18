@@ -19,29 +19,495 @@
   "chapters": [
     {
       "slug": "needs-and-wants",
-      "readingMinutes": 10,
+      "readingMinutes": 5,
       "translations": [
         {
           "locale": "en",
           "title": "Needs and wants",
-          "excerpt": "",
-          "blocks": [],
-          "state": "draft",
-          "aiDraft": false
+          "excerpt": "Priya has ₹200 and a long shopping list. Sorting needs from wants helps her decide what to buy first.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Priya is ten. Her amma gives her ₹200 to take to the kirana shop near their school in Madurai. The list says: a notebook for maths class, a packet of milk, and bread. On the counter Priya also sees a pack of her favourite chocolate and a shiny new pencil box. Everything together costs ₹260. She has ₹200. What should she leave behind?"
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "What is a need?"
+            },
+            {
+              "type": "paragraph",
+              "text": "A need is something you must have to live, learn and stay safe. Food, clean water, a place to sleep, school books, medicine when you are sick. If you did not have it, something important would go wrong."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "What is a want?"
+            },
+            {
+              "type": "paragraph",
+              "text": "A want is something that is nice to have but you would be fine without. The chocolate. The pencil box, because the old one still works. A new cricket ball when you already have one. Wants are not bad. They are just not first."
+            },
+            {
+              "type": "table",
+              "header": [
+                "On the counter",
+                "Need or want?",
+                "Why"
+              ],
+              "rows": [
+                [
+                  "Maths notebook",
+                  "Need",
+                  "Priya cannot do her homework without it"
+                ],
+                [
+                  "Milk and bread",
+                  "Need",
+                  "Breakfast for the whole family"
+                ],
+                [
+                  "Chocolate",
+                  "Want",
+                  "Tasty, but nobody goes hungry without it"
+                ],
+                [
+                  "New pencil box",
+                  "Want",
+                  "The old one still closes"
+                ]
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "So Priya buys the notebook, milk and bread for ₹140. She has ₹60 left. Now she can choose: buy the chocolate today, or put the ₹60 away towards the pencil box. The needs came first, and the choice came after."
+            },
+            {
+              "type": "callout",
+              "tone": "tip",
+              "text": "The same thing can be a need for one person and a want for another. A phone is a want for Priya, but a need for her amma, who takes tailoring orders on it. Ask: what would go wrong without it?"
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Try the two questions"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Do I need this to live, learn or stay safe?",
+                "If I wait a week, will I still want it?",
+                "If the answer is no and no, it is a want. Put it on a list and come back later."
+              ]
+            },
+            {
+              "type": "activity",
+              "text": "With a parent, walk around your kitchen and your school bag. Pick ten things and sort them into two piles: needs and wants. Then swap roles: let your parent pick five things from their day, like petrol, a cup of tea at the office, or a movie ticket. Do you agree on every pile?"
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "A need keeps you alive, learning and safe.",
+                "A want is nice but you would be fine without it.",
+                "Buy needs first, then choose wants with what is left.",
+                "Waiting a week is a good test for a want."
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "Priya has ₹200. Which should she buy first?",
+                  "options": [
+                    "The chocolate",
+                    "The maths notebook",
+                    "The new pencil box"
+                  ],
+                  "answer": 1,
+                  "explanation": "Homework needs the notebook. The chocolate and the pencil box can wait."
+                },
+                {
+                  "q": "A new cricket ball when your old one still works is a...",
+                  "options": [
+                    "Need",
+                    "Want",
+                    "Both"
+                  ],
+                  "answer": 1,
+                  "explanation": "It would be fun, but you can still play without it. That makes it a want."
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": false,
+          "publishedAt": "2026-10-18"
+        },
+        {
+          "locale": "ta",
+          "title": "தேவைகளும் விருப்பங்களும்",
+          "excerpt": "பிரியாவிடம் ₹200 உம் ஒரு நீண்ட பட்டியலும் உள்ளன. தேவைகளை விருப்பங்களிலிருந்து பிரிப்பது முதலில் எதை வாங்குவது என்று முடிவு செய்ய உதவுகிறது.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "பிரியாவுக்குப் பத்து வயது. மதுரையில் அவர்கள் பள்ளிக்கு அருகில் உள்ள கிரானா கடைக்குப் போக அம்மா ₹200 கொடுக்கிறார். பட்டியலில்: கணக்கு வகுப்புக்கு ஒரு நோட்டு, ஒரு பாக்கெட் பால், பிரெட். கடை மேசையில் பிரியா தனக்குப் பிடித்த சாக்லேட் பாக்கெட்டையும் பளபளக்கும் புதிய பென்சில் பாக்ஸையும் பார்க்கிறாள். எல்லாம் சேர்ந்து ₹260. அவளிடம் ₹200 தான் உள்ளது. எதை விட்டுவிட வேண்டும்?"
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "தேவை என்றால் என்ன?"
+            },
+            {
+              "type": "paragraph",
+              "text": "தேவை என்பது வாழவும், கற்கவும், பாதுகாப்பாக இருக்கவும் கட்டாயம் இருக்க வேண்டிய ஒன்று. உணவு, சுத்தமான தண்ணீர், தூங்க ஒரு இடம், பள்ளிப் புத்தகங்கள், உடம்பு சரியில்லாதபோது மருந்து. அது இல்லாவிட்டால் முக்கியமான ஏதோ ஒன்று தவறாகப் போகும்."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "விருப்பம் என்றால் என்ன?"
+            },
+            {
+              "type": "paragraph",
+              "text": "விருப்பம் என்பது இருந்தால் நன்றாக இருக்கும், ஆனால் இல்லாவிட்டாலும் பரவாயில்லை என்ற ஒன்று. சாக்லேட். பென்சில் பாக்ஸ், ஏனென்றால் பழையது இன்னும் வேலை செய்கிறது. ஏற்கனவே ஒன்று இருக்கும்போது புதிய கிரிக்கெட் பந்து. விருப்பங்கள் கெட்டவை அல்ல. அவை முதலில் வருவதில்லை, அவ்வளவுதான்."
+            },
+            {
+              "type": "table",
+              "header": [
+                "கடை மேசையில்",
+                "தேவையா விருப்பமா?",
+                "ஏன்"
+              ],
+              "rows": [
+                [
+                  "கணக்கு நோட்டு",
+                  "தேவை",
+                  "அது இல்லாமல் பிரியாவால் ஹோம்வொர்க் செய்ய முடியாது"
+                ],
+                [
+                  "பாலும் பிரெட்டும்",
+                  "தேவை",
+                  "குடும்பம் முழுவதற்கும் காலை உணவு"
+                ],
+                [
+                  "சாக்லேட்",
+                  "விருப்பம்",
+                  "சுவையானது, ஆனால் அது இல்லாமல் யாரும் பசியோடு இருக்க மாட்டார்கள்"
+                ],
+                [
+                  "புதிய பென்சில் பாக்ஸ்",
+                  "விருப்பம்",
+                  "பழையது இன்னும் மூடுகிறது"
+                ]
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "அதனால் பிரியா நோட்டு, பால், பிரெட்டை ₹140 க்கு வாங்குகிறாள். அவளிடம் ₹60 மீதம். இப்போது அவள் தேர்வு செய்யலாம்: இன்று சாக்லேட் வாங்கலாம், அல்லது ₹60 ஐப் பென்சில் பாக்ஸுக்காகச் சேர்த்து வைக்கலாம். தேவைகள் முதலில் வந்தன, தேர்வு அதற்குப் பிறகு வந்தது."
+            },
+            {
+              "type": "callout",
+              "tone": "tip",
+              "text": "ஒரே பொருள் ஒருவருக்குத் தேவையாகவும் இன்னொருவருக்கு விருப்பமாகவும் இருக்கலாம். போன் பிரியாவுக்கு ஒரு விருப்பம், ஆனால் அதில் தையல் ஆர்டர்கள் எடுக்கும் அவள் அம்மாவுக்கு ஒரு தேவை. கேளுங்கள்: அது இல்லாவிட்டால் என்ன தவறாகப் போகும்?"
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "இரண்டு கேள்விகளை முயன்று பாருங்கள்"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "வாழ, கற்க அல்லது பாதுகாப்பாக இருக்க இது எனக்குத் தேவையா?",
+                "ஒரு வாரம் காத்திருந்தால், அப்போதும் இது எனக்கு வேண்டுமா?",
+                "இரண்டுக்கும் பதில் இல்லை என்றால், அது ஒரு விருப்பம். ஒரு பட்டியலில் எழுதி வைத்துப் பிறகு வாருங்கள்."
+              ]
+            },
+            {
+              "type": "activity",
+              "text": "பெற்றோருடன் சேர்ந்து உங்கள் சமையலறையையும் பள்ளிப் பையையும் சுற்றிப் பாருங்கள். பத்து பொருட்களைத் தேர்ந்தெடுத்து இரண்டு குவியல்களாகப் பிரியுங்கள்: தேவைகள், விருப்பங்கள். பிறகு இடம் மாறுங்கள்: பெட்ரோல், அலுவலகத்தில் ஒரு கப் டீ, அல்லது சினிமா டிக்கெட் போல அவர்கள் நாளிலிருந்து ஐந்து பொருட்களைப் பெற்றோர் தேர்ந்தெடுக்கட்டும். எல்லாக் குவியல்களிலும் நீங்கள் ஒத்துப்போகிறீர்களா?"
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "தேவை உங்களை உயிரோடும், கற்றுக்கொண்டும், பாதுகாப்பாகவும் வைத்திருக்கும்.",
+                "விருப்பம் நன்றாக இருக்கும், ஆனால் அது இல்லாமலும் நீங்கள் நலமாக இருப்பீர்கள்.",
+                "முதலில் தேவைகளை வாங்குங்கள், பிறகு மீதியில் விருப்பங்களைத் தேர்ந்தெடுங்கள்.",
+                "ஒரு வாரம் காத்திருப்பது விருப்பத்திற்கு ஒரு நல்ல சோதனை."
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "பிரியாவிடம் ₹200 உள்ளது. எதை முதலில் வாங்க வேண்டும்?",
+                  "options": [
+                    "சாக்லேட்",
+                    "கணக்கு நோட்டு",
+                    "புதிய பென்சில் பாக்ஸ்"
+                  ],
+                  "answer": 1,
+                  "explanation": "ஹோம்வொர்க்குக்கு நோட்டு தேவை. சாக்லேட்டும் பென்சில் பாக்ஸும் காத்திருக்கலாம்."
+                },
+                {
+                  "q": "பழைய கிரிக்கெட் பந்து இன்னும் வேலை செய்யும்போது புதிய பந்து என்பது ஒரு...",
+                  "options": [
+                    "தேவை",
+                    "விருப்பம்",
+                    "இரண்டும்"
+                  ],
+                  "answer": 1,
+                  "explanation": "அது வேடிக்கையாக இருக்கும், ஆனால் அது இல்லாமலும் விளையாடலாம். அதனால் அது ஒரு விருப்பம்."
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": true,
+          "publishedAt": "2026-10-18"
         }
       ]
     },
     {
       "slug": "three-jars",
-      "readingMinutes": 10,
+      "readingMinutes": 5,
       "translations": [
         {
           "locale": "en",
           "title": "The three jars",
-          "excerpt": "",
-          "blocks": [],
-          "state": "draft",
-          "aiDraft": false
+          "excerpt": "Arun splits his pocket money into spend, save and share jars, and finds out what waiting does to a want.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Arun gets ₹100 pocket money every Sunday. By Wednesday it is always gone: a samosa here, a packet of stickers there. He wants a cricket bat that costs ₹800, and it feels impossible. His thatha, his grandfather, gives him three empty jam jars and a marker pen."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Spend, save, share"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Spend jar: money for small things this week, like a snack after school.",
+                "Save jar: money for a big thing later, like the cricket bat or a cycle.",
+                "Share jar: money to give or help with, like a gift for a cousin or a donation at Pongal time."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Every Sunday Arun puts ₹50 in spend, ₹40 in save and ₹10 in share. The save jar is the one he is not allowed to open until it reaches the goal. He writes CRICKET BAT ₹800 on the lid so he remembers why."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "How long will it take?"
+            },
+            {
+              "type": "table",
+              "header": [
+                "Week",
+                "Save jar"
+              ],
+              "rows": [
+                [
+                  "1",
+                  "₹40"
+                ],
+                [
+                  "5",
+                  "₹200"
+                ],
+                [
+                  "10",
+                  "₹400"
+                ],
+                [
+                  "20",
+                  "₹800"
+                ]
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Twenty weeks is about five months. That sounds long. But when Arun gets ₹500 at Deepavali from his aunts and uncles, he puts ₹300 of it in the save jar and the bat is only seven weeks away."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "The want that disappeared"
+            },
+            {
+              "type": "paragraph",
+              "text": "In week three, Arun badly wanted a ₹150 toy car he saw outside the temple. He wrote it on a list on the fridge instead of buying it. In week six he looked at the list and laughed. He did not want the toy car any more. Waiting had made the want disappear, and the ₹150 stayed in the jar."
+            },
+            {
+              "type": "callout",
+              "tone": "info",
+              "text": "A jar can be a real jar, three envelopes, or three pockets in a piggy bank. What matters is that the money is split before you start spending, not after."
+            },
+            {
+              "type": "activity",
+              "text": "Find three containers at home. Label them Spend, Save and Share with a parent. Decide one goal for the Save jar and write the price on the lid. Then agree on how much goes into each jar from your next pocket money or festival money."
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "Split money into spend, save and share before spending any of it.",
+                "Write your goal and its price on the save jar.",
+                "Festival money can speed up a goal.",
+                "Many wants disappear if you wait a few weeks."
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "Which jar does Arun keep closed until he reaches his goal?",
+                  "options": [
+                    "Spend",
+                    "Save",
+                    "Share"
+                  ],
+                  "answer": 1,
+                  "explanation": "The save jar is for the big goal, so it stays shut until the money is enough."
+                },
+                {
+                  "q": "What happened to the ₹150 toy car Arun wrote on his list?",
+                  "options": [
+                    "He bought it the next week",
+                    "He stopped wanting it",
+                    "His thatha bought it for him"
+                  ],
+                  "answer": 1,
+                  "explanation": "After a few weeks, the want had faded. The money stayed in the jar."
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": false,
+          "publishedAt": "2026-10-18"
+        },
+        {
+          "locale": "ta",
+          "title": "மூன்று ஜாடிகள்",
+          "excerpt": "அருண் தன் பாக்கெட் மணியைச் செலவு, சேமிப்பு, பகிர்வு ஜாடிகளாகப் பிரித்து, காத்திருப்பது ஒரு விருப்பத்தை என்ன செய்கிறது என்று கண்டுபிடிக்கிறான்.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "அருணுக்கு ஒவ்வொரு ஞாயிறும் ₹100 பாக்கெட் மணி கிடைக்கிறது. புதன்கிழமைக்குள் அது எப்போதும் தீர்ந்துவிடும்: இங்கே ஒரு சமோசா, அங்கே ஒரு பாக்கெட் ஸ்டிக்கர். அவனுக்கு ₹800 விலையுள்ள ஒரு கிரிக்கெட் பேட் வேண்டும், அது முடியாத காரியமாகத் தோன்றுகிறது. அவன் தாத்தா அவனுக்கு மூன்று காலி ஜாம் ஜாடிகளையும் ஒரு மார்க்கர் பேனாவையும் கொடுக்கிறார்."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "செலவு, சேமிப்பு, பகிர்வு"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "செலவு ஜாடி: பள்ளி முடிந்து ஒரு ஸ்நாக் போல இந்த வாரத்தின் சிறிய பொருட்களுக்கான பணம்.",
+                "சேமிப்பு ஜாடி: கிரிக்கெட் பேட் அல்லது சைக்கிள் போலப் பிறகு வாங்கும் பெரிய பொருளுக்கான பணம்.",
+                "பகிர்வு ஜாடி: கசினுக்கு ஒரு பரிசு அல்லது பொங்கல் நேரத்தில் ஒரு நன்கொடை போலக் கொடுக்கவோ உதவவோ பணம்."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "ஒவ்வொரு ஞாயிறும் அருண் ₹50 செலவிலும், ₹40 சேமிப்பிலும், ₹10 பகிர்விலும் போடுகிறான். இலக்கை அடையும் வரை திறக்கக் கூடாத ஜாடி சேமிப்பு ஜாடிதான். ஏன் என்று நினைவில் இருக்க மூடியில் கிரிக்கெட் பேட் ₹800 என்று எழுதுகிறான்."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "எவ்வளவு நேரம் ஆகும்?"
+            },
+            {
+              "type": "table",
+              "header": [
+                "வாரம்",
+                "சேமிப்பு ஜாடி"
+              ],
+              "rows": [
+                [
+                  "1",
+                  "₹40"
+                ],
+                [
+                  "5",
+                  "₹200"
+                ],
+                [
+                  "10",
+                  "₹400"
+                ],
+                [
+                  "20",
+                  "₹800"
+                ]
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "இருபது வாரங்கள் என்பது சுமார் ஐந்து மாதங்கள். அது நீளமாகத் தெரிகிறது. ஆனால் தீபாவளிக்கு அத்தை மாமாக்களிடமிருந்து ₹500 கிடைக்கும்போது, அருண் அதில் ₹300 ஐச் சேமிப்பு ஜாடியில் போடுகிறான், பேட் இப்போது ஏழு வாரங்கள் தூரத்தில்தான்."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "மறைந்து போன விருப்பம்"
+            },
+            {
+              "type": "paragraph",
+              "text": "மூன்றாவது வாரத்தில், கோவிலுக்கு வெளியே பார்த்த ₹150 பொம்மை கார் அருணுக்கு ரொம்பவே வேண்டும் என்று தோன்றியது. வாங்குவதற்குப் பதிலாக ஃப்ரிட்ஜில் உள்ள பட்டியலில் அதை எழுதி வைத்தான். ஆறாவது வாரத்தில் பட்டியலைப் பார்த்துச் சிரித்தான். அவனுக்கு இப்போது அந்த பொம்மை கார் வேண்டாம். காத்திருப்பு விருப்பத்தை மறையச் செய்தது, ₹150 ஜாடியிலேயே இருந்தது."
+            },
+            {
+              "type": "callout",
+              "tone": "info",
+              "text": "ஜாடி என்பது உண்மையான ஜாடியாகவோ, மூன்று கவர்களாகவோ, உண்டியலில் மூன்று பகுதிகளாகவோ இருக்கலாம். முக்கியம் என்னவென்றால், செலவு செய்யத் தொடங்கிய பிறகு அல்ல, தொடங்குவதற்கு முன்பே பணம் பிரிக்கப்படுவது."
+            },
+            {
+              "type": "activity",
+              "text": "வீட்டில் மூன்று டப்பாக்களைக் கண்டுபிடியுங்கள். பெற்றோருடன் சேர்ந்து அவற்றில் செலவு, சேமிப்பு, பகிர்வு என்று லேபிள் ஒட்டுங்கள். சேமிப்பு ஜாடிக்கு ஒரு இலக்கை முடிவு செய்து மூடியில் விலையை எழுதுங்கள். பிறகு அடுத்த பாக்கெட் மணி அல்லது பண்டிகைப் பணத்திலிருந்து ஒவ்வொரு ஜாடியிலும் எவ்வளவு போடுவது என்று ஒப்புக்கொள்ளுங்கள்."
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "எதையும் செலவு செய்வதற்கு முன் பணத்தைச் செலவு, சேமிப்பு, பகிர்வு என்று பிரியுங்கள்.",
+                "சேமிப்பு ஜாடியில் உங்கள் இலக்கையும் அதன் விலையையும் எழுதுங்கள்.",
+                "பண்டிகைப் பணம் ஒரு இலக்கை வேகப்படுத்தும்.",
+                "சில வாரங்கள் காத்திருந்தால் பல விருப்பங்கள் மறைந்து போகும்."
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "இலக்கை அடையும் வரை அருண் எந்த ஜாடியை மூடி வைக்கிறான்?",
+                  "options": [
+                    "செலவு",
+                    "சேமிப்பு",
+                    "பகிர்வு"
+                  ],
+                  "answer": 1,
+                  "explanation": "சேமிப்பு ஜாடி பெரிய இலக்குக்கானது, அதனால் பணம் போதுமானதாகும் வரை அது மூடியே இருக்கும்."
+                },
+                {
+                  "q": "அருண் பட்டியலில் எழுதிய ₹150 பொம்மை காருக்கு என்ன ஆனது?",
+                  "options": [
+                    "அடுத்த வாரம் அதை வாங்கினான்",
+                    "அது வேண்டும் என்று நினைப்பதை நிறுத்தினான்",
+                    "அவன் தாத்தா அதை வாங்கிக் கொடுத்தார்"
+                  ],
+                  "answer": 1,
+                  "explanation": "சில வாரங்களுக்குப் பிறகு, விருப்பம் மங்கிவிட்டது. பணம் ஜாடியிலேயே இருந்தது."
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": true,
+          "publishedAt": "2026-10-18"
         }
       ]
     }

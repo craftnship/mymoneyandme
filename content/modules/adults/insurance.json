@@ -19,57 +19,1331 @@
   "chapters": [
     {
       "slug": "why-insure",
-      "readingMinutes": 10,
+      "readingMinutes": 5,
       "translations": [
         {
           "locale": "en",
           "title": "Why insure, and what not to insure",
-          "excerpt": "",
-          "blocks": [],
-          "state": "draft",
-          "aiDraft": false
+          "excerpt": "Insurance moves a loss you cannot afford onto someone else. It is not a way to grow money, and most things do not need it.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Most Indian families are under-insured where it matters and over-insured where it does not. The same household that has no term plan and only the office health policy will happily pay for phone protection, an extended warranty on a fridge, and a 'savings plan' that a relative sold them. The confusion comes from one mistake: treating insurance as a way to get money back. Insurance is a contract. You pay a small, certain amount, the premium, so that someone else carries a large, uncertain loss. That is the whole idea."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Protection, not investment"
+            },
+            {
+              "type": "paragraph",
+              "text": "Think of a premium the way you think of rent. If the year passes and nothing goes wrong, the money is gone, and that is a good year. You were not cheated. You bought the right to sleep well. A policy that promises to 'give something back' has to pay for that promise somehow, so it either cuts the cover, charges much more, or both. Keep the two jobs apart: buy pure protection with insurance, and grow money with investments. Every policy that tries to do both does both badly."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "The rule: insure what you cannot afford to lose"
+            },
+            {
+              "type": "paragraph",
+              "text": "Before any policy, ask two questions. How big would the loss be? And could I pay it from savings without wrecking my plans? Insure the losses that are large and would wreck you. Carry the rest yourself. This single test sorts almost every policy you will ever be offered, and it also tells you how much cover to buy: enough to replace what you would lose, not a round number that sounds comfortable. The table below applies it to the risks most households face."
+            },
+            {
+              "type": "table",
+              "header": [
+                "The risk",
+                "Could you pay it yourself?",
+                "Insure it?"
+              ],
+              "rows": [
+                [
+                  "The earning member dies while the children are young",
+                  "No",
+                  "Yes: term life"
+                ],
+                [
+                  "A hospital bill of ₹5 lakh to ₹20 lakh",
+                  "Rarely",
+                  "Yes: health"
+                ],
+                [
+                  "Your vehicle injures someone on the road",
+                  "No, and the law requires cover",
+                  "Yes: motor third-party"
+                ],
+                [
+                  "Fire or flood damages the house you have a loan on",
+                  "No",
+                  "Yes: home insurance, often required by the lender"
+                ],
+                [
+                  "A ₹15,000 phone screen cracks",
+                  "Yes",
+                  "No: self-insure"
+                ],
+                [
+                  "The washing machine fails after its warranty",
+                  "Yes",
+                  "No: self-insure"
+                ]
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Self-insure the small stuff"
+            },
+            {
+              "type": "paragraph",
+              "text": "Gadget protection, extended warranties, the ₹49 travel cover ticked at checkout, 'loan protection' bundled into a two-wheeler loan: these pay out rarely, the loss they cover is small, and the margins are large. Instead of buying twenty tiny policies, build one emergency fund of three to six months of essential expenses. It is the only policy with no exclusions, no waiting period and no claim form. A cracked screen or a dead geyser comes out of it, and you top it back up next month."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Who needs what, by life stage"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Single, no one depends on your income: health cover is the priority. Term life only if a parent depends on you or co-signed a loan in your name.",
+                "Married, or with children: term life for every earning member, a family floater health policy, and personal accident cover if you ride or drive daily.",
+                "Parents past 60: a separate health policy for them, even if the premium looks steep. Adding them to your floater raises everyone's premium and one hospital stay empties the shared cover. Term life for them only if someone still depends on their income.",
+                "Anyone with a vehicle: third-party motor cover is compulsory. Own-damage cover is worth keeping while the vehicle is worth more than a few years of premium."
+              ]
+            },
+            {
+              "type": "callout",
+              "tone": "warning",
+              "text": "If a seller's first question is 'how much do you want back at maturity?', you are being sold an investment with a thin layer of insurance on top. Ask three things instead: what is the cover, what is the premium, and what is excluded?"
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "Insurance transfers a loss you cannot afford. It is not a place to grow money.",
+                "Insure large losses: death of an earner, a hospital stay, liability on the road, a house with a loan.",
+                "Self-insure small losses through an emergency fund.",
+                "A policy that promises returns is cutting your cover to pay for them.",
+                "Health first, then term life if anyone depends on your income."
+              ]
+            },
+            {
+              "type": "glossary",
+              "terms": [
+                {
+                  "term": "Premium",
+                  "definition": "The amount you pay the insurer, usually every year, to keep the policy alive."
+                },
+                {
+                  "term": "Sum assured",
+                  "definition": "The amount the insurer pays when the insured event happens; in health policies it is called the sum insured."
+                },
+                {
+                  "term": "Exclusion",
+                  "definition": "A situation the policy will not pay for. Every policy lists them; read that page first."
+                },
+                {
+                  "term": "Self-insure",
+                  "definition": "Deciding to pay for a small loss from your own savings rather than buying a policy for it."
+                }
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "What is the main job of insurance?",
+                  "options": [
+                    "To grow your money over time",
+                    "To move a large loss you cannot afford onto the insurer",
+                    "To save tax"
+                  ],
+                  "answer": 1,
+                  "explanation": "Insurance is a contract that transfers risk. Any returns or tax benefit are side effects, not the purpose."
+                },
+                {
+                  "q": "Which of these is best handled by self-insuring from an emergency fund?",
+                  "options": [
+                    "A cracked phone screen",
+                    "A ten-day ICU stay",
+                    "The death of the family's only earner"
+                  ],
+                  "answer": 0,
+                  "explanation": "A phone repair is small and affordable. Hospital stays and loss of an earner are large losses that need proper cover."
+                },
+                {
+                  "q": "A single 26-year-old with no dependants and no loans should buy what first?",
+                  "options": [
+                    "An endowment plan",
+                    "A ₹1 crore term plan",
+                    "A personal health policy"
+                  ],
+                  "answer": 2,
+                  "explanation": "With nobody depending on their income, term life can wait. A hospital bill cannot, so health cover comes first."
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": false,
+          "publishedAt": "2026-10-18"
+        },
+        {
+          "locale": "ta",
+          "title": "ஏன் காப்பீடு செய்ய வேண்டும், எதற்கு வேண்டாம்",
+          "excerpt": "உங்களால் தாங்க முடியாத இழப்பை வேறொருவர் மீது மாற்றுவதே காப்பீடு. அது பணத்தை வளர்க்கும் வழி அல்ல, பெரும்பாலானவற்றுக்கு அது தேவையுமில்லை.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "பெரும்பாலான இந்தியக் குடும்பங்கள் முக்கியமான இடத்தில் குறைவாகவும், தேவையில்லாத இடத்தில் அதிகமாகவும் காப்பீடு செய்திருக்கின்றன. டெர்ம் பிளான் (term plan) இல்லாத, அலுவலக உடல்நலக் காப்பீடு மட்டுமே உள்ள அதே குடும்பம், போன் புரொடெக்ஷன், ஃபிரிட்ஜுக்கு நீட்டிக்கப்பட்ட வாரண்டி, உறவினர் விற்ற 'சேமிப்புத் திட்டம்' ஆகியவற்றுக்கு மகிழ்ச்சியாகப் பணம் கட்டும். இந்தக் குழப்பம் ஒரே தவறிலிருந்து வருகிறது: காப்பீட்டைப் பணம் திரும்பப் பெறும் வழியாகப் பார்ப்பது. காப்பீடு ஒரு ஒப்பந்தம். நீங்கள் சிறிய, நிச்சயமான தொகையை, அதாவது பிரீமியத்தை (premium) செலுத்துகிறீர்கள்; அதற்குப் பதிலாக பெரிய, நிச்சயமற்ற இழப்பை வேறொருவர் சுமக்கிறார். அவ்வளவுதான்."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "பாதுகாப்பு, முதலீடு அல்ல"
+            },
+            {
+              "type": "paragraph",
+              "text": "பிரீமியத்தை வாடகை போலப் பாருங்கள். ஆண்டு முடிந்து எதுவும் தவறாக நடக்கவில்லை என்றால், பணம் போய்விட்டது; அது ஒரு நல்ல ஆண்டு. நீங்கள் ஏமாற்றப்படவில்லை. நிம்மதியாகத் தூங்கும் உரிமையை வாங்கினீர்கள். 'ஏதாவது திருப்பித் தரும்' என்று வாக்குறுதி அளிக்கும் பாலிசி அந்த வாக்குறுதிக்கு எப்படியாவது பணம் கட்ட வேண்டும்; எனவே அது கவரைக் (cover) குறைக்கும், அல்லது மிக அதிகமாக வசூலிக்கும், அல்லது இரண்டையும் செய்யும். இரண்டு வேலைகளையும் தனித்தனியாக வையுங்கள்: காப்பீட்டில் தூய பாதுகாப்பை வாங்குங்கள், முதலீடுகளில் பணத்தை வளர்க்குங்கள். இரண்டையும் செய்ய முயலும் ஒவ்வொரு பாலிசியும் இரண்டையும் மோசமாகவே செய்கிறது."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "விதி: இழக்க முடியாததைக் காப்பீடு செய்யுங்கள்"
+            },
+            {
+              "type": "paragraph",
+              "text": "எந்தப் பாலிசிக்கு முன்பும் இரண்டு கேள்விகளைக் கேளுங்கள். இழப்பு எவ்வளவு பெரியதாக இருக்கும்? என் திட்டங்களைச் சிதைக்காமல் சேமிப்பிலிருந்து அதைச் செலுத்த முடியுமா? பெரியதாகவும், உங்களைச் சிதைக்கக்கூடியதாகவும் உள்ள இழப்புகளைக் காப்பீடு செய்யுங்கள். மீதியை நீங்களே சுமங்கள். இந்த ஒரே சோதனை உங்களுக்கு வழங்கப்படும் ஏறக்குறைய ஒவ்வொரு பாலிசியையும் வகைப்படுத்தும்; எவ்வளவு கவர் வாங்குவது என்பதையும் சொல்லும்: வசதியாக ஒலிக்கும் வட்ட எண் அல்ல, நீங்கள் இழப்பதை மாற்றீடு செய்யப் போதுமானது. கீழே உள்ள அட்டவணை பெரும்பாலான குடும்பங்கள் எதிர்கொள்ளும் ஆபத்துகளுக்கு அதைப் பொருத்துகிறது."
+            },
+            {
+              "type": "table",
+              "header": [
+                "ஆபத்து",
+                "நீங்களே செலுத்த முடியுமா?",
+                "காப்பீடு செய்யவா?"
+              ],
+              "rows": [
+                [
+                  "குழந்தைகள் சிறியவர்களாக இருக்கும்போது சம்பாதிக்கும் உறுப்பினர் இறப்பது",
+                  "இல்லை",
+                  "ஆம்: டெர்ம் லைஃப்"
+                ],
+                [
+                  "₹5 லட்சம் முதல் ₹20 லட்சம் வரை மருத்துவமனை பில்",
+                  "அரிதாக",
+                  "ஆம்: உடல்நலக் காப்பீடு"
+                ],
+                [
+                  "உங்கள் வாகனம் சாலையில் ஒருவரைக் காயப்படுத்துவது",
+                  "இல்லை, சட்டமும் கவரைக் கட்டாயமாக்குகிறது",
+                  "ஆம்: மோட்டார் தேர்ட்-பார்ட்டி"
+                ],
+                [
+                  "கடன் உள்ள வீட்டைத் தீ அல்லது வெள்ளம் சேதப்படுத்துவது",
+                  "இல்லை",
+                  "ஆம்: வீட்டுக் காப்பீடு, பெரும்பாலும் கடன் வழங்குநர் கோருவார்"
+                ],
+                [
+                  "₹15,000 போன் திரை உடைவது",
+                  "ஆம்",
+                  "இல்லை: சுயக் காப்பீடு"
+                ],
+                [
+                  "வாரண்டி முடிந்த பிறகு வாஷிங் மெஷின் பழுதாவது",
+                  "ஆம்",
+                  "இல்லை: சுயக் காப்பீடு"
+                ]
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "சிறிய விஷயங்களுக்கு சுயக் காப்பீடு"
+            },
+            {
+              "type": "paragraph",
+              "text": "கேட்ஜெட் புரொடெக்ஷன், நீட்டிக்கப்பட்ட வாரண்டி, செக்-அவுட்டில் டிக் செய்யப்படும் ₹49 பயணக் கவர், இரு சக்கர வாகனக் கடனுடன் இணைக்கப்பட்ட 'லோன் புரொடெக்ஷன்': இவை அரிதாகவே பணம் தரும், இவை மறைக்கும் இழப்பு சிறியது, லாபம் பெரியது. இருபது சின்னச் சின்ன பாலிசிகளை வாங்குவதற்குப் பதிலாக, மூன்று முதல் ஆறு மாத அத்தியாவசியச் செலவுகளுக்கான ஒரு எமர்ஜென்சி ஃபண்ட் (emergency fund) கட்டுங்கள். விலக்குகள் இல்லாத, காத்திருப்புக் காலம் இல்லாத, கிளைம் படிவம் இல்லாத ஒரே பாலிசி அதுதான். உடைந்த திரையோ பழுதான கீசரோ அதிலிருந்து செலவாகும்; அடுத்த மாதம் மீண்டும் நிரப்பிக்கொள்வீர்கள்."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "வாழ்க்கைக் கட்டத்தின்படி யாருக்கு என்ன தேவை"
+            },
+            {
+              "type": "list",
+              "items": [
+                "தனியாக, உங்கள் வருமானத்தை யாரும் சார்ந்திருக்கவில்லை: உடல்நலக் காப்பீடுதான் முன்னுரிமை. பெற்றோர் உங்களைச் சார்ந்திருந்தால் அல்லது உங்கள் பெயரில் கடனுக்கு இணைந்து கையெழுத்திட்டிருந்தால் மட்டுமே டெர்ம் லைஃப்.",
+                "திருமணமானவர், அல்லது குழந்தைகள் உள்ளவர்: சம்பாதிக்கும் ஒவ்வொருவருக்கும் டெர்ம் லைஃப், குடும்பத்திற்கு ஃபேமிலி ஃப்ளோட்டர் (family floater) உடல்நலப் பாலிசி, தினமும் வாகனம் ஓட்டினால் தனிநபர் விபத்துக் காப்பீடு.",
+                "60 வயதைக் கடந்த பெற்றோர்: பிரீமியம் அதிகமாகத் தோன்றினாலும், அவர்களுக்குத் தனி உடல்நலப் பாலிசி. உங்கள் ஃப்ளோட்டரில் அவர்களைச் சேர்த்தால் அனைவரின் பிரீமியமும் உயரும்; ஒரே ஒரு மருத்துவமனைத் தங்கல் பகிரப்பட்ட கவரைக் காலி செய்துவிடும். அவர்களின் வருமானத்தை யாராவது சார்ந்திருந்தால் மட்டுமே அவர்களுக்கு டெர்ம் லைஃப்.",
+                "வாகனம் உள்ள அனைவரும்: தேர்ட்-பார்ட்டி மோட்டார் கவர் கட்டாயம். சில ஆண்டு பிரீமியத்தை விட வாகனத்தின் மதிப்பு அதிகமாக இருக்கும் வரை ஓன்-டேமேஜ் (own-damage) கவரை வைத்திருப்பது மதிப்புள்ளது."
+              ]
+            },
+            {
+              "type": "callout",
+              "tone": "warning",
+              "text": "விற்பவரின் முதல் கேள்வி 'முதிர்வில் எவ்வளவு திரும்ப வேண்டும்?' என்றால், மேலே மெல்லிய காப்பீட்டு அடுக்குள்ள ஒரு முதலீடு உங்களுக்கு விற்கப்படுகிறது. மாறாக மூன்று விஷயங்களைக் கேளுங்கள்: கவர் எவ்வளவு, பிரீமியம் எவ்வளவு, எது விலக்கப்பட்டுள்ளது?"
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "காப்பீடு உங்களால் தாங்க முடியாத இழப்பை மாற்றுகிறது. அது பணத்தை வளர்க்கும் இடம் அல்ல.",
+                "பெரிய இழப்புகளைக் காப்பீடு செய்யுங்கள்: சம்பாதிப்பவரின் இறப்பு, மருத்துவமனைத் தங்கல், சாலையில் பொறுப்பு, கடன் உள்ள வீடு.",
+                "சிறிய இழப்புகளுக்கு எமர்ஜென்சி ஃபண்ட் மூலம் சுயக் காப்பீடு செய்யுங்கள்.",
+                "வருமானம் தரும் என்று வாக்குறுதி அளிக்கும் பாலிசி, அதற்காக உங்கள் கவரைக் குறைக்கிறது.",
+                "முதலில் உடல்நலம், பிறகு உங்கள் வருமானத்தை யாராவது சார்ந்திருந்தால் டெர்ம் லைஃப்."
+              ]
+            },
+            {
+              "type": "glossary",
+              "terms": [
+                {
+                  "term": "பிரீமியம் (Premium)",
+                  "definition": "பாலிசியை உயிர்ப்புடன் வைக்க, பொதுவாக ஒவ்வொரு ஆண்டும் காப்பீட்டு நிறுவனத்திற்கு நீங்கள் செலுத்தும் தொகை."
+                },
+                {
+                  "term": "சம் அஷ்யூர்டு (Sum assured)",
+                  "definition": "காப்பீடு செய்யப்பட்ட நிகழ்வு நடக்கும்போது நிறுவனம் செலுத்தும் தொகை; உடல்நலப் பாலிசிகளில் இது சம் இன்ஷ்யூர்டு (sum insured) எனப்படும்."
+                },
+                {
+                  "term": "விலக்கு (Exclusion)",
+                  "definition": "பாலிசி பணம் தராத சூழ்நிலை. ஒவ்வொரு பாலிசியும் அவற்றைப் பட்டியலிடுகிறது; அந்தப் பக்கத்தை முதலில் படியுங்கள்."
+                },
+                {
+                  "term": "சுயக் காப்பீடு (Self-insure)",
+                  "definition": "சிறிய இழப்புக்குப் பாலிசி வாங்காமல் சொந்தச் சேமிப்பிலிருந்து செலுத்த முடிவு செய்வது."
+                }
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "காப்பீட்டின் முக்கிய வேலை என்ன?",
+                  "options": [
+                    "காலப்போக்கில் உங்கள் பணத்தை வளர்ப்பது",
+                    "உங்களால் தாங்க முடியாத பெரிய இழப்பைக் காப்பீட்டு நிறுவனத்திற்கு மாற்றுவது",
+                    "வரி சேமிப்பது"
+                  ],
+                  "answer": 1,
+                  "explanation": "காப்பீடு ஆபத்தை மாற்றும் ஒப்பந்தம். வருமானமோ வரிச் சலுகையோ பக்க விளைவுகள், நோக்கம் அல்ல."
+                },
+                {
+                  "q": "இவற்றில் எமர்ஜென்சி ஃபண்டிலிருந்து சுயக் காப்பீடு செய்ய மிகவும் ஏற்றது எது?",
+                  "options": [
+                    "உடைந்த போன் திரை",
+                    "பத்து நாள் ICU தங்கல்",
+                    "குடும்பத்தின் ஒரே சம்பாதிப்பவரின் இறப்பு"
+                  ],
+                  "answer": 0,
+                  "explanation": "போன் பழுது சிறியது, தாங்கக்கூடியது. மருத்துவமனைத் தங்கலும் சம்பாதிப்பவரின் இழப்பும் முறையான கவர் தேவைப்படும் பெரிய இழப்புகள்."
+                },
+                {
+                  "q": "சார்ந்தவர்களோ கடனோ இல்லாத 26 வயதுத் தனி நபர் முதலில் எதை வாங்க வேண்டும்?",
+                  "options": [
+                    "எண்டோவ்மென்ட் பிளான்",
+                    "₹1 கோடி டெர்ம் பிளான்",
+                    "தனிப்பட்ட உடல்நலப் பாலிசி"
+                  ],
+                  "answer": 2,
+                  "explanation": "அவரது வருமானத்தை யாரும் சார்ந்திருக்காததால் டெர்ம் லைஃப் காத்திருக்கலாம். மருத்துவமனை பில் காத்திருக்காது; எனவே உடல்நலக் காப்பீடு முதலில்."
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": true,
+          "publishedAt": "2026-10-18"
         }
       ]
     },
     {
       "slug": "term-life",
-      "readingMinutes": 10,
+      "readingMinutes": 6,
       "translations": [
         {
           "locale": "en",
           "title": "Term life cover",
-          "excerpt": "",
-          "blocks": [],
-          "state": "draft",
-          "aiDraft": false
+          "excerpt": "A term plan replaces your income for those who depend on it: how much to buy, for how long, and how to make it pay.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "If someone eats because you earn, you need term life cover. A term plan is the simplest insurance there is: you pay a premium every year, and if you die during the policy term, your family receives the sum assured. If you outlive the term, nothing is paid. That is exactly why it is so cheap. A healthy 30-year-old who does not smoke can usually buy ₹1 crore of cover for roughly ₹10,000 to ₹15,000 a year, less than many families spend on mobile data. The same ₹1 crore from a 'savings' policy would cost several lakh a year."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "How much cover, and for how long"
+            },
+            {
+              "type": "paragraph",
+              "text": "The quick rule is 10 to 15 times your annual income, plus any loans that would fall on the family, minus what you already have. The better way is to add up what the money must actually do. Take Priya, 32, who earns ₹12 lakh a year, has a ₹40 lakh home loan and two children aged four and seven."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Replace income until the children are independent: 15 times ₹12 lakh is ₹1.8 crore.",
+                "Clear the home loan so the family keeps the house: ₹40 lakh.",
+                "Fund the two children's higher education: about ₹30 lakh in today's money.",
+                "Subtract existing investments and any cover from work: say ₹20 lakh.",
+                "Cover needed: roughly ₹2.3 crore. Round up, not down; the premium difference is small."
+              ]
+            },
+            {
+              "type": "calculator",
+              "slug": "term-cover"
+            },
+            {
+              "type": "paragraph",
+              "text": "Cover until the people who depend on you no longer do. For most families that is when the youngest child is about 25, or when you retire at 60 to 65, whichever is later. Do not buy cover until age 85 or 99 because it sounds safer. Premiums for those extra decades are steep, and by then your children are earning and your retirement corpus is what the family lives on, not your salary. 'Return of premium' and 'whole life' variants exist to make the plan look like savings; they cost far more for the same protection."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Buying it right"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Disclose everything: smoking, alcohol, past illnesses, family history, your real income, other policies you hold. A hidden fact is the commonest reason a claim is refused. Once a policy has run three years, Section 45 of the Insurance Act stops the insurer from questioning it on grounds of misstatement, so honesty plus time is what protects your family.",
+                "Check the claim settlement ratio, the share of claims the insurer paid last year, and look for a high number sustained over several years rather than one good year.",
+                "Buy online or directly from the insurer. The cover is identical, the premium is usually lower, and nobody is steering you toward a plan that pays them more.",
+                "Choose level cover with regular annual premiums. 'Limited pay' options ask you to pay the whole policy in 10 years; they are fine if you can afford it, but they are not cheaper.",
+                "Riders: a waiver of premium on disability is cheap and useful. Accidental death and critical illness riders can help, but compare them with standalone policies before adding.",
+                "Premiums qualify for Section 80C up to {section_80c_limit} in the old tax regime. Buy for the cover, not the deduction."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Nominee and claim"
+            },
+            {
+              "type": "paragraph",
+              "text": "Name a nominee when you buy, and update it after marriage or a child. A spouse, child or parent named as nominee is a 'beneficial nominee' under current law and receives the money as its owner, not merely as a caretaker. If you want the payout ring-fenced for your wife and children, protected from your creditors and from claims by other relatives, ask to buy the policy under the Married Women's Property Act (MWP Act); it is a tick box on the form. At claim time, the nominee informs the insurer, submits the claim form, the death certificate, identity proof and bank details. Regulations require the insurer to settle a clean claim within 30 days of receiving all documents, and to pay interest if it is late. If a claim is refused, write to the insurer's grievance officer first, then to the Insurance Ombudsman; both are free."
+            },
+            {
+              "type": "callout",
+              "tone": "tip",
+              "text": "Write the policy number, the insurer's helpline and where the documents are on one page, and hand it to your nominee today. A policy nobody knows about pays nobody."
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "Buy term life only if someone depends on your income; then buy enough.",
+                "Cover of 10 to 15 times annual income, plus loans, minus existing assets.",
+                "Term until dependants are independent, not until 99.",
+                "Honest disclosure is what makes a claim pay.",
+                "Nominee named, documents findable, family informed."
+              ]
+            },
+            {
+              "type": "glossary",
+              "terms": [
+                {
+                  "term": "Sum assured",
+                  "definition": "The amount paid to the nominee if the insured person dies during the policy term."
+                },
+                {
+                  "term": "Claim settlement ratio",
+                  "definition": "Of every 100 death claims an insurer received in a year, the number it paid. Published yearly by the regulator."
+                },
+                {
+                  "term": "Nominee",
+                  "definition": "The person you name to receive the policy money. A spouse, child or parent named as nominee becomes the owner of the money."
+                },
+                {
+                  "term": "MWP Act",
+                  "definition": "The Married Women's Property Act, 1874. A term plan bought under it is held in trust for the wife and children and cannot be claimed by the policyholder's creditors."
+                },
+                {
+                  "term": "Rider",
+                  "definition": "An optional add-on to a policy, such as a waiver of premium on disability, for an extra premium."
+                }
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "What happens if you outlive a term plan?",
+                  "options": [
+                    "You get all your premiums back",
+                    "Nothing is paid, which is why the premium is low",
+                    "The policy converts into a pension"
+                  ],
+                  "answer": 1,
+                  "explanation": "A pure term plan pays only on death during the term. That is what keeps ₹1 crore of cover affordable."
+                },
+                {
+                  "q": "A 35-year-old earning ₹10 lakh a year with a ₹30 lakh loan and no other cover needs roughly how much?",
+                  "options": [
+                    "₹10 lakh",
+                    "₹30 lakh",
+                    "₹1.3 crore to ₹1.8 crore"
+                  ],
+                  "answer": 2,
+                  "explanation": "Ten to fifteen times income is ₹1 crore to ₹1.5 crore, plus the ₹30 lakh loan."
+                },
+                {
+                  "q": "What is the most common reason a term claim is rejected?",
+                  "options": [
+                    "The nominee lives abroad",
+                    "A fact such as smoking or an illness was hidden when buying",
+                    "The premium was paid online"
+                  ],
+                  "answer": 1,
+                  "explanation": "Non-disclosure is the leading cause of refused claims. Tell the insurer everything when you buy."
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": false,
+          "publishedAt": "2026-10-18"
+        },
+        {
+          "locale": "ta",
+          "title": "டெர்ம் லைஃப் கவர்",
+          "excerpt": "டெர்ம் பிளான் உங்களைச் சார்ந்தவர்களுக்காக உங்கள் வருமானத்தை மாற்றீடு செய்கிறது. எவ்வளவு வாங்குவது, எவ்வளவு காலத்திற்கு, கிளைம் கிடைக்க என்ன செய்வது.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "நீங்கள் சம்பாதிப்பதால் யாராவது சாப்பிடுகிறார்கள் என்றால், உங்களுக்கு டெர்ம் லைஃப் கவர் (term life cover) தேவை. டெர்ம் பிளான் என்பது மிக எளிமையான காப்பீடு: ஒவ்வொரு ஆண்டும் பிரீமியம் செலுத்துகிறீர்கள்; பாலிசிக் காலத்தில் நீங்கள் இறந்தால் உங்கள் குடும்பம் சம் அஷ்யூர்டைப் பெறும். காலத்தைத் தாண்டி வாழ்ந்தால் எதுவும் தரப்படாது. அதனால்தான் அது இவ்வளவு மலிவானது. புகைபிடிக்காத ஆரோக்கியமான 30 வயது நபர் பொதுவாக ஆண்டுக்கு ஏறத்தாழ ₹10,000 முதல் ₹15,000 வரை செலுத்தி ₹1 கோடி கவர் வாங்கலாம்; பல குடும்பங்கள் மொபைல் டேட்டாவுக்குச் செலவிடுவதை விடக் குறைவு. அதே ₹1 கோடியை 'சேமிப்பு' பாலிசியில் பெற ஆண்டுக்குப் பல லட்சம் ஆகும்."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "எவ்வளவு கவர், எவ்வளவு காலத்திற்கு"
+            },
+            {
+              "type": "paragraph",
+              "text": "விரைவு விதி: உங்கள் ஆண்டு வருமானத்தின் 10 முதல் 15 மடங்கு, குடும்பத்தின் மீது விழக்கூடிய கடன்களைச் சேர்த்து, ஏற்கனவே உள்ளதைக் கழித்து. சிறந்த வழி, அந்தப் பணம் உண்மையில் என்ன செய்ய வேண்டும் என்பதைக் கூட்டிப் பார்ப்பது. பிரியாவை எடுத்துக்கொள்ளுங்கள்: 32 வயது, ஆண்டுக்கு ₹12 லட்சம் சம்பாதிக்கிறார், ₹40 லட்சம் வீட்டுக் கடன், நான்கு மற்றும் ஏழு வயதில் இரண்டு குழந்தைகள்."
+            },
+            {
+              "type": "list",
+              "items": [
+                "குழந்தைகள் சுயசார்பு அடையும் வரை வருமானத்தை மாற்றீடு செய்ய: ₹12 லட்சத்தின் 15 மடங்கு ₹1.8 கோடி.",
+                "குடும்பம் வீட்டை வைத்துக்கொள்ள வீட்டுக் கடனை அடைக்க: ₹40 லட்சம்.",
+                "இரு குழந்தைகளின் உயர்கல்விக்கு: இன்றைய மதிப்பில் சுமார் ₹30 லட்சம்.",
+                "ஏற்கனவே உள்ள முதலீடுகளையும் அலுவலகக் கவரையும் கழிக்கவும்: சொல்லுங்கள் ₹20 லட்சம்.",
+                "தேவையான கவர்: ஏறத்தாழ ₹2.3 கோடி. கீழே அல்ல, மேலே சுற்றுங்கள்; பிரீமிய வித்தியாசம் சிறியது."
+              ]
+            },
+            {
+              "type": "calculator",
+              "slug": "term-cover"
+            },
+            {
+              "type": "paragraph",
+              "text": "உங்களைச் சார்ந்தவர்கள் இனி சார்ந்திருக்காத வரை கவர் வையுங்கள். பெரும்பாலான குடும்பங்களுக்கு அது இளைய குழந்தைக்கு சுமார் 25 வயது ஆகும்போது, அல்லது நீங்கள் 60 முதல் 65 வயதில் ஓய்வு பெறும்போது, இதில் எது பிந்தையதோ அது. பாதுகாப்பாகத் தோன்றுகிறது என்பதற்காக 85 அல்லது 99 வயது வரை கவர் வாங்காதீர்கள். அந்தக் கூடுதல் தசாப்தங்களுக்கான பிரீமியம் மிக அதிகம்; அப்போது உங்கள் குழந்தைகள் சம்பாதிப்பார்கள், குடும்பம் உங்கள் சம்பளத்தில் அல்ல, ஓய்வூதிய நிதியில் வாழும். 'ரிட்டர்ன் ஆஃப் பிரீமியம்', 'ஹோல் லைஃப்' வகைகள் திட்டத்தைச் சேமிப்பு போலக் காட்டவே உள்ளன; அதே பாதுகாப்புக்கு அவை மிக அதிகம் செலவாகும்."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "சரியாக வாங்குவது"
+            },
+            {
+              "type": "list",
+              "items": [
+                "எல்லாவற்றையும் வெளிப்படுத்துங்கள்: புகை, மது, முந்தைய நோய்கள், குடும்ப வரலாறு, உண்மையான வருமானம், வைத்திருக்கும் பிற பாலிசிகள். மறைக்கப்பட்ட ஒரு தகவல்தான் கிளைம் மறுக்கப்படுவதற்கு மிகப் பொதுவான காரணம். பாலிசி மூன்று ஆண்டுகள் நடந்த பிறகு, காப்பீட்டுச் சட்டத்தின் பிரிவு 45 தவறான தகவல் என்ற அடிப்படையில் அதைக் கேள்வி கேட்பதிலிருந்து நிறுவனத்தைத் தடுக்கிறது; எனவே நேர்மையும் காலமும்தான் உங்கள் குடும்பத்தைப் பாதுகாக்கும்.",
+                "கிளைம் செட்டில்மென்ட் விகிதத்தை (claim settlement ratio), அதாவது கடந்த ஆண்டு நிறுவனம் செலுத்திய கிளைம்களின் பங்கைப் பாருங்கள்; ஒரு நல்ல ஆண்டு அல்ல, பல ஆண்டுகள் தொடர்ந்து உயர்ந்த எண்ணைத் தேடுங்கள்.",
+                "ஆன்லைனில் அல்லது நேரடியாக நிறுவனத்திடம் வாங்குங்கள். கவர் ஒன்றே, பிரீமியம் பொதுவாகக் குறைவு, யாரும் தங்களுக்கு அதிகம் தரும் திட்டத்தை நோக்கி உங்களைத் திருப்ப மாட்டார்கள்.",
+                "வழக்கமான ஆண்டுப் பிரீமியத்துடன் லெவல் கவரைத் தேர்வு செய்யுங்கள். 'லிமிடெட் பே' விருப்பங்கள் முழுப் பாலிசியையும் 10 ஆண்டுகளில் செலுத்தச் சொல்லும்; வசதி இருந்தால் பரவாயில்லை, ஆனால் அவை மலிவானவை அல்ல.",
+                "ரைடர்கள்: ஊனத்தின் போது பிரீமியம் தள்ளுபடி (waiver of premium) மலிவானது, பயனுள்ளது. விபத்து மரணம் மற்றும் கிரிட்டிகல் இல்னஸ் ரைடர்கள் உதவலாம், ஆனால் சேர்ப்பதற்கு முன் தனிப் பாலிசிகளுடன் ஒப்பிடுங்கள்.",
+                "பழைய வரி முறையில் பிரீமியங்கள் {section_80c_limit} வரை பிரிவு 80C-க்குத் தகுதி பெறும். கழிவுக்காக அல்ல, கவருக்காக வாங்குங்கள்."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "நாமினி மற்றும் கிளைம்"
+            },
+            {
+              "type": "paragraph",
+              "text": "வாங்கும்போதே நாமினியைக் (nominee) குறிப்பிடுங்கள்; திருமணம் அல்லது குழந்தைக்குப் பிறகு புதுப்பியுங்கள். தற்போதைய சட்டப்படி நாமினியாகக் குறிப்பிடப்பட்ட மனைவி/கணவர், குழந்தை அல்லது பெற்றோர் 'பெனிஃபிஷியல் நாமினி'; வெறும் பராமரிப்பாளராக அல்ல, உரிமையாளராகப் பணத்தைப் பெறுவார்கள். பணம் மனைவி மற்றும் குழந்தைகளுக்காக மட்டுமே இருக்க, உங்கள் கடன் வழங்குநர்களிடமிருந்தும் பிற உறவினர்களின் உரிமைகோரலிலிருந்தும் பாதுகாக்கப்பட, திருமணமான பெண்களின் சொத்துச் சட்டத்தின் (MWP Act) கீழ் பாலிசியை வாங்கக் கேளுங்கள்; அது படிவத்தில் ஒரு டிக் பாக்ஸ்தான். கிளைம் நேரத்தில் நாமினி நிறுவனத்திற்குத் தெரிவித்து, கிளைம் படிவம், இறப்புச் சான்றிதழ், அடையாளச் சான்று, வங்கி விவரங்களைச் சமர்ப்பிக்க வேண்டும். எல்லா ஆவணங்களையும் பெற்ற 30 நாட்களுக்குள் சுத்தமான கிளைமைத் தீர்க்கவும், தாமதமானால் வட்டி செலுத்தவும் விதிமுறைகள் நிறுவனத்திற்குக் கட்டாயப்படுத்துகின்றன. கிளைம் மறுக்கப்பட்டால், முதலில் நிறுவனத்தின் குறைதீர் அதிகாரிக்கும், பிறகு காப்பீட்டு ஒம்புட்ஸ்மனுக்கும் (Insurance Ombudsman) எழுதுங்கள்; இரண்டும் இலவசம்."
+            },
+            {
+              "type": "callout",
+              "tone": "tip",
+              "text": "பாலிசி எண், நிறுவனத்தின் ஹெல்ப்லைன், ஆவணங்கள் எங்கே உள்ளன என்பதை ஒரே பக்கத்தில் எழுதி, இன்றே உங்கள் நாமினியிடம் கொடுங்கள். யாருக்கும் தெரியாத பாலிசி யாருக்கும் பணம் தராது."
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "உங்கள் வருமானத்தை யாராவது சார்ந்திருந்தால் மட்டுமே டெர்ம் லைஃப் வாங்குங்கள்; பிறகு போதுமான அளவு வாங்குங்கள்.",
+                "ஆண்டு வருமானத்தின் 10 முதல் 15 மடங்கு கவர், கடன்களைச் சேர்த்து, இருக்கும் சொத்துகளைக் கழித்து.",
+                "99 வரை அல்ல, சார்ந்தவர்கள் சுயசார்பு அடையும் வரை டெர்ம்.",
+                "நேர்மையான வெளிப்படுத்தல்தான் கிளைமைச் செலுத்த வைக்கிறது.",
+                "நாமினி குறிப்பிடப்பட்டு, ஆவணங்கள் கிடைக்கும்படி, குடும்பத்திற்குத் தெரிவித்து."
+              ]
+            },
+            {
+              "type": "glossary",
+              "terms": [
+                {
+                  "term": "சம் அஷ்யூர்டு (Sum assured)",
+                  "definition": "பாலிசிக் காலத்தில் காப்பீடு செய்யப்பட்டவர் இறந்தால் நாமினிக்குச் செலுத்தப்படும் தொகை."
+                },
+                {
+                  "term": "கிளைம் செட்டில்மென்ட் விகிதம் (Claim settlement ratio)",
+                  "definition": "ஓர் ஆண்டில் நிறுவனம் பெற்ற ஒவ்வொரு 100 இறப்புக் கிளைம்களில் அது செலுத்திய எண்ணிக்கை. ஒழுங்குமுறை ஆணையம் ஆண்டுதோறும் வெளியிடுகிறது."
+                },
+                {
+                  "term": "நாமினி (Nominee)",
+                  "definition": "பாலிசிப் பணத்தைப் பெற நீங்கள் குறிப்பிடும் நபர். நாமினியாகக் குறிப்பிடப்பட்ட மனைவி/கணவர், குழந்தை அல்லது பெற்றோர் பணத்தின் உரிமையாளர் ஆவார்."
+                },
+                {
+                  "term": "MWP சட்டம் (MWP Act)",
+                  "definition": "திருமணமான பெண்களின் சொத்துச் சட்டம், 1874. இதன் கீழ் வாங்கிய டெர்ம் பிளான் மனைவி மற்றும் குழந்தைகளுக்காக அறக்கட்டளையில் வைக்கப்படும்; பாலிசிதாரரின் கடன் வழங்குநர்கள் உரிமை கோர முடியாது."
+                },
+                {
+                  "term": "ரைடர் (Rider)",
+                  "definition": "கூடுதல் பிரீமியத்திற்குப் பாலிசியுடன் சேர்க்கும் விருப்ப இணைப்பு, எடுத்துக்காட்டாக ஊனத்தின் போது பிரீமியம் தள்ளுபடி."
+                }
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "டெர்ம் பிளான் காலத்தைத் தாண்டி நீங்கள் வாழ்ந்தால் என்ன நடக்கும்?",
+                  "options": [
+                    "உங்கள் பிரீமியங்கள் அனைத்தும் திரும்பக் கிடைக்கும்",
+                    "எதுவும் செலுத்தப்படாது, அதனால்தான் பிரீமியம் குறைவு",
+                    "பாலிசி பென்ஷனாக மாறும்"
+                  ],
+                  "answer": 1,
+                  "explanation": "தூய டெர்ம் பிளான் காலத்தில் இறப்பு நேர்ந்தால் மட்டுமே செலுத்தும். அதுதான் ₹1 கோடி கவரை மலிவாக வைக்கிறது."
+                },
+                {
+                  "q": "ஆண்டுக்கு ₹10 லட்சம் சம்பாதிக்கும், ₹30 லட்சம் கடனும் வேறு கவரும் இல்லாத 35 வயது நபருக்கு ஏறத்தாழ எவ்வளவு தேவை?",
+                  "options": [
+                    "₹10 லட்சம்",
+                    "₹30 லட்சம்",
+                    "₹1.3 கோடி முதல் ₹1.8 கோடி"
+                  ],
+                  "answer": 2,
+                  "explanation": "வருமானத்தின் பத்து முதல் பதினைந்து மடங்கு ₹1 கோடி முதல் ₹1.5 கோடி, அத்துடன் ₹30 லட்சம் கடன்."
+                },
+                {
+                  "q": "டெர்ம் கிளைம் நிராகரிக்கப்படுவதற்கு மிகப் பொதுவான காரணம் எது?",
+                  "options": [
+                    "நாமினி வெளிநாட்டில் வசிக்கிறார்",
+                    "வாங்கும்போது புகை அல்லது நோய் போன்ற தகவல் மறைக்கப்பட்டது",
+                    "பிரீமியம் ஆன்லைனில் செலுத்தப்பட்டது"
+                  ],
+                  "answer": 1,
+                  "explanation": "தகவல் மறைப்புதான் கிளைம் மறுப்பின் முதன்மைக் காரணம். வாங்கும்போது நிறுவனத்திடம் எல்லாவற்றையும் சொல்லுங்கள்."
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": true,
+          "publishedAt": "2026-10-18"
         }
       ]
     },
     {
       "slug": "health-insurance",
-      "readingMinutes": 10,
+      "readingMinutes": 6,
       "translations": [
         {
           "locale": "en",
           "title": "Health insurance",
-          "excerpt": "",
-          "blocks": [],
-          "state": "draft",
-          "aiDraft": false
+          "excerpt": "One hospital stay can undo years of saving: how much cover you need, what the fine print means, and why office cover is not enough.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "A week in the ICU of a private hospital in a big city costs ₹3 lakh to ₹8 lakh. A bypass surgery is ₹4 lakh to ₹7 lakh. Cancer treatment runs well past ₹20 lakh. Medical costs in India rise faster than almost anything else, close to 10 to 14 percent a year, which means they double every six or seven years. Health insurance is the one policy every adult needs before any investment, and yet most families have either no cover of their own or only the policy their employer gives them."
+            },
+            {
+              "type": "paragraph",
+              "text": "A family of three or four in a metro should hold at least ₹10 lakh of cover, and more if they would choose a corporate hospital. In smaller cities ₹5 lakh to ₹7 lakh is a workable floor. Buy a base policy you can afford and raise the total with a super top-up, which is explained below. Remember the number you pick today has to cover a bill seven years from now."
+            },
+            {
+              "type": "calculator",
+              "slug": "health-cover"
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Individual, floater, or both"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Individual policy: one person, one sum insured. Best for anyone with a known condition, and for parents.",
+                "Family floater: one shared sum insured for you, your spouse and children. Cheaper than separate policies, but a single large claim uses up the cover for everyone that year, so pick a higher amount or add a restoration benefit.",
+                "Parents above 60: a separate policy, not your floater. The floater premium is priced on the oldest member, and their claims are the most likely, so mixing drains both the cover and your wallet.",
+                "Employer policy: keep it as a bonus layer, never as the only layer."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "The fine print that decides your claim"
+            },
+            {
+              "type": "table",
+              "header": [
+                "Term",
+                "What it means",
+                "What to look for"
+              ],
+              "rows": [
+                [
+                  "Waiting period",
+                  "30 days before any claim except accidents; up to three years for pre-existing diseases; one to two years for listed conditions such as cataract, hernia or joint replacement",
+                  "Buy while healthy so the clocks run out before you need them"
+                ],
+                [
+                  "Room-rent cap",
+                  "A daily limit on the room. If the cap is ₹5,000 and you take a ₹10,000 room, many policies cut the whole bill in proportion, not just the room charge",
+                  "No cap, or at least 'single private room'"
+                ],
+                [
+                  "Co-pay",
+                  "A fixed share of every bill you must pay yourself, common in senior policies",
+                  "Zero or the lowest available"
+                ],
+                [
+                  "Sub-limits",
+                  "Caps on specific treatments, for example ₹40,000 for cataract",
+                  "As few as possible"
+                ],
+                [
+                  "Restoration",
+                  "The sum insured refills after a claim in the same year",
+                  "Useful on floaters"
+                ],
+                [
+                  "No-claim bonus",
+                  "The sum insured grows for every claim-free year",
+                  "Higher and cumulative is better"
+                ],
+                [
+                  "Network hospitals",
+                  "Hospitals where the insurer settles the bill directly (cashless)",
+                  "Check the hospitals you would actually use"
+                ]
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Top-ups, and why the office policy is not enough"
+            },
+            {
+              "type": "paragraph",
+              "text": "A super top-up pays once your total hospital bills in a year cross a threshold called the deductible. A ₹20 lakh super top-up with a ₹5 lakh deductible costs a fraction of a ₹25 lakh base policy, because the insurer only pays for the rare big year. Pairing a ₹5 lakh base with a ₹20 lakh super top-up is the cheapest way most families can reach serious cover. Employer cover looks generous but has three flaws: it ends the day you leave, are laid off, or take a break; it is usually ₹3 lakh to ₹5 lakh and the company can shrink it; and you cannot take it with you. If you try to buy your own policy at 45 after a diagnosis, you will be refused or loaded with exclusions. Buy personal cover while you are young and healthy and let the office policy be the extra layer. In the old tax regime, premiums are deductible under Section 80D up to {section_80d_self} for yourself and your family, with a separate, higher limit for senior-citizen parents."
+            },
+            {
+              "type": "callout",
+              "tone": "warning",
+              "text": "Never let a health policy lapse. Waiting periods start again from zero on a new policy, so a gap of even a month can mean a fresh three-year wait for a condition you already have. If you want to switch insurers, port the policy at least 45 days before renewal so your waiting-period credit moves with you."
+            },
+            {
+              "type": "paragraph",
+              "text": "At claim time, go cashless at a network hospital: show the policy card, inform the insurer or its TPA two to three days before a planned admission or within 24 hours of an emergency, and rules now require a decision on cashless requests within an hour and on final discharge within three hours. At a non-network hospital you pay first and claim later, so keep every bill, prescription, test report and the discharge summary; a missing paper is the usual cause of a cut. If a claim is refused, the letter will cite a waiting period, a sub-limit or non-disclosure, and you can appeal to the insurer's grievance officer and then the Insurance Ombudsman at no cost."
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "Health cover comes before any investment; medical costs double every six to seven years.",
+                "₹10 lakh for a metro family is a floor, not a ceiling; use a super top-up to go higher cheaply.",
+                "Parents get their own policy; employer cover is a bonus layer, not the base.",
+                "Room-rent caps, co-pays and sub-limits decide how much of a bill you actually get.",
+                "Never let the policy lapse; port, do not restart."
+              ]
+            },
+            {
+              "type": "glossary",
+              "terms": [
+                {
+                  "term": "Sum insured",
+                  "definition": "The maximum the policy pays for hospital bills in one policy year."
+                },
+                {
+                  "term": "Family floater",
+                  "definition": "One policy with a single sum insured shared by all family members covered under it."
+                },
+                {
+                  "term": "Deductible",
+                  "definition": "The amount of bills you must bear, or cover from another policy, before a top-up starts paying."
+                },
+                {
+                  "term": "Pre-existing disease",
+                  "definition": "A condition you had, or were treated for, before buying the policy. It is covered only after its waiting period ends."
+                },
+                {
+                  "term": "Portability",
+                  "definition": "Moving your health policy to another insurer while keeping the credit for waiting periods already served."
+                }
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "Your policy has a ₹5,000 room-rent cap and you take a ₹10,000 room. What usually happens?",
+                  "options": [
+                    "Only the room charge is reduced",
+                    "The entire bill may be paid in the same proportion, so you bear a large share",
+                    "Nothing, the cap applies only to ICU"
+                  ],
+                  "answer": 1,
+                  "explanation": "Most policies apply proportionate deduction across the bill. Prefer policies without a room-rent cap."
+                },
+                {
+                  "q": "Why is employer health cover not enough on its own?",
+                  "options": [
+                    "It is always the cheapest option",
+                    "It ends when the job ends and cannot be carried with you",
+                    "It covers only accidents"
+                  ],
+                  "answer": 1,
+                  "explanation": "Employer cover stops the day you leave, and buying your own later, after an illness, is hard or impossible."
+                },
+                {
+                  "q": "What is the cheapest way to raise ₹5 lakh of cover to ₹25 lakh?",
+                  "options": [
+                    "Buy a new ₹25 lakh base policy",
+                    "Add a ₹20 lakh super top-up with a ₹5 lakh deductible",
+                    "Add your parents to the floater"
+                  ],
+                  "answer": 1,
+                  "explanation": "A super top-up only pays in the rare big year above the deductible, so it costs far less than a large base policy."
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": false,
+          "publishedAt": "2026-10-18"
+        },
+        {
+          "locale": "ta",
+          "title": "உடல்நலக் காப்பீடு",
+          "excerpt": "ஒரே ஒரு மருத்துவமனைத் தங்கல் பல ஆண்டுச் சேமிப்பை அழிக்கலாம். எவ்வளவு கவர் தேவை, சிறு எழுத்துகளின் பொருள் என்ன, அலுவலகப் பாலிசி ஏன் போதாது.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "பெரிய நகரத்தில் தனியார் மருத்துவமனை ICU-வில் ஒரு வாரம் ₹3 லட்சம் முதல் ₹8 லட்சம் வரை செலவாகும். பைபாஸ் அறுவை சிகிச்சை ₹4 லட்சம் முதல் ₹7 லட்சம். புற்றுநோய் சிகிச்சை ₹20 லட்சத்தையும் தாண்டும். இந்தியாவில் மருத்துவச் செலவுகள் மற்ற எதையும் விட வேகமாக, ஆண்டுக்கு 10 முதல் 14 சதவீதம் வரை உயர்கின்றன; அதாவது ஆறு அல்லது ஏழு ஆண்டுகளுக்கு ஒருமுறை இரட்டிப்பாகின்றன. எந்த முதலீட்டுக்கும் முன் ஒவ்வொரு பெரியவருக்கும் தேவையான ஒரே பாலிசி உடல்நலக் காப்பீடுதான்; ஆனாலும் பெரும்பாலான குடும்பங்களுக்குச் சொந்தக் கவர் இல்லை, அல்லது முதலாளி தரும் பாலிசி மட்டுமே உள்ளது."
+            },
+            {
+              "type": "paragraph",
+              "text": "மெட்ரோவில் மூன்று அல்லது நான்கு பேர் கொண்ட குடும்பம் குறைந்தது ₹10 லட்சம் கவர் வைத்திருக்க வேண்டும்; கார்ப்பரேட் மருத்துவமனையைத் தேர்வு செய்பவர்களுக்கு இன்னும் அதிகம். சிறிய நகரங்களில் ₹5 லட்சம் முதல் ₹7 லட்சம் ஒரு நடைமுறைக் குறைந்தபட்சம். வசதிக்கேற்ற அடிப்படைப் பாலிசியை வாங்கி, கீழே விளக்கப்படும் சூப்பர் டாப்-அப் (super top-up) மூலம் மொத்தத்தை உயர்த்துங்கள். இன்று நீங்கள் தேர்வு செய்யும் எண் ஏழு ஆண்டுகள் கழித்து வரும் பில்லைச் சமாளிக்க வேண்டும் என்பதை நினைவில் கொள்ளுங்கள்."
+            },
+            {
+              "type": "calculator",
+              "slug": "health-cover"
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "தனி, ஃப்ளோட்டர், அல்லது இரண்டும்"
+            },
+            {
+              "type": "list",
+              "items": [
+                "தனிப் பாலிசி: ஒருவர், ஒரு சம் இன்ஷ்யூர்டு. அறியப்பட்ட நோய் உள்ளவர்களுக்கும் பெற்றோருக்கும் சிறந்தது.",
+                "ஃபேமிலி ஃப்ளோட்டர் (family floater): உங்களுக்கும் துணைக்கும் குழந்தைகளுக்கும் பகிரப்பட்ட ஒரே சம் இன்ஷ்யூர்டு. தனித்தனிப் பாலிசிகளை விட மலிவு, ஆனால் ஒரே ஒரு பெரிய கிளைம் அந்த ஆண்டு அனைவரின் கவரையும் பயன்படுத்திவிடும்; எனவே அதிகத் தொகையைத் தேர்வு செய்யுங்கள் அல்லது ரெஸ்டோரேஷன் (restoration) நன்மையைச் சேருங்கள்.",
+                "60 வயதுக்கு மேற்பட்ட பெற்றோர்: உங்கள் ஃப்ளோட்டர் அல்ல, தனிப் பாலிசி. ஃப்ளோட்டர் பிரீமியம் மூத்த உறுப்பினரின் வயதில் நிர்ணயிக்கப்படுகிறது, அவர்களின் கிளைம்களே அதிக வாய்ப்புள்ளவை; கலப்பது கவரையும் உங்கள் பணப்பையையும் வறண்டச் செய்யும்.",
+                "முதலாளியின் பாலிசி: கூடுதல் அடுக்காக வைத்துக்கொள்ளுங்கள், ஒரே அடுக்காக அல்ல."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "உங்கள் கிளைமை முடிவு செய்யும் சிறு எழுத்துகள்"
+            },
+            {
+              "type": "table",
+              "header": [
+                "சொல்",
+                "பொருள்",
+                "எதைத் தேடுவது"
+              ],
+              "rows": [
+                [
+                  "காத்திருப்புக் காலம் (waiting period)",
+                  "விபத்து தவிர எந்தக் கிளைமுக்கும் முன் 30 நாட்கள்; முன்பே இருந்த நோய்களுக்கு மூன்று ஆண்டுகள் வரை; கண்புரை, குடலிறக்கம், மூட்டு மாற்று போன்ற பட்டியலிடப்பட்ட நிலைகளுக்கு ஒன்று முதல் இரண்டு ஆண்டுகள்",
+                  "தேவைப்படும் முன் கடிகாரங்கள் முடிந்துவிட ஆரோக்கியமாக இருக்கும்போதே வாங்குங்கள்"
+                ],
+                [
+                  "அறை வாடகை வரம்பு (room-rent cap)",
+                  "அறைக்கான தினசரி வரம்பு. வரம்பு ₹5,000 ஆக இருந்து நீங்கள் ₹10,000 அறையை எடுத்தால், பல பாலிசிகள் அறைக் கட்டணத்தை மட்டுமல்ல, முழு பில்லையும் விகிதாசாரமாகக் குறைக்கும்",
+                  "வரம்பு இல்லாதது, அல்லது குறைந்தது 'சிங்கிள் பிரைவேட் ரூம்'"
+                ],
+                [
+                  "கோ-பே (co-pay)",
+                  "ஒவ்வொரு பில்லிலும் நீங்களே செலுத்த வேண்டிய நிலையான பங்கு; மூத்தோர் பாலிசிகளில் பொதுவானது",
+                  "பூஜ்ஜியம் அல்லது கிடைக்கும் மிகக் குறைந்தது"
+                ],
+                [
+                  "துணை வரம்புகள் (sub-limits)",
+                  "குறிப்பிட்ட சிகிச்சைகளுக்கான வரம்புகள், எடுத்துக்காட்டாக கண்புரைக்கு ₹40,000",
+                  "முடிந்தவரை குறைவாக"
+                ],
+                [
+                  "ரெஸ்டோரேஷன் (restoration)",
+                  "அதே ஆண்டில் கிளைமுக்குப் பிறகு சம் இன்ஷ்யூர்டு மீண்டும் நிரம்புகிறது",
+                  "ஃப்ளோட்டர்களில் பயனுள்ளது"
+                ],
+                [
+                  "நோ-கிளைம் போனஸ் (no-claim bonus)",
+                  "கிளைம் இல்லாத ஒவ்வொரு ஆண்டுக்கும் சம் இன்ஷ்யூர்டு வளர்கிறது",
+                  "அதிகமாகவும் கூட்டாகவும் இருப்பது சிறந்தது"
+                ],
+                [
+                  "நெட்வொர்க் மருத்துவமனைகள்",
+                  "நிறுவனம் நேரடியாக பில்லைச் செலுத்தும் (கேஷ்லெஸ்) மருத்துவமனைகள்",
+                  "நீங்கள் உண்மையில் பயன்படுத்தும் மருத்துவமனைகளைச் சரிபாருங்கள்"
+                ]
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "டாப்-அப்கள், அலுவலகப் பாலிசி ஏன் போதாது"
+            },
+            {
+              "type": "paragraph",
+              "text": "ஓர் ஆண்டில் உங்கள் மொத்த மருத்துவமனை பில்கள் டிடக்டிபிள் (deductible) எனப்படும் வரம்பைத் தாண்டியதும் சூப்பர் டாப்-அப் செலுத்தத் தொடங்கும். ₹5 லட்சம் டிடக்டிபிள் உள்ள ₹20 லட்சம் சூப்பர் டாப்-அப், ₹25 லட்சம் அடிப்படைப் பாலிசியின் ஒரு சிறு பகுதியே செலவாகும்; ஏனெனில் நிறுவனம் அரிதான பெரிய ஆண்டுக்கு மட்டுமே செலுத்துகிறது. ₹5 லட்சம் அடிப்படையுடன் ₹20 லட்சம் சூப்பர் டாப்-அப்பை இணைப்பதே பெரும்பாலான குடும்பங்கள் தீவிரமான கவரை அடையும் மலிவான வழி. முதலாளியின் கவர் தாராளமாகத் தோன்றினாலும் மூன்று குறைகள் உள்ளன: நீங்கள் விலகும், பணிநீக்கம் செய்யப்படும், அல்லது இடைவெளி எடுக்கும் நாளே அது முடிந்துவிடும்; அது பொதுவாக ₹3 லட்சம் முதல் ₹5 லட்சம், நிறுவனம் அதைக் குறைக்கலாம்; அதை உங்களுடன் எடுத்துச் செல்ல முடியாது. 45 வயதில் ஒரு நோய் கண்டறியப்பட்ட பிறகு சொந்தப் பாலிசி வாங்க முயன்றால், மறுக்கப்படுவீர்கள் அல்லது விலக்குகள் ஏற்றப்படும். இளமையாகவும் ஆரோக்கியமாகவும் இருக்கும்போதே தனிப்பட்ட கவரை வாங்கி, அலுவலகப் பாலிசியைக் கூடுதல் அடுக்காக இருக்க விடுங்கள். பழைய வரி முறையில், உங்களுக்கும் குடும்பத்திற்கும் பிரிவு 80D-ன் கீழ் {section_80d_self} வரை பிரீமியம் கழிவுக்குத் தகுதி; மூத்த குடிமக்களான பெற்றோருக்குத் தனியான, அதிக வரம்பு உள்ளது."
+            },
+            {
+              "type": "callout",
+              "tone": "warning",
+              "text": "உடல்நலப் பாலிசியை ஒருபோதும் காலாவதியாக விடாதீர்கள். புதிய பாலிசியில் காத்திருப்புக் காலங்கள் பூஜ்ஜியத்திலிருந்து மீண்டும் தொடங்கும்; ஒரு மாத இடைவெளி கூட ஏற்கனவே உள்ள நிலைக்குப் புதிய மூன்று ஆண்டு காத்திருப்பு என்று பொருள். நிறுவனத்தை மாற்ற விரும்பினால், காத்திருப்புக் காலக் கடன் உங்களுடன் வர, புதுப்பித்தலுக்குக் குறைந்தது 45 நாட்களுக்கு முன் பாலிசியைப் போர்ட் (port) செய்யுங்கள்."
+            },
+            {
+              "type": "paragraph",
+              "text": "கிளைம் நேரத்தில், நெட்வொர்க் மருத்துவமனையில் கேஷ்லெஸ் செல்லுங்கள்: பாலிசி அட்டையைக் காட்டி, திட்டமிட்ட அனுமதிக்கு இரண்டு மூன்று நாட்கள் முன்பும் அவசரநிலைக்கு 24 மணி நேரத்திற்குள்ளும் நிறுவனம் அல்லது அதன் TPA-க்குத் தெரிவியுங்கள்; கேஷ்லெஸ் கோரிக்கைகளை ஒரு மணி நேரத்திற்குள்ளும் இறுதி டிஸ்சார்ஜை மூன்று மணி நேரத்திற்குள்ளும் முடிவு செய்ய விதிகள் இப்போது கட்டாயப்படுத்துகின்றன. நெட்வொர்க் அல்லாத மருத்துவமனையில் முதலில் செலுத்தி பிறகு கிளைம் செய்கிறீர்கள்; எனவே ஒவ்வொரு பில், மருந்துச் சீட்டு, பரிசோதனை அறிக்கை, டிஸ்சார்ஜ் சம்மரியை வைத்திருங்கள்; காணாமல் போன ஒரு தாள்தான் கழிவுக்கு வழக்கமான காரணம். கிளைம் மறுக்கப்பட்டால், கடிதம் காத்திருப்புக் காலம், துணை வரம்பு அல்லது தகவல் மறைப்பைக் குறிப்பிடும்; நிறுவனத்தின் குறைதீர் அதிகாரியிடமும் பிறகு காப்பீட்டு ஒம்புட்ஸ்மனிடமும் செலவின்றி மேல்முறையீடு செய்யலாம்."
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "எந்த முதலீட்டுக்கும் முன் உடல்நலக் கவர்; மருத்துவச் செலவுகள் ஆறு ஏழு ஆண்டுகளுக்கு ஒருமுறை இரட்டிப்பாகின்றன.",
+                "மெட்ரோ குடும்பத்திற்கு ₹10 லட்சம் குறைந்தபட்சம், உச்சவரம்பு அல்ல; மலிவாக உயர சூப்பர் டாப்-அப்பைப் பயன்படுத்துங்கள்.",
+                "பெற்றோருக்குச் சொந்தப் பாலிசி; முதலாளியின் கவர் கூடுதல் அடுக்கு, அடிப்படை அல்ல.",
+                "அறை வாடகை வரம்புகள், கோ-பே, துணை வரம்புகள்தான் பில்லில் எவ்வளவு உண்மையில் கிடைக்கும் என்பதை முடிவு செய்கின்றன.",
+                "பாலிசியை ஒருபோதும் காலாவதியாக விடாதீர்கள்; மீண்டும் தொடங்காமல் போர்ட் செய்யுங்கள்."
+              ]
+            },
+            {
+              "type": "glossary",
+              "terms": [
+                {
+                  "term": "சம் இன்ஷ்யூர்டு (Sum insured)",
+                  "definition": "ஒரு பாலிசி ஆண்டில் மருத்துவமனை பில்களுக்குப் பாலிசி செலுத்தும் அதிகபட்சம்."
+                },
+                {
+                  "term": "ஃபேமிலி ஃப்ளோட்டர் (Family floater)",
+                  "definition": "அதன் கீழ் காப்பீடு செய்யப்பட்ட அனைத்துக் குடும்ப உறுப்பினர்களும் பகிர்ந்துகொள்ளும் ஒரே சம் இன்ஷ்யூர்டு கொண்ட ஒரு பாலிசி."
+                },
+                {
+                  "term": "டிடக்டிபிள் (Deductible)",
+                  "definition": "டாப்-அப் செலுத்தத் தொடங்கும் முன் நீங்களே தாங்க வேண்டிய, அல்லது வேறு பாலிசியால் ஈடுகட்ட வேண்டிய பில் தொகை."
+                },
+                {
+                  "term": "முன்பே இருந்த நோய் (Pre-existing disease)",
+                  "definition": "பாலிசி வாங்கும் முன் உங்களுக்கு இருந்த, அல்லது சிகிச்சை பெற்ற நிலை. அதன் காத்திருப்புக் காலம் முடிந்த பிறகே காப்பீடு செய்யப்படும்."
+                },
+                {
+                  "term": "போர்ட்டபிலிட்டி (Portability)",
+                  "definition": "ஏற்கனவே கழித்த காத்திருப்புக் காலங்களின் கடனை வைத்துக்கொண்டே உடல்நலப் பாலிசியை வேறு நிறுவனத்திற்கு மாற்றுவது."
+                }
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "உங்கள் பாலிசியில் ₹5,000 அறை வாடகை வரம்பு உள்ளது; நீங்கள் ₹10,000 அறையை எடுக்கிறீர்கள். பொதுவாக என்ன நடக்கும்?",
+                  "options": [
+                    "அறைக் கட்டணம் மட்டுமே குறைக்கப்படும்",
+                    "முழு பில்லும் அதே விகிதத்தில் செலுத்தப்படலாம், எனவே பெரும் பங்கை நீங்கள் தாங்குவீர்கள்",
+                    "எதுவுமில்லை, வரம்பு ICU-க்கு மட்டுமே பொருந்தும்"
+                  ],
+                  "answer": 1,
+                  "explanation": "பெரும்பாலான பாலிசிகள் பில் முழுவதும் விகிதாசாரக் கழிவைப் பயன்படுத்துகின்றன. அறை வாடகை வரம்பு இல்லாத பாலிசிகளை விரும்புங்கள்."
+                },
+                {
+                  "q": "முதலாளியின் உடல்நலக் கவர் தனியாக ஏன் போதாது?",
+                  "options": [
+                    "அது எப்போதும் மலிவான விருப்பம்",
+                    "வேலை முடியும்போது அது முடிந்துவிடும், உங்களுடன் எடுத்துச் செல்ல முடியாது",
+                    "அது விபத்துகளை மட்டுமே காப்பீடு செய்கிறது"
+                  ],
+                  "answer": 1,
+                  "explanation": "முதலாளியின் கவர் நீங்கள் விலகும் நாளே நின்றுவிடும்; நோய்க்குப் பிறகு சொந்தமாக வாங்குவது கடினம் அல்லது சாத்தியமற்றது."
+                },
+                {
+                  "q": "₹5 லட்சம் கவரை ₹25 லட்சமாக உயர்த்த மலிவான வழி எது?",
+                  "options": [
+                    "புதிய ₹25 லட்சம் அடிப்படைப் பாலிசி வாங்குவது",
+                    "₹5 லட்சம் டிடக்டிபிளுடன் ₹20 லட்சம் சூப்பர் டாப்-அப் சேர்ப்பது",
+                    "பெற்றோரை ஃப்ளோட்டரில் சேர்ப்பது"
+                  ],
+                  "answer": 1,
+                  "explanation": "சூப்பர் டாப்-அப் டிடக்டிபிளுக்கு மேல் அரிதான பெரிய ஆண்டில் மட்டுமே செலுத்துகிறது; எனவே பெரிய அடிப்படைப் பாலிசியை விட மிகக் குறைவாகச் செலவாகும்."
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": true,
+          "publishedAt": "2026-10-18"
         }
       ]
     },
     {
       "slug": "policies-to-avoid",
-      "readingMinutes": 10,
+      "readingMinutes": 7,
       "translations": [
         {
           "locale": "en",
           "title": "Endowment, ULIP and other mixes to avoid",
-          "excerpt": "",
-          "blocks": [],
-          "state": "draft",
-          "aiDraft": false
+          "excerpt": "Policies that promise both protection and returns usually deliver little of either. How to read them, and what to do if you already own one.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "The most widely sold insurance in India is neither term nor health. It is the 'savings plan': endowment, money-back, guaranteed-income, child plan, ULIP. It usually arrives through a relative who became an agent, or the relationship manager at your bank, with the line 'you get your money back and cover too'. The trouble is that both halves are weak. The cover is too small to protect anyone, and the return is too low to grow anything. You pay for two things and get a little of each."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Why the mix fails"
+            },
+            {
+              "type": "list",
+              "items": [
+                "The cover is thin. Most such plans insure you for about ten times the annual premium. A ₹50,000 premium buys roughly ₹5 lakh of cover, which replaces nobody's income for more than a few months.",
+                "The return is low. Traditional plans typically earn 4 to 6 percent a year over their life, below PPF at {ppf_rate} and often below inflation. 'Guaranteed' sounds safe, but the guarantee is on a small number.",
+                "The costs are high. First-year commission on traditional plans can be a quarter or more of the premium, and ULIP charges are front-loaded, so your early money barely gets invested.",
+                "The money is locked. Surrender in the early years returns a fraction of what you paid; many traditional plans pay nothing at all if you stop in the first year. Terms of 15 to 25 years are normal."
+              ]
+            },
+            {
+              "type": "table",
+              "header": [
+                "₹50,000 a year for 20 years",
+                "Endowment plan",
+                "Term plan plus PPF"
+              ],
+              "rows": [
+                [
+                  "Life cover",
+                  "₹5 lakh to ₹10 lakh",
+                  "₹1 crore for about ₹12,000 a year"
+                ],
+                [
+                  "Money invested",
+                  "What is left after commission and charges",
+                  "₹38,000 a year in PPF"
+                ],
+                [
+                  "Value at 20 years",
+                  "Roughly ₹15 lakh to ₹17 lakh at 4 to 5 percent",
+                  "Roughly ₹17 lakh at 7 percent, tax-free"
+                ],
+                [
+                  "If you need the money in year 5",
+                  "Heavy surrender loss",
+                  "Partial PPF withdrawal from year 7; loan from year 3"
+                ]
+              ]
+            },
+            {
+              "type": "callout",
+              "tone": "tip",
+              "text": "Same money, ten times the cover, similar or better maturity value, and far more flexibility. One question cuts through every brochure: if I split this premium into a term plan and a separate investment, would I get more cover and more money? The answer is almost always yes. If the seller cannot show you otherwise with numbers, walk away."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "The common forms"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Endowment: pay for 15 to 25 years, receive a lump sum at the end. Low cover, low return.",
+                "Money-back: the same, with small payouts every few years that are really your own money coming back.",
+                "Guaranteed income or guaranteed return plans: a fixed payout for years after a paying period. The 'guarantee' usually works out to 5 to 6 percent.",
+                "ULIP (unit-linked insurance plan): premiums go into market funds after charges, with a five-year lock-in. The investment part can do well, but a mutual fund does the same job with lower costs and no lock-in.",
+                "Child plans: an endowment with the child's name on the brochure. A term plan on the parent plus a separate investment protects the child better.",
+                "Loan protection or credit life: a single premium added to a home or vehicle loan. A term plan of your own usually covers the same loan at a lower cost and stays with you if you refinance."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "If you already own one"
+            },
+            {
+              "type": "paragraph",
+              "text": "Do not surrender in a panic. First get your term and health cover in place, so stopping the policy does not leave the family exposed. Then write down three numbers from the insurer: premiums paid so far, the surrender value today, and the paid-up value. Paid-up means you stop paying, the policy continues with a reduced sum assured and maturity amount, and you lose nothing further. It is usually available once the policy has acquired a surrender value, which for most plans is after the first year or two of premiums. With those numbers you can decide:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Close to maturity, say three years left of fifteen: continue; most of the cost is behind you.",
+                "Middle of the term: make it paid-up, and redirect the premium to a term plan and your own investments.",
+                "Early, with decades to go: surrender may be right even with a loss, because the premiums still ahead of you matter more than the money already gone.",
+                "A ULIP past its five-year lock-in: check the charges; you can switch funds inside it or withdraw without surrender penalty."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Why do they keep getting sold? Commissions on bundled plans are many times those on term plans, and bank staff carry sales targets for them. None of this makes the seller a villain, but it means their advice is not neutral. Two protections help. Every policy comes with a free-look period, now 30 days from receiving the document, in which you can return it for a near-full refund. And no genuine offer expires at the end of the month; 'last day' pressure is itself the warning sign. Note also that maturity proceeds are tax-free under Section 10(10D) only when the annual premium is at most 10 percent of the sum assured, and larger policies bought recently can be taxable, which removes the last argument for buying them. The figures in the table above are illustrative and depend on the plan, but the pattern repeats across almost every bundled policy."
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "Endowment, money-back, guaranteed-income and child plans give thin cover and 4 to 6 percent returns.",
+                "ULIPs add charges and a lock-in to what a mutual fund does more cheaply.",
+                "Term plan plus your own investments beats the bundle on cover, return and flexibility.",
+                "Already own one? Secure term and health first, then compare surrender, paid-up and continue.",
+                "Use the 30-day free-look period; never buy under month-end pressure."
+              ]
+            },
+            {
+              "type": "glossary",
+              "terms": [
+                {
+                  "term": "Endowment plan",
+                  "definition": "A policy that combines a small life cover with a savings element paid out at maturity."
+                },
+                {
+                  "term": "ULIP",
+                  "definition": "Unit-linked insurance plan: premiums are invested in market funds after charges, with a five-year lock-in and a small cover."
+                },
+                {
+                  "term": "Surrender value",
+                  "definition": "What the insurer pays if you close the policy early; usually far less than the premiums paid."
+                },
+                {
+                  "term": "Paid-up",
+                  "definition": "Stopping premiums while keeping the policy alive at a reduced sum assured and maturity value."
+                },
+                {
+                  "term": "Free-look period",
+                  "definition": "The window after receiving a policy document, now 30 days, in which you can return the policy for a refund of premium less small charges."
+                }
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "Roughly how much life cover does a ₹50,000-a-year endowment plan give?",
+                  "options": [
+                    "About ₹5 lakh",
+                    "About ₹50 lakh",
+                    "About ₹1 crore"
+                  ],
+                  "answer": 0,
+                  "explanation": "Bundled plans insure for about ten times the annual premium. A term plan gives ₹1 crore for a fraction of that premium."
+                },
+                {
+                  "q": "You hold an endowment plan with 12 years left and have no term cover. What is the first step?",
+                  "options": [
+                    "Surrender it today",
+                    "Buy term and health cover, then compare surrender, paid-up and continue",
+                    "Buy a second endowment plan"
+                  ],
+                  "answer": 1,
+                  "explanation": "Never drop a policy before the family's protection is in place. Then decide with the three numbers from the insurer."
+                },
+                {
+                  "q": "What does the free-look period let you do?",
+                  "options": [
+                    "Skip the first premium",
+                    "Return a new policy within 30 days for a refund",
+                    "Change the nominee without a form"
+                  ],
+                  "answer": 1,
+                  "explanation": "The free-look period is your exit if you realise you were sold the wrong policy. Read the document as soon as it arrives."
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": false,
+          "publishedAt": "2026-10-18"
+        },
+        {
+          "locale": "ta",
+          "title": "எண்டோவ்மென்ட், ULIP மற்றும் தவிர்க்க வேண்டிய பிற கலவைகள்",
+          "excerpt": "பாதுகாப்பும் வருமானமும் இரண்டையும் தருவதாக வாக்குறுதி அளிக்கும் பாலிசிகள் பொதுவாக இரண்டையும் சிறிதளவே தருகின்றன. அவற்றை எப்படிப் படிப்பது, ஏற்கனவே வைத்திருந்தால் என்ன செய்வது.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "இந்தியாவில் மிகவும் பரவலாக விற்கப்படும் காப்பீடு டெர்மும் அல்ல, உடல்நலமும் அல்ல. அது 'சேமிப்புத் திட்டம்': எண்டோவ்மென்ட் (endowment), மணி-பேக் (money-back), கியாரண்டீட்-இன்கம், சைல்டு பிளான், ULIP. அது பொதுவாக ஏஜென்டாக மாறிய உறவினர் மூலமாகவோ, உங்கள் வங்கியின் ரிலேஷன்ஷிப் மேனேஜர் மூலமாகவோ, 'உங்கள் பணமும் திரும்பக் கிடைக்கும், கவரும் கிடைக்கும்' என்ற வார்த்தையுடன் வருகிறது. பிரச்சனை என்னவென்றால் இரு பாதிகளும் பலவீனமானவை. கவர் யாரையும் பாதுகாக்க முடியாத அளவு சிறியது; வருமானம் எதையும் வளர்க்க முடியாத அளவு குறைவு. இரண்டுக்கும் பணம் கட்டி, ஒவ்வொன்றிலும் சிறிதளவே பெறுகிறீர்கள்."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "கலவை ஏன் தோல்வியடைகிறது"
+            },
+            {
+              "type": "list",
+              "items": [
+                "கவர் மெல்லியது. இத்தகைய பெரும்பாலான திட்டங்கள் ஆண்டுப் பிரீமியத்தின் சுமார் பத்து மடங்குக்குக் காப்பீடு செய்கின்றன. ₹50,000 பிரீமியம் ஏறத்தாழ ₹5 லட்சம் கவரை வாங்குகிறது; அது யாருடைய வருமானத்தையும் சில மாதங்களுக்கு மேல் மாற்றீடு செய்யாது.",
+                "வருமானம் குறைவு. பாரம்பரியத் திட்டங்கள் பொதுவாக அவற்றின் காலத்தில் ஆண்டுக்கு 4 முதல் 6 சதவீதம் ஈட்டுகின்றன; {ppf_rate} தரும் PPF-ஐ விடக் குறைவு, பெரும்பாலும் பணவீக்கத்தை விடவும் குறைவு. 'கியாரண்டீ' பாதுகாப்பாக ஒலிக்கிறது, ஆனால் உத்தரவாதம் ஒரு சிறிய எண்ணுக்குத்தான்.",
+                "செலவுகள் அதிகம். பாரம்பரியத் திட்டங்களில் முதல் ஆண்டு கமிஷன் பிரீமியத்தின் கால் பங்கோ அதற்கு மேலோ இருக்கலாம்; ULIP கட்டணங்கள் முன்பகுதியில் அதிகம், எனவே உங்கள் ஆரம்பப் பணம் முதலீடாகவே ஆகாது.",
+                "பணம் பூட்டப்பட்டுள்ளது. ஆரம்ப ஆண்டுகளில் சரண்டர் செய்தால் செலுத்தியதில் ஒரு பகுதியே திரும்பும்; முதல் ஆண்டில் நிறுத்தினால் பல பாரம்பரியத் திட்டங்கள் எதுவுமே தராது. 15 முதல் 25 ஆண்டு காலங்கள் சாதாரணம்."
+              ]
+            },
+            {
+              "type": "table",
+              "header": [
+                "20 ஆண்டுகளுக்கு ஆண்டுக்கு ₹50,000",
+                "எண்டோவ்மென்ட் திட்டம்",
+                "டெர்ம் பிளான் + PPF"
+              ],
+              "rows": [
+                [
+                  "ஆயுள் கவர்",
+                  "₹5 லட்சம் முதல் ₹10 லட்சம்",
+                  "ஆண்டுக்கு சுமார் ₹12,000-க்கு ₹1 கோடி"
+                ],
+                [
+                  "முதலீடு செய்யப்பட்ட பணம்",
+                  "கமிஷனும் கட்டணங்களும் போக மீதி",
+                  "PPF-ல் ஆண்டுக்கு ₹38,000"
+                ],
+                [
+                  "20 ஆண்டுகளில் மதிப்பு",
+                  "4 முதல் 5 சதவீதத்தில் ஏறத்தாழ ₹15 லட்சம் முதல் ₹17 லட்சம்",
+                  "7 சதவீதத்தில் ஏறத்தாழ ₹17 லட்சம், வரியில்லாமல்"
+                ],
+                [
+                  "5-ஆம் ஆண்டில் பணம் தேவைப்பட்டால்",
+                  "கடுமையான சரண்டர் இழப்பு",
+                  "7-ஆம் ஆண்டிலிருந்து PPF பகுதி திரும்பப் பெறல்; 3-ஆம் ஆண்டிலிருந்து கடன்"
+                ]
+              ]
+            },
+            {
+              "type": "callout",
+              "tone": "tip",
+              "text": "அதே பணம், பத்து மடங்கு கவர், ஒத்த அல்லது சிறந்த முதிர்வு மதிப்பு, மேலும் அதிக நெகிழ்வுத்தன்மை. ஒரே கேள்வி ஒவ்வொரு சிற்றேட்டையும் ஊடுருவும்: இந்தப் பிரீமியத்தை டெர்ம் பிளானாகவும் தனி முதலீடாகவும் பிரித்தால், அதிகக் கவரும் அதிகப் பணமும் கிடைக்குமா? பதில் ஏறக்குறைய எப்போதும் ஆம். விற்பவர் எண்களுடன் மாறாகக் காட்ட முடியாவிட்டால், விலகிச் செல்லுங்கள்."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "பொதுவான வடிவங்கள்"
+            },
+            {
+              "type": "list",
+              "items": [
+                "எண்டோவ்மென்ட்: 15 முதல் 25 ஆண்டுகள் செலுத்தி, முடிவில் மொத்தத் தொகையைப் பெறுவது. குறைந்த கவர், குறைந்த வருமானம்.",
+                "மணி-பேக்: அதுவே, ஆனால் சில ஆண்டுகளுக்கு ஒருமுறை சிறிய தொகைகள் தரப்படும்; அவை உண்மையில் உங்கள் சொந்தப் பணமே திரும்பி வருவது.",
+                "கியாரண்டீட் இன்கம் அல்லது கியாரண்டீட் ரிட்டர்ன் திட்டங்கள்: செலுத்தும் காலத்திற்குப் பிறகு பல ஆண்டுகளுக்கு நிலையான தொகை. 'உத்தரவாதம்' பொதுவாக 5 முதல் 6 சதவீதமாகவே அமைகிறது.",
+                "ULIP (யூனிட்-லிங்க்டு இன்ஷூரன்ஸ் பிளான்): கட்டணங்கள் போக பிரீமியங்கள் சந்தை ஃபண்டுகளில் செல்கின்றன, ஐந்து ஆண்டு லாக்-இன். முதலீட்டுப் பகுதி நன்றாகச் செயல்படலாம், ஆனால் மியூச்சுவல் ஃபண்ட் அதே வேலையைக் குறைந்த செலவில், லாக்-இன் இல்லாமல் செய்கிறது.",
+                "சைல்டு பிளான்கள்: சிற்றேட்டில் குழந்தையின் பெயருடன் ஒரு எண்டோவ்மென்ட். பெற்றோருக்கு டெர்ம் பிளானும் தனி முதலீடும் குழந்தையைச் சிறப்பாகப் பாதுகாக்கும்.",
+                "லோன் புரொடெக்ஷன் அல்லது கிரெடிட் லைஃப்: வீட்டு அல்லது வாகனக் கடனுடன் சேர்க்கப்படும் ஒற்றைப் பிரீமியம். உங்கள் சொந்த டெர்ம் பிளான் பொதுவாக அதே கடனைக் குறைந்த செலவில் மறைக்கும், ரீஃபைனான்ஸ் செய்தாலும் உங்களுடன் இருக்கும்."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "ஏற்கனவே ஒன்று வைத்திருந்தால்"
+            },
+            {
+              "type": "paragraph",
+              "text": "பதற்றத்தில் சரண்டர் செய்யாதீர்கள். முதலில் உங்கள் டெர்ம் மற்றும் உடல்நலக் கவரை அமைத்துக்கொள்ளுங்கள்; அப்போதுதான் பாலிசியை நிறுத்துவது குடும்பத்தை ஆபத்தில் விடாது. பிறகு நிறுவனத்திடமிருந்து மூன்று எண்களை எழுதி வையுங்கள்: இதுவரை செலுத்திய பிரீமியங்கள், இன்றைய சரண்டர் மதிப்பு, பெய்டு-அப் மதிப்பு. பெய்டு-அப் (paid-up) என்றால் நீங்கள் செலுத்துவதை நிறுத்துகிறீர்கள், பாலிசி குறைக்கப்பட்ட சம் அஷ்யூர்டு மற்றும் முதிர்வுத் தொகையுடன் தொடரும், மேலும் எதையும் இழக்க மாட்டீர்கள். பாலிசி சரண்டர் மதிப்பைப் பெற்றதும் இது பொதுவாகக் கிடைக்கும்; பெரும்பாலான திட்டங்களுக்கு அது முதல் ஓரிரு ஆண்டுப் பிரீமியங்களுக்குப் பிறகு. அந்த எண்களுடன் நீங்கள் முடிவு செய்யலாம்:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "முதிர்வுக்கு அருகில், சொல்லுங்கள் பதினைந்தில் மூன்று ஆண்டுகள் மீதம்: தொடருங்கள்; செலவின் பெரும்பகுதி கடந்துவிட்டது.",
+                "காலத்தின் நடுவில்: பெய்டு-அப் ஆக்கி, பிரீமியத்தை டெர்ம் பிளானுக்கும் உங்கள் சொந்த முதலீடுகளுக்கும் திருப்புங்கள்.",
+                "ஆரம்பத்தில், பல தசாப்தங்கள் மீதம்: இழப்பு இருந்தாலும் சரண்டர் சரியாக இருக்கலாம்; ஏனெனில் ஏற்கனவே போன பணத்தை விட இனி வரும் பிரீமியங்களே முக்கியம்.",
+                "ஐந்து ஆண்டு லாக்-இன் கடந்த ULIP: கட்டணங்களைச் சரிபாருங்கள்; அதற்குள் ஃபண்டுகளை மாற்றலாம் அல்லது சரண்டர் அபராதம் இல்லாமல் திரும்பப் பெறலாம்."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "அவை ஏன் தொடர்ந்து விற்கப்படுகின்றன? கலப்புத் திட்டங்களின் கமிஷன் டெர்ம் பிளான்களின் பல மடங்கு; வங்கி ஊழியர்களுக்கு அவற்றுக்கான விற்பனை இலக்குகள் உள்ளன. இது விற்பவரை வில்லனாக்காது, ஆனால் அவர்களின் ஆலோசனை நடுநிலையானது அல்ல என்று பொருள். இரண்டு பாதுகாப்புகள் உதவும். ஒவ்வொரு பாலிசியுடனும் ஃப்ரீ-லுக் காலம் (free-look period) வருகிறது; ஆவணம் கிடைத்ததிலிருந்து இப்போது 30 நாட்கள்; அதற்குள் ஏறக்குறைய முழுத் திரும்பப் பணத்துடன் திருப்பித் தரலாம். மேலும் உண்மையான சலுகை எதுவும் மாத இறுதியில் காலாவதியாகாது; 'கடைசி நாள்' அழுத்தமே எச்சரிக்கை அறிகுறி. ஆண்டுப் பிரீமியம் சம் அஷ்யூர்டின் அதிகபட்சம் 10 சதவீதமாக இருக்கும்போது மட்டுமே முதிர்வுத் தொகை பிரிவு 10(10D)-ன் கீழ் வரியில்லாதது என்பதையும், சமீபத்தில் வாங்கிய பெரிய பாலிசிகள் வரிக்குட்பட்டதாக இருக்கலாம் என்பதையும் கவனியுங்கள்; அது அவற்றை வாங்குவதற்கான கடைசி வாதத்தையும் நீக்குகிறது. மேலே உள்ள அட்டவணையின் எண்கள் விளக்கத்திற்காகவே, திட்டத்தைப் பொறுத்து மாறும்; ஆனால் ஏறக்குறைய ஒவ்வொரு கலப்புப் பாலிசியிலும் இதே அமைப்பு திரும்புகிறது."
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "எண்டோவ்மென்ட், மணி-பேக், கியாரண்டீட்-இன்கம், சைல்டு பிளான்கள் மெல்லிய கவரும் 4 முதல் 6 சதவீத வருமானமும் தருகின்றன.",
+                "மியூச்சுவல் ஃபண்ட் மலிவாகச் செய்வதற்கு ULIP-கள் கட்டணங்களையும் லாக்-இன்னையும் சேர்க்கின்றன.",
+                "டெர்ம் பிளானும் உங்கள் சொந்த முதலீடுகளும் கவர், வருமானம், நெகிழ்வுத்தன்மை ஆகியவற்றில் கலவையை வெல்கின்றன.",
+                "ஏற்கனவே ஒன்று உள்ளதா? முதலில் டெர்மும் உடல்நலமும் பாதுகாத்து, பிறகு சரண்டர், பெய்டு-அப், தொடர்தல் ஆகியவற்றை ஒப்பிடுங்கள்.",
+                "30 நாள் ஃப்ரீ-லுக் காலத்தைப் பயன்படுத்துங்கள்; மாத இறுதி அழுத்தத்தில் ஒருபோதும் வாங்காதீர்கள்."
+              ]
+            },
+            {
+              "type": "glossary",
+              "terms": [
+                {
+                  "term": "எண்டோவ்மென்ட் திட்டம் (Endowment plan)",
+                  "definition": "சிறிய ஆயுள் கவரை முதிர்வில் தரப்படும் சேமிப்புப் பகுதியுடன் இணைக்கும் பாலிசி."
+                },
+                {
+                  "term": "ULIP",
+                  "definition": "யூனிட்-லிங்க்டு இன்ஷூரன்ஸ் பிளான்: கட்டணங்கள் போக பிரீமியங்கள் சந்தை ஃபண்டுகளில் முதலீடு செய்யப்படுகின்றன; ஐந்து ஆண்டு லாக்-இன், சிறிய கவர்."
+                },
+                {
+                  "term": "சரண்டர் மதிப்பு (Surrender value)",
+                  "definition": "பாலிசியை முன்கூட்டியே மூடினால் நிறுவனம் செலுத்துவது; பொதுவாக செலுத்திய பிரீமியங்களை விட மிகக் குறைவு."
+                },
+                {
+                  "term": "பெய்டு-அப் (Paid-up)",
+                  "definition": "குறைக்கப்பட்ட சம் அஷ்யூர்டு மற்றும் முதிர்வு மதிப்பில் பாலிசியை உயிர்ப்புடன் வைத்துக்கொண்டே பிரீமியங்களை நிறுத்துவது."
+                },
+                {
+                  "term": "ஃப்ரீ-லுக் காலம் (Free-look period)",
+                  "definition": "பாலிசி ஆவணம் கிடைத்த பிறகு, இப்போது 30 நாட்கள், சிறு கட்டணங்கள் போக பிரீமியத் திரும்பப் பணத்துடன் பாலிசியைத் திருப்பித் தரக்கூடிய காலம்."
+                }
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "ஆண்டுக்கு ₹50,000 எண்டோவ்மென்ட் திட்டம் ஏறத்தாழ எவ்வளவு ஆயுள் கவர் தருகிறது?",
+                  "options": [
+                    "சுமார் ₹5 லட்சம்",
+                    "சுமார் ₹50 லட்சம்",
+                    "சுமார் ₹1 கோடி"
+                  ],
+                  "answer": 0,
+                  "explanation": "கலப்புத் திட்டங்கள் ஆண்டுப் பிரீமியத்தின் சுமார் பத்து மடங்குக்குக் காப்பீடு செய்கின்றன. டெர்ம் பிளான் அந்தப் பிரீமியத்தின் ஒரு பகுதிக்கே ₹1 கோடி தருகிறது."
+                },
+                {
+                  "q": "12 ஆண்டுகள் மீதமுள்ள எண்டோவ்மென்ட் திட்டம் வைத்திருக்கிறீர்கள், டெர்ம் கவர் இல்லை. முதல் படி என்ன?",
+                  "options": [
+                    "இன்றே சரண்டர் செய்வது",
+                    "டெர்ம் மற்றும் உடல்நலக் கவர் வாங்கி, பிறகு சரண்டர், பெய்டு-அப், தொடர்தல் ஆகியவற்றை ஒப்பிடுவது",
+                    "இரண்டாவது எண்டோவ்மென்ட் திட்டம் வாங்குவது"
+                  ],
+                  "answer": 1,
+                  "explanation": "குடும்பத்தின் பாதுகாப்பு அமையும் முன் ஒரு பாலிசியையும் கைவிடாதீர்கள். பிறகு நிறுவனத்திடமிருந்து பெறும் மூன்று எண்களுடன் முடிவு செய்யுங்கள்."
+                },
+                {
+                  "q": "ஃப்ரீ-லுக் காலம் உங்களை என்ன செய்ய அனுமதிக்கிறது?",
+                  "options": [
+                    "முதல் பிரீமியத்தைத் தவிர்ப்பது",
+                    "புதிய பாலிசியை 30 நாட்களுக்குள் திருப்பிக் கொடுத்துப் பணம் பெறுவது",
+                    "படிவம் இல்லாமல் நாமினியை மாற்றுவது"
+                  ],
+                  "answer": 1,
+                  "explanation": "தவறான பாலிசி விற்கப்பட்டது என்று உணர்ந்தால் ஃப்ரீ-லுக் காலமே உங்கள் வெளியேறும் வழி. ஆவணம் வந்தவுடன் படியுங்கள்."
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": true,
+          "publishedAt": "2026-10-18"
         }
       ]
     }

@@ -19,29 +19,649 @@
   "chapters": [
     {
       "slug": "joint-budget",
-      "readingMinutes": 10,
+      "readingMinutes": 5,
       "translations": [
         {
           "locale": "en",
           "title": "The joint budget",
-          "excerpt": "",
-          "blocks": [],
-          "state": "draft",
-          "aiDraft": false
+          "excerpt": "A household runs on numbers both partners know. How to build one budget from two incomes, two habits and no surprises.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "In many Indian homes one person earns, or earns more, the other runs the house, and neither sees the whole picture. He knows the salary and the EMI; she knows the grocery bill and the school fees; nobody knows the savings rate. The household check-up on this site scores exactly that gap under 'cashflow': what comes in, what goes out, and what is left at the end of the month. A joint budget is nothing more than making those three numbers visible to both of you, and agreeing what to do with the third one. Sit down once with bank statements, UPI history and a notebook, and write them as one unit, not as his and hers."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Start with the household's numbers"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Income: both take-home salaries, plus any rent, business income or money regularly received from family.",
+                "Fixed needs: rent or EMI, school fees, groceries, electricity and gas, domestic help, transport, money sent to parents, insurance premiums.",
+                "Wants: eating out, deliveries, subscriptions, clothes, gifts, festivals, travel.",
+                "Savings already happening: SIPs, EPF, PPF, RD, chit funds, gold.",
+                "Debts: credit card balances, personal loans, gold loans, buy-now-pay-later, money owed to relatives.",
+                "The result: savings rate, which is income minus all spending, divided by income. Twenty percent is the target; many couples discover theirs is near zero."
+              ]
+            },
+            {
+              "type": "calculator",
+              "slug": "50-30-20-budget"
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Yours, mine, ours: how to hold the accounts"
+            },
+            {
+              "type": "table",
+              "header": [
+                "Model",
+                "How it works",
+                "Where it breaks"
+              ],
+              "rows": [
+                [
+                  "Everything joint",
+                  "All income into one joint account; all spending from it",
+                  "No personal money without explanation; the lower earner often feels watched"
+                ],
+                [
+                  "Everything separate",
+                  "Each keeps their own account and pays an agreed list of bills",
+                  "Nobody sees the total; savings are uneven; one partner's emergency is the other's surprise"
+                ],
+                [
+                  "Three pots",
+                  "Each keeps an account in their own name; a joint account funds shared costs and shared savings",
+                  "Needs a monthly transfer and a ten-minute review to stay honest"
+                ]
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "The three-pot model suits most households. Each partner keeps an account solely in their own name with net banking and UPI, which matters for independence and for the day one of you cannot operate the other's account. The joint account, held 'either or survivor', pays the shared needs and funds the shared savings. How much each puts in can be equal, or in proportion to income. If Kavitha earns ₹60,000 and Ravi earns ₹90,000 and shared costs are ₹90,000, a proportional split is 40 percent and 60 percent: ₹36,000 from her and ₹54,000 from him, leaving each with roughly the same share of their own income to spend or save freely."
+            },
+            {
+              "type": "paragraph",
+              "text": "Unpaid work counts, too. If one partner has left paid work to raise children or care for parents, the budget must still treat them as a full partner. That means three things. An equal say on every decision above the threshold you set together. A personal amount every month that needs no permission and no receipts. And savings and investments in both names, not only the earner's: a SIP in the homemaker's name, a PPF account, gold recorded as hers. Gifts between spouses are tax-free, and although income from such gifts is clubbed with the giver's income for tax, that is a tax detail; the point is ownership and security, not tax."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Deciding together: twenty minutes a month"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Fix a date, for example the Sunday after salary day, and keep it like a bill payment.",
+                "Look at three numbers only: income, spending, savings rate. Do not audit every transaction.",
+                "Agree one change for the coming month, such as moving the SIP date to salary day or capping deliveries.",
+                "Set a threshold, say ₹10,000, above which any spend, loan, guarantee or gift to family is discussed before, not reported after.",
+                "Both partners can log in to the bank, pay the EMI, and find the insurance papers. If only one of you can, fix that first."
+              ]
+            },
+            {
+              "type": "callout",
+              "tone": "tip",
+              "text": "Run the household check-up together once a year with the real numbers, not estimates. The cashflow score moving from 'needs attention' to 'good' is a goal a couple can actually see."
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "A joint budget is three shared numbers: income, spending, savings rate.",
+                "Three pots: an account in each partner's own name plus a joint account for shared needs and savings.",
+                "Contribute in proportion to income so both keep a fair share of their own money.",
+                "Unpaid work earns equal say, personal money and investments in your own name.",
+                "Twenty minutes a month and a spending threshold prevent most money fights."
+              ]
+            },
+            {
+              "type": "glossary",
+              "terms": [
+                {
+                  "term": "Savings rate",
+                  "definition": "Income minus all spending, divided by income. The cashflow number the household check-up scores."
+                },
+                {
+                  "term": "Either or survivor",
+                  "definition": "A joint account mode in which either holder can operate it alone, and the survivor keeps it if one dies."
+                },
+                {
+                  "term": "Clubbing of income",
+                  "definition": "A tax rule under which income earned from money gifted to a spouse is taxed in the giver's hands."
+                },
+                {
+                  "term": "Threshold",
+                  "definition": "The amount above which a spend or a loan is agreed together in advance rather than announced afterwards."
+                }
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "Which number does the household check-up's cashflow dimension look at?",
+                  "options": [
+                    "The savings rate",
+                    "The number of bank accounts",
+                    "The price of gold"
+                  ],
+                  "answer": 0,
+                  "explanation": "Cashflow is income minus spending as a share of income. It is the first number a joint budget makes visible."
+                },
+                {
+                  "q": "In the three-pot model, who holds an account in their own name?",
+                  "options": [
+                    "Only the higher earner",
+                    "Both partners, plus a joint account for shared costs",
+                    "Only the joint account exists"
+                  ],
+                  "answer": 1,
+                  "explanation": "Each partner keeps their own account for independence; the joint account funds shared needs and savings."
+                },
+                {
+                  "q": "Kavitha earns ₹60,000 and Ravi earns ₹90,000. Shared costs are ₹90,000. A proportional split means Kavitha contributes?",
+                  "options": [
+                    "₹45,000",
+                    "₹36,000",
+                    "₹60,000"
+                  ],
+                  "answer": 1,
+                  "explanation": "She earns 40 percent of the household income, so she contributes 40 percent of shared costs, ₹36,000."
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": false,
+          "publishedAt": "2026-10-18"
+        },
+        {
+          "locale": "ta",
+          "title": "கூட்டு பட்ஜெட்",
+          "excerpt": "இருவருக்கும் தெரிந்த எண்களில் ஒரு குடும்பம் இயங்குகிறது. இரு வருமானங்கள், இரு பழக்கங்கள், ஆச்சரியங்கள் இல்லாமல் ஒரே பட்ஜெட்டை எப்படிக் கட்டுவது.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "பல இந்திய வீடுகளில் ஒருவர் சம்பாதிக்கிறார், அல்லது அதிகம் சம்பாதிக்கிறார்; மற்றவர் வீட்டை நடத்துகிறார்; இருவருக்கும் முழுச் சித்திரம் தெரியாது. அவருக்குச் சம்பளமும் EMI-யும் தெரியும்; அவளுக்கு மளிகை பில்லும் பள்ளிக் கட்டணமும் தெரியும்; சேமிப்பு விகிதம் யாருக்கும் தெரியாது. இந்தத் தளத்தின் குடும்ப செக்-அப் (household check-up) அந்த இடைவெளியையே 'கேஷ்ஃப்ளோ' (cashflow) என்ற பிரிவில் மதிப்பிடுகிறது: என்ன வருகிறது, என்ன போகிறது, மாத இறுதியில் என்ன மீதம். கூட்டு பட்ஜெட் என்பது அந்த மூன்று எண்களை இருவருக்கும் தெரியும்படி செய்வதும், மூன்றாவது எண்ணை என்ன செய்வது என்று ஒப்புக்கொள்வதும்தான், அதற்கு மேல் எதுவுமில்லை. வங்கி அறிக்கைகள், UPI வரலாறு, ஒரு நோட்டுப் புத்தகத்துடன் ஒருமுறை அமர்ந்து, அவற்றை அவருடையது அவளுடையது என்றல்லாமல் ஒரே அலகாக எழுதுங்கள்."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "குடும்பத்தின் எண்களில் தொடங்குங்கள்"
+            },
+            {
+              "type": "list",
+              "items": [
+                "வருமானம்: இருவரின் கையில் கிடைக்கும் சம்பளம், அத்துடன் வாடகை, தொழில் வருமானம் அல்லது குடும்பத்திடமிருந்து வழக்கமாகக் கிடைக்கும் பணம்.",
+                "நிலையான தேவைகள்: வாடகை அல்லது EMI, பள்ளிக் கட்டணம், மளிகை, மின்சாரம் மற்றும் கேஸ், வீட்டு வேலை உதவி, போக்குவரத்து, பெற்றோருக்கு அனுப்பும் பணம், காப்பீட்டுப் பிரீமியங்கள்.",
+                "விருப்பங்கள்: வெளியே சாப்பிடுவது, டெலிவரிகள், சந்தாக்கள், உடைகள், பரிசுகள், பண்டிகைகள், பயணம்.",
+                "ஏற்கனவே நடக்கும் சேமிப்பு: SIP, EPF, PPF, RD, சீட்டு, தங்கம்.",
+                "கடன்கள்: கிரெடிட் கார்டு பாக்கி, தனிநபர் கடன், நகைக் கடன், பை-நவ்-பே-லேட்டர், உறவினர்களுக்குத் தர வேண்டிய பணம்.",
+                "முடிவு: சேமிப்பு விகிதம், அதாவது வருமானத்திலிருந்து மொத்தச் செலவைக் கழித்து வருமானத்தால் வகுத்தது. இருபது சதவீதம் இலக்கு; பல தம்பதிகள் தங்களுடையது பூஜ்ஜியத்திற்கு அருகில் இருப்பதைக் கண்டறிகிறார்கள்."
+              ]
+            },
+            {
+              "type": "calculator",
+              "slug": "50-30-20-budget"
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "உன்னுடையது, என்னுடையது, நம்முடையது: கணக்குகளை எப்படி வைத்திருப்பது"
+            },
+            {
+              "type": "table",
+              "header": [
+                "மாதிரி",
+                "எப்படி வேலை செய்கிறது",
+                "எங்கே உடைகிறது"
+              ],
+              "rows": [
+                [
+                  "எல்லாம் கூட்டு",
+                  "எல்லா வருமானமும் ஒரே கூட்டுக் கணக்கில்; எல்லாச் செலவும் அதிலிருந்து",
+                  "விளக்கம் இல்லாமல் தனிப்பட்ட பணம் இல்லை; குறைவாகச் சம்பாதிப்பவர் பெரும்பாலும் கண்காணிக்கப்படுவதாக உணர்வார்"
+                ],
+                [
+                  "எல்லாம் தனித்தனி",
+                  "ஒவ்வொருவரும் சொந்தக் கணக்கை வைத்து, ஒப்புக்கொண்ட பில்களின் பட்டியலைச் செலுத்துவது",
+                  "மொத்தத்தை யாரும் பார்ப்பதில்லை; சேமிப்பு சமமற்றது; ஒருவரின் அவசரநிலை மற்றவருக்கு ஆச்சரியம்"
+                ],
+                [
+                  "மூன்று பானைகள்",
+                  "ஒவ்வொருவரும் சொந்தப் பெயரில் கணக்கை வைத்திருப்பது; கூட்டுக் கணக்கு பகிரப்பட்ட செலவுகளையும் பகிரப்பட்ட சேமிப்பையும் நிதியளிக்கிறது",
+                  "நேர்மையாக இருக்க மாதாந்திர பரிமாற்றமும் பத்து நிமிட மதிப்பாய்வும் தேவை"
+                ]
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "மூன்று பானை மாதிரி பெரும்பாலான குடும்பங்களுக்குப் பொருந்தும். ஒவ்வொரு துணையும் நெட் பேங்கிங் மற்றும் UPI-யுடன் சொந்தப் பெயரில் மட்டுமே ஒரு கணக்கை வைத்திருக்க வேண்டும்; சுதந்திரத்திற்கும், ஒருவரால் மற்றவரின் கணக்கை இயக்க முடியாத நாளுக்கும் அது முக்கியம். 'ஈதர் ஆர் சர்வைவர்' (either or survivor) முறையில் வைக்கப்பட்ட கூட்டுக் கணக்கு பகிரப்பட்ட தேவைகளைச் செலுத்தி, பகிரப்பட்ட சேமிப்புக்கு நிதியளிக்கிறது. ஒவ்வொருவரும் எவ்வளவு போடுவது என்பது சமமாகவோ, வருமான விகிதத்திலோ இருக்கலாம். கவிதா ₹60,000-ம் ரவி ₹90,000-ம் சம்பாதித்து, பகிரப்பட்ட செலவுகள் ₹90,000 என்றால், விகிதாசாரப் பிரிவு 40 சதவீதமும் 60 சதவீதமும்: அவளிடமிருந்து ₹36,000, அவரிடமிருந்து ₹54,000; இருவருக்கும் சுதந்திரமாகச் செலவிடவோ சேமிக்கவோ தங்கள் சொந்த வருமானத்தில் ஏறத்தாழ ஒரே பங்கு மீதமாகும்."
+            },
+            {
+              "type": "paragraph",
+              "text": "ஊதியமற்ற உழைப்பும் கணக்கில் வரும். குழந்தைகளை வளர்க்கவோ பெற்றோரைப் பராமரிக்கவோ ஒரு துணை ஊதிய வேலையை விட்டிருந்தால், பட்ஜெட் அவரை முழுத் துணையாகவே கருத வேண்டும். அதற்கு மூன்று விஷயங்கள் தேவை. நீங்கள் இருவரும் சேர்ந்து நிர்ணயித்த வரம்புக்கு மேலான ஒவ்வொரு முடிவிலும் சமமான குரல். அனுமதியோ ரசீதோ தேவையில்லாத ஒரு தனிப்பட்ட தொகை ஒவ்வொரு மாதமும். சம்பாதிப்பவரின் பெயரில் மட்டுமல்ல, இருவர் பெயரிலும் சேமிப்பும் முதலீடும்: இல்லத்தரசியின் பெயரில் ஒரு SIP, ஒரு PPF கணக்கு, அவளுடையது எனப் பதிவு செய்யப்பட்ட தங்கம். துணைவர்களுக்கிடையேயான பரிசுகள் வரியில்லாதவை; அத்தகைய பரிசுகளிலிருந்து வரும் வருமானம் வரிக்காகக் கொடுப்பவரின் வருமானத்துடன் கிளப்பிங் (clubbing) செய்யப்பட்டாலும், அது ஒரு வரி விவரம்; முக்கியம் உரிமையும் பாதுகாப்பும், வரி அல்ல."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "சேர்ந்து முடிவு செய்தல்: மாதத்திற்கு இருபது நிமிடங்கள்"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "ஒரு தேதியை நிர்ணயியுங்கள், எடுத்துக்காட்டாக சம்பள நாளுக்குப் பிறகான ஞாயிறு; பில் செலுத்துவது போல அதைக் கடைப்பிடியுங்கள்.",
+                "மூன்று எண்களை மட்டும் பாருங்கள்: வருமானம், செலவு, சேமிப்பு விகிதம். ஒவ்வொரு பரிவர்த்தனையையும் தணிக்கை செய்யாதீர்கள்.",
+                "வரும் மாதத்திற்கு ஒரு மாற்றத்தை ஒப்புக்கொள்ளுங்கள், SIP தேதியைச் சம்பள நாளுக்கு நகர்த்துவது அல்லது டெலிவரிகளுக்கு வரம்பு வைப்பது போல.",
+                "ஒரு வரம்பை, சொல்லுங்கள் ₹10,000, நிர்ணயியுங்கள்; அதற்கு மேலான எந்தச் செலவு, கடன், உத்தரவாதம் அல்லது குடும்பத்திற்குப் பரிசும் பின்னர் அறிவிக்கப்படுவதல்ல, முன்பே விவாதிக்கப்படுகிறது.",
+                "இருவரும் வங்கியில் உள்நுழையவும், EMI செலுத்தவும், காப்பீட்டு ஆவணங்களைக் கண்டுபிடிக்கவும் முடிய வேண்டும். ஒருவரால் மட்டுமே முடிந்தால், அதை முதலில் சரிசெய்யுங்கள்."
+              ]
+            },
+            {
+              "type": "callout",
+              "tone": "tip",
+              "text": "ஆண்டுக்கு ஒருமுறை, மதிப்பீடுகள் அல்ல உண்மையான எண்களுடன், குடும்ப செக்-அப்பைச் சேர்ந்து செய்யுங்கள். கேஷ்ஃப்ளோ மதிப்பெண் 'கவனம் தேவை' என்பதிலிருந்து 'நல்லது' என்பதற்கு நகர்வது ஒரு தம்பதி உண்மையில் பார்க்கக்கூடிய இலக்கு."
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "கூட்டு பட்ஜெட் என்பது பகிரப்பட்ட மூன்று எண்கள்: வருமானம், செலவு, சேமிப்பு விகிதம்.",
+                "மூன்று பானைகள்: ஒவ்வொரு துணையின் சொந்தப் பெயரில் ஒரு கணக்கு, அத்துடன் பகிரப்பட்ட தேவைகளுக்கும் சேமிப்புக்கும் ஒரு கூட்டுக் கணக்கு.",
+                "இருவரும் தங்கள் சொந்தப் பணத்தில் நியாயமான பங்கை வைத்திருக்க வருமான விகிதத்தில் பங்களியுங்கள்.",
+                "ஊதியமற்ற உழைப்பு சமமான குரல், தனிப்பட்ட பணம், சொந்தப் பெயரில் முதலீடுகளைப் பெறுகிறது.",
+                "மாதத்திற்கு இருபது நிமிடங்களும் ஒரு செலவு வரம்பும் பெரும்பாலான பணச் சண்டைகளைத் தடுக்கும்."
+              ]
+            },
+            {
+              "type": "glossary",
+              "terms": [
+                {
+                  "term": "சேமிப்பு விகிதம் (Savings rate)",
+                  "definition": "வருமானத்திலிருந்து மொத்தச் செலவைக் கழித்து வருமானத்தால் வகுத்தது. குடும்ப செக்-அப் மதிப்பிடும் கேஷ்ஃப்ளோ எண்."
+                },
+                {
+                  "term": "ஈதர் ஆர் சர்வைவர் (Either or survivor)",
+                  "definition": "எந்த ஒருவரும் தனியாக இயக்கக்கூடிய, ஒருவர் இறந்தால் மற்றவர் வைத்துக்கொள்ளும் கூட்டுக் கணக்கு முறை."
+                },
+                {
+                  "term": "வருமானக் கிளப்பிங் (Clubbing of income)",
+                  "definition": "துணைக்குப் பரிசாகத் தந்த பணத்திலிருந்து ஈட்டப்படும் வருமானம் கொடுப்பவரின் கையில் வரி விதிக்கப்படும் வரி விதி."
+                },
+                {
+                  "term": "வரம்பு (Threshold)",
+                  "definition": "அதற்கு மேலான செலவு அல்லது கடன் பின்னர் அறிவிக்கப்படாமல் முன்பே சேர்ந்து ஒப்புக்கொள்ளப்படும் தொகை."
+                }
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "குடும்ப செக்-அப்பின் கேஷ்ஃப்ளோ பரிமாணம் எந்த எண்ணைப் பார்க்கிறது?",
+                  "options": [
+                    "சேமிப்பு விகிதம்",
+                    "வங்கிக் கணக்குகளின் எண்ணிக்கை",
+                    "தங்கத்தின் விலை"
+                  ],
+                  "answer": 0,
+                  "explanation": "கேஷ்ஃப்ளோ என்பது வருமானத்தின் பங்காக வருமானம் கழித்தல் செலவு. கூட்டு பட்ஜெட் தெரியும்படி செய்யும் முதல் எண் அதுதான்."
+                },
+                {
+                  "q": "மூன்று பானை மாதிரியில், சொந்தப் பெயரில் கணக்கு வைத்திருப்பவர் யார்?",
+                  "options": [
+                    "அதிகம் சம்பாதிப்பவர் மட்டும்",
+                    "இருவரும், அத்துடன் பகிரப்பட்ட செலவுகளுக்கு ஒரு கூட்டுக் கணக்கு",
+                    "கூட்டுக் கணக்கு மட்டுமே உள்ளது"
+                  ],
+                  "answer": 1,
+                  "explanation": "சுதந்திரத்திற்காக ஒவ்வொரு துணையும் சொந்தக் கணக்கை வைத்திருக்கிறார்; கூட்டுக் கணக்கு பகிரப்பட்ட தேவைகளுக்கும் சேமிப்புக்கும் நிதியளிக்கிறது."
+                },
+                {
+                  "q": "கவிதா ₹60,000-ம் ரவி ₹90,000-ம் சம்பாதிக்கிறார்கள். பகிரப்பட்ட செலவுகள் ₹90,000. விகிதாசாரப் பிரிவில் கவிதா பங்களிப்பது?",
+                  "options": [
+                    "₹45,000",
+                    "₹36,000",
+                    "₹60,000"
+                  ],
+                  "answer": 1,
+                  "explanation": "அவள் குடும்ப வருமானத்தில் 40 சதவீதம் சம்பாதிக்கிறாள்; எனவே பகிரப்பட்ட செலவில் 40 சதவீதம், ₹36,000, பங்களிக்கிறாள்."
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": true,
+          "publishedAt": "2026-10-18"
         }
       ]
     },
     {
       "slug": "money-conversations",
-      "readingMinutes": 10,
+      "readingMinutes": 5,
       "translations": [
         {
           "locale": "en",
           "title": "Money conversations",
-          "excerpt": "",
-          "blocks": [],
-          "state": "draft",
-          "aiDraft": false
+          "excerpt": "Most money fights are about something unsaid. How to talk about spending, family and debt without blame, even when you are not the earner.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Couples argue about money more than about anything else, and almost never about the amount. The fight is about feeling unheard, or about finding out late: a personal loan that surfaces when the EMI bounces, gold bought without a word, ₹15,000 a month going to a brother's business. Silence is expensive. The household check-up can tell you the cashflow number is weak; only a conversation can tell you why, and the conversation is usually harder than the fix. This chapter is about having it."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Five conversations every household needs"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Where the money goes: income, spending and savings rate, the numbers from the joint-budget chapter, seen together.",
+                "What each of us needs personally: a monthly amount that is nobody else's business, so that a saree or a gadget is never a confession.",
+                "Family obligations: money to parents, a sibling's wedding, festival gifts, a cousin's loan request. Decide the yearly amount and the rule for surprises before the request comes, not during it.",
+                "Debt, all of it: cards, buy-now-pay-later, gold loans, chit funds, money borrowed from or lent to relatives, and anything either of you has guaranteed for someone else.",
+                "What if: a job loss, a long illness, a death. Which policies exist, who the nominees are, where the papers are, and how many months the emergency fund would last."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "How to start without a fight"
+            },
+            {
+              "type": "table",
+              "header": [
+                "Instead of",
+                "Try"
+              ],
+              "rows": [
+                [
+                  "You waste money on deliveries",
+                  "We spent ₹18,000 on deliveries last month. Can we agree a cap?"
+                ],
+                [
+                  "You never tell me anything",
+                  "I would like to see the bank app and the policies. Can we set it up this weekend?"
+                ],
+                [
+                  "Your family always needs money",
+                  "What is a yearly amount for family that we both feel fine about?"
+                ],
+                [
+                  "Why did you take that loan?",
+                  "From now on, anything above ₹10,000 we decide together before, not after. Agreed?"
+                ]
+              ]
+            },
+            {
+              "type": "list",
+              "items": [
+                "Pick a calm time, not the moment a bill arrives or a card is declined.",
+                "Lead with a shared goal: 'I want us to have six months saved by next Diwali.'",
+                "Use numbers, not character. '₹18,000 on deliveries' is a fact; 'you are careless' is an accusation.",
+                "One topic per sitting. Debt one week, family money the next.",
+                "Write the decision down, even as a phone note, so it does not have to be re-argued."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "When you are not the earner"
+            },
+            {
+              "type": "paragraph",
+              "text": "Not earning does not mean not knowing. You have a right to the four numbers from the taking-charge module: what comes in, what the household owns, what it owes, and how long it could last. Ask to be the nominee on your partner's accounts and policies, to be a joint holder on the main account, and for a personal amount each month. Ask for the papers to be kept where you can reach them. If every request for information is refused, if all money and every card is controlled by one person and you must account for every rupee, that is called economic abuse, and the Protection of Women from Domestic Violence Act 2005 recognises it as a form of domestic violence. Talk to someone you trust, and know that the national women's helpline, 181, exists for exactly this."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "When you earn more, or your partner has debt"
+            },
+            {
+              "type": "paragraph",
+              "text": "A wife who out-earns her husband is still unusual enough in India that both partners can feel it, and the feeling turns into scorekeeping. Decide roles, not scores: who pays which bills, who tracks which savings, and that both have equal say regardless of who contributes more. If your partner carries debt, remember that credit histories are individual. You are not liable for their loan unless you are a co-borrower or guarantor, so do not sign as one to 'help' without understanding that you become fully liable. The household cashflow, though, is shared, so the repayment plan should be made together, with the highest-interest loan first."
+            },
+            {
+              "type": "callout",
+              "tone": "info",
+              "text": "A money conversation is a success if each of you leaves knowing one number you did not know before. You do not have to agree on everything in one evening."
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "Money fights are about silence, not amounts. Five conversations cover almost everything.",
+                "Lead with numbers and a shared goal; one topic per sitting.",
+                "Agree a threshold above which spending and borrowing are decided together in advance.",
+                "Not earning does not mean not knowing: ask for the numbers, nominee status and access.",
+                "Complete financial control by one partner is economic abuse, and help exists."
+              ]
+            },
+            {
+              "type": "glossary",
+              "terms": [
+                {
+                  "term": "Economic abuse",
+                  "definition": "Controlling a partner by withholding money or information, or denying access to shared resources. Recognised under the Domestic Violence Act 2005."
+                },
+                {
+                  "term": "Guarantor",
+                  "definition": "Someone who promises to repay another person's loan if they do not. A guarantor is fully liable and the loan appears on their credit report."
+                },
+                {
+                  "term": "Co-borrower",
+                  "definition": "A person who takes a loan jointly with another and is equally responsible for every EMI."
+                },
+                {
+                  "term": "Cashflow",
+                  "definition": "What comes in, what goes out and what is left each month; the dimension of the household check-up this module supports."
+                }
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "Which opening is most likely to lead to a useful conversation?",
+                  "options": [
+                    "You waste money on deliveries",
+                    "We spent ₹18,000 on deliveries last month. Can we agree a cap?",
+                    "Your family always needs money"
+                  ],
+                  "answer": 1,
+                  "explanation": "Numbers plus a shared request invite a decision. Character judgements invite a defence."
+                },
+                {
+                  "q": "If you sign as guarantor on your partner's personal loan, what happens?",
+                  "options": [
+                    "Nothing unless they ask you to pay",
+                    "You become fully liable and the loan shows on your credit report",
+                    "The interest rate halves"
+                  ],
+                  "answer": 1,
+                  "explanation": "A guarantor is legally bound to repay if the borrower defaults, and lenders treat the loan as part of the guarantor's obligations."
+                },
+                {
+                  "q": "A partner who controls all money, refuses to share any information and demands accounts for every rupee is showing what?",
+                  "options": [
+                    "Good budgeting discipline",
+                    "Economic abuse, recognised under the Domestic Violence Act",
+                    "Normal behaviour for the higher earner"
+                  ],
+                  "answer": 1,
+                  "explanation": "Financial control used to dominate a partner is recognised as domestic violence in Indian law. Help is available through trusted people and the 181 helpline."
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": false,
+          "publishedAt": "2026-10-18"
+        },
+        {
+          "locale": "ta",
+          "title": "பணப் பேச்சுகள்",
+          "excerpt": "பெரும்பாலான பணச் சண்டைகள் சொல்லப்படாத ஒன்றைப் பற்றியவை. செலவு, குடும்பக் கடமைகள், கடன் பற்றிக் குற்றம் சாட்டாமல் எப்படிப் பேசுவது, நீங்கள் சம்பாதிப்பவர் இல்லாதபோது என்ன செய்வது.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "தம்பதிகள் வேறு எதையும் விடப் பணத்தைப் பற்றியே அதிகம் சண்டையிடுகிறார்கள்; ஆனால் தொகையைப் பற்றி ஏறக்குறைய ஒருபோதும் இல்லை. சண்டை கேட்கப்படாமல் போனதை உணர்வதைப் பற்றியது, அல்லது தாமதமாகத் தெரிந்துகொள்வதைப் பற்றியது: EMI தவறும்போது வெளிப்படும் தனிநபர் கடன், ஒரு வார்த்தையும் இல்லாமல் வாங்கிய நகை, சகோதரனின் தொழிலுக்கு மாதம் ₹15,000. மௌனம் விலை உயர்ந்தது. கேஷ்ஃப்ளோ எண் பலவீனமாக உள்ளது என்று குடும்ப செக்-அப் சொல்லும்; ஏன் என்று ஒரு பேச்சு மட்டுமே சொல்ல முடியும்; பொதுவாகத் தீர்வை விடப் பேச்சே கடினம். இந்த அத்தியாயம் அதைப் பேசுவதைப் பற்றியது."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "ஒவ்வொரு குடும்பத்திற்கும் தேவையான ஐந்து பேச்சுகள்"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "பணம் எங்கே போகிறது: வருமானம், செலவு, சேமிப்பு விகிதம்; கூட்டு பட்ஜெட் அத்தியாயத்தின் எண்களைச் சேர்ந்து பார்ப்பது.",
+                "நம் ஒவ்வொருவருக்கும் தனிப்பட்ட தேவை என்ன: வேறு யாருடைய விஷயமும் அல்லாத மாதாந்திரத் தொகை; அப்போது ஒரு புடவையோ கேட்ஜெட்டோ ஒருபோதும் ஒப்புதல் வாக்குமூலமாக இருக்காது.",
+                "குடும்பக் கடமைகள்: பெற்றோருக்குப் பணம், உடன்பிறந்தவரின் திருமணம், பண்டிகைப் பரிசுகள், ஒன்றுவிட்ட சகோதரரின் கடன் கோரிக்கை. கோரிக்கை வரும்போது அல்ல, அதற்கு முன்பே ஆண்டுத் தொகையையும் ஆச்சரியங்களுக்கான விதியையும் முடிவு செய்யுங்கள்.",
+                "கடன், அனைத்தும்: கார்டுகள், பை-நவ்-பே-லேட்டர், நகைக் கடன், சீட்டு, உறவினர்களிடமிருந்து வாங்கிய அல்லது கொடுத்த பணம், இருவரில் யாராவது வேறொருவருக்கு உத்தரவாதம் அளித்திருப்பது.",
+                "என்ன ஆனால்: வேலை இழப்பு, நீண்ட நோய், மரணம். எந்தப் பாலிசிகள் உள்ளன, நாமினிகள் யார், ஆவணங்கள் எங்கே, எமர்ஜென்சி ஃபண்ட் எத்தனை மாதங்கள் நீடிக்கும்."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "சண்டை இல்லாமல் எப்படித் தொடங்குவது"
+            },
+            {
+              "type": "table",
+              "header": [
+                "இப்படிச் சொல்வதற்குப் பதிலாக",
+                "இப்படி முயலுங்கள்"
+              ],
+              "rows": [
+                [
+                  "நீ டெலிவரிகளில் பணத்தை வீணடிக்கிறாய்",
+                  "போன மாதம் டெலிவரிகளுக்கு ₹18,000 செலவிட்டோம். ஒரு வரம்பை ஒப்புக்கொள்ளலாமா?"
+                ],
+                [
+                  "நீ எனக்கு எதுவுமே சொல்வதில்லை",
+                  "வங்கி ஆப்பையும் பாலிசிகளையும் பார்க்க விரும்புகிறேன். இந்த வார இறுதியில் அமைத்துக்கொள்ளலாமா?"
+                ],
+                [
+                  "உன் குடும்பத்திற்கு எப்போதும் பணம் தேவை",
+                  "குடும்பத்திற்கு இருவருக்கும் சரியெனத் தோன்றும் ஆண்டுத் தொகை என்ன?"
+                ],
+                [
+                  "அந்தக் கடனை ஏன் வாங்கினாய்?",
+                  "இனிமேல் ₹10,000-க்கு மேல் எதையும் பின்னால் அல்ல, முன்பே சேர்ந்து முடிவு செய்வோம். சரியா?"
+                ]
+              ]
+            },
+            {
+              "type": "list",
+              "items": [
+                "அமைதியான நேரத்தைத் தேர்வு செய்யுங்கள்; பில் வரும் அல்லது கார்டு நிராகரிக்கப்படும் தருணத்தில் அல்ல.",
+                "பகிரப்பட்ட இலக்குடன் தொடங்குங்கள்: 'அடுத்த தீபாவளிக்குள் நமக்கு ஆறு மாதச் சேமிப்பு இருக்க வேண்டும் என்று விரும்புகிறேன்.'",
+                "குணத்தை அல்ல, எண்களைப் பயன்படுத்துங்கள். 'டெலிவரிகளுக்கு ₹18,000' ஒரு உண்மை; 'நீ கவனக்குறைவானவன்' ஒரு குற்றச்சாட்டு.",
+                "ஒரு அமர்வுக்கு ஒரு தலைப்பு. ஒரு வாரம் கடன், அடுத்த வாரம் குடும்பப் பணம்.",
+                "மீண்டும் வாதிட வேண்டியதில்லாதபடி, போன் குறிப்பாகவாவது முடிவை எழுதி வையுங்கள்."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "நீங்கள் சம்பாதிப்பவர் இல்லாதபோது"
+            },
+            {
+              "type": "paragraph",
+              "text": "சம்பாதிக்காதது தெரியாமல் இருப்பது என்று பொருளல்ல. பொறுப்பேற்றல் தொகுதியின் நான்கு எண்களுக்கு உங்களுக்கு உரிமை உண்டு: என்ன வருகிறது, குடும்பம் எதை வைத்திருக்கிறது, எதைக் கடன்பட்டிருக்கிறது, எவ்வளவு காலம் தாங்கும். உங்கள் துணையின் கணக்குகளிலும் பாலிசிகளிலும் நாமினியாக இருக்கவும், முக்கியக் கணக்கில் கூட்டு உரிமையாளராக இருக்கவும், ஒவ்வொரு மாதமும் தனிப்பட்ட தொகைக்கும் கேளுங்கள். ஆவணங்களை நீங்கள் எடுக்கக்கூடிய இடத்தில் வைக்கக் கேளுங்கள். தகவலுக்கான ஒவ்வொரு கோரிக்கையும் மறுக்கப்பட்டால், எல்லாப் பணமும் ஒவ்வொரு கார்டும் ஒருவரால் கட்டுப்படுத்தப்பட்டு ஒவ்வொரு ரூபாய்க்கும் நீங்கள் கணக்குக் கொடுக்க வேண்டியிருந்தால், அது பொருளாதாரத் துஷ்பிரயோகம் (economic abuse) எனப்படும்; குடும்ப வன்முறையிலிருந்து பெண்களைப் பாதுகாக்கும் சட்டம் 2005 அதைக் குடும்ப வன்முறையின் ஒரு வடிவமாக அங்கீகரிக்கிறது. நீங்கள் நம்பும் ஒருவரிடம் பேசுங்கள்; தேசிய மகளிர் ஹெல்ப்லைன் 181 இதற்காகவே இருக்கிறது என்பதை அறியுங்கள்."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "நீங்கள் அதிகம் சம்பாதிக்கும்போது, அல்லது துணைக்குக் கடன் இருக்கும்போது"
+            },
+            {
+              "type": "paragraph",
+              "text": "கணவனை விட அதிகம் சம்பாதிக்கும் மனைவி இந்தியாவில் இன்னும் இருவரும் உணரும் அளவு அசாதாரணம்; அந்த உணர்வு கணக்கு வைப்பதாக மாறுகிறது. மதிப்பெண்களை அல்ல, பங்குகளை முடிவு செய்யுங்கள்: யார் எந்த பில்லைச் செலுத்துவது, யார் எந்தச் சேமிப்பைக் கண்காணிப்பது, யார் அதிகம் பங்களித்தாலும் இருவருக்கும் சமமான குரல். உங்கள் துணைக்குக் கடன் இருந்தால், கடன் வரலாறுகள் தனிப்பட்டவை என்பதை நினைவில் கொள்ளுங்கள். நீங்கள் இணைக் கடனாளியாகவோ உத்தரவாததாரராகவோ இல்லாவிட்டால் அவர்களின் கடனுக்கு நீங்கள் பொறுப்பல்ல; எனவே முழுப் பொறுப்பாளியாகிவிடுவீர்கள் என்பதைப் புரிந்துகொள்ளாமல் 'உதவ' அப்படிக் கையெழுத்திடாதீர்கள். ஆனால் குடும்பக் கேஷ்ஃப்ளோ பகிரப்பட்டது; எனவே திருப்பிச் செலுத்தும் திட்டம் சேர்ந்து, அதிக வட்டிக் கடன் முதலில் என்று அமைக்கப்பட வேண்டும்."
+            },
+            {
+              "type": "callout",
+              "tone": "info",
+              "text": "முன்பு தெரியாத ஒரு எண்ணை இருவரும் தெரிந்துகொண்டு எழுந்தால், அந்தப் பணப் பேச்சு வெற்றி. ஒரே மாலையில் எல்லாவற்றிலும் உடன்பட வேண்டியதில்லை."
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "பணச் சண்டைகள் தொகையைப் பற்றியவை அல்ல, மௌனத்தைப் பற்றியவை. ஐந்து பேச்சுகள் ஏறக்குறைய எல்லாவற்றையும் உள்ளடக்கும்.",
+                "எண்களுடனும் பகிரப்பட்ட இலக்குடனும் தொடங்குங்கள்; ஒரு அமர்வுக்கு ஒரு தலைப்பு.",
+                "அதற்கு மேலான செலவும் கடனும் முன்பே சேர்ந்து முடிவு செய்யப்படும் ஒரு வரம்பை ஒப்புக்கொள்ளுங்கள்.",
+                "சம்பாதிக்காதது தெரியாமல் இருப்பது அல்ல: எண்கள், நாமினி நிலை, அணுகலைக் கேளுங்கள்.",
+                "ஒரு துணையின் முழுமையான நிதிக் கட்டுப்பாடு பொருளாதாரத் துஷ்பிரயோகம்; உதவி உள்ளது."
+              ]
+            },
+            {
+              "type": "glossary",
+              "terms": [
+                {
+                  "term": "பொருளாதாரத் துஷ்பிரயோகம் (Economic abuse)",
+                  "definition": "பணத்தையோ தகவலையோ மறுத்து, அல்லது பகிரப்பட்ட வளங்களுக்கான அணுகலை மறுத்து, துணையைக் கட்டுப்படுத்துவது. குடும்ப வன்முறைச் சட்டம் 2005-ன் கீழ் அங்கீகரிக்கப்பட்டது."
+                },
+                {
+                  "term": "உத்தரவாததாரர் (Guarantor)",
+                  "definition": "வேறொருவர் கடனைத் திருப்பிச் செலுத்தாவிட்டால் தாம் செலுத்துவதாக வாக்களிப்பவர். உத்தரவாததாரர் முழுப் பொறுப்பாளி; கடன் அவர்களின் கடன் அறிக்கையில் தோன்றும்."
+                },
+                {
+                  "term": "இணைக் கடனாளி (Co-borrower)",
+                  "definition": "மற்றொருவருடன் சேர்ந்து கடன் வாங்கி, ஒவ்வொரு EMI-க்கும் சமமாகப் பொறுப்பானவர்."
+                },
+                {
+                  "term": "கேஷ்ஃப்ளோ (Cashflow)",
+                  "definition": "ஒவ்வொரு மாதமும் என்ன வருகிறது, என்ன போகிறது, என்ன மீதம்; இந்தத் தொகுதி ஆதரிக்கும் குடும்ப செக்-அப்பின் பரிமாணம்."
+                }
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "எந்தத் தொடக்கம் பயனுள்ள பேச்சுக்கு இட்டுச் செல்ல அதிக வாய்ப்பு?",
+                  "options": [
+                    "நீ டெலிவரிகளில் பணத்தை வீணடிக்கிறாய்",
+                    "போன மாதம் டெலிவரிகளுக்கு ₹18,000 செலவிட்டோம். ஒரு வரம்பை ஒப்புக்கொள்ளலாமா?",
+                    "உன் குடும்பத்திற்கு எப்போதும் பணம் தேவை"
+                  ],
+                  "answer": 1,
+                  "explanation": "எண்களும் பகிரப்பட்ட கோரிக்கையும் ஒரு முடிவை அழைக்கின்றன. குணத் தீர்ப்புகள் தற்காப்பை அழைக்கின்றன."
+                },
+                {
+                  "q": "உங்கள் துணையின் தனிநபர் கடனில் உத்தரவாததாரராகக் கையெழுத்திட்டால் என்ன நடக்கும்?",
+                  "options": [
+                    "அவர்கள் செலுத்தச் சொன்னால் தவிர எதுவுமில்லை",
+                    "நீங்கள் முழுப் பொறுப்பாளியாகிறீர்கள், கடன் உங்கள் கடன் அறிக்கையில் தோன்றும்",
+                    "வட்டி விகிதம் பாதியாகும்"
+                  ],
+                  "answer": 1,
+                  "explanation": "கடனாளி தவறினால் உத்தரவாததாரர் சட்டப்படி திருப்பிச் செலுத்தக் கடமைப்பட்டவர்; கடன் வழங்குநர்கள் அந்தக் கடனை உத்தரவாததாரரின் கடமைகளின் பகுதியாகக் கருதுகிறார்கள்."
+                },
+                {
+                  "q": "எல்லாப் பணத்தையும் கட்டுப்படுத்தி, எந்தத் தகவலையும் பகிர மறுத்து, ஒவ்வொரு ரூபாய்க்கும் கணக்குக் கேட்கும் துணை எதைக் காட்டுகிறார்?",
+                  "options": [
+                    "நல்ல பட்ஜெட் ஒழுக்கம்",
+                    "குடும்ப வன்முறைச் சட்டத்தின் கீழ் அங்கீகரிக்கப்பட்ட பொருளாதாரத் துஷ்பிரயோகம்",
+                    "அதிகம் சம்பாதிப்பவரின் சாதாரண நடத்தை"
+                  ],
+                  "answer": 1,
+                  "explanation": "துணையை அடக்கப் பயன்படுத்தப்படும் நிதிக் கட்டுப்பாடு இந்தியச் சட்டத்தில் குடும்ப வன்முறையாக அங்கீகரிக்கப்பட்டுள்ளது. நம்பகமானவர்கள் மூலமாகவும் 181 ஹெல்ப்லைன் மூலமாகவும் உதவி கிடைக்கும்."
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": true,
+          "publishedAt": "2026-10-18"
         }
       ]
     }
