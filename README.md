@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# My Money & Me
 
-## Getting Started
+Free financial education for India at [mymoneyandme.in](https://mymoneyandme.in): a public article feed, a learning hub for adults, kids and women, 60 calculators, and a financial health check-up that returns a prioritised plan.
 
-First, run the development server:
+Built and run by one person with AI-assisted development. The product requirements live in `docs/feature-requirements.md`; delivery follows the phases in its section 20. See `docs/architecture.md` for how the code is organised and `docs/roadmap.md` for what each phase ships.
+
+## Quick start
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
+pnpm dev          # http://localhost:3000 → redirects to /en
+pnpm test         # unit tests: calculators, check-up engine, rule pack
+pnpm typecheck    # next typegen + tsc
+pnpm lint
+pnpm build && pnpm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Node 22 and pnpm 10.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## What is here (Phase 1 + public site slice)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Next.js 16 app, TypeScript, Tailwind v4**, server-rendered public pages with Cache Components.
+- **Internationalised routing** (`/en/...`, `/ta/...`) with next-intl; English is the source language, Tamil ships now, the other seven launch languages are one messages file each (`src/i18n/routing.ts`).
+- **India rule pack** (`rulepacks/india-2025-26.v1.json`): tax slabs, scheme rates, insurance norms, scoring weights and bands, inflation and return defaults. Validated with zod on load; every calculator and check-up result records the version used.
+- **Calculator engine** (`src/lib/calculators`): formula families plus JSON-shaped definitions for 60 calculators across 9 groups. Live recalculation, sliders, shareable URLs, year-by-year tables, SVG charts, lakh/crore or international grouping.
+- **Check-up engine** (`src/lib/checkup`): eight weighted dimensions scored from declarative bands, life-stage weight adjustments, confidence indicator, and a plan builder that follows the fixed priority sequence. Exposed as the public 5-question quick check at `/check-up` via `POST /api/checkup/quick`.
+- **Content store** (`content/`): articles and 29 learning-hub modules as JSON with per-language translations, publish states, AI-draft labels and fallback rules. Four articles and five chapters have full bodies; the rest are listed as coming soon.
+- **SEO**: per-language sitemap, hreflang alternates, Article JSON-LD, robots, PWA manifest, secure headers.
 
-## Learn More
+## Not yet built
 
-To learn more about Next.js, take a look at the following resources:
+Accounts and the member app (Phase 3), the authoring and admin consoles, the database, donations, notifications, and the remaining seven languages. `docs/roadmap.md` lists them in order with what each needs.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Editing content
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Add an article: new JSON file in `content/articles/` following an existing one. `{placeholders}` such as `{section_80c_limit}` resolve against the rule pack at render time.
+- Add a chapter body: edit the module file in `content/modules/<track>/`, set the translation `state` to `published`.
+- Add a calculator: add a definition to `src/lib/calculators/definitions.ts` (or a new formula family in `formulas.ts`) and names/labels to `messages/en.json`.
+- Change a rate or limit: edit the rule pack (or copy it to a new version with a new `effectiveFrom`).
+- Add a language: add `messages/<code>.json`, flip `enabled` in `src/i18n/routing.ts`.

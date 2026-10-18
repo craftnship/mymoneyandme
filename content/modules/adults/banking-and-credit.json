@@ -1,0 +1,77 @@
+{
+  "slug": "banking-and-credit",
+  "track": "adults",
+  "order": 2,
+  "difficulty": "beginner",
+  "estimatedHours": 3,
+  "translations": [
+    {
+      "locale": "en",
+      "title": "Banking and credit",
+      "summary": "Accounts, credit scores, cards and loans: how to use the banking system without it using you."
+    },
+    {
+      "locale": "ta",
+      "title": "வங்கி மற்றும் கடன்",
+      "summary": "கணக்குகள், கடன் மதிப்பெண், அட்டைகள் மற்றும் கடன்கள்: வங்கி அமைப்பை உங்களைப் பயன்படுத்த விடாமல் பயன்படுத்துவது எப்படி."
+    }
+  ],
+  "chapters": [
+    {
+      "slug": "bank-accounts",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Bank accounts and UPI",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    },
+    {
+      "slug": "credit-score",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Your credit score",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    },
+    {
+      "slug": "credit-cards",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Credit cards without the trap",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    },
+    {
+      "slug": "loans-and-emis",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Loans and EMIs",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    }
+  ]
+}

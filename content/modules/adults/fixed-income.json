@@ -1,0 +1,63 @@
+{
+  "slug": "fixed-income",
+  "track": "adults",
+  "order": 7,
+  "difficulty": "intermediate",
+  "estimatedHours": 3,
+  "translations": [
+    {
+      "locale": "en",
+      "title": "Fixed income",
+      "summary": "Deposits, bonds and government schemes."
+    },
+    {
+      "locale": "ta",
+      "title": "நிலையான வருமானம்",
+      "summary": "வைப்புத்தொகைகள், பத்திரங்கள் மற்றும் அரசுத் திட்டங்கள்."
+    }
+  ],
+  "chapters": [
+    {
+      "slug": "deposits",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Fixed and recurring deposits",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    },
+    {
+      "slug": "government-schemes",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "PPF, NSC, SSY and post office schemes",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    },
+    {
+      "slug": "bonds",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Bonds and yields",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "slug": "insurance-for-women",
+  "track": "women",
+  "order": 4,
+  "difficulty": "beginner",
+  "estimatedHours": 2,
+  "translations": [
+    {
+      "locale": "en",
+      "title": "Insurance and health cover for women",
+      "summary": "Maternity, critical illness and the covers that matter most."
+    },
+    {
+      "locale": "ta",
+      "title": "பெண்களுக்கான காப்பீடு மற்றும் உடல்நலக் காப்பீடு",
+      "summary": "மகப்பேறு, தீவிர நோய் மற்றும் மிக முக்கியமான காப்பீடுகள்."
+    }
+  ],
+  "chapters": [
+    {
+      "slug": "health-cover-for-women",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Health cover for women",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    },
+    {
+      "slug": "life-cover",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Life cover for earning and non-earning women",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    }
+  ],
+  "checkupDimension": "insurance"
+}

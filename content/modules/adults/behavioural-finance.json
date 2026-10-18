@@ -1,0 +1,63 @@
+{
+  "slug": "behavioural-finance",
+  "track": "adults",
+  "order": 12,
+  "difficulty": "advanced",
+  "estimatedHours": 3,
+  "translations": [
+    {
+      "locale": "en",
+      "title": "Behavioural finance and avoiding scams",
+      "summary": "The mind's money mistakes and the frauds that exploit them."
+    },
+    {
+      "locale": "ta",
+      "title": "நடத்தை நிதி மற்றும் மோசடிகளைத் தவிர்த்தல்",
+      "summary": "மனதின் பணத் தவறுகள் மற்றும் அவற்றைப் பயன்படுத்தும் மோசடிகள்."
+    }
+  ],
+  "chapters": [
+    {
+      "slug": "biases",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "The biases that cost money",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    },
+    {
+      "slug": "scams",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Scams and how they work",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    },
+    {
+      "slug": "staying-the-course",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Staying the course",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,26 +1,93 @@
 @import "tailwindcss";
 
+/*
+  Design tokens. The brand palette is a placeholder until the design language is
+  chosen (decision log, section 21); every colour is a token so a swap is one edit.
+  Body text is 16 px minimum (section 13), Indic scripts get a taller line height.
+*/
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --bg: #fbfaf7;
+  --bg-elevated: #ffffff;
+  --fg: #1c1b18;
+  --fg-muted: #5f5c55;
+  --border: #e6e2d9;
+  --accent: #0f6e56;
+  --accent-strong: #0b5a46;
+  --accent-soft: #e3f1ec;
+  --warn: #b45309;
+  --warn-soft: #fdf1e3;
+  --danger: #b42318;
+  --danger-soft: #fdecea;
+  --info-soft: #e8f0fb;
+  --radius: 14px;
+  --font-sans: "Noto Sans", "Noto Sans Tamil", "Noto Sans Devanagari", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  :root:not([data-theme="light"]) {
+    --bg: #121311;
+    --bg-elevated: #1b1d1a;
+    --fg: #ecebe6;
+    --fg-muted: #a7a59c;
+    --border: #2d302b;
+    --accent: #5cc9a5;
+    --accent-strong: #7fdcbd;
+    --accent-soft: #15302a;
+    --warn: #f3a85a;
+    --warn-soft: #33240f;
+    --danger: #f08a80;
+    --danger-soft: #3a1a17;
+    --info-soft: #172334;
   }
 }
 
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-soft: var(--accent-soft);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-info-soft: var(--info-soft);
+  --radius-card: var(--radius);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+:lang(ta), :lang(hi), :lang(te), :lang(kn), :lang(ml), :lang(bn), :lang(mr), :lang(gu) {
+  line-height: 1.75;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+input[type="range"] {
+  accent-color: var(--accent);
+}
+
+@media print {
+  header, footer, nav, .no-print { display: none !important; }
+  body { background: #fff; color: #000; }
 }

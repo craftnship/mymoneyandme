@@ -1,0 +1,36 @@
+{
+  "slug": "online-safety",
+  "track": "kids",
+  "order": 7,
+  "difficulty": "beginner",
+  "estimatedHours": 1,
+  "translations": [
+    {
+      "locale": "en",
+      "title": "Online safety and scams",
+      "summary": "OTPs, strangers and the rule of never sharing."
+    },
+    {
+      "locale": "ta",
+      "title": "ஆன்லைன் பாதுகாப்பு மற்றும் மோசடிகள்",
+      "summary": "OTP, அந்நியர்கள் மற்றும் பகிராத விதி."
+    }
+  ],
+  "chapters": [
+    {
+      "slug": "otp-rule",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "The OTP rule",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    }
+  ],
+  "level": "8-11"
+}

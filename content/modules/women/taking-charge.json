@@ -1,0 +1,109 @@
+{
+  "slug": "taking-charge",
+  "track": "women",
+  "order": 1,
+  "difficulty": "beginner",
+  "estimatedHours": 2,
+  "translations": [
+    {
+      "locale": "en",
+      "title": "Taking charge: financial independence at any life stage",
+      "summary": "Your own account, your own numbers, your own plan, whatever the household looks like."
+    },
+    {
+      "locale": "ta",
+      "title": "பொறுப்பேற்றல்: எந்த வாழ்க்கைக் கட்டத்திலும் நிதி சுதந்திரம்",
+      "summary": "உங்கள் சொந்தக் கணக்கு, சொந்த எண்கள், சொந்தத் திட்டம், குடும்பம் எப்படி இருந்தாலும்."
+    }
+  ],
+  "chapters": [
+    {
+      "slug": "your-own-numbers",
+      "readingMinutes": 8,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Your own numbers",
+          "excerpt": "Financial independence starts with knowing four figures that are yours alone.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Independence is not about separating from a partner or a family. It is about being able to answer four questions without asking anyone: what do I earn or control, what do I own, what do I owe, and what would I live on for six months if everything changed tomorrow."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "The four numbers"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Income you control: salary, business income, rent, or the household money that is yours to decide on.",
+                "Assets in your name: bank balances, deposits, gold, investments, property. Joint counts as half unless agreed otherwise.",
+                "Debts in your name or that you have guaranteed.",
+                "Your emergency months: liquid assets in your name divided by essential monthly expenses."
+              ]
+            },
+            {
+              "type": "calculator",
+              "slug": "net-worth"
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Three things to do this month"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Open or revive a bank account solely in your name with net banking and UPI.",
+                "Check that you are the nominee on your partner's accounts and policies, and they on yours.",
+                "Keep copies of policies, property papers and account numbers somewhere you can reach alone."
+              ]
+            },
+            {
+              "type": "callout",
+              "tone": "info",
+              "text": "Under Indian law, a wife's stridhan (gifts and earnings that are hers) remains hers through marriage, separation or widowhood. Keeping a record is what makes that right usable."
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "Four numbers: income, assets, debts, emergency months.",
+                "An account in your own name is the first step.",
+                "Nominations and paperwork protect everyone."
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "Which of these is not one of the four numbers?",
+                  "options": [
+                    "Assets in your name",
+                    "Your partner's salary",
+                    "Your emergency months"
+                  ],
+                  "answer": 1
+                },
+                {
+                  "q": "What is the first practical step toward financial independence?",
+                  "options": [
+                    "Buy gold",
+                    "Open an account solely in your name",
+                    "Take a loan"
+                  ],
+                  "answer": 1
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": false,
+          "publishedAt": "2026-10-10"
+        }
+      ]
+    }
+  ],
+  "checkupDimension": "cashflow"
+}

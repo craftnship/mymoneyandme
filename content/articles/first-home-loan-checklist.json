@@ -1,0 +1,53 @@
+{
+  "id": "art-003",
+  "slug": "first-home-loan-checklist",
+  "sourceLocale": "en",
+  "category": "loans",
+  "format": "howTo",
+  "tags": ["home loan", "real estate"],
+  "author": "My Money & Me",
+  "publishedAt": "2026-10-05",
+  "relatedCalculator": "emi",
+  "relatedChapter": "adults/real-estate-and-home-loans/before-you-borrow",
+  "translations": [
+    {
+      "locale": "en",
+      "title": "The first-timer's home loan checklist",
+      "excerpt": "Twelve things to settle before you sign, from the EMI ceiling to the prepayment clause.",
+      "state": "published",
+      "aiDraft": false,
+      "publishedAt": "2026-10-05",
+      "blocks": [
+        { "type": "paragraph", "text": "A home loan is the largest financial commitment most families ever make, and the paperwork arrives faster than the thinking. Work through this list before the sanction letter, not after." },
+        { "type": "heading", "level": 2, "text": "Before you apply" },
+        { "type": "list", "ordered": true, "items": [
+          "Keep the EMI under 35% of take-home pay, including any existing EMIs.",
+          "Have the down payment (20% or more) plus registration and stamp duty in a separate account; do not borrow it.",
+          "Keep a six-month emergency fund outside the down payment.",
+          "Check your credit score; above 750 usually gets the lowest rate band.",
+          "Decide the tenure with the EMI calculator: a shorter tenure costs more each month but far less overall."
+        ] },
+        { "type": "calculator", "slug": "emi" },
+        { "type": "heading", "level": 2, "text": "In the loan agreement" },
+        { "type": "list", "ordered": true, "items": [
+          "Floating rate linked to an external benchmark (repo rate), with the spread written down.",
+          "No prepayment or foreclosure penalty on floating-rate loans to individuals; this is the rule, confirm it is in writing.",
+          "Processing fee, legal and valuation charges listed with amounts.",
+          "What happens to the EMI when rates change: the tenure usually stretches first; ask for the EMI to rise instead if you can afford it.",
+          "Term life cover for at least the loan amount, bought separately rather than bundled."
+        ] },
+        { "type": "heading", "level": 2, "text": "After disbursal" },
+        { "type": "list", "ordered": true, "items": [
+          "Set up the EMI auto-debit two days after salary day.",
+          "Prepay one extra EMI a year if you can; on a 20-year loan it removes roughly three years.",
+          "Keep the interest certificate for tax: up to {section_80c_limit} of principal under 80C and home-loan interest under 24(b) in the old regime."
+        ] },
+        { "type": "takeaways", "items": [
+          "EMI under 35% of take-home, emergency fund intact, down payment unborrowed.",
+          "Floating rate, benchmark-linked, no prepayment penalty, all in writing.",
+          "One extra EMI a year shortens the loan by years."
+        ] }
+      ]
+    }
+  ]
+}

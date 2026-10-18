@@ -1,0 +1,413 @@
+{
+  "slug": "money-basics",
+  "track": "adults",
+  "order": 1,
+  "difficulty": "beginner",
+  "estimatedHours": 3,
+  "translations": [
+    {
+      "locale": "en",
+      "title": "Money basics",
+      "summary": "Budgeting, cash flow and the emergency fund: the three habits everything else rests on."
+    },
+    {
+      "locale": "ta",
+      "title": "பண அடிப்படைகள்",
+      "summary": "பட்ஜெட், பணப்புழக்கம் மற்றும் அவசர நிதி: மற்ற அனைத்தும் சார்ந்திருக்கும் மூன்று பழக்கங்கள்."
+    }
+  ],
+  "chapters": [
+    {
+      "slug": "budgeting",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Budgeting: give every rupee a job",
+          "excerpt": "Why budgets fail, the 50/30/20 rule, and a weekend routine that keeps one alive.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Most budgets fail for one reason: they are built around what is left after spending. Flip the order. Decide what to save on salary day, move it out of reach, and spend the rest without guilt."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "The 50/30/20 split"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Needs, 50%: rent or EMI, food, utilities, commute, school fees, insurance.",
+                "Wants, 30%: everything that makes life pleasant but would pause in a crisis.",
+                "Savings, 20%: emergency fund first, then investments and extra loan repayment."
+              ]
+            },
+            {
+              "type": "calculator",
+              "slug": "50-30-20-budget"
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "A routine that survives"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Salary day: auto-debit the savings bucket.",
+                "Sunday evening: ten minutes to tag the week's spending as need or want.",
+                "Month end: one number, the savings rate; aim for 20% and rising."
+              ]
+            },
+            {
+              "type": "callout",
+              "tone": "tip",
+              "text": "Track categories, not every transaction. Four or five buckets are enough to see where money leaks."
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "Save first, spend the rest.",
+                "Three numbers: needs, wants, savings rate.",
+                "Ten minutes a week keeps the plan alive."
+              ]
+            },
+            {
+              "type": "glossary",
+              "terms": [
+                {
+                  "term": "Take-home pay",
+                  "definition": "Salary after tax, EPF and other deductions; the number budgets are built on."
+                },
+                {
+                  "term": "Savings rate",
+                  "definition": "The share of take-home pay you keep, whether saved, invested or used to prepay loans."
+                }
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "In the 50/30/20 rule, which bucket is funded first?",
+                  "options": [
+                    "Needs",
+                    "Wants",
+                    "Savings"
+                  ],
+                  "answer": 2,
+                  "explanation": "Savings are moved out on salary day; needs and wants are met from what remains."
+                },
+                {
+                  "q": "A home-loan EMI belongs to which bucket?",
+                  "options": [
+                    "Needs",
+                    "Wants",
+                    "Savings"
+                  ],
+                  "answer": 0
+                },
+                {
+                  "q": "What is a healthy starting target for the savings rate?",
+                  "options": [
+                    "5%",
+                    "20%",
+                    "50%"
+                  ],
+                  "answer": 1
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": false,
+          "publishedAt": "2026-10-10"
+        },
+        {
+          "locale": "ta",
+          "title": "பட்ஜெட்: ஒவ்வொரு ரூபாய்க்கும் ஒரு வேலை",
+          "excerpt": "பட்ஜெட்கள் ஏன் தோல்வியடைகின்றன, 50/30/20 விதி, மற்றும் அதை உயிர்ப்புடன் வைத்திருக்கும் வார இறுதி வழக்கம்.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "பெரும்பாலான பட்ஜெட்கள் ஒரே காரணத்தால் தோல்வியடைகின்றன: செலவுக்குப் பிறகு மீதமாவதைச் சுற்றி கட்டப்படுகின்றன. வரிசையை மாற்றுங்கள். சம்பள நாளில் எவ்வளவு சேமிப்பது என்று முடிவு செய்து, அதை எட்டாத இடத்திற்கு நகர்த்தி, மீதியை குற்ற உணர்வின்றி செலவிடுங்கள்."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "50/30/20 பிரிவு"
+            },
+            {
+              "type": "list",
+              "items": [
+                "தேவைகள், 50%: வாடகை அல்லது EMI, உணவு, மின்சாரம், பயணம், பள்ளிக் கட்டணம், காப்பீடு.",
+                "விருப்பங்கள், 30%: வாழ்க்கையை இனிமையாக்கும், ஆனால் நெருக்கடியில் நிறுத்தக்கூடிய அனைத்தும்.",
+                "சேமிப்பு, 20%: முதலில் அவசர நிதி, பிறகு முதலீடுகள் மற்றும் கூடுதல் கடன் திருப்பிச் செலுத்துதல்."
+              ]
+            },
+            {
+              "type": "calculator",
+              "slug": "50-30-20-budget"
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "நீடிக்கும் ஒரு வழக்கம்"
+            },
+            {
+              "type": "list",
+              "items": [
+                "சம்பள நாள்: சேமிப்புப் பிரிவை ஆட்டோ-டெபிட் செய்யுங்கள்.",
+                "ஞாயிறு மாலை: வாரச் செலவுகளைத் தேவை அல்லது விருப்பம் என்று குறிக்க பத்து நிமிடங்கள்.",
+                "மாத இறுதி: ஒரே எண், சேமிப்பு விகிதம்; 20% ஐ இலக்காகக் கொண்டு உயர்த்துங்கள்."
+              ]
+            },
+            {
+              "type": "callout",
+              "tone": "tip",
+              "text": "ஒவ்வொரு பரிவர்த்தனையையும் அல்ல, வகைகளைக் கண்காணியுங்கள். பணம் எங்கே கசிகிறது என்று பார்க்க நான்கைந்து பிரிவுகள் போதும்."
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "முதலில் சேமியுங்கள், மீதியைச் செலவிடுங்கள்.",
+                "மூன்று எண்கள்: தேவைகள், விருப்பங்கள், சேமிப்பு விகிதம்.",
+                "வாரத்திற்கு பத்து நிமிடங்கள் திட்டத்தை உயிர்ப்புடன் வைக்கும்."
+              ]
+            },
+            {
+              "type": "glossary",
+              "terms": [
+                {
+                  "term": "கையில் கிடைக்கும் சம்பளம்",
+                  "definition": "வரி, EPF மற்றும் பிற பிடித்தங்களுக்குப் பிறகான சம்பளம்; பட்ஜெட் கட்டப்படும் எண்."
+                },
+                {
+                  "term": "சேமிப்பு விகிதம்",
+                  "definition": "கையில் கிடைக்கும் சம்பளத்தில் நீங்கள் வைத்துக்கொள்ளும் பங்கு; சேமிப்பு, முதலீடு அல்லது கடன் முன்பணம் எதுவாக இருந்தாலும்."
+                }
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "50/30/20 விதியில் எந்தப் பிரிவு முதலில் நிரப்பப்படுகிறது?",
+                  "options": [
+                    "தேவைகள்",
+                    "விருப்பங்கள்",
+                    "சேமிப்பு"
+                  ],
+                  "answer": 2,
+                  "explanation": "சம்பள நாளில் சேமிப்பு வெளியே நகர்த்தப்படுகிறது; மீதியில் தேவைகளும் விருப்பங்களும்."
+                },
+                {
+                  "q": "வீட்டுக் கடன் EMI எந்தப் பிரிவைச் சேர்ந்தது?",
+                  "options": [
+                    "தேவைகள்",
+                    "விருப்பங்கள்",
+                    "சேமிப்பு"
+                  ],
+                  "answer": 0
+                },
+                {
+                  "q": "சேமிப்பு விகிதத்திற்கான ஆரோக்கியமான தொடக்க இலக்கு என்ன?",
+                  "options": [
+                    "5%",
+                    "20%",
+                    "50%"
+                  ],
+                  "answer": 1
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": true,
+          "publishedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "slug": "emergency-fund",
+      "readingMinutes": 8,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "The emergency fund",
+          "excerpt": "How many months, where to keep it, and when to use it.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "An emergency fund is insurance you sell to yourself. It turns a job loss or a hospital bill from a crisis into an inconvenience, and it is the reason you will never have to break a long-term investment at the wrong time."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "How much"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Three months of essential expenses for a dual-income salaried household with no dependants.",
+                "Six months with one earner or dependants.",
+                "Nine to twelve months if income is irregular: freelance, business, commission."
+              ]
+            },
+            {
+              "type": "calculator",
+              "slug": "emergency-fund"
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Where"
+            },
+            {
+              "type": "list",
+              "items": [
+                "One month in a savings account you do not use day to day.",
+                "The rest in a sweep-in FD or a liquid fund: withdrawable within a day, earning more than a savings account.",
+                "Never in equity, gold or anything with a lock-in."
+              ]
+            },
+            {
+              "type": "callout",
+              "tone": "warning",
+              "text": "A credit card is not an emergency fund; it is an emergency loan at about 40% a year."
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "Size it on essentials, not total spending.",
+                "Keep it boring and liquid.",
+                "Refill it before restarting investments after use."
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "A self-employed designer with irregular income should hold how many months of essential expenses?",
+                  "options": [
+                    "3",
+                    "6",
+                    "9 to 12"
+                  ],
+                  "answer": 2
+                },
+                {
+                  "q": "Which is a suitable home for an emergency fund?",
+                  "options": [
+                    "Equity mutual fund",
+                    "Liquid fund or sweep-in FD",
+                    "PPF"
+                  ],
+                  "answer": 1
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": false,
+          "publishedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "slug": "cash-flow",
+      "readingMinutes": 8,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Cash flow: the monthly picture",
+          "excerpt": "Income in, money out, and the one ratio that tells you if you are winning.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Net worth is a photograph; cash flow is the film. A household can own property and still be in trouble if more goes out each month than comes in. The monthly cash-flow statement is the simplest financial document you will ever make, and the most useful."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Build it in three lines"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Income: all take-home pay, rental income, interest and dividends, averaged over the year.",
+                "Fixed outflows: EMIs, rent, premiums, school fees, subscriptions.",
+                "Variable outflows: food, transport, lifestyle. The difference is your surplus."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "The ratios"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Savings rate = surplus ÷ income. Target 20% or more.",
+                "EMI-to-income = all EMIs ÷ income. Keep under 35%.",
+                "Essentials share = fixed plus essential variable ÷ income. Under 50% leaves room to breathe."
+              ]
+            },
+            {
+              "type": "calculator",
+              "slug": "savings-rate"
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "Cash flow is the film; net worth is the photo.",
+                "Three lines: income, fixed, variable.",
+                "Savings rate 20%+, EMI under 35%."
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "What does the EMI-to-income ratio measure?",
+                  "options": [
+                    "Loan size against property value",
+                    "Monthly loan payments against take-home pay",
+                    "Interest paid over the loan's life"
+                  ],
+                  "answer": 1
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": false,
+          "publishedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "slug": "goal-setting",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Setting goals that money can measure",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        },
+        {
+          "locale": "ta",
+          "title": "பணத்தால் அளவிடக்கூடிய இலக்குகளை அமைத்தல்",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    }
+  ]
+}

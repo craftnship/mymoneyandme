@@ -1,0 +1,36 @@
+{
+  "slug": "giving-and-sharing",
+  "track": "kids",
+  "order": 6,
+  "difficulty": "beginner",
+  "estimatedHours": 1,
+  "translations": [
+    {
+      "locale": "en",
+      "title": "Giving and sharing",
+      "summary": "Why one jar is for others."
+    },
+    {
+      "locale": "ta",
+      "title": "கொடுத்தல் மற்றும் பகிர்தல்",
+      "summary": "ஒரு ஜாடி ஏன் மற்றவர்களுக்கு."
+    }
+  ],
+  "chapters": [
+    {
+      "slug": "giving",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Giving",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    }
+  ],
+  "level": "8-11"
+}

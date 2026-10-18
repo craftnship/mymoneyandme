@@ -1,0 +1,50 @@
+{
+  "slug": "earning",
+  "track": "kids",
+  "order": 3,
+  "difficulty": "beginner",
+  "estimatedHours": 1,
+  "translations": [
+    {
+      "locale": "en",
+      "title": "Earning, chores and a first bank account",
+      "summary": "Where money comes from and what a bank does with it."
+    },
+    {
+      "locale": "ta",
+      "title": "சம்பாதித்தல், வீட்டு வேலைகள் மற்றும் முதல் வங்கிக் கணக்கு",
+      "summary": "பணம் எங்கிருந்து வருகிறது, வங்கி அதை என்ன செய்கிறது."
+    }
+  ],
+  "chapters": [
+    {
+      "slug": "earning",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Earning",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    },
+    {
+      "slug": "first-bank-account",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "A first bank account",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    }
+  ],
+  "level": "8-11"
+}

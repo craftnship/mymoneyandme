@@ -1,0 +1,45 @@
+{
+  "id": "art-002",
+  "slug": "emergency-fund-guide",
+  "sourceLocale": "en",
+  "category": "personalFinance",
+  "format": "explainer",
+  "tags": ["emergency fund", "saving", "beginner"],
+  "author": "My Money & Me",
+  "publishedAt": "2026-10-08",
+  "relatedCalculator": "emergency-fund",
+  "relatedChapter": "adults/money-basics/emergency-fund",
+  "translations": [
+    {
+      "locale": "en",
+      "title": "How big should your emergency fund be, and where should it sit?",
+      "excerpt": "Three months for a dual-income salaried couple, nine for the self-employed, and never in the same account you spend from.",
+      "state": "published",
+      "aiDraft": false,
+      "publishedAt": "2026-10-08",
+      "blocks": [
+        { "type": "paragraph", "text": "An emergency fund is the money that stops a bad month from becoming a bad decade. It covers a job loss, a hospital deposit, a parent's surgery or a car that dies on the highway, without touching investments or taking a personal loan at 16%." },
+        { "type": "heading", "level": 2, "text": "How many months" },
+        { "type": "table", "header": ["Your situation", "Months of essential expenses"], "rows": [
+          ["Two salaried earners, no dependants", "3"],
+          ["One salaried earner, or dependants", "6"],
+          ["Self-employed, freelance or business income", "9 to 12"]
+        ] },
+        { "type": "paragraph", "text": "Count essential expenses only: rent, EMIs, food, utilities, school fees, insurance premiums. Streaming subscriptions and weekend plans pause in an emergency." },
+        { "type": "calculator", "slug": "emergency-fund" },
+        { "type": "heading", "level": 2, "text": "Where to keep it" },
+        { "type": "list", "items": [
+          "One month in a savings account you do not spend from day to day.",
+          "The rest in a sweep-in fixed deposit or a liquid mutual fund; both pay more than savings interest and can be withdrawn within a day.",
+          "Not in equity funds, gold or your PPF; prices fall at the worst moments and lock-ins defeat the purpose."
+        ] },
+        { "type": "callout", "tone": "warning", "text": "A credit card limit is not an emergency fund. It is an emergency loan at roughly 40% a year." },
+        { "type": "takeaways", "items": [
+          "Size it on essential expenses, not total spending.",
+          "Keep it liquid and boring: savings account, sweep-in FD, liquid fund.",
+          "Refill it before restarting SIPs after you use it."
+        ] }
+      ]
+    }
+  ]
+}

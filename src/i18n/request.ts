@@ -1,0 +1,47 @@
+import { getRequestConfig } from "next-intl/server";
+import { hasLocale } from "next-intl";
+import { locale as rootLocale } from "next/root-params";
+import { routing } from "./routing";
+
+type Messages = { [key: string]: string | Messages };
+
+function deepMerge(base: Messages, override: Messages): Messages {
+  const out: Messages = { ...base };
+  for (const [k, v] of Object.entries(override)) {
+    const b = out[k];
+    out[k] = typeof v === "object" && v !== null && typeof b === "object" && b !== null ? deepMerge(b, v) : v;
+  }
+  return out;
+}
+
+export default getRequestConfig(async () => {
+  // The [locale] root segment is the single source of truth for the request
+  // language; falling back keeps unknown paths (e.g. /favicon.txt) renderable.
+  const candidate = await rootLocale();
+  const locale = hasLocale(routing.locales, candidate)
+    ? candidate
+    : routing.defaultLocale;
+
+  // English is the source language for every UI string; a locale file that is
+  // missing a key falls back to the English string rather than the raw key.
+  const base = (await import("../../messages/en.json")).default;
+  const own = locale === "en" ? base : (await import(`../../messages/${locale}.json`)).default;
+
+  return {
+    locale,
+    messages: deepMerge(base, own),
+    timeZone: "Asia/Kolkata",
+    // Indian grouping (1,00,000) is the default for every language (section 13).
+    formats: {
+      number: {
+        inr: {
+          style: "currency",
+          currency: "INR",
+          maximumFractionDigits: 0,
+          numberingSystem: "latn",
+        },
+        percent: { style: "percent", maximumFractionDigits: 1 },
+      },
+    },
+  };
+});

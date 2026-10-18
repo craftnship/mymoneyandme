@@ -1,0 +1,50 @@
+{
+  "slug": "investing-for-women",
+  "track": "women",
+  "order": 5,
+  "difficulty": "beginner",
+  "estimatedHours": 3,
+  "translations": [
+    {
+      "locale": "en",
+      "title": "Investing for women: starting late, starting small",
+      "summary": "A first SIP at any age, and why gold is not a plan."
+    },
+    {
+      "locale": "ta",
+      "title": "பெண்களுக்கான முதலீடு: தாமதமாகத் தொடங்குதல், சிறியதாகத் தொடங்குதல்",
+      "summary": "எந்த வயதிலும் முதல் SIP, தங்கம் ஏன் ஒரு திட்டம் அல்ல."
+    }
+  ],
+  "chapters": [
+    {
+      "slug": "first-sip",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Your first SIP",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    },
+    {
+      "slug": "gold-is-not-a-plan",
+      "readingMinutes": 10,
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Gold is not a plan",
+          "excerpt": "",
+          "blocks": [],
+          "state": "draft",
+          "aiDraft": false
+        }
+      ]
+    }
+  ],
+  "checkupDimension": "investments"
+}
