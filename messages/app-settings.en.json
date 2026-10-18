@@ -1,1 +1,273 @@
-{}
+{
+  "appSettings": {
+    "title": "Settings",
+    "intro": "Your profile, sign-in security and privacy choices. Everything here applies only to your own account.",
+    "nav": {
+      "label": "Settings sections",
+      "profile": "Profile",
+      "security": "Security",
+      "privacy": "Privacy and data"
+    },
+    "errors": {
+      "generic": "Something went wrong. Please try again.",
+      "signedOut": "You are signed out. Sign in and try again.",
+      "notConfigured": "Email is not available right now. Please try again later.",
+      "rateLimited": "Too many attempts. Please wait a while and try again.",
+      "invalid": "Some of the details are not valid. Check the form and try again.",
+      "name": "Enter your name (up to 100 characters).",
+      "dob": "Enter a valid date of birth. Members must be 18 or older.",
+      "pin": "Enter a six-digit Indian PIN code, or leave it blank.",
+      "retirementAge": "Expected retirement age must be between 40 and 80.",
+      "riskIncomplete": "Answer all five questions to get your risk profile.",
+      "noPassword": "This account signs in without a password.",
+      "wrongPassword": "The current password is not correct.",
+      "samePassword": "Choose a password different from the current one.",
+      "password": {
+        "tooShort": "Use at least 12 characters.",
+        "tooLong": "Use at most 128 characters.",
+        "breached": "This password has appeared in a known data breach. Choose a different one."
+      },
+      "passkeyName": "Enter a name for the passkey (up to 100 characters).",
+      "confirmRequired": "Tick the box to confirm you want to delete the account.",
+      "mailFailed": "The confirmation email could not be sent. Please try again later."
+    },
+    "profile": {
+      "identity": "About you",
+      "name": "Full name",
+      "preferredName": "Preferred name",
+      "preferredNameHint": "How we greet you. Leave blank to use your first name.",
+      "dob": "Date of birth",
+      "dobHint": "Used for retirement and insurance sizing. Never shown to anyone else.",
+      "gender": "Gender",
+      "maritalStatus": "Marital status",
+      "location": "Where you live",
+      "city": "City or town",
+      "state": "State or union territory",
+      "pin": "PIN code",
+      "pinHint": "Optional. Six digits.",
+      "cityTier": "City tier",
+      "cityTierHint": "Tier 1 is a metro such as Chennai or Mumbai; tier 3 is a small town. It adjusts cost-of-living benchmarks.",
+      "preferences": "Preferences",
+      "language": "Display language",
+      "languageHint": "Changing this switches the whole app, including emails we send you.",
+      "numberFormat": "Number format",
+      "riskTolerance": "Risk tolerance",
+      "riskTake": "Take the two-minute questionnaire",
+      "riskRetake": "Retake the questionnaire",
+      "work": "Work and retirement",
+      "employment": "Employment type",
+      "retirementAge": "Expected retirement age",
+      "retirementAgeHint": "Between 40 and 80. Leave blank to use 60.",
+      "health": "Health and lifestyle",
+      "healthHint": "Optional, yes or no only. Used to size life and health cover; never shared.",
+      "smoker": "Do you smoke or use tobacco?",
+      "existingConditions": "Any existing medical conditions?",
+      "notSet": "Not set",
+      "save": "Save profile",
+      "saved": "Profile saved.",
+      "languageChanged": "Display language updated. The app now shows in your chosen language."
+    },
+    "options": {
+      "gender": {
+        "female": "Female",
+        "male": "Male",
+        "nonBinary": "Non-binary",
+        "preferNot": "Prefer not to say"
+      },
+      "marital": {
+        "single": "Single",
+        "married": "Married",
+        "divorced": "Divorced or separated",
+        "widowed": "Widowed",
+        "preferNot": "Prefer not to say"
+      },
+      "cityTier": {
+        "1": "Tier 1 (metro)",
+        "2": "Tier 2 (large city)",
+        "3": "Tier 3 (town or rural)"
+      },
+      "numberFormat": {
+        "indian": "Indian: 1,00,000 (lakh, crore)",
+        "international": "International: 100,000 (thousand, million)"
+      },
+      "employment": {
+        "salaried": "Salaried",
+        "selfEmployed": "Self-employed or professional",
+        "business": "Business owner",
+        "retired": "Retired",
+        "student": "Student",
+        "homemaker": "Homemaker"
+      },
+      "risk": {
+        "conservative": "Conservative",
+        "balanced": "Balanced",
+        "growth": "Growth"
+      },
+      "yesNo": {
+        "yes": "Yes",
+        "no": "No"
+      }
+    },
+    "states": {
+      "AN": "Andaman and Nicobar Islands",
+      "AP": "Andhra Pradesh",
+      "AR": "Arunachal Pradesh",
+      "AS": "Assam",
+      "BR": "Bihar",
+      "CH": "Chandigarh",
+      "CT": "Chhattisgarh",
+      "DH": "Dadra and Nagar Haveli and Daman and Diu",
+      "DL": "Delhi",
+      "GA": "Goa",
+      "GJ": "Gujarat",
+      "HR": "Haryana",
+      "HP": "Himachal Pradesh",
+      "JK": "Jammu and Kashmir",
+      "JH": "Jharkhand",
+      "KA": "Karnataka",
+      "KL": "Kerala",
+      "LA": "Ladakh",
+      "LD": "Lakshadweep",
+      "MP": "Madhya Pradesh",
+      "MH": "Maharashtra",
+      "MN": "Manipur",
+      "ML": "Meghalaya",
+      "MZ": "Mizoram",
+      "NL": "Nagaland",
+      "OR": "Odisha",
+      "PY": "Puducherry",
+      "PB": "Punjab",
+      "RJ": "Rajasthan",
+      "SK": "Sikkim",
+      "TN": "Tamil Nadu",
+      "TG": "Telangana",
+      "TR": "Tripura",
+      "UP": "Uttar Pradesh",
+      "UT": "Uttarakhand",
+      "WB": "West Bengal"
+    },
+    "risk": {
+      "title": "Risk tolerance",
+      "intro": "Five quick questions. Your answers set how much of your long-term money the plan suggests keeping in growth assets such as equity.",
+      "submit": "Get my risk profile",
+      "result": "Your risk profile is {profile}.",
+      "current": "Your current risk profile is {profile}.",
+      "backToProfile": "Back to profile",
+      "explain": {
+        "conservative": "Capital safety first: the plan leans on debt, deposits and a smaller equity share.",
+        "balanced": "A middle path: a mix of equity and debt that can ride out normal market swings.",
+        "growth": "Comfortable with volatility for higher long-term returns: a larger equity share for goals more than seven years away."
+      },
+      "q": {
+        "horizon": {
+          "text": "When will you need most of the money you are investing?",
+          "a1": "Within three years",
+          "a2": "In three to seven years",
+          "a3": "In more than seven years"
+        },
+        "drop": {
+          "text": "Your investments fall 20% in a month. What do you do?",
+          "a1": "Sell to stop further losses",
+          "a2": "Hold and wait for recovery",
+          "a3": "Invest more while prices are low"
+        },
+        "experience": {
+          "text": "How much have you invested in equity (shares or equity funds) so far?",
+          "a1": "Nothing, or only fixed deposits and gold",
+          "a2": "Some, through SIPs or a few funds",
+          "a3": "A lot; I follow the markets regularly"
+        },
+        "income": {
+          "text": "How steady is your household income?",
+          "a1": "Irregular, or one earner with no buffer",
+          "a2": "Steady, with a few months of savings",
+          "a3": "Very steady, with more than six months of expenses saved"
+        },
+        "priority": {
+          "text": "Which matters more to you?",
+          "a1": "Never losing money, even if growth is slow",
+          "a2": "Beating inflation with moderate ups and downs",
+          "a3": "The highest growth, accepting big swings along the way"
+        }
+      }
+    },
+    "security": {
+      "email": "Email address",
+      "verified": "Verified",
+      "unverified": "Not verified",
+      "verifyHint": "Confirm your email so you can recover the account and receive reminders.",
+      "password": "Password",
+      "passwordIntro": "Changing your password signs out every other device.",
+      "currentPassword": "Current password",
+      "newPassword": "New password",
+      "newPasswordHint": "At least {min} characters. A short sentence you will remember works well.",
+      "changePassword": "Change password",
+      "passwordChanged": "Password changed. Other devices have been signed out.",
+      "noPassword": "This account uses passkeys only, so there is no password to change.",
+      "sessions": "Where you are signed in",
+      "sessionsIntro": "Sessions end after 30 minutes idle or 30 days at most. Sign out anything you do not recognise.",
+      "device": "{browser} on {platform}",
+      "unknownBrowser": "Unknown browser",
+      "unknownPlatform": "unknown device",
+      "thisDevice": "This device",
+      "lastSeen": "Last active {when}",
+      "signedInSince": "signed in {when}",
+      "approxIp": "near {ip}",
+      "revoke": "Sign out",
+      "signOutElsewhere": "Sign out everywhere else",
+      "signedOutElsewhere": "Every other device has been signed out.",
+      "passkeys": "Passkeys",
+      "passkeysIntro": "Sign in with Face ID, fingerprint or a security key instead of a password. Keep at least one way to sign in that you can still use if you lose a device.",
+      "noPasskeys": "No passkeys yet.",
+      "unnamedPasskey": "Unnamed passkey",
+      "synced": "Synced",
+      "added": "Added {when}",
+      "lastUsed": "last used {when}",
+      "rename": "Rename",
+      "passkeyNewName": "New passkey name",
+      "save": "Save",
+      "cancel": "Cancel",
+      "remove": "Remove",
+      "removeConfirm": "Remove this passkey?",
+      "removeYes": "Yes, remove"
+    },
+    "privacy": {
+      "consents": "Your consent choices",
+      "consentsIntro": "Each choice is recorded with its date so you can always see what you agreed to. Nothing is sold, and no advertising is based on your finances.",
+      "consent": {
+        "analytics": {
+          "label": "Anonymous usage analytics",
+          "hint": "Which pages and features are used, without any financial figures."
+        },
+        "marketing": {
+          "label": "Weekly digest and product updates by email",
+          "hint": "You can also unsubscribe from any email."
+        },
+        "peerComparison": {
+          "label": "Peer comparison",
+          "hint": "Show how your score compares with similar households; your data joins the anonymous benchmark."
+        },
+        "personalisation": {
+          "label": "Personalised content",
+          "hint": "Suggest articles and lessons based on your check-up results."
+        }
+      },
+      "decidedAt": "Last decided {when}",
+      "undecided": "Not yet decided",
+      "saveConsents": "Save choices",
+      "consentsSaved": "Your choices are saved.",
+      "export": "Download your data",
+      "exportIntro": "Get everything we hold about you: profile, household members, financial items, goals, check-ups, plan progress and consent history.",
+      "exportJson": "Download everything (JSON)",
+      "exportCsv": "Download financial items (CSV)",
+      "exportNote": "The files contain your full financial details in plain text. Store them somewhere safe.",
+      "delete": "Delete account",
+      "deleteIntro": "We email you a confirmation link. Once confirmed, your account is locked and permanently erased after {days} days. You can cancel from this page until then.",
+      "deleteConfirm": "I understand that my household data, goals and check-ups will be permanently deleted.",
+      "requestDeletion": "Send deletion email",
+      "deletionEmailSent": "Check your inbox for the confirmation link. It works for 24 hours.",
+      "deletionPending": "Deletion is confirmed. Your account and all its data are permanently removed on {when}.",
+      "cancelDeletion": "Keep my account"
+    }
+  }
+}
