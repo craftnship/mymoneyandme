@@ -15,7 +15,8 @@
     "language": "Language",
     "menu": "Menu",
     "signIn": "Sign in",
-    "comingSoon": "Coming soon"
+    "comingSoon": "Coming soon",
+    "account": "My account"
   },
   "footer": {
     "educational": "Educational content only. Not regulated financial advice. We never recommend a specific fund, bank or insurer.",
@@ -634,6 +635,91 @@
       "confirmed": "Subscription confirmed. The next digest will reach you.",
       "unsubscribed": "You have been unsubscribed. Sorry to see you go.",
       "invalid": "This link is not valid or has expired."
+    }
+  },
+  "app": {
+    "errors": {
+      "generic": "Something went wrong. Please try again.",
+      "notConfigured": "Accounts are not available right now. Please try again later.",
+      "invalidEmail": "Enter a valid email address.",
+      "invalidName": "Enter your name (up to 100 characters).",
+      "termsRequired": "Please accept the terms and privacy policy to continue.",
+      "rateLimited": "Too many attempts. Please wait a while and try again.",
+      "invalidCredentials": "That email and password do not match.",
+      "locked": "Too many failed attempts. This account is locked for 15 minutes.",
+      "invalidToken": "This link is invalid or has expired. Request a new one.",
+      "signedOut": "You are signed out. Sign in and try again.",
+      "password": {
+        "tooShort": "Use at least 12 characters.",
+        "tooLong": "Use at most 128 characters.",
+        "breached": "This password has appeared in a known data breach. Choose a different one."
+      }
+    },
+    "auth": {
+      "email": "Email",
+      "password": "Password",
+      "newPassword": "New password",
+      "name": "Your name",
+      "signIn": "Sign in",
+      "signOut": "Sign out",
+      "forgot": "Forgot password?",
+      "noAccount": "New here?",
+      "haveAccount": "Already have an account?",
+      "createAccount": "Create account",
+      "existsNotice": "If this email is new, your account is ready; otherwise sign in with it or reset your password.",
+      "passwordHint": "At least {min} characters. A short sentence you will remember works well.",
+      "terms": "I agree to the <terms>terms of use</terms> and <privacy>privacy policy</privacy>.",
+      "consentAnalytics": "Help improve the site with anonymous usage analytics (optional).",
+      "consentMarketing": "Email me the weekly digest and product updates (optional).",
+      "resetSent": "If that email has an account, a reset link is on its way. It works for one hour.",
+      "sendReset": "Send reset link",
+      "setPassword": "Set new password",
+      "usePasskey": "Use a passkey",
+      "passkeyFailed": "Passkey sign-in did not complete. Try again or use your password.",
+      "passkeyUnsupported": "This browser does not support passkeys.",
+      "passkeyName": "Passkey name",
+      "passkeyNamePlaceholder": "e.g. My phone",
+      "addPasskey": "Add passkey",
+      "passkeyAdded": "Passkey added.",
+      "signInTitle": "Sign in",
+      "signInIntro": "Your money picture, plan and goals. Private to you.",
+      "signUpTitle": "Create your account",
+      "signUpIntro": "Free, no card needed. Your financial details are encrypted and never sold.",
+      "privacyNote": "We ask only for what the check-up needs. You can export or delete everything from settings at any time.",
+      "forgotTitle": "Reset password",
+      "forgotIntro": "Enter your email and we will send a one-hour link to choose a new password.",
+      "resetTitle": "Choose a new password",
+      "resetIntro": "Other devices are signed out once the new password is set.",
+      "resetMissing": "This reset link is incomplete.",
+      "deletionScheduled": "Deletion confirmed. Your data is removed in 30 days; signing in before then cancels it.",
+      "sessionEnded": "Your session ended. Please sign in again.",
+      "verifyNudge": "Confirm your email ({email}) so you can recover the account.",
+      "resendVerification": "Resend the email",
+      "verificationSent": "Sent. Check your inbox and junk folder.",
+      "deletionPending": "This account is scheduled for deletion. Cancel it from settings if you want to stay.",
+      "verified": "Your email is confirmed. Thank you.",
+      "linkInvalid": "That link is invalid or has expired.",
+      "error": {
+        "rateLimited": "Please wait before requesting another email.",
+        "notConfigured": "Email is not available right now.",
+        "signedOut": "You are signed out."
+      }
+    },
+    "nav": {
+      "dashboard": "Overview",
+      "data": "My data",
+      "goals": "Goals",
+      "plan": "Plan",
+      "settings": "Settings",
+      "memberMenu": "Member menu"
+    },
+    "dashboard": {
+      "title": "Overview",
+      "intro": "Your financial health at a glance, with the next steps that matter most.",
+      "hello": "Hello, {name}",
+      "emptyBody": "Add your household details and finances to run your full check-up. It takes about ten minutes and nothing is shared.",
+      "startData": "Add my details",
+      "goSettings": "Settings"
     }
   }
 }

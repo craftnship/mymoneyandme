@@ -1,6 +1,8 @@
+import { Suspense } from "react";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { AccountLink } from "./AccountLink";
 
 export async function SiteHeader() {
   const t = await getTranslations("nav");
@@ -29,7 +31,9 @@ export async function SiteHeader() {
         </nav>
         <div className="ms-auto flex items-center gap-2">
           <LanguageSwitcher />
-          {/* "Sign in" returns here with the Phase 3 member app; a placeholder that does nothing only confuses readers. */}
+          <Suspense fallback={null}>
+            <AccountLink />
+          </Suspense>
         </div>
       </div>
     </header>
