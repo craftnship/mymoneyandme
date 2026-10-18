@@ -15,9 +15,6 @@ import { ProgressBar } from "@/components/app/checkup/ui";
 
 type SearchParams = Promise<Record<string, string | string[] | undefined>>;
 
-// Goal ids are per household and cannot be enumerated at build time; the site
-// header reads the pathname outside Suspense, so this segment must block.
-export const instant = false;
 
 export async function generateMetadata() {
   const t = await getTranslations("appCheckup.goals");
