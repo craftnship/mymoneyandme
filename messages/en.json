@@ -612,5 +612,28 @@
     "notFoundBody": "The page you asked for does not exist or has moved.",
     "goHome": "Go to the home page",
     "langSwitch": "Change language"
+  },
+  "newsletter": {
+    "title": "Weekly digest",
+    "body": "New articles, chapters and calculators once a week. Free, no ads, unsubscribe any time.",
+    "pageIntro": "One email a week with what is new on My Money & Me.",
+    "emailLabel": "Email address",
+    "emailPlaceholder": "you@example.com",
+    "subscribe": "Subscribe",
+    "checkInbox": "Check your inbox and click the confirmation link to finish.",
+    "alreadyConfirmed": "This address is already subscribed.",
+    "privacy": "We only use your address for this digest. See the privacy notice.",
+    "backHome": "Back to the home page",
+    "error": {
+      "invalid": "That does not look like an email address.",
+      "notConfigured": "Sign-up is not available right now. Please try again later.",
+      "rateLimited": "Too many attempts. Please try again in a few minutes.",
+      "error": "Something went wrong. Please try again."
+    },
+    "status": {
+      "confirmed": "Subscription confirmed. The next digest will reach you.",
+      "unsubscribed": "You have been unsubscribed. Sorry to see you go.",
+      "invalid": "This link is not valid or has expired."
+    }
   }
 }

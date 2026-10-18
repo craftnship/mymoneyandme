@@ -5,6 +5,7 @@ import { localeMeta, routing } from "@/i18n/routing";
 import { allArticles, availableLocales, getArticle, readingMinutes, resolveTranslation } from "@/lib/content/store";
 import { BlockRenderer } from "@/components/BlockRenderer";
 import { Notice, Pill } from "@/components/ui";
+import { NewsletterSignup } from "@/components/NewsletterSignup";
 
 export function generateStaticParams() {
   return allArticles().map((a) => ({ slug: a.slug }));
@@ -106,6 +107,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ locale
           </ul>
         </aside>
       ) : null}
+      <div className="mt-10"><NewsletterSignup compact /></div>
     </article>
   );
 }
