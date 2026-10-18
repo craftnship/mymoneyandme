@@ -16,6 +16,7 @@ vi.mock("../auth/current", () => ({
   getCurrentUser: async () => findUserById(current.userId),
 }));
 vi.mock("next/navigation", () => ({ redirect: (to: string) => { throw new Redirect(to); }, notFound: () => { throw new Error("notFound"); } }));
+vi.mock("next/cache", () => ({ refresh: () => undefined }));
 
 const { quickStart, saveMember, archiveMemberAction, saveItem, archiveItemAction } = await import("./actions");
 
