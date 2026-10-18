@@ -30,7 +30,10 @@ export async function SiteHeader() {
           ))}
         </nav>
         <div className="ms-auto flex items-center gap-2">
-          <LanguageSwitcher />
+          {/* Reads the pathname and params, so it streams in on routes whose params cannot be enumerated at build time. */}
+          <Suspense fallback={null}>
+            <LanguageSwitcher />
+          </Suspense>
           <Suspense fallback={null}>
             <AccountLink />
           </Suspense>

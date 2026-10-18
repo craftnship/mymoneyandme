@@ -6,8 +6,6 @@ import { MemberForm } from "@/components/app/data/MemberForm";
 import { requireHousehold } from "@/lib/auth/current";
 import { listMembers } from "@/lib/data/store";
 
-// Member ids cannot be enumerated at build time, so this route has no static shell and is allowed to block.
-export const instant = false;
 
 export async function generateMetadata() {
   const t = await getTranslations("appData.members");
