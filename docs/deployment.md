@@ -24,6 +24,8 @@ Direct file uploads to the hosting file browser are blocked from the build sessi
 3. Hostinger clones that branch into `public_html/deploy` (Git section of hPanel, or the API's "Deploy website Git repository").
 4. A Node.js build is started from `deploy/app.zip` with the settings above (hPanel: Websites, Manage, Node.js; or the API's "Start Node.js build").
 
+Publishing a build replaces the contents of `public_html`, which removes the `deploy` folder. Step 3 therefore has to run again before every build; a build started without the archive in place fails within seconds and leaves no log.
+
 To move to push-to-deploy: connect the GitHub account once in hPanel (Websites, Manage, Advanced, Git), then set the Git auto-deployment to `craftnship/mymoneyandme`, branch `main`. Every push to `main` then rebuilds with the stored settings, and the `deploy-archive` branch can be deleted.
 
 ## Environment variables
@@ -38,7 +40,7 @@ Set these in hPanel (Websites, Manage, Node.js, Environment variables) or throug
 | `SMTP_PORT` | | `465` |
 | `SMTP_USER` | The sending mailbox | `hello@mymoneyandme.in` |
 | `SMTP_PASS` | That mailbox's password | |
-| `NEWSLETTER_FROM` | Optional sending address; defaults to `SMTP_USER`. Use a bare address: the display name "My Money & Me" is added by the app, and values with `<` or `&` have broken the Hostinger build | `hello@mymoneyandme.in` |
+| `NEWSLETTER_FROM` | Optional sending address; defaults to `SMTP_USER`. A bare address is enough: the app adds the display name "My Money & Me" | `hello@mymoneyandme.in` |
 
 Without `DATABASE_URL` and the SMTP settings the site runs fine; the newsletter form reports that sign-up is not available.
 
