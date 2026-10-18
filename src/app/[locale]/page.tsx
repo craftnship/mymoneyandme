@@ -3,6 +3,7 @@ import { Link } from "@/i18n/navigation";
 import { allArticles } from "@/lib/content/store";
 import { CALCULATORS } from "@/lib/calculators";
 import { ArticleCard } from "@/components/ArticleCard";
+import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { Card } from "@/components/ui";
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
@@ -67,6 +68,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           ))}
         </div>
       </section>
+
+      <NewsletterSignup />
     </div>
   );
 }
