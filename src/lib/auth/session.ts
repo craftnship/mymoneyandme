@@ -1,5 +1,6 @@
 import "server-only";
 import { cookies, headers } from "next/headers";
+import { connection } from "next/server";
 import { execute, newId, one, query, type Row } from "../db";
 import { randomToken, sha256 } from "../db/crypto";
 import { SESSION_COOKIE } from "./cookie";
@@ -36,6 +37,8 @@ export async function createSession(userId: string): Promise<void> {
 
 /** Returns the user id behind the request's cookie, or null when there is no live session. */
 export async function getSessionUserId(): Promise<string | null> {
+  // Session state is request-only: never part of a prerendered or prefetched shell.
+  await connection();
   const token = (await cookies()).get(SESSION_COOKIE)?.value;
   if (!token) return null;
   const row = await one<Row & { id: string; user_id: string; last_seen_at: Date; expires_at: Date; deletion_requested_at: Date | null }>(

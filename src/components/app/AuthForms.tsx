@@ -15,7 +15,7 @@ export function SignInForm({ next }: { next?: string }) {
       <LocaleField />
       {next ? <input type="hidden" name="next" value={next} /> : null}
       <Field id="email" label={t("email")}>
-        <input id="email" name="email" type="email" autoComplete="username webauthn" required className={inputClass} />
+        <input id="email" name="email" type="email" autoComplete="username webauthn" required defaultValue={state.email ?? ""} className={inputClass} />
       </Field>
       <Field id="password" label={t("password")}>
         <input id="password" name="password" type="password" autoComplete="current-password" required className={inputClass} />
@@ -47,10 +47,10 @@ export function SignUpForm() {
     <form action={action} className="space-y-4">
       <LocaleField />
       <Field id="name" label={t("name")}>
-        <input id="name" name="name" type="text" autoComplete="name" required maxLength={100} className={inputClass} />
+        <input id="name" name="name" type="text" autoComplete="name" required maxLength={100} defaultValue={state.name ?? ""} className={inputClass} />
       </Field>
       <Field id="email" label={t("email")}>
-        <input id="email" name="email" type="email" autoComplete="email" required className={inputClass} />
+        <input id="email" name="email" type="email" autoComplete="email" required defaultValue={state.email ?? ""} className={inputClass} />
       </Field>
       <Field id="password" label={t("password")} hint={t("passwordHint", { min: PASSWORD_MIN })}>
         <input id="password" name="password" type="password" autoComplete="new-password" required minLength={PASSWORD_MIN} aria-describedby="password-hint" className={inputClass} />

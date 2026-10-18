@@ -1,5 +1,6 @@
 "use server";
 
+import { refresh } from "next/cache";
 import { redirect } from "next/navigation";
 import { z } from "zod";
 import { routing } from "@/i18n/routing";
@@ -32,6 +33,7 @@ export async function runCheckUpAction(_prev: CheckUpActionState, form: FormData
   } catch {
     return { error: "generic" };
   }
+  refresh(); // the destination may be the page we are on; make the router refetch it
   redirect(`/${locale}/app/check-up?ran=${encodeURIComponent(id)}`);
 }
 
@@ -54,5 +56,6 @@ export async function setPlanStatusAction(_prev: CheckUpActionState, form: FormD
   }
   await setPlanItemStatus(household.id, itemId.data, status.data, skipReason || null, snoozedUntil);
   await audit(user.id, `plan.${status.data}`, "planItem", itemId.data);
+  refresh(); // the destination may be the page we are on; make the router refetch it
   redirect(`/${locale}/app/plan#item-${itemId.data}`);
 }

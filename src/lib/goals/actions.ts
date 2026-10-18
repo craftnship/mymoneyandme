@@ -1,5 +1,6 @@
 "use server";
 
+import { refresh } from "next/cache";
 import { redirect } from "next/navigation";
 import { z } from "zod";
 import { routing } from "@/i18n/routing";
@@ -77,6 +78,7 @@ export async function createGoalAction(_prev: GoalActionState, form: FormData): 
   const parsed = await parseGoalForm(household.id, form);
   if ("error" in parsed) return { error: parsed.error };
   const goal = await createGoal(household.id, user.id, parsed.input);
+  refresh(); // the destination may be the page we are on; make the router refetch it
   redirect(`/${locale}/app/goals/${goal.id}`);
 }
 
@@ -91,6 +93,7 @@ export async function updateGoalAction(_prev: GoalActionState, form: FormData): 
   if ("error" in parsed) return { error: parsed.error };
   const updated = await updateGoal(household.id, user.id, id.data, parsed.input);
   if (!updated) return { error: "generic" };
+  refresh(); // the destination may be the page we are on; make the router refetch it
   redirect(`/${locale}/app/goals/${id.data}?saved=1`);
 }
 
@@ -101,5 +104,6 @@ export async function archiveGoalAction(form: FormData): Promise<void> {
   const household = await getCurrentHousehold(user.id);
   const id = idSchema.safeParse(form.get("id"));
   if (id.success && (await getGoal(household.id, id.data))) await archiveGoal(household.id, user.id, id.data);
+  refresh(); // the destination may be the page we are on; make the router refetch it
   redirect(`/${locale}/app/goals`);
 }

@@ -1,5 +1,6 @@
 "use server";
 
+import { refresh } from "next/cache";
 import { redirect } from "next/navigation";
 import { z } from "zod";
 import { routing } from "@/i18n/routing";
@@ -73,6 +74,7 @@ export async function saveMember(_prev: DataActionState, form: FormData): Promis
     await createMember(household.id, user.id, m);
   }
   await syncDependants(household.id, user.id);
+  refresh(); // the destination may be the page we are on; make the router refetch it
   redirect(`/${locale}/app/data/members`);
 }
 
@@ -84,6 +86,7 @@ export async function archiveMemberAction(form: FormData): Promise<void> {
     await archiveMember(household.id, user.id, id.data); // the store refuses the self row
     await syncDependants(household.id, user.id);
   }
+  refresh(); // the destination may be the page we are on; make the router refetch it
   redirect(`/${locale}/app/data/members`);
 }
 
@@ -102,6 +105,7 @@ export async function saveItem(_prev: DataActionState, form: FormData): Promise<
   } else {
     await createItem(household.id, user.id, { family, ...parsed.data });
   }
+  refresh(); // the destination may be the page we are on; make the router refetch it
   redirect(`/${locale}/app/data/${family}`);
 }
 
@@ -114,5 +118,6 @@ export async function archiveItemAction(form: FormData): Promise<void> {
     const existing = await getItem(household.id, id.data);
     if (existing && existing.family === family) await archiveItem(household.id, user.id, id.data);
   }
+  refresh(); // the destination may be the page we are on; make the router refetch it
   redirect(`/${locale}/app/data/${family}`);
 }

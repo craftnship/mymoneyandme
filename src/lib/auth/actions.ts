@@ -24,7 +24,7 @@ import { clearDeletionRequest } from "../account/store";
  * a plain `{ error }` object for useActionState; redirects happen here so the
  * client never has to know where to go next.
  */
-export type ActionState = { error?: string; ok?: boolean; email?: string };
+export type ActionState = { error?: string; ok?: boolean; email?: string; name?: string };
 
 const emailSchema = z.string().trim().toLowerCase().email().max(254);
 const localeSchema = z.enum(routing.locales as unknown as [string, ...string[]]).catch("en");
@@ -58,13 +58,14 @@ export async function signUp(_prev: ActionState, form: FormData): Promise<Action
   const name = String(form.get("name") ?? "").trim();
   const password = String(form.get("password") ?? "");
   const terms = form.get("terms") === "on";
-  if (!email.success) return { error: "invalidEmail" };
-  if (name.length < 1 || name.length > 100) return { error: "invalidName" };
-  if (!terms) return { error: "termsRequired" };
-  if (password.length > PASSWORD_MAX) return { error: "password.tooLong" };
+  const keep = { name: name.slice(0, 100), email: String(form.get("email") ?? "").slice(0, 254) };
+  if (!email.success) return { error: "invalidEmail", ...keep };
+  if (name.length < 1 || name.length > 100) return { error: "invalidName", ...keep };
+  if (!terms) return { error: "termsRequired", ...keep };
+  if (password.length > PASSWORD_MAX) return { error: "password.tooLong", ...keep };
   const problem = await checkPassword(password);
-  if (problem) return { error: `password.${problem}` };
-  if (!(await signUpLimiter(`signup:${await clientIp()}`))) return { error: "rateLimited" };
+  if (problem) return { error: `password.${problem}`, ...keep };
+  if (!(await signUpLimiter(`signup:${await clientIp()}`))) return { error: "rateLimited", ...keep };
 
   if (await findUserByEmail(email.data)) {
     // Do not reveal whether the address exists; behave as if it worked and nudge towards sign-in by email.
@@ -88,8 +89,10 @@ export async function signIn(_prev: ActionState, form: FormData): Promise<Action
   const next = nextSchema.parse(form.get("next"));
   const email = emailSchema.safeParse(form.get("email"));
   const password = String(form.get("password") ?? "");
-  if (!email.success || !password) return { error: "invalidCredentials" };
-  if (!(await signInLimiter(`signin:${await clientIp()}:${email.data}`))) return { error: "rateLimited" };
+  // The typed email is echoed back so a failed attempt does not clear the form (React resets it after the action).
+  const keep = email.success ? email.data : String(form.get("email") ?? "").slice(0, 254);
+  if (!email.success || !password) return { error: "invalidCredentials", email: keep };
+  if (!(await signInLimiter(`signin:${await clientIp()}:${email.data}`))) return { error: "rateLimited", email: keep };
 
   // Accounts past their 30-day deletion grace are purged before any lookup, so they can no longer sign in.
   await purgeDueDeletions().catch(() => undefined);
@@ -98,13 +101,13 @@ export async function signIn(_prev: ActionState, form: FormData): Promise<Action
   if (!user || !hash) {
     // Burn the same time as a real check so timing does not reveal registered addresses.
     await verifyPassword(password, "scrypt$32768$8$1$AAAAAAAAAAAAAAAAAAAAAA$AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA").catch(() => false);
-    return { error: "invalidCredentials" };
+    return { error: "invalidCredentials", email: keep };
   }
-  if (await isLocked(user.id)) return { error: "locked" };
+  if (await isLocked(user.id)) return { error: "locked", email: keep };
   if (!(await verifyPassword(password, hash))) {
     await recordLoginFailure(user.id);
     await audit(user.id, "signInFailed", "user", user.id);
-    return { error: "invalidCredentials" };
+    return { error: "invalidCredentials", email: keep };
   }
   await clearLoginFailures(user.id);
   // Signing in during the grace period cancels a pending deletion, as the confirmation email promises.

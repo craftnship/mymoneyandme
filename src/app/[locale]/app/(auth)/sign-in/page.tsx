@@ -29,7 +29,7 @@ export default async function SignInPage({ searchParams }: { searchParams: Searc
   return (
     <>
       <PageTitle title={t("signInTitle")} intro={t("signInIntro")} />
-      <Suspense fallback={<SignInForm />}>
+      <Suspense fallback={null}>
         <Inner searchParams={searchParams} />
       </Suspense>
     </>
