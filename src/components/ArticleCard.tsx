@@ -5,7 +5,9 @@ import { readingMinutes, resolveTranslation } from "@/lib/content/store";
 import { localeMeta } from "@/i18n/routing";
 import { Pill } from "./ui";
 
-export async function ArticleCard({ article, locale, large = false }: { article: Article; locale: string; large?: boolean }) {
+/** `heading` keeps the outline valid: h2 directly under a page title, h3 inside a titled section. */
+export async function ArticleCard({ article, locale, large = false, heading = "h3" }: { article: Article; locale: string; large?: boolean; heading?: "h2" | "h3" }) {
+  const Heading = heading;
   const t = await getTranslations("article");
   const th = await getTranslations("home");
   const f = await getFormatter();
@@ -21,11 +23,11 @@ export async function ArticleCard({ article, locale, large = false }: { article:
         {fallback ? <Pill tone="warn">{localeMeta(r.locale).nativeName}</Pill> : null}
         {translation.aiDraft ? <Pill tone="warn">AI</Pill> : null}
       </div>
-      <h3 className={`font-semibold tracking-tight ${large ? "text-2xl sm:text-3xl" : "text-lg"}`}>
+      <Heading className={`font-semibold tracking-tight ${large ? "text-2xl sm:text-3xl" : "text-lg"}`}>
         <Link href={`/articles/${article.slug}`} className="hover:underline underline-offset-4">
           {translation.title}
         </Link>
-      </h3>
+      </Heading>
       <p className="text-fg-muted">{translation.excerpt}</p>
       <p className="mt-auto text-xs text-fg-muted">
         {article.author} · {f.dateTime(new Date(article.publishedAt), { dateStyle: "medium" })} · {th("minRead", { minutes: readingMinutes(translation) })}

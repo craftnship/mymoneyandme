@@ -46,7 +46,7 @@ export default async function CalculatorPage({ params, searchParams }: { params:
         <SharedCalculator def={def} searchParams={searchParams} />
       </Suspense>
       {(related || def.relatedChapter) ? (
-        <aside className="rounded-card border border-border p-5">
+        <section className="rounded-card border border-border p-5">
           <p className="font-semibold">{t("whatItMeans")}</p>
           <ul className="mt-2 space-y-1 text-sm">
             {related && relatedT ? <li><Link href={`/articles/${related.slug}`} className="underline underline-offset-4">{relatedT.translation.title}</Link></li> : null}
@@ -55,7 +55,7 @@ export default async function CalculatorPage({ params, searchParams }: { params:
               return <li><Link href={`/learn/${track}/${mod}/${chapter}`} className="underline underline-offset-4">{ta("relatedChapter")}</Link></li>;
             })() : null}
           </ul>
-        </aside>
+        </section>
       ) : null}
       {siblings.length ? (
         <section>

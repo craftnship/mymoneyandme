@@ -42,7 +42,7 @@ async function Feed({ locale, query }: { locale: string; query: ArticleQuery }) 
         <p className="rounded-card border border-border bg-bg-elevated p-6 text-fg-muted">{t("noResults")}</p>
       ) : (
         <div className="grid gap-4 md:grid-cols-2">
-          {results.map((a) => <ArticleCard key={a.id} article={a} locale={locale} />)}
+          {results.map((a) => <ArticleCard key={a.id} article={a} locale={locale} heading="h2" />)}
         </div>
       )}
     </div>
