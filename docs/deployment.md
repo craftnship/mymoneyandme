@@ -38,7 +38,7 @@ Set these in hPanel (Websites, Manage, Node.js, Environment variables) or throug
 | `SMTP_PORT` | | `465` |
 | `SMTP_USER` | The sending mailbox | `hello@mymoneyandme.in` |
 | `SMTP_PASS` | That mailbox's password | |
-| `NEWSLETTER_FROM` | From header on confirmation emails and digests | `My Money & Me <hello@mymoneyandme.in>` |
+| `NEWSLETTER_FROM` | Optional sending address; defaults to `SMTP_USER`. Use a bare address: the display name "My Money & Me" is added by the app, and values with `<` or `&` have broken the Hostinger build | `hello@mymoneyandme.in` |
 
 Without `DATABASE_URL` and the SMTP settings the site runs fine; the newsletter form reports that sign-up is not available.
 
