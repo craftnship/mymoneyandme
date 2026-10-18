@@ -1,0 +1,377 @@
+{
+  "appCheckup": {
+    "errors": {
+      "generic": "Something went wrong. Please try again.",
+      "signedOut": "You are signed out. Sign in and try again.",
+      "skipReasonRequired": "Tell us briefly why you are skipping this item.",
+      "snoozeDateInvalid": "Choose a date after today to snooze until.",
+      "nameInvalid": "Give the goal a name (up to 120 characters).",
+      "dateInvalid": "Choose a target date after today.",
+      "amountInvalid": "Enter an amount of zero or more.",
+      "inflationInvalid": "Inflation must be between 0% and 30%."
+    },
+    "common": {
+      "yes": "Yes",
+      "no": "No",
+      "monthsShort": "{count} mo"
+    },
+    "checkup": {
+      "title": "Financial health check-up",
+      "intro": "Your score across eight dimensions, built from the data you have entered. Every run is kept so you can see what changed.",
+      "loading": "Loading your check-up…",
+      "run": "Run a new check-up",
+      "running": "Scoring…",
+      "runFirst": "Run my first check-up",
+      "noneTitle": "No check-up yet",
+      "noneBody": "Run your first check-up to get a score, the risks that matter most and a prioritised plan.",
+      "noDataBody": "You can run a check-up now, but the score will be low-confidence until you add your income, expenses and savings.",
+      "addData": "Add my data",
+      "justRan": "Your check-up is done. The plan has been updated with the new numbers.",
+      "viewPlan": "See my plan",
+      "noPrevious": "This is your first run; the next one will show what changed.",
+      "history": "Score history",
+      "latest": "Latest",
+      "viewRun": "View",
+      "scoreLabel": "Score {score} out of 100",
+      "lastRun": "Run on {date}",
+      "raiseConfidence": "Add these to raise confidence:",
+      "field": {
+        "monthlyIncome": "income",
+        "monthlyExpenses": "expenses",
+        "liquidAssets": "cash and deposits",
+        "lifeCover": "life insurance",
+        "healthCover": "health insurance",
+        "monthlyEmi": "loans and EMIs",
+        "investments": "investments",
+        "retirementCorpus": "EPF, PPF or NPS",
+        "age": "date of birth",
+        "goals": "goals",
+        "nominationsSet": "nomination status",
+        "dependants": "family members",
+        "retirementAge": "retirement age",
+        "monthlyRetirementSip": "retirement SIP",
+        "employment": "employment type",
+        "cityTier": "city"
+      },
+      "readChapter": "Read the chapter",
+      "weightNote": "Weights after life-stage adjustment: {weight}.",
+      "noRisks": "Every dimension is in good shape.",
+      "noStrengths": "No dimension scores 70 or more yet; the plan shows where to start.",
+      "whatChanged": "What changed since {date}",
+      "overallDelta": "Overall score moved from {from} to {to} ({delta}).",
+      "gradeChanged": "Grade changed from {from} to {to}.",
+      "nothingChanged": "No dimension moved between these two runs.",
+      "runTitle": "Check-up details",
+      "runFrom": "Check-up from {date}",
+      "backToLatest": "Back to the latest check-up",
+      "metric": {
+        "savingsRate": "Savings rate",
+        "essentialShare": "Essentials as share of income",
+        "emergencyMonths": "Months of essentials covered",
+        "emiToIncome": "EMIs as share of income",
+        "highCostDebtShare": "High-cost share of debt",
+        "lifeCoverMultiple": "Life cover ÷ annual income",
+        "healthCoverRatio": "Health cover vs recommended",
+        "allocationDrift": "Drift from target equity",
+        "idleCashShare": "Idle cash share",
+        "targetEquity": "Target equity share",
+        "equityShare": "Equity share",
+        "retirementReadiness": "Retirement readiness",
+        "corpusNeeded": "Corpus needed",
+        "projectedCorpus": "Projected corpus",
+        "goalReadiness": "Goal value on track",
+        "nominationsSet": "Nominations set",
+        "willInPlace": "Will in place",
+        "investable": "Investable assets"
+      },
+      "verdict": {
+        "cashflow": {
+          "good": "You save a healthy share of income and essentials leave room to invest.",
+          "watch": "Savings are positive but below the 20% that funds every other goal.",
+          "act": "Expenses are eating most or all of income; this comes before anything else."
+        },
+        "emergency": {
+          "good": "Your liquid savings cover the target months of essential expenses.",
+          "watch": "There is a cushion, but a long illness or job gap would run it dry.",
+          "act": "Little or no emergency fund; one bad month would mean borrowing."
+        },
+        "debt": {
+          "good": "EMIs are a manageable share of income and there is no high-cost debt.",
+          "watch": "Debt is serviceable but EMIs or costly loans are starting to crowd out saving.",
+          "act": "High-cost or revolving debt, or EMIs above 35% of income, need clearing first."
+        },
+        "insurance": {
+          "good": "Life and health cover are close to what your family would need.",
+          "watch": "Some cover is in place but short of the recommended amounts.",
+          "act": "A large protection gap: one event could undo everything else."
+        },
+        "investments": {
+          "good": "Your mix is close to the age-based target and cash is put to work.",
+          "watch": "The mix has drifted or cash is sitting idle beyond the emergency fund.",
+          "act": "Allocation is far from target or most money is idle; a plan is needed."
+        },
+        "retirement": {
+          "good": "On the current path you are on track for the retirement corpus you need.",
+          "watch": "Between 70% and 100% of the needed corpus; a higher SIP closes the gap.",
+          "act": "Well under 70% of the needed corpus on the current path."
+        },
+        "goals": {
+          "good": "Most of your goal value is funded on the current trajectory.",
+          "watch": "Some goals will fall short unless SIPs rise or dates move.",
+          "act": "Most goals are unfunded on the current path."
+        },
+        "hygiene": {
+          "good": "Nominations and basic estate paperwork are in place.",
+          "watch": "One of nominations or a will is missing.",
+          "act": "Nominations and a will are missing; both are cheap to fix."
+        }
+      }
+    },
+    "plan": {
+      "title": "Recommended plan",
+      "intro": "One ordered checklist from your latest check-up, in the standard personal-finance sequence. Completed items stay done when you re-run.",
+      "loading": "Loading your plan…",
+      "noPlanTitle": "No plan yet",
+      "noPlanBody": "Run a check-up and your plan appears here, ordered by what matters most.",
+      "progressLabel": "{pct}% of plan items done",
+      "progress": "{done} of {total} items done",
+      "basedOn": "Based on your latest score of {score}",
+      "viewCheckUp": "See the check-up",
+      "projected": "If you complete the next {count} items your score could reach about {score}",
+      "approximate": "approximate",
+      "disclaimer": "This plan is educational and generated by rules on your own numbers. It is not regulated financial advice; speak to a SEBI-registered adviser before large decisions.",
+      "band": {
+        "1": "Stop the bleeding",
+        "2": "Protect",
+        "3": "Cushion",
+        "4": "Optimise debt",
+        "5": "Grow",
+        "6": "Secure the future",
+        "7": "Review"
+      },
+      "statusLabel": "Status",
+      "status": {
+        "todo": "To do",
+        "inProgress": "In progress",
+        "done": "Done",
+        "skipped": "Skipped",
+        "snoozed": "Snoozed"
+      },
+      "skipReason": "Why are you skipping it?",
+      "snoozeUntil": "Snooze until",
+      "update": "Update",
+      "skippedBecause": "Skipped: {reason}",
+      "snoozedUntil": "Snoozed until {date}",
+      "snoozeOver": "Snooze period is over; this item is back on the list.",
+      "effortMinutes": "{count} min",
+      "effortHours": "{count} h",
+      "effortDays": "{count} days",
+      "readChapter": "Read the chapter",
+      "rule": "Rule: {rule}",
+      "titles": {
+        "fixOverspend": "Bring expenses under income",
+        "clearHighCostDebt": "Clear high-cost debt",
+        "raiseTermCover": "Raise term life cover",
+        "raiseHealthCover": "Raise health cover",
+        "setNominations": "Set nominations everywhere",
+        "buildEmergencyFund": "Build the emergency fund",
+        "reduceEmiLoad": "Reduce the EMI load",
+        "raiseSavingsRate": "Raise the savings rate",
+        "rebalance": "Rebalance the portfolio",
+        "deployIdleCash": "Put idle cash to work",
+        "fundGoals": "Fund the goals",
+        "retirementSip": "Start or raise the retirement SIP",
+        "writeWill": "Write a simple will",
+        "annualReview": "Annual review"
+      },
+      "how": {
+        "fixOverspend": {
+          "1": "List the last three months of spending by category from bank and card statements.",
+          "2": "Cut or pause the largest discretionary items until income covers everything.",
+          "3": "Move the fixed expenses to a separate account funded on salary day."
+        },
+        "clearHighCostDebt": {
+          "1": "List every loan with its rate; the highest rate goes first.",
+          "2": "Pay the full card bill, not the minimum due, and stop new card spending.",
+          "3": "Consider a balance transfer or a lower-rate loan to replace the costliest debt."
+        },
+        "raiseTermCover": {
+          "1": "Work out the gap: 10 to 15 times annual income plus outstanding loans, minus existing cover.",
+          "2": "Compare three insurers on claim-settlement ratio and premium for a plain term plan.",
+          "3": "Declare health and habits honestly so the claim is never disputed."
+        },
+        "raiseHealthCover": {
+          "1": "Check what the employer plan covers and whether it continues after leaving the job.",
+          "2": "Buy a family floater or individual policies that reach the recommended amount for your city.",
+          "3": "Add a super top-up once the base policy is in place."
+        },
+        "setNominations": {
+          "1": "List every bank account, deposit, mutual fund, demat, EPF, PPF and policy.",
+          "2": "Add or update a nominee on each, online where possible.",
+          "3": "Keep one list of accounts and nominees where your family can find it."
+        },
+        "buildEmergencyFund": {
+          "1": "Set the target: the months shown times monthly essential expenses.",
+          "2": "Open a sweep-in FD or a liquid fund kept separate from spending money.",
+          "3": "Automate a monthly transfer until the target is reached."
+        },
+        "reduceEmiLoad": {
+          "1": "Prepay the loan with the highest rate using any lump sum or bonus.",
+          "2": "Ask the lender about a longer tenure or a lower rate after a rate change.",
+          "3": "Avoid new loans until EMIs are under 35% of take-home income."
+        },
+        "raiseSavingsRate": {
+          "1": "Set up a SIP or transfer on salary day for the difference.",
+          "2": "Raise it every time income rises, before lifestyle catches up.",
+          "3": "Review subscriptions and recurring spends every quarter."
+        },
+        "rebalance": {
+          "1": "Compare your equity share with the age-based target shown.",
+          "2": "Direct new SIPs to the under-weight asset class first.",
+          "3": "Shift existing money gradually, minding exit loads and capital-gains tax."
+        },
+        "deployIdleCash": {
+          "1": "Keep the emergency fund aside; the rest is what can be invested.",
+          "2": "Choose the goal or asset class the money belongs to.",
+          "3": "Move it in over a few months through an STP or staggered lumpsums."
+        },
+        "fundGoals": {
+          "1": "Open each goal to see the monthly amount it needs.",
+          "2": "Raise SIPs on the Must goals first.",
+          "3": "Push out the date or trim the amount of Nice-to-have goals that do not fit."
+        },
+        "retirementSip": {
+          "1": "Use the retirement calculator to confirm the corpus and monthly amount.",
+          "2": "Raise EPF voluntary contributions, NPS or an equity index fund SIP.",
+          "3": "Increase the SIP by 10% a year as income grows."
+        },
+        "writeWill": {
+          "1": "List assets, liabilities and who should receive what.",
+          "2": "Write a simple will; a template or a lawyer for an hour is enough for most families.",
+          "3": "Sign it before two witnesses and tell your family where it is."
+        },
+        "annualReview": {
+          "1": "Update income, expenses, investments and policies once a year.",
+          "2": "Re-run the check-up and compare with the previous one.",
+          "3": "Re-run after any life event: marriage, a child, a new job or a home."
+        }
+      }
+    },
+    "goals": {
+      "title": "Goals",
+      "intro": "A goal is an amount on a date. The planner inflates today's cost, suggests a mix for the horizon and tells you the monthly amount needed.",
+      "loading": "Loading your goals…",
+      "new": "Add a goal",
+      "newTitle": "New goal",
+      "newIntro": "Pick a template, enter today's cost and a date. Inflation and the asset mix are pre-filled from the rule pack and can be changed.",
+      "detailTitle": "Goal",
+      "back": "Back to goals",
+      "summary": "{onTrack} of {total} goals on track",
+      "noneTitle": "No goals yet",
+      "noneBody": "Add your first goal, from an emergency fund to a child's education or retirement, and the planner will tell you what it takes each month.",
+      "conflict": {
+        "title": "Your goals need more than you can invest each month",
+        "body": "Together they need {required} a month; your current investable surplus is about {surplus}.",
+        "trim": "Nice-to-have goals you could push out or trim: {names}."
+      },
+      "onTrack": "On track",
+      "behind": "Behind",
+      "progressLabel": "{name}: {pct}% funded on the current path",
+      "target": "{amount} by {date}",
+      "required": "Needs {amount}/month",
+      "current": "Investing {amount}/month",
+      "neverReaches": "The current path never reaches the target; set a monthly amount.",
+      "aheadBy": "About {months} months ahead of the date",
+      "behindBy": "About {months} months behind the date",
+      "timeline": "Timeline",
+      "saved": "Goal saved.",
+      "edit": "Edit this goal",
+      "archive": "Archive goal",
+      "archiveHint": "Archived goals leave the dashboard and the check-up.",
+      "create": "Create goal",
+      "save": "Save changes",
+      "template": {
+        "emergencyFund": "Emergency fund",
+        "childEducationSchool": "Child's schooling",
+        "childEducationUndergrad": "Child's undergraduate degree",
+        "childEducationPostgrad": "Child's postgraduate degree",
+        "childEducationAbroad": "Child's education abroad",
+        "childWedding": "Child's wedding",
+        "homePurchase": "Home purchase (down payment)",
+        "homeRenovation": "Home renovation",
+        "vehicle": "Car or vehicle",
+        "vacation": "Vacation",
+        "business": "Starting a business",
+        "debtFree": "Debt-free date",
+        "retirement": "Retirement",
+        "parentsCare": "Parents' care",
+        "wealth": "Wealth target",
+        "custom": "Custom goal"
+      },
+      "priority": {
+        "must": "Must",
+        "should": "Should",
+        "nice": "Nice to have"
+      },
+      "fields": {
+        "template": "Goal type",
+        "name": "Name",
+        "member": "For whom",
+        "noMember": "The household",
+        "targetToday": "Cost today (₹)",
+        "inflationPct": "Inflation per year (%)",
+        "targetDate": "Target date",
+        "flexibilityYears": "Flexible by (years)",
+        "assignedAmount": "Already set aside (₹)",
+        "monthlySip": "Monthly investment towards it (₹)",
+        "priority": "Priority"
+      },
+      "hints": {
+        "member": "Link the goal to a family member where it helps, such as a child's education.",
+        "targetToday": "What it would cost if you paid today; the planner inflates it to the date.",
+        "inflationPct": "Education and healthcare inflate faster than general prices.",
+        "flexibilityYears": "0 for a fixed date; otherwise how many years it could move.",
+        "assignedAmount": "Existing savings or investments earmarked for this goal.",
+        "monthlySip": "Your current SIP or transfer for this goal, if any."
+      },
+      "detail": {
+        "futureValue": "Cost on the target date",
+        "months": "Months left",
+        "mix": "Suggested mix",
+        "mixValue": "{horizon}: {equity}% equity, {debt}% debt, {liquid}% liquid",
+        "horizon": {
+          "short": "Under 3 years",
+          "medium": "3 to 7 years",
+          "long": "Over 7 years"
+        },
+        "expectedReturn": "Expected return of the mix",
+        "projected": "Projected value on the current path",
+        "requiredSip": "Monthly amount needed",
+        "shortfall": "Shortfall on the current path",
+        "surplus": "Surplus on the current path",
+        "note": "Returns are long-run assumptions from the rule pack, not promises. The mix de-risks as the date approaches, so the expected return steps down in the last years."
+      }
+    },
+    "dashboard": {
+      "addDataBody": "Add your income, expenses and savings to get a confident score.",
+      "addData": "Add my data",
+      "scoreLabel": "Score {score} out of 100",
+      "latestScore": "Latest score, run on {date}",
+      "viewCheckUp": "See the full check-up",
+      "runFirstTitle": "Run your first check-up",
+      "runFirstBody": "Your data is in; a check-up takes a moment and gives you a score and a plan.",
+      "runFirstNoData": "You can run it now for a rough score, or add your data first for a confident one.",
+      "noRisks": "No dimension needs attention right now.",
+      "afterCheckUp": "Appears after your first check-up.",
+      "nextSteps": "Next steps",
+      "allDone": "Every plan item is done or parked. Re-run the check-up to refresh it.",
+      "planProgress": "{done} of {total} plan items done",
+      "viewPlan": "See the plan",
+      "goals": "Goals",
+      "goalsSummary": "{onTrack} of {total} goals on track",
+      "noGoals": "No goals yet. A goal is an amount on a date; the planner does the rest.",
+      "viewGoals": "See all goals",
+      "addGoal": "Add a goal"
+    }
+  }
+}

@@ -8,7 +8,7 @@ The site runs on Hostinger Business web hosting as a Node.js web app (the plan t
 | --- | --- |
 | Hosting order | Business plan, order 1010049079 |
 | Account username | u567978051 |
-| Staging site | lightcyan-mandrill-691431.hostingersite.com (temporary subdomain created 2026-10-18) |
+| Website domain | mymoneyandme.in (switched from the temporary subdomain lightcyan-mandrill-691431.hostingersite.com on 2026-10-18) |
 | Build settings | Node 22, framework `next`, root `.`, output `.next`, build script `build`, package manager pnpm |
 
 ## Build notes
@@ -35,25 +35,22 @@ Set these in hPanel (Websites, Manage, Node.js, Environment variables) or throug
 | Variable | Purpose | Example |
 | --- | --- | --- |
 | `NEXT_PUBLIC_SITE_URL` | Canonical origin for metadata, sitemap and confirmation links | `https://mymoneyandme.in` |
-| `DATABASE_URL` | MySQL on the same server (newsletter subscribers now; the Phase 3 data model later) | `mysql://u567978051_mmapp:<password>@127.0.0.1:3306/u567978051_mmapp` |
+| `DATABASE_URL` | MySQL on the same server: newsletter subscribers and the member-app tables | `mysql://u567978051_mmapp:<password>@127.0.0.1:3306/u567978051_mmapp` |
+| `DATA_ENCRYPTION_KEY` | 32-byte key (64 hex characters) for the AES-256-GCM encryption of financial data at rest. Generate once with `node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"`, keep a copy in a password manager: losing it makes every stored household's data unreadable. Accounts are disabled until it is set | |
+| `CRON_SECRET` | Optional bearer token that protects `GET /api/cron/purge` (purges accounts whose 30-day deletion grace has passed); the same purge also runs opportunistically on sign-in | |
 | `SMTP_HOST` | Hostinger mail | `smtp.hostinger.com` |
 | `SMTP_PORT` | | `465` |
 | `SMTP_USER` | The sending mailbox | `hello@mymoneyandme.in` |
 | `SMTP_PASS` | That mailbox's password | |
 | `NEWSLETTER_FROM` | Optional sending address; defaults to `SMTP_USER`. A bare address is enough: the app adds the display name "My Money & Me" | `hello@mymoneyandme.in` |
 
-Without `DATABASE_URL` and the SMTP settings the site runs fine; the newsletter form reports that sign-up is not available.
+Without `DATABASE_URL` and the SMTP settings the public site runs fine; the newsletter form and the member sign-up report that they are not available. The member app additionally needs `DATA_ENCRYPTION_KEY`; the account pages say "Accounts are not available right now" until it is set.
 
-Create the database in hPanel (Websites, Manage, Databases) or with the API's "Create account database"; the name and user are prefixed with the account username. The app creates its `newsletter_subscribers` table on first use. Node.js apps must connect to `127.0.0.1`, not `localhost`.
+Create the database in hPanel (Websites, Manage, Databases) or with the API's "Create account database"; the name and user are prefixed with the account username. The app creates its tables on first use (`newsletter_subscribers`, and the member-app tables listed in `src/lib/db/migrations.ts`, tracked in `schema_migrations`). Node.js apps must connect to `127.0.0.1`, not `localhost`.
 
-## Switching the domain
+## Domain
 
-mymoneyandme.in currently serves the Hostinger Horizons site (DNS: `@` ALIAS and `www` CNAME to `*.cdn.hstgr.net`). Once the staging site is approved:
-
-1. In hPanel, change the website's domain from the temporary subdomain to `mymoneyandme.in` (or create the Node.js website on the domain and repeat the deploy).
-2. Hostinger rewrites the `@` and `www` records to the hosting server; leave the MX, SPF, DKIM and DMARC records for the mailbox untouched.
-3. Rebuild with `NEXT_PUBLIC_SITE_URL=https://mymoneyandme.in` so canonical URLs, the sitemap and confirmation links use the real domain.
-4. Keep the Horizons site unpublished but not deleted for a week in case of a rollback.
+mymoneyandme.in was switched from the Hostinger Horizons site to this Node.js website on 2026-10-18 through hPanel (Horizons "Change domain", then "Connect domain" on the Node.js website). Hostinger rewrote the `@` and `www` records to the hosting server; the MX, SPF, DKIM and DMARC records for the mailbox were left untouched. The build runs with `NEXT_PUBLIC_SITE_URL=https://mymoneyandme.in`, so canonical URLs, the sitemap and email links use the real domain. The Horizons site is kept unpublished for a while in case of a rollback.
 
 ## Checks after each deploy
 

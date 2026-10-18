@@ -14,6 +14,19 @@ function deepMerge(base: Messages, override: Messages): Messages {
   return out;
 }
 
+// Member-app areas keep their strings in their own files so the public-site
+// file stays small; each file holds one top-level namespace.
+const AREAS = ["app-data", "app-checkup", "app-settings"] as const;
+
+async function loadMessages(locale: string): Promise<Messages> {
+  let merged: Messages = (await import(`../../messages/${locale}.json`)).default;
+  for (const area of AREAS) {
+    const extra = (await import(`../../messages/${area}.${locale}.json`)).default as Messages;
+    merged = deepMerge(merged, extra);
+  }
+  return merged;
+}
+
 export default getRequestConfig(async () => {
   // The [locale] root segment is the single source of truth for the request
   // language; falling back keeps unknown paths (e.g. /favicon.txt) renderable.
@@ -24,8 +37,8 @@ export default getRequestConfig(async () => {
 
   // English is the source language for every UI string; a locale file that is
   // missing a key falls back to the English string rather than the raw key.
-  const base = (await import("../../messages/en.json")).default;
-  const own = locale === "en" ? base : (await import(`../../messages/${locale}.json`)).default;
+  const base = await loadMessages("en");
+  const own = locale === "en" ? base : await loadMessages(locale);
 
   return {
     locale,

@@ -17,7 +17,7 @@ pnpm build && pnpm start
 
 Node 22 and pnpm 10.
 
-## What is here (Phase 1 + public site slice)
+## What is here (Phase 1, public site, member app slice)
 
 - **Next.js 16 app, TypeScript, Tailwind v4**, server-rendered public pages with Cache Components.
 - **Internationalised routing** (`/en/...`, `/ta/...`) with next-intl; English is the source language, Tamil ships now, the other seven launch languages are one messages file each (`src/i18n/routing.ts`).
@@ -27,11 +27,12 @@ Node 22 and pnpm 10.
 - **Content store** (`content/`): articles and 29 learning-hub modules as JSON with per-language translations, publish states, AI-draft labels and fallback rules. Four articles and 22 chapters (the first three modules of each track) have full bodies in English and Tamil; the rest are listed as coming soon.
 - **Article search and category filters** as plain query-string state, so filtered views are shareable and work without JavaScript.
 - **Newsletter** sign-up with double opt-in from the site's own mailbox; subscribers in MySQL behind a store interface (`src/lib/newsletter`). See `docs/deployment.md` for the variables.
+- **Member app** (`/app`): accounts with passkeys, encrypted financial data for a household, the full eight-dimension check-up with history, goals, the prioritised plan checklist, settings with sessions, consents, export and deletion. See `docs/deployment.md` for `DATA_ENCRYPTION_KEY`.
 - **SEO**: per-language sitemap, hreflang alternates, Article JSON-LD, robots, PWA manifest, secure headers.
 
 ## Not yet built
 
-Accounts and the member app (Phase 3), the authoring and admin consoles, the database, donations, notifications, and the remaining seven languages. `docs/roadmap.md` lists them in order with what each needs.
+Household invites, CSV import and document uploads in the member app, Google and Apple sign-in, the authoring and admin consoles, donations, notifications, and the remaining seven languages. `docs/roadmap.md` lists them in order with what each needs.
 
 ## Editing content
 
