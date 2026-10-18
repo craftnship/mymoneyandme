@@ -16,6 +16,8 @@ import {
   markEmailVerified, recordConsents, recordLoginFailure, setPasswordHash,
 } from "./users";
 import { getCurrentUser } from "./current";
+import { purgeDueDeletions } from "../account/purge";
+import { clearDeletionRequest } from "../account/store";
 
 /**
  * Account Server Actions. Every action re-checks the session itself and returns
@@ -89,6 +91,8 @@ export async function signIn(_prev: ActionState, form: FormData): Promise<Action
   if (!email.success || !password) return { error: "invalidCredentials" };
   if (!(await signInLimiter(`signin:${await clientIp()}:${email.data}`))) return { error: "rateLimited" };
 
+  // Accounts past their 30-day deletion grace are purged before any lookup, so they can no longer sign in.
+  await purgeDueDeletions().catch(() => undefined);
   const user = await findUserByEmail(email.data);
   const hash = user ? await getPasswordHash(user.id) : null;
   if (!user || !hash) {
@@ -103,6 +107,8 @@ export async function signIn(_prev: ActionState, form: FormData): Promise<Action
     return { error: "invalidCredentials" };
   }
   await clearLoginFailures(user.id);
+  // Signing in during the grace period cancels a pending deletion, as the confirmation email promises.
+  if (user.deletionRequestedAt) await clearDeletionRequest(user.id);
   await createSession(user.id);
   await audit(user.id, "signIn", "user", user.id);
   redirect(next && next.startsWith(`/${locale}/app`) ? next : appPath(locale));
