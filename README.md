@@ -2,7 +2,7 @@
 
 Free financial education for India at [mymoneyandme.in](https://mymoneyandme.in): a public article feed, a learning hub for adults, kids and women, 60 calculators, and a financial health check-up that returns a prioritised plan.
 
-Built and run by one person with AI-assisted development. The product requirements live in `docs/feature-requirements.md`; delivery follows the phases in its section 20. See `docs/architecture.md` for how the code is organised and `docs/roadmap.md` for what each phase ships.
+Built and run by one person with AI-assisted development. The product requirements live in `docs/feature-requirements.md`; delivery follows the phases in its section 20. See `docs/architecture.md` for how the code is organised, `docs/roadmap.md` for what each phase ships and `docs/deployment.md` for the Hostinger setup.
 
 ## Quick start
 
@@ -26,6 +26,7 @@ Node 22 and pnpm 10.
 - **Check-up engine** (`src/lib/checkup`): eight weighted dimensions scored from declarative bands, life-stage weight adjustments, confidence indicator, and a plan builder that follows the fixed priority sequence. Exposed as the public 5-question quick check at `/check-up` via `POST /api/checkup/quick`.
 - **Content store** (`content/`): articles and 29 learning-hub modules as JSON with per-language translations, publish states, AI-draft labels and fallback rules. Four articles and 22 chapters (the first three modules of each track) have full bodies in English and Tamil; the rest are listed as coming soon.
 - **Article search and category filters** as plain query-string state, so filtered views are shareable and work without JavaScript.
+- **Newsletter** sign-up with double opt-in from the site's own mailbox; subscribers in MySQL behind a store interface (`src/lib/newsletter`). See `docs/deployment.md` for the variables.
 - **SEO**: per-language sitemap, hreflang alternates, Article JSON-LD, robots, PWA manifest, secure headers.
 
 ## Not yet built
