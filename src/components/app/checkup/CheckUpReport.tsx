@@ -2,6 +2,8 @@ import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Card } from "@/components/ui";
 import { chapterHref, DIMENSION_CHAPTERS } from "@/lib/checkup/chapters";
+import { retirementExplanation } from "@/lib/checkup/explain";
+import { encodeInputs } from "@/lib/calculators";
 import type { StoredCheckUp } from "@/lib/checkup/store";
 import type { CheckUpDiff } from "@/lib/checkup/progress";
 import { missingFields } from "@/lib/data/snapshot";
@@ -14,6 +16,8 @@ export async function CheckUpReport({ checkup }: { checkup: StoredCheckUp }) {
   const tw = await getTranslations("appCheckup.common");
   const { result, snapshot } = checkup;
   const missing = missingFields(snapshot.provided, 4);
+  const retirement = retirementExplanation(snapshot, result.rulePackVersion);
+  const tcalc = await getTranslations("calc");
   const words = { yes: tw("yes"), no: tw("no"), months: (count: number) => tw("monthsShort", { count }) };
 
   return (
@@ -57,6 +61,12 @@ export async function CheckUpReport({ checkup }: { checkup: StoredCheckUp }) {
                   </div>
                 ))}
               </dl>
+              {d.key === "retirement" && d.status !== "unknown" ? (
+                <p className="mt-2 text-xs text-fg-muted">
+                  {t("assumesRetirement", { ...retirement.params, expenses: new Intl.NumberFormat("en-IN").format(retirement.params.expenses) })}{" "}
+                  <Link href={`/calculators/retirement-corpus?${encodeInputs(retirement.calculatorInputs)}`} className="underline underline-offset-4">{t("calculatorWithMyNumbers", { name: tcalc("names.retirement-corpus") })}</Link>
+                </p>
+              ) : null}
               <p className="mt-2 text-xs text-fg-muted">{tc(`dim.${d.key}.why`)} <Link href={chapterHref(DIMENSION_CHAPTERS[d.key])} className="underline underline-offset-4">{t("readChapter")}</Link></p>
             </li>
           ))}

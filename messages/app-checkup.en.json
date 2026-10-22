@@ -54,6 +54,8 @@
         "cityTier": "city"
       },
       "readChapter": "Read the chapter",
+      "assumesRetirement": "This assumes you retire at {retireAt}, live to {lifeExpectancy}, prices rise {inflation}% a year and savings earn {postReturn}% after retirement, starting from today's expenses of ₹{expenses} a month.",
+      "calculatorWithMyNumbers": "{name}, with my numbers",
       "weightNote": "Weights after life-stage adjustment: {weight}.",
       "noRisks": "Every dimension is in good shape.",
       "noStrengths": "No dimension scores 70 or more yet; the plan shows where to start.",
@@ -176,6 +178,12 @@
       "effortHours": "{count} h",
       "effortDays": "{count} days",
       "readChapter": "Read the chapter",
+      "calculatorWithMyNumbers": "{name}, with my numbers",
+      "assumes": {
+        "retirementSip": "This assumes you retire at {retireAt}, live to {lifeExpectancy}, prices rise {inflation}% a year and savings earn {postReturn}% after retirement, starting from today's expenses of ₹{expenses} a month.",
+        "raiseTermCover": "This is {multiple}× your yearly take-home income of ₹{annual}. The calculator also counts your loans, goals and savings.",
+        "raiseHealthCover": "The recommended amount is ₹{target} for a family in a tier {tier} city, before any top-up for age."
+      },
       "addData": "Add my data",
       "titles": {
         "fixOverspend": "Bring expenses under income",

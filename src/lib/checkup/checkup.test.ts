@@ -2,6 +2,8 @@ import { describe, expect, it } from "vitest";
 import { runCheckUp, runQuickCheck, type HouseholdSnapshot } from "./engine";
 import { buildPlan } from "./plan";
 import { getRulePack } from "../rulepack";
+import { explainItem } from "./explain";
+import { runCalculator } from "../calculators";
 
 const healthy: HouseholdSnapshot = {
   age: 35,
@@ -157,5 +159,28 @@ describe("missing data is unknown, not zero", () => {
   it("keeps legacy snapshots without a provided list fully scored", () => {
     const r = runCheckUp(healthy);
     expect(r.dimensions.every((d) => d.status !== "unknown")).toBe(true);
+  });
+});
+
+describe("explaining the big numbers", () => {
+  it("opens the retirement calculator on the same numbers the plan used", () => {
+    const h: HouseholdSnapshot = { ...healthy, monthlyRetirementSip: 0, retirementCorpus: 0, investments: { equity: 0, debt: 0, gold: 0, realEstate: 0 } };
+    const r = runCheckUp(h);
+    const item = buildPlan(r, h.monthlyIncome).find((i) => i.id === "retirement-sip")!;
+    const e = explainItem(item, h, r.rulePackVersion)!;
+    expect(e.template).toBe("retirementSip");
+    expect(e.params).toMatchObject({ retireAt: 60, lifeExpectancy: 85, inflation: 6, postReturn: 7, expenses: 120000 });
+    expect(Math.round(Number(runCalculator("retirement-corpus", e.calculatorInputs).values.corpusNeeded))).toBe(Number(item.params.corpus));
+  });
+  it("explains term and health cover targets and leaves other items alone", () => {
+    const h: HouseholdSnapshot = { ...healthy, lifeCover: 0, healthCover: 200000, cityTier: 2 };
+    const r = runCheckUp(h);
+    const plan = buildPlan(r, h.monthlyIncome);
+    const term = explainItem(plan.find((i) => i.id === "raise-term-cover")!, h)!;
+    expect(term.params).toEqual({ multiple: 10, annual: 2400000 });
+    expect(term.calculatorInputs).toMatchObject({ income: 200000, existingCover: 0, loans: 3000000 });
+    const health = explainItem(plan.find((i) => i.id === "raise-health-cover")!, h)!;
+    expect(health.params).toEqual({ target: 700000, tier: 2 });
+    expect(explainItem(plan.find((i) => i.id === "annual-review")!, h)).toBeUndefined();
   });
 });

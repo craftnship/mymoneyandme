@@ -590,7 +590,7 @@
       "reduceEmiLoad": "EMIs take {share}% of income. Prepay the costliest loan or extend tenure to get under 35%.",
       "raiseSavingsRate": "Raise the savings rate from {rate}% to {target}%: automate the difference on salary day.",
       "rebalance": "Rebalance: equity is {equity}% of financial assets against a target of about {target}%.",
-      "startInvesting": "Start investing: nothing beyond bank savings is invested yet. For your age, about {target}% of long-term money in equity is a common starting point.",
+      "startInvesting": "Start investing: apart from bank savings and EPF, PPF or NPS, nothing is invested yet. For your age, about {target}% of long-term money in equity is a common starting point.",
       "deployIdleCash": "Move idle cash ({share}% of financial assets beyond the emergency fund) into a plan.",
       "fundGoals": "Goals are {ready}% funded on the current path; raise SIPs or push out the flexible ones.",
       "retirementSip": "Retirement is {ready}% on track against a corpus of about ₹{corpus}; start or raise the retirement SIP.",
