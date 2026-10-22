@@ -19,29 +19,447 @@
   "chapters": [
     {
       "slug": "nominations",
-      "readingMinutes": 10,
+      "readingMinutes": 12,
       "translations": [
         {
           "locale": "en",
           "title": "Nominations",
-          "excerpt": "",
-          "blocks": [],
-          "state": "draft",
-          "aiDraft": false
+          "excerpt": "Who gets the money first, why it matters, and how to set a nominee on every account in an afternoon.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "A nomination tells a bank, insurer or fund house who should receive the money if you die. Without one, your family has to prove they are your legal heirs before anyone pays out: succession certificates, affidavits and months of visits, at the very moment they most need cash."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "What a nominee is, and is not"
+            },
+            {
+              "type": "paragraph",
+              "text": "In most cases a nominee receives the money as a trustee for your legal heirs, not as its final owner. The bank pays the nominee quickly; if the will or succession law says the money belongs to someone else, they can claim it from the nominee. Life insurance is the main exception: a spouse, child or parent named as nominee is a beneficial nominee and keeps the claim amount."
+            },
+            {
+              "type": "callout",
+              "tone": "info",
+              "text": "A nomination makes the money easy to collect. A will decides who finally owns it. You need both, and they should agree with each other."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Where to set one"
+            },
+            {
+              "type": "table",
+              "header": [
+                "Account",
+                "How to nominate"
+              ],
+              "rows": [
+                [
+                  "Savings accounts and fixed deposits",
+                  "Net banking or a form at the branch. Banks now allow up to four nominees, with a share for each."
+                ],
+                [
+                  "Mutual funds and demat accounts",
+                  "The fund house, registrar (CAMS, KFintech) or broker website. Several nominees with percentage shares are allowed."
+                ],
+                [
+                  "EPF",
+                  "E-nomination on the EPFO member portal using your UAN."
+                ],
+                [
+                  "PPF, NSC, post office schemes",
+                  "A nomination form at the bank or post office where the account is held."
+                ],
+                [
+                  "NPS",
+                  "Your CRA account online, or through your employer's nodal office."
+                ],
+                [
+                  "Life and health insurance",
+                  "On the proposal form, or a change-of-nomination request to the insurer at any time."
+                ]
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Doing it in one afternoon"
+            },
+            {
+              "type": "list",
+              "items": [
+                "List every account, deposit, folio, demat account, policy and EPF, PPF or NPS account you hold.",
+                "Log in to each and check the nominee; many older accounts have none.",
+                "Add or update the nominee, splitting by percentage if you want more than one person to share.",
+                "If a nominee is a minor, name an adult guardian to receive the money on their behalf.",
+                "Keep one list of accounts and nominees where your family can find it."
+              ],
+              "ordered": true
+            },
+            {
+              "type": "callout",
+              "tone": "tip",
+              "text": "Review nominations after marriage, a child's birth, a divorce or a death in the family. An old nomination does not update itself."
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "A nominee gets the money fast; legal heirs decide who finally keeps it, except for beneficial nominees in life insurance.",
+                "Every bank account, folio, demat, policy and retirement account needs its own nomination.",
+                "Pair nominations with a will so the two say the same thing."
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "You named your brother as nominee on a fixed deposit, but your will leaves it to your daughter. Who finally owns the money?",
+                  "options": [
+                    "Your brother, because he is the nominee",
+                    "Your daughter, as the will says",
+                    "The bank, until a court decides"
+                  ],
+                  "answer": 1
+                },
+                {
+                  "q": "Which of these is a beneficial nominee who keeps a life insurance claim?",
+                  "options": [
+                    "A friend",
+                    "A spouse",
+                    "A cousin"
+                  ],
+                  "answer": 1
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": false,
+          "publishedAt": "2026-10-22"
+        },
+        {
+          "locale": "ta",
+          "title": "நாமினி நியமனம்",
+          "excerpt": "பணம் முதலில் யாருக்குப் போகும், அது ஏன் முக்கியம், ஒரே மதியத்தில் ஒவ்வொரு கணக்கிலும் நாமினியை எப்படி நியமிப்பது.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "நீங்கள் இறந்தால் பணத்தை யார் பெற வேண்டும் என்று வங்கி, காப்பீட்டு நிறுவனம் அல்லது ஃபண்ட் நிறுவனத்திடம் சொல்வதே நாமினி நியமனம். அது இல்லையென்றால், யாரும் பணம் தருவதற்கு முன் உங்கள் குடும்பம் தாங்கள் சட்டப்பூர்வ வாரிசுகள் என்று நிரூபிக்க வேண்டும்: வாரிசுச் சான்றிதழ், பிரமாணப் பத்திரங்கள், மாதக்கணக்கில் அலைச்சல்; அதுவும் அவர்களுக்குப் பணம் மிகவும் தேவைப்படும் நேரத்தில்."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "நாமினி என்றால் என்ன, என்ன அல்ல"
+            },
+            {
+              "type": "paragraph",
+              "text": "பெரும்பாலான சமயங்களில் நாமினி பணத்தை அதன் இறுதி உரிமையாளராக அல்ல, உங்கள் சட்டப்பூர்வ வாரிசுகளுக்கான அறங்காவலராகவே பெறுகிறார். வங்கி நாமினிக்கு விரைவாகப் பணம் தருகிறது; உயிலோ வாரிசுரிமைச் சட்டமோ பணம் வேறொருவருக்குச் சொந்தம் என்று சொன்னால், அவர் நாமினியிடமிருந்து அதைக் கோரலாம். ஆயுள் காப்பீடு முக்கிய விதிவிலக்கு: நாமினியாகக் குறிப்பிடப்பட்ட கணவர்/மனைவி, குழந்தை அல்லது பெற்றோர் 'பயனாளி நாமினி'; க்ளெய்ம் தொகை அவருக்கே சொந்தம்."
+            },
+            {
+              "type": "callout",
+              "tone": "info",
+              "text": "நாமினி நியமனம் பணத்தை எளிதாகப் பெற உதவுகிறது. இறுதியில் அது யாருக்குச் சொந்தம் என்பதை உயில் தீர்மானிக்கிறது. இரண்டும் தேவை; இரண்டும் ஒன்றோடொன்று ஒத்துப்போக வேண்டும்."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "எங்கே நியமிப்பது"
+            },
+            {
+              "type": "table",
+              "header": [
+                "கணக்கு",
+                "எப்படி நியமிப்பது"
+              ],
+              "rows": [
+                [
+                  "சேமிப்புக் கணக்குகள் மற்றும் நிலை வைப்புகள் (FD)",
+                  "நெட் பேங்கிங் அல்லது கிளையில் ஒரு படிவம். வங்கிகள் இப்போது ஒவ்வொருவருக்கும் ஒரு பங்குடன் நான்கு நாமினிகள் வரை அனுமதிக்கின்றன."
+                ],
+                [
+                  "மியூச்சுவல் ஃபண்டுகள் மற்றும் டீமேட் கணக்குகள்",
+                  "ஃபண்ட் நிறுவனம், பதிவாளர் (CAMS, KFintech) அல்லது புரோக்கர் இணையதளம். சதவீதப் பங்குகளுடன் பல நாமினிகள் அனுமதிக்கப்படுகின்றனர்."
+                ],
+                [
+                  "EPF",
+                  "உங்கள் UAN மூலம் EPFO உறுப்பினர் இணையதளத்தில் இ-நாமினேஷன்."
+                ],
+                [
+                  "PPF, NSC, அஞ்சலகத் திட்டங்கள்",
+                  "கணக்கு உள்ள வங்கி அல்லது அஞ்சலகத்தில் நாமினேஷன் படிவம்."
+                ],
+                [
+                  "NPS",
+                  "உங்கள் CRA கணக்கில் ஆன்லைனில், அல்லது உங்கள் நிறுவனத்தின் நோடல் அலுவலகம் மூலம்."
+                ],
+                [
+                  "ஆயுள் மற்றும் மருத்துவக் காப்பீடு",
+                  "முன்மொழிவுப் படிவத்தில், அல்லது எப்போது வேண்டுமானாலும் காப்பீட்டாளரிடம் நாமினி மாற்றக் கோரிக்கை."
+                ]
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "ஒரே மதியத்தில் செய்து முடிப்பது"
+            },
+            {
+              "type": "list",
+              "items": [
+                "உங்களிடம் உள்ள ஒவ்வொரு கணக்கு, வைப்பு, ஃபோலியோ, டீமேட் கணக்கு, பாலிசி மற்றும் EPF, PPF அல்லது NPS கணக்கையும் பட்டியலிடுங்கள்.",
+                "ஒவ்வொன்றிலும் உள்நுழைந்து நாமினியைச் சரிபாருங்கள்; பல பழைய கணக்குகளில் நாமினியே இருக்காது.",
+                "நாமினியைச் சேர்க்கவும் அல்லது புதுப்பிக்கவும்; ஒருவருக்கு மேற்பட்டவர்கள் பகிர வேண்டுமென்றால் சதவீதப்படி பிரியுங்கள்.",
+                "நாமினி மைனராக இருந்தால், அவர் சார்பில் பணத்தைப் பெற ஒரு வயதுவந்த பாதுகாவலரைக் குறிப்பிடுங்கள்.",
+                "கணக்குகள் மற்றும் நாமினிகளின் ஒரு பட்டியலை உங்கள் குடும்பம் கண்டுபிடிக்கக்கூடிய இடத்தில் வையுங்கள்."
+              ],
+              "ordered": true
+            },
+            {
+              "type": "callout",
+              "tone": "tip",
+              "text": "திருமணம், குழந்தை பிறப்பு, விவாகரத்து அல்லது குடும்பத்தில் ஒரு மரணத்திற்குப் பிறகு நாமினிகளை மறுபரிசீலனை செய்யுங்கள். பழைய நாமினி நியமனம் தானாக மாறாது."
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "நாமினிக்குப் பணம் விரைவாகக் கிடைக்கும்; இறுதியில் யார் வைத்துக்கொள்வது என்பதை சட்டப்பூர்வ வாரிசுகள் தீர்மானிப்பர், ஆயுள் காப்பீட்டின் பயனாளி நாமினிகள் தவிர.",
+                "ஒவ்வொரு வங்கிக் கணக்கு, ஃபோலியோ, டீமேட், பாலிசி மற்றும் ஓய்வூதியக் கணக்குக்கும் தனி நாமினி நியமனம் தேவை.",
+                "நாமினி நியமனங்களையும் உயிலையும் இணைத்துச் செய்யுங்கள்; இரண்டும் ஒரே விஷயத்தைச் சொல்ல வேண்டும்."
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "ஒரு FD இல் உங்கள் சகோதரரை நாமினியாகக் குறிப்பிட்டீர்கள், ஆனால் உங்கள் உயில் அதை உங்கள் மகளுக்கு விட்டுச் செல்கிறது. இறுதியில் பணம் யாருக்குச் சொந்தம்?",
+                  "options": [
+                    "உங்கள் சகோதரர், ஏனெனில் அவர் நாமினி",
+                    "உயில் சொல்வதுபோல் உங்கள் மகள்",
+                    "நீதிமன்றம் முடிவு செய்யும் வரை வங்கி"
+                  ],
+                  "answer": 1
+                },
+                {
+                  "q": "இவர்களில் ஆயுள் காப்பீட்டு க்ளெய்மை வைத்துக்கொள்ளும் பயனாளி நாமினி யார்?",
+                  "options": [
+                    "ஒரு நண்பர்",
+                    "கணவர்/மனைவி",
+                    "ஒரு உறவினர் (cousin)"
+                  ],
+                  "answer": 1
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": true,
+          "publishedAt": "2026-10-22"
         }
       ]
     },
     {
       "slug": "wills",
-      "readingMinutes": 10,
+      "readingMinutes": 12,
       "translations": [
         {
           "locale": "en",
           "title": "Writing a will",
-          "excerpt": "",
-          "blocks": [],
-          "state": "draft",
-          "aiDraft": false
+          "excerpt": "What makes a will valid in India, what to put in it, and why a simple one is enough for most families.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "A will says who gets what after you die, and who will look after your children. Without one, your property is divided by the succession law that applies to your religion, which may not match what you want, and your family may need court papers before they can touch it."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "What makes a will valid"
+            },
+            {
+              "type": "list",
+              "items": [
+                "You are an adult of sound mind and are making it freely.",
+                "It is in writing: handwritten or typed, in any language, on plain paper. No stamp paper is needed.",
+                "You sign it in front of two witnesses, who also sign. A witness, or a witness's spouse, should not be someone who inherits under the will."
+              ]
+            },
+            {
+              "type": "callout",
+              "tone": "info",
+              "text": "Registering a will at the sub-registrar's office is optional. It costs little and makes the will harder to dispute or lose, so it is worth doing."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "What to put in it"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Your name, address and a line saying this will replaces any earlier one.",
+                "A list of what you own: property, bank accounts, deposits, investments, insurance, vehicles, jewellery, and any loans you owe.",
+                "Who gets what, by name and relationship, with a share or a specific item.",
+                "A guardian for children under 18.",
+                "An executor: someone you trust to carry out the will, who can also be a beneficiary.",
+                "Date, place, your signature, and the two witnesses' names, addresses and signatures."
+              ],
+              "ordered": true
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Things that trip people up"
+            },
+            {
+              "type": "list",
+              "items": [
+                "The will and the nominations disagree. Line them up so your family is not caught between the two.",
+                "Only part of the property is covered. Add a line for everything else, so nothing is left to intestate succession.",
+                "The will is never updated. Review it after marriage, a child, a property purchase or a death in the family; the latest valid will is the one that counts.",
+                "Nobody knows where it is. Tell your executor and keep a copy with the list of accounts."
+              ]
+            },
+            {
+              "type": "callout",
+              "tone": "warning",
+              "text": "Under Muslim personal law, a will can usually pass on only up to one-third of the estate unless the other heirs agree. In some cities, a will about property there may need probate from a court before it can be acted on. A lawyer for an hour is worth it if either applies to you."
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "A will on plain paper, signed before two witnesses who do not inherit, is valid.",
+                "Name a guardian for minor children and an executor you trust.",
+                "Keep the will in line with your nominations, and update it after big life events."
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "Which of these is required for a valid will in India?",
+                  "options": [
+                    "Stamp paper",
+                    "Registration at the sub-registrar",
+                    "Your signature before two witnesses"
+                  ],
+                  "answer": 2
+                },
+                {
+                  "q": "Who should not be a witness to your will?",
+                  "options": [
+                    "A neighbour",
+                    "Your daughter, who inherits under it",
+                    "Your family doctor"
+                  ],
+                  "answer": 1
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": false,
+          "publishedAt": "2026-10-22"
+        },
+        {
+          "locale": "ta",
+          "title": "உயில் எழுதுதல்",
+          "excerpt": "இந்தியாவில் உயிலைச் செல்லுபடியாக்குவது எது, அதில் என்ன எழுத வேண்டும், பெரும்பாலான குடும்பங்களுக்கு எளிய உயிலே ஏன் போதும்.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "நீங்கள் இறந்த பிறகு எது யாருக்குப் போக வேண்டும், உங்கள் குழந்தைகளை யார் கவனித்துக்கொள்வார்கள் என்று உயில் சொல்கிறது. உயில் இல்லையென்றால், உங்கள் மதத்திற்குப் பொருந்தும் வாரிசுரிமைச் சட்டப்படி சொத்து பிரிக்கப்படும்; அது நீங்கள் விரும்புவதுடன் ஒத்துப்போகாமல் இருக்கலாம், மேலும் உங்கள் குடும்பம் அதைத் தொடுவதற்கு முன் நீதிமன்ற ஆவணங்கள் தேவைப்படலாம்."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "உயிலைச் செல்லுபடியாக்குவது எது"
+            },
+            {
+              "type": "list",
+              "items": [
+                "நீங்கள் மனநிலை சரியான வயதுவந்தவர், சுயவிருப்பத்துடன் எழுதுகிறீர்கள்.",
+                "அது எழுத்து வடிவில் இருக்க வேண்டும்: கையால் எழுதியதோ தட்டச்சு செய்ததோ, எந்த மொழியிலும், சாதாரணத் தாளில். முத்திரைத் தாள் தேவையில்லை.",
+                "இரண்டு சாட்சிகளின் முன் நீங்கள் கையெழுத்திடுகிறீர்கள்; அவர்களும் கையெழுத்திடுகிறார்கள். சாட்சியோ சாட்சியின் கணவர்/மனைவியோ உயிலின் கீழ் சொத்து பெறுபவராக இருக்கக்கூடாது."
+              ]
+            },
+            {
+              "type": "callout",
+              "tone": "info",
+              "text": "சார்பதிவாளர் அலுவலகத்தில் உயிலைப் பதிவு செய்வது விருப்பத்திற்குரியது. செலவு குறைவு; உயிலை மறுப்பதையும் தொலைப்பதையும் கடினமாக்கும், எனவே செய்வது நல்லது."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "அதில் என்ன எழுத வேண்டும்"
+            },
+            {
+              "type": "list",
+              "items": [
+                "உங்கள் பெயர், முகவரி, மேலும் இந்த உயில் முந்தைய எந்த உயிலையும் மாற்றுகிறது என்ற ஒரு வரி.",
+                "உங்களுக்குச் சொந்தமானவற்றின் பட்டியல்: சொத்து, வங்கிக் கணக்குகள், வைப்புகள், முதலீடுகள், காப்பீடு, வாகனங்கள், நகைகள், நீங்கள் செலுத்த வேண்டிய கடன்கள்.",
+                "யாருக்கு எது, பெயர் மற்றும் உறவுமுறையுடன், ஒரு பங்காகவோ குறிப்பிட்ட பொருளாகவோ.",
+                "18 வயதுக்குட்பட்ட குழந்தைகளுக்கு ஒரு பாதுகாவலர்.",
+                "ஒரு நிறைவேற்றுநர் (executor): உயிலை நிறைவேற்ற நீங்கள் நம்பும் ஒருவர்; அவர் பயனாளியாகவும் இருக்கலாம்.",
+                "தேதி, இடம், உங்கள் கையெழுத்து, இரண்டு சாட்சிகளின் பெயர், முகவரி மற்றும் கையெழுத்து."
+              ],
+              "ordered": true
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "மக்கள் தடுமாறும் இடங்கள்"
+            },
+            {
+              "type": "list",
+              "items": [
+                "உயிலும் நாமினி நியமனங்களும் முரண்படுகின்றன. இரண்டுக்கும் நடுவே உங்கள் குடும்பம் சிக்காமல் இருக்க அவற்றை ஒத்துப்போகச் செய்யுங்கள்.",
+                "சொத்தின் ஒரு பகுதி மட்டுமே குறிப்பிடப்பட்டுள்ளது. மற்ற எல்லாவற்றுக்கும் ஒரு வரி சேர்த்தால், எதுவும் உயிலில்லா வாரிசுரிமைக்கு விடப்படாது.",
+                "உயில் ஒருபோதும் புதுப்பிக்கப்படுவதில்லை. திருமணம், குழந்தை, சொத்து வாங்குதல் அல்லது குடும்பத்தில் மரணத்திற்குப் பிறகு மறுபரிசீலனை செய்யுங்கள்; கடைசியாக எழுதப்பட்ட செல்லுபடியான உயிலே கணக்கில் கொள்ளப்படும்.",
+                "அது எங்கே இருக்கிறது என்று யாருக்கும் தெரியாது. உங்கள் நிறைவேற்றுநரிடம் சொல்லுங்கள்; கணக்குகளின் பட்டியலுடன் ஒரு நகலை வையுங்கள்."
+              ]
+            },
+            {
+              "type": "callout",
+              "tone": "warning",
+              "text": "முஸ்லிம் தனிநபர் சட்டத்தின் கீழ், மற்ற வாரிசுகள் ஒப்புக்கொண்டால் தவிர, உயில் மூலம் பொதுவாகச் சொத்தில் மூன்றில் ஒரு பங்கு வரை மட்டுமே கொடுக்க முடியும். சில நகரங்களில், அங்குள்ள சொத்து பற்றிய உயிலை நிறைவேற்றுவதற்கு முன் நீதிமன்றத்திடமிருந்து புரொபேட் தேவைப்படலாம். இவற்றில் ஏதாவது உங்களுக்குப் பொருந்தினால், ஒரு மணி நேரம் வழக்கறிஞரைச் சந்திப்பது பயனுள்ளது."
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "சொத்து பெறாத இரண்டு சாட்சிகளின் முன் கையெழுத்திட்ட, சாதாரணத் தாளில் எழுதிய உயில் செல்லுபடியானது.",
+                "மைனர் குழந்தைகளுக்கு ஒரு பாதுகாவலரையும் நீங்கள் நம்பும் ஒரு நிறைவேற்றுநரையும் குறிப்பிடுங்கள்.",
+                "உயிலை உங்கள் நாமினி நியமனங்களுடன் ஒத்துப்போகச் செய்து, பெரிய வாழ்க்கை நிகழ்வுகளுக்குப் பிறகு புதுப்பியுங்கள்."
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "இந்தியாவில் செல்லுபடியான உயிலுக்கு இவற்றில் எது தேவை?",
+                  "options": [
+                    "முத்திரைத் தாள்",
+                    "சார்பதிவாளரிடம் பதிவு",
+                    "இரண்டு சாட்சிகளின் முன் உங்கள் கையெழுத்து"
+                  ],
+                  "answer": 2
+                },
+                {
+                  "q": "உங்கள் உயிலுக்கு யார் சாட்சியாக இருக்கக்கூடாது?",
+                  "options": [
+                    "ஒரு அண்டை வீட்டுக்காரர்",
+                    "உயிலின் கீழ் சொத்து பெறும் உங்கள் மகள்",
+                    "உங்கள் குடும்ப மருத்துவர்"
+                  ],
+                  "answer": 1
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": true,
+          "publishedAt": "2026-10-22"
         }
       ]
     },
