@@ -9,7 +9,7 @@ import { openItems, planProgress } from "@/lib/checkup/progress";
 import { listGoals } from "@/lib/goals/store";
 import { projectGoal } from "@/lib/goals/math";
 import { RunCheckUp } from "@/components/app/checkup/RunCheckUp";
-import { formatDate, ProgressBar, ScoreGauge, statusClass } from "@/components/app/checkup/ui";
+import { formatDate, ProgressBar, ScoreGauge, statusClass, statusLabel } from "@/components/app/checkup/ui";
 
 type SearchParams = Promise<Record<string, string | string[] | undefined>>;
 
@@ -72,7 +72,7 @@ async function Overview({ locale }: { locale: string }) {
                 return (
                   <li key={k} className="flex items-center justify-between gap-2">
                     <span>{tc(`dim.${k}.title`)}</span>
-                    {d ? <span className={`text-xs font-semibold rounded-full px-2 py-0.5 ${statusClass(d.status)}`}>{tc(`status.${d.status}`)} · {d.score}</span> : null}
+                    {d ? <span className={`text-xs font-semibold rounded-full px-2 py-0.5 ${statusClass(d.status)}`}>{statusLabel(d.status, d.score, tc(`status.${d.status}`))}</span> : null}
                   </li>
                 );
               })}

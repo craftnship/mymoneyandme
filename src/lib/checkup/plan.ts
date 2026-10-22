@@ -14,7 +14,7 @@ export type PlanItem = {
   params: Record<string, number | string>;
   effortMinutes: number;
   scoreImpact: number; // expected points gained
-  rule: string; // explainability: which metric and threshold produced it
+  rule: string; // explainability for support and tests; not shown to members
   relatedCalculator?: string;
   relatedChapter?: string;
 };
@@ -25,9 +25,12 @@ export function buildPlan(result: CheckUpResult, income: number): PlanItem[] {
   const items: PlanItem[] = [];
   const dim = (k: PlanItem["dimension"]) => result.dimensions.find((d) => d.key === k)!;
   const impact = (k: PlanItem["dimension"], targetScore = 100) => Math.round(((targetScore - dim(k).score) * dim(k).weight) / 100);
+  // A metric is known when some dimension scored it; advice is never built on numbers the member has not entered.
+  const known = (metric: string) => result.dimensions.some((d) => metric in d.metrics);
+  const unscored = result.dimensions.filter((d) => d.status === "unknown");
 
   // 1. Stop the bleeding
-  if (m.savingsRate < 0) {
+  if (known("savingsRate") && m.savingsRate < 0) {
     items.push({ id: "fix-overspend", priority: 1, dimension: "cashflow", template: "fixOverspend", params: { gap: Math.round(-m.savingsRate * income) }, effortMinutes: 120, scoreImpact: impact("cashflow"), rule: "savingsRate < 0", relatedCalculator: "50-30-20-budget", relatedChapter: "adults/money-basics/budgeting" });
   }
   if (m.highCostDebtShare > 0) {
@@ -36,10 +39,10 @@ export function buildPlan(result: CheckUpResult, income: number): PlanItem[] {
 
   // 2. Protect
   const multiple = pack.insurance.termCoverMultipleOfIncome.min;
-  if (m.lifeCoverMultiple < multiple) {
+  if (known("lifeCoverMultiple") && m.lifeCoverMultiple < multiple) {
     items.push({ id: "raise-term-cover", priority: 2, dimension: "insurance", template: "raiseTermCover", params: { target: Math.round(income * 12 * multiple), multiple }, effortMinutes: 30, scoreImpact: Math.round(impact("insurance") / 2), rule: `lifeCoverMultiple < ${multiple}`, relatedCalculator: "term-cover", relatedChapter: "adults/insurance/term-life" });
   }
-  if (m.healthCoverRatio < 1) {
+  if (known("healthCoverRatio") && m.healthCoverRatio < 1) {
     items.push({ id: "raise-health-cover", priority: 2, dimension: "insurance", template: "raiseHealthCover", params: { ratio: Math.round(m.healthCoverRatio * 100) }, effortMinutes: 45, scoreImpact: Math.round(impact("insurance") / 2), rule: "healthCoverRatio < 1", relatedCalculator: "health-cover", relatedChapter: "adults/insurance/health-insurance" });
   }
   if (!m.nominationsSet) {
@@ -47,31 +50,34 @@ export function buildPlan(result: CheckUpResult, income: number): PlanItem[] {
   }
 
   // 3. Cushion
-  if (m.emergencyMonths < 6) {
+  if (known("emergencyMonths") && m.emergencyMonths < 6) {
     items.push({ id: "build-emergency-fund", priority: 3, dimension: "emergency", template: "buildEmergencyFund", params: { months: Math.round(m.emergencyMonths * 10) / 10, target: 6 }, effortMinutes: 15, scoreImpact: impact("emergency"), rule: "emergencyMonths < 6", relatedCalculator: "emergency-fund", relatedChapter: "adults/money-basics/emergency-fund" });
   }
 
   // 4. Optimise debt
-  if (m.emiToIncome > 0.35) {
+  if (known("emiToIncome") && m.emiToIncome > 0.35) {
     items.push({ id: "reduce-emi-load", priority: 4, dimension: "debt", template: "reduceEmiLoad", params: { share: Math.round(m.emiToIncome * 100) }, effortMinutes: 60, scoreImpact: impact("debt"), rule: "emiToIncome > 0.35", relatedCalculator: "prepayment", relatedChapter: "adults/banking-and-credit/loans-and-emis" });
   }
 
   // 5. Grow
-  if (m.savingsRate >= 0 && m.savingsRate < 0.2) {
+  if (known("savingsRate") && m.savingsRate >= 0 && m.savingsRate < 0.2) {
     items.push({ id: "raise-savings-rate", priority: 5, dimension: "cashflow", template: "raiseSavingsRate", params: { rate: Math.round(m.savingsRate * 100), target: 20 }, effortMinutes: 60, scoreImpact: impact("cashflow"), rule: "savingsRate < 0.20", relatedCalculator: "savings-rate", relatedChapter: "adults/money-basics/budgeting" });
   }
-  if (m.allocationDrift > 0.1) {
+  // With nothing invested yet the advice is to start, not to rebalance a portfolio that does not exist.
+  if (known("allocationDrift") && m.allocationDrift > 0.1 && m.investedShare === 0) {
+    items.push({ id: "start-investing", priority: 5, dimension: "investments", template: "startInvesting", params: { target: Math.round(m.targetEquity * 100) }, effortMinutes: 60, scoreImpact: impact("investments"), rule: "allocationDrift > 0.10 and investedShare = 0", relatedCalculator: "sip", relatedChapter: "adults/investing-fundamentals/asset-allocation" });
+  } else if (known("allocationDrift") && m.allocationDrift > 0.1) {
     items.push({ id: "rebalance", priority: 5, dimension: "investments", template: "rebalance", params: { equity: Math.round(m.equityShare * 100), target: Math.round(m.targetEquity * 100) }, effortMinutes: 45, scoreImpact: impact("investments"), rule: "allocationDrift > 0.10", relatedChapter: "adults/investing-fundamentals/asset-allocation" });
   }
-  if (m.idleCashShare > 0.1) {
+  if (known("idleCashShare") && m.idleCashShare > 0.1) {
     items.push({ id: "deploy-idle-cash", priority: 5, dimension: "investments", template: "deployIdleCash", params: { share: Math.round(m.idleCashShare * 100) }, effortMinutes: 30, scoreImpact: Math.round(impact("investments") / 2), rule: "idleCashShare > 0.10", relatedCalculator: "sip" });
   }
-  if (m.goalReadiness < 0.8) {
+  if (known("goalReadiness") && m.goalReadiness < 0.8) {
     items.push({ id: "fund-goals", priority: 5, dimension: "goals", template: "fundGoals", params: { ready: Math.round(m.goalReadiness * 100) }, effortMinutes: 30, scoreImpact: impact("goals"), rule: "goalReadiness < 0.80", relatedCalculator: "goal-sip" });
   }
 
   // 6. Secure the future
-  if (m.retirementReadiness < 1) {
+  if (known("retirementReadiness") && m.retirementReadiness < 1) {
     items.push({ id: "retirement-sip", priority: 6, dimension: "retirement", template: "retirementSip", params: { ready: Math.round(m.retirementReadiness * 100), corpus: Math.round(m.corpusNeeded) }, effortMinutes: 30, scoreImpact: impact("retirement"), rule: "retirementReadiness < 1", relatedCalculator: "retirement-corpus", relatedChapter: "adults/retirement-planning/how-much-is-enough" });
   }
   if (!m.willInPlace) {
@@ -79,6 +85,9 @@ export function buildPlan(result: CheckUpResult, income: number): PlanItem[] {
   }
 
   // 7. Review
+  if (unscored.length) {
+    items.push({ id: "fill-gaps", priority: 7, dimension: unscored[0].key, template: "fillGaps", params: { count: unscored.length }, effortMinutes: 20, scoreImpact: 0, rule: "dimension status = unknown" });
+  }
   items.push({ id: "annual-review", priority: 7, dimension: "hygiene", template: "annualReview", params: {}, effortMinutes: 20, scoreImpact: 0, rule: "always" });
 
   return items.sort((a, b) => a.priority - b.priority || b.scoreImpact - a.scoreImpact);

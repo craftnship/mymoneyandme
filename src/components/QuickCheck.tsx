@@ -86,10 +86,10 @@ export function QuickCheck() {
               <li key={d.key} className="rounded-xl border border-border bg-bg-elevated p-4">
                 <div className="flex items-center justify-between gap-2">
                   <p className="font-medium">{t(`dim.${d.key}.title`)}</p>
-                  <span className={`text-xs font-semibold rounded-full px-2 py-0.5 ${d.status === "good" ? "bg-accent-soft text-accent-strong" : d.status === "watch" ? "bg-warn-soft text-warn" : "bg-danger-soft text-danger"}`}>{t(`status.${d.status}`)} · {d.score}</span>
+                  <span className={`text-xs font-semibold rounded-full px-2 py-0.5 ${d.status === "unknown" ? "bg-bg border border-border text-fg-muted" : d.status === "good" ? "bg-accent-soft text-accent-strong" : d.status === "watch" ? "bg-warn-soft text-warn" : "bg-danger-soft text-danger"}`}>{d.status === "unknown" ? t("status.unknown") : `${t(`status.${d.status}`)} · ${d.score}`}</span>
                 </div>
-                <div className="mt-2 h-2 rounded-full bg-bg border border-border overflow-hidden"><div className="h-full bg-accent" style={{ width: `${d.score}%` }} /></div>
-                <p className="mt-2 text-xs text-fg-muted">{t(`dim.${d.key}.why`)}</p>
+                <div className="mt-2 h-2 rounded-full bg-bg border border-border overflow-hidden"><div className="h-full bg-accent" style={{ width: `${d.status === "unknown" ? 0 : d.score}%` }} /></div>
+                <p className="mt-2 text-xs text-fg-muted">{d.status === "unknown" ? t("notAsked") : t(`dim.${d.key}.why`)}</p>
               </li>
             ))}
           </ul>
@@ -116,6 +116,7 @@ export function QuickCheck() {
         <section className="rounded-card border border-accent/30 bg-accent-soft p-5">
           <p className="font-semibold">{t("signUpCta")}</p>
           <p className="text-sm text-fg-muted mt-1">{t("signUpBody")}</p>
+          <Link href="/app/sign-up" className="mt-3 inline-block rounded-lg bg-accent text-white px-4 py-2 text-sm font-medium hover:bg-accent-strong">{t("signUpButton")}</Link>
         </section>
       </div>
     );

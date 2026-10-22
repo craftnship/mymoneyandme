@@ -513,7 +513,8 @@
     "status": {
       "good": "Good",
       "watch": "Watch",
-      "act": "Act"
+      "act": "Act",
+      "unknown": "Not scored yet"
     },
     "confidence": "Confidence: {level}",
     "confidenceLevel": {
@@ -522,6 +523,7 @@
       "low": "low"
     },
     "dimensions": "Dimensions",
+    "notAsked": "The quick check does not ask about this; the full check-up covers it.",
     "strengths": "Strengths",
     "risks": "Top risks",
     "plan": "Your next steps",
@@ -530,7 +532,8 @@
     "run": "Get my score",
     "rerun": "Change answers",
     "signUpCta": "Save this and get the full plan",
-    "signUpBody": "Accounts are coming in the next release. Your answers stay on this device until then.",
+    "signUpBody": "A free account keeps your numbers, scores all eight dimensions and builds a step-by-step plan. These answers stay on this device.",
+    "signUpButton": "Create a free account",
     "rulePack": "Scored with rule pack {version}",
     "q": {
       "age": "Your age",
@@ -587,10 +590,12 @@
       "reduceEmiLoad": "EMIs take {share}% of income. Prepay the costliest loan or extend tenure to get under 35%.",
       "raiseSavingsRate": "Raise the savings rate from {rate}% to {target}%: automate the difference on salary day.",
       "rebalance": "Rebalance: equity is {equity}% of financial assets against a target of about {target}%.",
+      "startInvesting": "Start investing: nothing beyond bank savings is invested yet. For your age, about {target}% of long-term money in equity is a common starting point.",
       "deployIdleCash": "Move idle cash ({share}% of financial assets beyond the emergency fund) into a plan.",
       "fundGoals": "Goals are {ready}% funded on the current path; raise SIPs or push out the flexible ones.",
       "retirementSip": "Retirement is {ready}% on track against a corpus of about ₹{corpus}; start or raise the retirement SIP.",
       "writeWill": "Write a simple will; with dependants or after 40 it is the cheapest protection there is.",
+      "fillGaps": "{count, plural, one {# area is} other {# areas are}} not scored yet because the details are missing. Add them so the plan covers everything.",
       "annualReview": "Re-run the check-up once a year and after any life event."
     }
   },

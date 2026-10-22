@@ -62,12 +62,11 @@ async function Checklist({ locale }: { locale: string }) {
 
       <Notice tone="info">{t("disclaimer")}</Notice>
 
-      {BANDS.map((band) => {
-        const items = byBand.get(band);
-        if (!items?.length) return null;
+      {BANDS.filter((band) => byBand.get(band)?.length).map((band, index) => {
+        const items = byBand.get(band)!;
         return (
           <section key={band} aria-labelledby={`band-${band}`}>
-            <h2 id={`band-${band}`} className="text-lg font-semibold mb-3"><span className="font-mono text-fg-muted me-2">{band}</span>{t(`band.${band}`)}</h2>
+            <h2 id={`band-${band}`} className="text-lg font-semibold mb-3"><span className="font-mono text-fg-muted me-2">{index + 1}</span>{t(`band.${band}`)}</h2>
             <ol className="space-y-3">
               {items.map((item) => {
                 const stale = item.status === "snoozed" && item.snoozedUntil && item.snoozedUntil <= today;
@@ -87,7 +86,7 @@ async function Checklist({ locale }: { locale: string }) {
                       {item.scoreImpact > 0 ? ` · ${tc("impact", { points: item.scoreImpact })}` : ""}
                       {item.relatedCalculator ? <> · <Link href={`/calculators/${item.relatedCalculator}`} className="underline underline-offset-4">{tcalc(`names.${item.relatedCalculator}` as "names.sip")}</Link></> : null}
                       {item.relatedChapter ? <> · <Link href={chapterHref(item.relatedChapter)} className="underline underline-offset-4">{t("readChapter")}</Link></> : null}
-                      {" · "}<span title={item.rule}>{t("rule", { rule: item.rule })}</span>
+                      {item.template === "fillGaps" ? <> · <Link href="/app/data" className="underline underline-offset-4">{t("addData")}</Link></> : null}
                     </p>
                     {item.status === "skipped" && item.skipReason ? <p className="mt-1 text-xs text-fg-muted">{t("skippedBecause", { reason: item.skipReason })}</p> : null}
                     {item.status === "snoozed" && item.snoozedUntil ? <p className="mt-1 text-xs text-fg-muted">{stale ? t("snoozeOver") : t("snoozedUntil", { date: item.snoozedUntil })}</p> : null}
