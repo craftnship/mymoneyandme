@@ -72,7 +72,7 @@ export async function signUp(_prev: ActionState, form: FormData): Promise<Action
     return { ok: true, email: email.data };
   }
   const user = await createUser({ email: email.data, passwordHash: await hashPassword(password), name, locale });
-  await recordConsents(user.id, { analytics: form.get("analytics") === "on", marketing: form.get("marketing") === "on" });
+  await recordConsents(user.id, { analytics: form.get("analytics") === "on", marketing: form.get("marketing") === "on", planReminders: form.get("planReminders") === "on" });
   await audit(user.id, "signUp", "user", user.id);
   if (mailConfigured()) {
     const token = await issueEmailToken(user.id, "verify", 48);

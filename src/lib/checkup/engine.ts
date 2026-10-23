@@ -41,9 +41,10 @@ export type HouseholdSnapshot = {
 export type DimensionResult = {
   key: DimensionKey;
   weight: number;
-  score: number; // 0–100
-  status: "good" | "watch" | "act";
-  metrics: Record<string, number>;
+  score: number; // 0–100; 0 and ignored when status is "unknown"
+  /** "unknown": none of the dimension's inputs were entered, so it is left out of the overall score. */
+  status: "good" | "watch" | "act" | "unknown";
+  metrics: Record<string, number>; // only the metrics that were scored
 };
 
 export type CheckUpResult = {
@@ -112,6 +113,7 @@ export function computeMetrics(h: HouseholdSnapshot, pack: RulePack): Record<str
   const targetEquity = Math.min(eq.max, Math.max(eq.min, (100 - h.age) / 100));
   const financial = inv.equity + inv.debt + inv.gold + (inv.other ?? 0) + h.liquidAssets;
   const equityShare = financial > 0 ? inv.equity / financial : 0;
+  const investedShare = financial > 0 ? (financial - h.liquidAssets) / financial : 0;
   const allocationDrift = financial > 0 ? Math.abs(equityShare - targetEquity) : 0;
   const idleCashShare = financial > 0 ? Math.max(0, h.liquidAssets - essential * 6) / financial : 0;
 
@@ -152,6 +154,7 @@ export function computeMetrics(h: HouseholdSnapshot, pack: RulePack): Record<str
     idleCashShare,
     targetEquity,
     equityShare,
+    investedShare,
     retirementReadiness,
     corpusNeeded,
     projectedCorpus: projected,
@@ -162,34 +165,72 @@ export function computeMetrics(h: HouseholdSnapshot, pack: RulePack): Record<str
   };
 }
 
-function scoreDimension(dim: Dimension, metrics: Record<string, number>): DimensionResult {
+/**
+ * Snapshot fields each scored metric depends on: every group must have at
+ * least one provided field. A metric whose inputs were never entered is
+ * unknown rather than zero, so a skipped section does not read as a failure.
+ */
+const METRIC_INPUTS: Record<string, string[][]> = {
+  savingsRate: [["monthlyIncome"], ["monthlyExpenses"]],
+  essentialShare: [["monthlyIncome"], ["monthlyExpenses"]],
+  emergencyMonths: [["liquidAssets"], ["monthlyExpenses"]],
+  emiToIncome: [["monthlyIncome"]],
+  lifeCoverMultiple: [["lifeCover"], ["monthlyIncome"]],
+  healthCoverRatio: [["healthCover"]],
+  allocationDrift: [["investments", "liquidAssets"]],
+  idleCashShare: [["investments", "liquidAssets"]],
+  retirementReadiness: [["retirementCorpus", "investments", "monthlyRetirementSip"]],
+  goalReadiness: [["goals"]],
+};
+
+/** Metrics that cannot be scored from what was entered. Without a `provided` list everything counts as known. */
+export function unknownMetrics(h: HouseholdSnapshot): Set<string> {
+  const unknown = new Set<string>();
+  if (!h.provided) return unknown;
+  const have = new Set(h.provided);
+  for (const [metric, groups] of Object.entries(METRIC_INPUTS)) {
+    if (!groups.every((g) => g.some((f) => have.has(f)))) unknown.add(metric);
+  }
+  if (h.nominationsSet === undefined) unknown.add("nominationsSet");
+  const willExempt = h.age < 40 && h.dependants === 0;
+  if (h.willInPlace === undefined && !willExempt) unknown.add("willInPlace");
+  return unknown;
+}
+
+function scoreDimension(dim: Dimension, metrics: Record<string, number>, unknown: Set<string>): DimensionResult {
   let score = 0;
+  let share = 0;
   const used: Record<string, number> = {};
   for (const rule of dim.rules) {
+    if (unknown.has(rule.metric)) continue;
     const v = metrics[rule.metric] ?? 0;
     used[rule.metric] = v;
     score += scoreBands(v, rule.points) * rule.share;
+    share += rule.share;
   }
-  score = Math.round(score);
+  if (share === 0) return { key: dim.key, weight: dim.weight, score: 0, status: "unknown", metrics: used };
+  score = Math.round(score / share);
   return { key: dim.key, weight: dim.weight, score, status: statusFor(score), metrics: used };
 }
 
 export function runCheckUp(h: HouseholdSnapshot, version = CURRENT_RULEPACK_VERSION): CheckUpResult {
   const pack = getRulePack(version);
   const metrics = computeMetrics(h, pack);
+  const unknown = unknownMetrics(h);
   const stage = lifeStageFor(h.age, h.employment);
   const adjustments = pack.scoring.lifeStageWeightAdjustments[stage] ?? {};
 
   const dims = pack.scoring.dimensions.map((d) => {
-    const r = scoreDimension(d, metrics);
+    const r = scoreDimension(d, metrics, unknown);
     r.weight = Math.max(0, d.weight + (adjustments[d.key] ?? 0));
     return r;
   });
-  const totalWeight = dims.reduce((s, d) => s + d.weight, 0) || 1;
-  const overall = Math.round(dims.reduce((s, d) => s + d.score * d.weight, 0) / totalWeight);
+  const scored = dims.filter((d) => d.status !== "unknown");
+  const totalWeight = scored.reduce((s, d) => s + d.weight, 0) || 1;
+  const overall = Math.round(scored.reduce((s, d) => s + d.score * d.weight, 0) / totalWeight);
   const grade = pack.scoring.grades.find((g) => overall >= g.min)?.grade ?? "needsAttention";
 
-  const sorted = [...dims].sort((a, b) => b.score - a.score);
+  const sorted = [...scored].sort((a, b) => b.score - a.score);
   const strengths = sorted.filter((d) => d.score >= 70).slice(0, 3).map((d) => d.key);
   const risks = [...sorted].reverse().filter((d) => d.score < 70).slice(0, 3).map((d) => d.key);
 
@@ -238,10 +279,9 @@ export function runQuickCheck(q: QuickCheckInput, version = CURRENT_RULEPACK_VER
     totalDebt: q.monthlyEmi * 60,
     lifeCover: q.hasTermCover ? income * 12 * 12 : 0,
     healthCover: q.hasHealthCover ? 1000000 : 0,
-    monthlyRetirementSip: Math.max(0, income - q.monthlyExpenses - q.monthlyEmi) * 0.5,
-    nominationsSet: false,
-    willInPlace: false,
-    provided: ["age", "monthlyIncome", "monthlyExpenses", "emergencySavings", "monthlyEmi", "lifeCover", "healthCover"],
+    // Nominations, a will, investments, retirement savings and goals are not
+    // asked, so they stay unknown and out of the score instead of counting as zero.
+    provided: ["age", "monthlyIncome", "monthlyExpenses", "liquidAssets", "monthlyEmi", "lifeCover", "healthCover"],
   };
   return runCheckUp(snapshot, version);
 }

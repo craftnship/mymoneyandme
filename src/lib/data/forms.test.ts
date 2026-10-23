@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { ageFromDob, parseItem, parseMember, parseQuickStart } from "./forms";
+import { ageFromDob, parseFirstLook, parseItem, parseMember, parseProfileStep, parseQuickStart } from "./forms";
+import { nextProfileStep, profileStepProgress, withStepDone } from "./profileSteps";
 
 function fd(entries: Record<string, string | string[]>): FormData {
   const f = new FormData();
@@ -73,5 +74,40 @@ describe("ageFromDob", () => {
     expect(ageFromDob("1990-10-19", now)).toBe(35);
     expect(ageFromDob("1990-10-18", now)).toBe(36);
     expect(ageFromDob(null)).toBeNull();
+  });
+});
+
+describe("parseFirstLook", () => {
+  it("needs only income and expenses; savings and cover default to unknown", () => {
+    const r = parseFirstLook(fd({ monthlyIncome: "100000", monthlyExpenses: "60000", emergencySavings: "" }));
+    expect(r).toEqual({ ok: true, data: { monthlyIncome: 100000, monthlyExpenses: 60000, emergencySavings: undefined, termCover: "notSure", healthCover: "notSure" } });
+  });
+  it("reads the answers and rejects missing amounts or a bad cover answer", () => {
+    const r = parseFirstLook(fd({ monthlyIncome: "100000", monthlyExpenses: "60000", emergencySavings: "250000", termCover: "no", healthCover: "yes" }));
+    expect(r.ok && r.data).toMatchObject({ emergencySavings: 250000, termCover: "no", healthCover: "yes" });
+    const bad = parseFirstLook(fd({ monthlyIncome: "", termCover: "maybe" }));
+    expect(bad).toEqual({ ok: false, fieldErrors: { monthlyIncome: "required", monthlyExpenses: "required", termCover: "invalid" } });
+  });
+});
+
+describe("profile steps", () => {
+  it("validates one question at a time", () => {
+    expect(parseProfileStep("dob", fd({ dob: "1990-05-01" }))).toEqual({ ok: true, data: { dob: "1990-05-01" } });
+    expect(parseProfileStep("dob", fd({ dob: "2090-01-01" }))).toEqual({ ok: false, fieldErrors: { dob: "futureDate" } });
+    expect(parseProfileStep("cityTier", fd({ cityTier: "2" }))).toEqual({ ok: true, data: { cityTier: 2 } });
+    expect(parseProfileStep("employment", fd({ employment: "astronaut" })).ok).toBe(false);
+  });
+  it("asks the questions in order, skipping ones already answered or skipped", () => {
+    expect(nextProfileStep({ profileSteps: [], city: null })).toBe("dob");
+    expect(nextProfileStep({ profileSteps: ["dob", "employment"], city: null })).toBe("dependants");
+    expect(nextProfileStep({ profileSteps: ["dob", "employment", "dependants", "cityTier"], city: null })).toBeNull();
+    expect(profileStepProgress({ profileSteps: ["employment"], city: null })).toEqual({ done: 1, total: 4 });
+  });
+  it("treats accounts from the long quick start as complete", () => {
+    expect(nextProfileStep({ profileSteps: [], city: "Chennai" })).toBeNull();
+  });
+  it("records a step once, in order", () => {
+    expect(withStepDone(["cityTier"], "dob")).toBe("dob,cityTier");
+    expect(withStepDone(["dob"], "dob")).toBe("dob");
   });
 });

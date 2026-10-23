@@ -6,7 +6,8 @@ import { z } from "zod";
 import { routing } from "@/i18n/routing";
 import { requireHousehold } from "../auth/current";
 import { audit, updateUser } from "../auth/users";
-import { parseItem, parseMember, parseQuickStart, type FieldErrors } from "./forms";
+import { parseFirstLook, parseItem, parseMember, parseProfileStep, parseQuickStart, profileStepSchemas, type FieldErrors, type ProfileStep } from "./forms";
+import { withStepDone } from "./profileSteps";
 import { syncDependants } from "./members";
 import { isFamily, type Family } from "./model";
 import { archiveItem, archiveMember, createItem, createMember, getItem, listItems, listMembers, updateItem, updateMember } from "./store";
@@ -56,6 +57,59 @@ export async function quickStart(_prev: DataActionState, form: FormData): Promis
     await createItem(household.id, user.id, { family: "expenses", type: "other", payload: { label: "Monthly expenses", monthly: d.monthlyExpenses } });
   }
   redirect(hasIncome ? `/${locale}/app/data` : `/${locale}/app/welcome?look=1`);
+}
+
+const COVER_FLAG = { yes: 1, no: 0, notSure: null } as const;
+
+/**
+ * The short first run: income and expenses (required), emergency savings if
+ * known, and yes / no / not sure on term and health cover. The rest of the
+ * profile is asked afterwards, one question at a time.
+ */
+export async function firstLook(_prev: DataActionState, form: FormData): Promise<DataActionState> {
+  const locale = localeSchema.parse(form.get("locale"));
+  const { user, household } = await requireHousehold(locale);
+  const parsed = parseFirstLook(form);
+  if (!parsed.ok) return { fieldErrors: parsed.fieldErrors };
+  const d = parsed.data;
+  const existing = await listItems(household.id);
+  const self = (await listMembers(household.id)).find((m) => m.relation === "self");
+
+  await updateUser(user.id, { has_term_cover: COVER_FLAG[d.termCover], has_health_cover: COVER_FLAG[d.healthCover] });
+  await audit(user.id, "quickStart", "user", user.id);
+  // Seed each family once, so going back and submitting again does not double count.
+  if (!existing.some((i) => i.family === "income")) {
+    const type = user.employment === "retired" ? "pension" : BUSINESS_LIKE.has(user.employment) ? "business" : "salary";
+    await createItem(household.id, user.id, { family: "income", type, memberId: self?.id ?? null, payload: { netMonthly: d.monthlyIncome } });
+  }
+  if (!existing.some((i) => i.family === "expenses")) {
+    await createItem(household.id, user.id, { family: "expenses", type: "other", payload: { label: "Monthly expenses", monthly: d.monthlyExpenses } });
+  }
+  if (d.emergencySavings !== undefined && !existing.some((i) => i.family === "assets")) {
+    await createItem(household.id, user.id, { family: "assets", type: "cash", memberId: self?.id ?? null, payload: { label: "Emergency savings", currentValue: d.emergencySavings, liquidity: "liquid" } });
+  }
+  redirect(`/${locale}/app/welcome?look=1`);
+}
+
+/** Answers or skips one profile question (form field `skip` set means skip). */
+export async function answerProfileStep(_prev: DataActionState, form: FormData): Promise<DataActionState> {
+  const locale = localeSchema.parse(form.get("locale"));
+  const { user } = await requireHousehold(locale);
+  const step = String(form.get("step") ?? "");
+  if (!(step in profileStepSchemas)) return { error: "generic" };
+  const key = step as ProfileStep;
+  const steps = withStepDone(user.profileSteps, key);
+  if (form.get("skip")) {
+    await updateUser(user.id, { profile_steps: steps });
+  } else {
+    const parsed = parseProfileStep(key, form);
+    if (!parsed.ok) return { fieldErrors: parsed.fieldErrors };
+    const d = parsed.data as Record<string, string | number>;
+    const column = { dob: "dob", employment: "employment", dependants: "dependants", cityTier: "city_tier" } as const;
+    await updateUser(user.id, { [column[key]]: d[key], profile_steps: steps });
+  }
+  refresh(); // the card lives on the page we are on; make the router refetch it
+  return { ok: true };
 }
 
 export async function saveMember(_prev: DataActionState, form: FormData): Promise<DataActionState> {

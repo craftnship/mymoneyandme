@@ -3,11 +3,13 @@ import { getTranslations } from "next-intl/server";
 import { Link, redirect } from "@/i18n/navigation";
 import { Card, Notice, PageTitle } from "@/components/ui";
 import { QuickStartForm } from "@/components/app/data/QuickStartForm";
+import { FirstLookForm } from "@/components/app/data/FirstLookForm";
+import { NextProfileStep } from "@/components/app/data/NextProfileStep";
 import { requireHousehold } from "@/lib/auth/current";
-import { runQuickCheck } from "@/lib/checkup/engine";
-import { ageFromDob } from "@/lib/data/forms";
-import { listItems } from "@/lib/data/store";
-import { amountOf } from "@/lib/data/summary";
+import { runCheckUp } from "@/lib/checkup/engine";
+import { buildSnapshot } from "@/lib/data/snapshot";
+import { listItems, listMembers } from "@/lib/data/store";
+import { listGoals } from "@/lib/goals/store";
 import { formatINR, formatPercent } from "@/lib/format";
 
 type SearchParams = Promise<Record<string, string | string[] | undefined>>;
@@ -18,7 +20,10 @@ export async function generateMetadata() {
 }
 
 /**
- * Onboarding quick start (section 7): the minimum needed for a first score.
+ * Onboarding quick start (section 7): the minimum needed for a first score,
+ * which is income, expenses, savings if known and two cover questions. The
+ * first look scores those with the full engine, so anything not asked stays
+ * unscored, and then asks the rest of the profile one question at a time.
  * Once the household has income data the page hands over to the dashboard,
  * except right after submit (?look=1) and when editing the profile (?edit=1).
  */
@@ -40,7 +45,6 @@ async function Body({ locale, searchParams }: { locale: string; searchParams: Se
   const sp = await searchParams;
   const items = await listItems(household.id);
   const income = items.filter((i) => i.family === "income");
-  const expenses = items.filter((i) => i.family === "expenses");
   const hasIncome = income.length > 0;
   const look = sp.look === "1";
   const edit = sp.edit === "1";
@@ -48,10 +52,12 @@ async function Body({ locale, searchParams }: { locale: string; searchParams: Se
   const t = await getTranslations("appData");
 
   if (hasIncome && look) {
-    const monthlyIncome = income.reduce((s, i) => s + amountOf(i), 0);
-    const monthlyExpenses = expenses.reduce((s, i) => s + amountOf(i), 0);
+    const [members, goals] = await Promise.all([listMembers(household.id), listGoals(household.id)]);
+    const snapshot = buildSnapshot(user, members, items, goals);
+    const result = runCheckUp(snapshot);
+    const { monthlyIncome, monthlyExpenses } = snapshot;
     const savingsRate = monthlyIncome > 0 ? (monthlyIncome - monthlyExpenses) / monthlyIncome : 0;
-    const result = runQuickCheck({ age: ageFromDob(user.dob) ?? 32, monthlyIncome, monthlyExpenses, emergencySavings: 0, monthlyEmi: 0, hasTermCover: false, hasHealthCover: false });
+    const emergencyKnown = snapshot.provided?.includes("liquidAssets");
     const tc = await getTranslations("checkup");
     return (
       <div className="space-y-6">
@@ -65,8 +71,17 @@ async function Body({ locale, searchParams }: { locale: string; searchParams: Se
           </Card>
           <Card>
             <p className="text-sm text-fg-muted">{t("welcome.look.emergency")}</p>
-            <p className="mt-1 text-3xl font-semibold">{t("welcome.look.emergencyUnknown")}</p>
-            <p className="mt-2 text-xs text-fg-muted">{t("welcome.look.emergencyHint")}</p>
+            {emergencyKnown ? (
+              <>
+                <p className="mt-1 text-3xl font-semibold tabular-nums">{t("welcome.look.emergencyMonths", { months: Math.round(result.metrics.emergencyMonths * 10) / 10 })}</p>
+                <p className="mt-2 text-xs text-fg-muted">{t("welcome.look.emergencyMonthsHint")}</p>
+              </>
+            ) : (
+              <>
+                <p className="mt-1 text-3xl font-semibold">{t("welcome.look.emergencyUnknown")}</p>
+                <p className="mt-2 text-xs text-fg-muted">{t("welcome.look.emergencyHint")}</p>
+              </>
+            )}
           </Card>
           <Card>
             <p className="text-sm text-fg-muted">{t("welcome.look.score")} · {tc("approximate")}</p>
@@ -74,6 +89,7 @@ async function Body({ locale, searchParams }: { locale: string; searchParams: Se
             <p className="mt-2 text-xs text-fg-muted">{t("welcome.look.scoreHint", { grade: tc(`grade.${result.grade}` as "grade.good") })}</p>
           </Card>
         </div>
+        <NextProfileStep user={user} />
         <div className="flex flex-wrap gap-3">
           <Link href="/app/data" className="rounded-lg bg-accent px-4 py-2 font-medium text-white hover:bg-accent-strong">{t("welcome.look.addData")}</Link>
           <Link href="/app" className="rounded-lg border border-border px-4 py-2 font-medium hover:bg-accent-soft">{t("welcome.look.dashboard")}</Link>
@@ -83,9 +99,17 @@ async function Body({ locale, searchParams }: { locale: string; searchParams: Se
   }
 
   const editing = hasIncome && edit;
+  if (!editing) {
+    return (
+      <Card>
+        <p className="mb-5 text-fg-muted">{t("welcome.intro")}</p>
+        <FirstLookForm />
+      </Card>
+    );
+  }
   return (
     <Card>
-      <p className="mb-5 text-fg-muted">{editing ? t("welcome.editIntro") : t("welcome.intro")}</p>
+      <p className="mb-5 text-fg-muted">{t("welcome.editIntro")}</p>
       <QuickStartForm
         edit={editing}
         defaults={{

@@ -6,6 +6,8 @@ import { requireHousehold } from "@/lib/auth/current";
 import { planForHousehold } from "@/lib/checkup/planStore";
 import { isoDateFromNow, planProgress, projectedScore, type PlanItemWithStatus } from "@/lib/checkup/progress";
 import { chapterHref } from "@/lib/checkup/chapters";
+import { explainItem } from "@/lib/checkup/explain";
+import { encodeInputs } from "@/lib/calculators";
 import { RunCheckUp } from "@/components/app/checkup/RunCheckUp";
 import { PlanItemControls } from "@/components/app/checkup/PlanItemControls";
 import { formatEffort, ScoreGauge } from "@/components/app/checkup/ui";
@@ -62,16 +64,17 @@ async function Checklist({ locale }: { locale: string }) {
 
       <Notice tone="info">{t("disclaimer")}</Notice>
 
-      {BANDS.map((band) => {
-        const items = byBand.get(band);
-        if (!items?.length) return null;
+      {BANDS.filter((band) => byBand.get(band)?.length).map((band, index) => {
+        const items = byBand.get(band)!;
         return (
           <section key={band} aria-labelledby={`band-${band}`}>
-            <h2 id={`band-${band}`} className="text-lg font-semibold mb-3"><span className="font-mono text-fg-muted me-2">{band}</span>{t(`band.${band}`)}</h2>
+            <h2 id={`band-${band}`} className="text-lg font-semibold mb-3"><span className="font-mono text-fg-muted me-2">{index + 1}</span>{t(`band.${band}`)}</h2>
             <ol className="space-y-3">
               {items.map((item) => {
                 const stale = item.status === "snoozed" && item.snoozedUntil && item.snoozedUntil <= today;
                 const muted = item.status === "done" || item.status === "skipped" || (item.status === "snoozed" && !stale);
+                const explained = explainItem(item, plan.checkup.snapshot, plan.checkup.result.rulePackVersion);
+                const calcHref = item.relatedCalculator ? `/calculators/${item.relatedCalculator}${explained ? `?${encodeInputs(explained.calculatorInputs)}` : ""}` : null;
                 return (
                   <li key={item.id} id={`item-${item.id}`} className={`rounded-xl border border-border bg-bg-elevated p-4 ${muted ? "opacity-70" : ""}`}>
                     <div className="flex flex-wrap items-start justify-between gap-2">
@@ -79,15 +82,16 @@ async function Checklist({ locale }: { locale: string }) {
                       <span className={`text-xs font-semibold rounded-full px-2 py-0.5 ${item.status === "done" ? "bg-accent-soft text-accent-strong" : item.status === "skipped" ? "bg-bg border border-border text-fg-muted" : item.status === "inProgress" ? "bg-warn-soft text-warn" : "bg-bg border border-border text-fg-muted"}`}>{t(`status.${item.status}`)}</span>
                     </div>
                     <p className="mt-1 text-sm">{tc(`items.${item.template}` as "items.annualReview", fmtParams(item.params))}</p>
+                    {explained ? <p className="mt-1 text-xs text-fg-muted">{t(`assumes.${explained.template}`, fmtParams(explained.params))}</p> : null}
                     <ol className="mt-2 list-decimal ps-5 text-sm text-fg-muted space-y-0.5">
                       {([1, 2, 3] as const).map((n) => <li key={n}>{t(`how.${item.template}.${n}`)}</li>)}
                     </ol>
                     <p className="mt-2 text-xs text-fg-muted">
                       {formatEffort(item.effortMinutes, t)}
                       {item.scoreImpact > 0 ? ` · ${tc("impact", { points: item.scoreImpact })}` : ""}
-                      {item.relatedCalculator ? <> · <Link href={`/calculators/${item.relatedCalculator}`} className="underline underline-offset-4">{tcalc(`names.${item.relatedCalculator}` as "names.sip")}</Link></> : null}
+                      {item.relatedCalculator && calcHref ? <> · <Link href={calcHref} className="underline underline-offset-4">{explained ? t("calculatorWithMyNumbers", { name: tcalc(`names.${item.relatedCalculator}` as "names.sip") }) : tcalc(`names.${item.relatedCalculator}` as "names.sip")}</Link></> : null}
                       {item.relatedChapter ? <> · <Link href={chapterHref(item.relatedChapter)} className="underline underline-offset-4">{t("readChapter")}</Link></> : null}
-                      {" · "}<span title={item.rule}>{t("rule", { rule: item.rule })}</span>
+                      {item.template === "fillGaps" ? <> · <Link href="/app/data" className="underline underline-offset-4">{t("addData")}</Link></> : null}
                     </p>
                     {item.status === "skipped" && item.skipReason ? <p className="mt-1 text-xs text-fg-muted">{t("skippedBecause", { reason: item.skipReason })}</p> : null}
                     {item.status === "snoozed" && item.snoozedUntil ? <p className="mt-1 text-xs text-fg-muted">{stale ? t("snoozeOver") : t("snoozedUntil", { date: item.snoozedUntil })}</p> : null}

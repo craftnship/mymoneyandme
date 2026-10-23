@@ -54,6 +54,8 @@
         "cityTier": "city"
       },
       "readChapter": "Read the chapter",
+      "assumesRetirement": "This assumes you retire at {retireAt}, live to {lifeExpectancy}, prices rise {inflation}% a year and savings earn {postReturn}% after retirement, starting from today's expenses of ₹{expenses} a month.",
+      "calculatorWithMyNumbers": "{name}, with my numbers",
       "weightNote": "Weights after life-stage adjustment: {weight}.",
       "noRisks": "Every dimension is in good shape.",
       "noStrengths": "No dimension scores 70 or more yet; the plan shows where to start.",
@@ -88,44 +90,53 @@
         "cashflow": {
           "good": "You save a healthy share of income and essentials leave room to invest.",
           "watch": "Savings are positive but below the 20% that funds every other goal.",
-          "act": "Expenses are eating most or all of income; this comes before anything else."
+          "act": "Expenses are eating most or all of income; this comes before anything else.",
+          "unknown": "Not scored yet: add your income and monthly expenses."
         },
         "emergency": {
           "good": "Your liquid savings cover the target months of essential expenses.",
           "watch": "There is a cushion, but a long illness or job gap would run it dry.",
-          "act": "Little or no emergency fund; one bad month would mean borrowing."
+          "act": "Little or no emergency fund; one bad month would mean borrowing.",
+          "unknown": "Not scored yet: add your bank balances, deposits and expenses."
         },
         "debt": {
           "good": "EMIs are a manageable share of income and there is no high-cost debt.",
           "watch": "Debt is serviceable but EMIs or costly loans are starting to crowd out saving.",
-          "act": "High-cost or revolving debt, or EMIs above 35% of income, need clearing first."
+          "act": "High-cost or revolving debt, or EMIs above 35% of income, need clearing first.",
+          "unknown": "Not scored yet: add your income so EMIs can be compared with it."
         },
         "insurance": {
           "good": "Life and health cover are close to what your family would need.",
           "watch": "Some cover is in place but short of the recommended amounts.",
-          "act": "A large protection gap: one event could undo everything else."
+          "act": "A large protection gap: one event could undo everything else.",
+          "unknown": "Not scored yet: add your life and health insurance policies."
         },
         "investments": {
           "good": "Your mix is close to the age-based target and cash is put to work.",
           "watch": "The mix has drifted or cash is sitting idle beyond the emergency fund.",
-          "act": "Allocation is far from target or most money is idle; a plan is needed."
+          "act": "Allocation is far from target or most money is idle; a plan is needed.",
+          "unknown": "Not scored yet: add your bank savings and any investments."
         },
         "retirement": {
           "good": "On the current path you are on track for the retirement corpus you need.",
           "watch": "Between 70% and 100% of the needed corpus; a higher SIP closes the gap.",
-          "act": "Well under 70% of the needed corpus on the current path."
+          "act": "Well under 70% of the needed corpus on the current path.",
+          "unknown": "Not scored yet: add EPF, PPF, NPS or other investments."
         },
         "goals": {
           "good": "Most of your goal value is funded on the current trajectory.",
           "watch": "Some goals will fall short unless SIPs rise or dates move.",
-          "act": "Most goals are unfunded on the current path."
+          "act": "Most goals are unfunded on the current path.",
+          "unknown": "No goals yet, so this is not scored. Add a goal to see whether it is on track."
         },
         "hygiene": {
           "good": "Nominations and basic estate paperwork are in place.",
           "watch": "One of nominations or a will is missing.",
-          "act": "Nominations and a will are missing; both are cheap to fix."
+          "act": "Nominations and a will are missing; both are cheap to fix.",
+          "unknown": "Not scored yet: record whether nominees are set on your accounts and policies."
         }
-      }
+      },
+      "addGoal": "Add a goal"
     },
     "plan": {
       "title": "Recommended plan",
@@ -167,7 +178,13 @@
       "effortHours": "{count} h",
       "effortDays": "{count} days",
       "readChapter": "Read the chapter",
-      "rule": "Rule: {rule}",
+      "calculatorWithMyNumbers": "{name}, with my numbers",
+      "assumes": {
+        "retirementSip": "This assumes you retire at {retireAt}, live to {lifeExpectancy}, prices rise {inflation}% a year and savings earn {postReturn}% after retirement, starting from today's expenses of ₹{expenses} a month.",
+        "raiseTermCover": "This is {multiple}× your yearly take-home income of ₹{annual}. The calculator also counts your loans, goals and savings.",
+        "raiseHealthCover": "The recommended amount is ₹{target} for a family in a tier {tier} city, before any top-up for age."
+      },
+      "addData": "Add my data",
       "titles": {
         "fixOverspend": "Bring expenses under income",
         "clearHighCostDebt": "Clear high-cost debt",
@@ -178,10 +195,12 @@
         "reduceEmiLoad": "Reduce the EMI load",
         "raiseSavingsRate": "Raise the savings rate",
         "rebalance": "Rebalance the portfolio",
+        "startInvesting": "Start investing",
         "deployIdleCash": "Put idle cash to work",
         "fundGoals": "Fund the goals",
         "retirementSip": "Start or raise the retirement SIP",
         "writeWill": "Write a simple will",
+        "fillGaps": "Add the missing details",
         "annualReview": "Annual review"
       },
       "how": {
@@ -230,6 +249,11 @@
           "2": "Direct new SIPs to the under-weight asset class first.",
           "3": "Shift existing money gradually, minding exit loads and capital-gains tax."
         },
+        "startInvesting": {
+          "1": "Keep the emergency fund in place first; invest only money you will not need for five years or more.",
+          "2": "Start a monthly SIP in a low-cost equity index fund for the equity share.",
+          "3": "Put the rest in PPF or a debt fund, and raise the SIP as income grows."
+        },
         "deployIdleCash": {
           "1": "Keep the emergency fund aside; the rest is what can be invested.",
           "2": "Choose the goal or asset class the money belongs to.",
@@ -249,6 +273,11 @@
           "1": "List assets, liabilities and who should receive what.",
           "2": "Write a simple will; a template or a lawyer for an hour is enough for most families.",
           "3": "Sign it before two witnesses and tell your family where it is."
+        },
+        "fillGaps": {
+          "1": "Open My data and add what is missing: insurance policies, investments, EPF, PPF or NPS, and goals.",
+          "2": "Rough figures are fine; you can correct them later.",
+          "3": "Re-run the check-up to see the full score and plan."
         },
         "annualReview": {
           "1": "Update income, expenses, investments and policies once a year.",
@@ -365,6 +394,7 @@
       "afterCheckUp": "Appears after your first check-up.",
       "nextSteps": "Next steps",
       "allDone": "Every plan item is done or parked. Re-run the check-up to refresh it.",
+      "scoreAfterStep": "Finish step 1 and your score could go from {from} to about {to}.",
       "planProgress": "{done} of {total} plan items done",
       "viewPlan": "See the plan",
       "goals": "Goals",

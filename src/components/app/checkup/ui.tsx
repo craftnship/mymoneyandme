@@ -17,7 +17,13 @@ export function ScoreGauge({ score, label, size = "size-32" }: { score: number; 
 }
 
 export function statusClass(status: DimensionResult["status"]) {
+  if (status === "unknown") return "bg-bg border border-border text-fg-muted";
   return status === "good" ? "bg-accent-soft text-accent-strong" : status === "watch" ? "bg-warn-soft text-warn" : "bg-danger-soft text-danger";
+}
+
+/** Badge text: the status word, plus the score when there is one. */
+export function statusLabel(status: DimensionResult["status"], score: number, word: string) {
+  return status === "unknown" ? word : `${word} · ${score}`;
 }
 
 export function ProgressBar({ pct, label }: { pct: number; label: string }) {

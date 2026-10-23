@@ -6,10 +6,12 @@ import { requireHousehold } from "@/lib/auth/current";
 import { listItems } from "@/lib/data/store";
 import { planForHousehold } from "@/lib/checkup/planStore";
 import { openItems, planProgress } from "@/lib/checkup/progress";
+import { pickReminder } from "@/lib/reminders/pick";
 import { listGoals } from "@/lib/goals/store";
 import { projectGoal } from "@/lib/goals/math";
 import { RunCheckUp } from "@/components/app/checkup/RunCheckUp";
-import { formatDate, ProgressBar, ScoreGauge, statusClass } from "@/components/app/checkup/ui";
+import { NextProfileStep } from "@/components/app/data/NextProfileStep";
+import { formatDate, ProgressBar, ScoreGauge, statusClass, statusLabel } from "@/components/app/checkup/ui";
 
 type SearchParams = Promise<Record<string, string | string[] | undefined>>;
 
@@ -33,6 +35,7 @@ async function Overview({ locale }: { locale: string }) {
   const onTrack = projected.filter((p) => p.onTrack).length;
   const next = plan ? openItems(plan.items).slice(0, 3) : [];
   const progress = plan ? planProgress(plan.items) : null;
+  const first = plan ? pickReminder(plan.checkup.result.overall, plan.items) : null;
   const result = plan?.checkup.result;
 
   return (
@@ -43,6 +46,8 @@ async function Overview({ locale }: { locale: string }) {
           <p className="mt-2 text-fg-muted">{t("addDataBody")} <Link href="/app/data" className="underline underline-offset-4 font-medium">{t("addData")}</Link></p>
         ) : null}
       </Card>
+
+      {incomes.length ? <NextProfileStep user={user} /> : null}
 
       {plan && result ? (
         <Card className="grid gap-6 sm:grid-cols-[auto_1fr] items-center">
@@ -72,7 +77,7 @@ async function Overview({ locale }: { locale: string }) {
                 return (
                   <li key={k} className="flex items-center justify-between gap-2">
                     <span>{tc(`dim.${k}.title`)}</span>
-                    {d ? <span className={`text-xs font-semibold rounded-full px-2 py-0.5 ${statusClass(d.status)}`}>{tc(`status.${d.status}`)} · {d.score}</span> : null}
+                    {d ? <span className={`text-xs font-semibold rounded-full px-2 py-0.5 ${statusClass(d.status)}`}>{statusLabel(d.status, d.score, tc(`status.${d.status}`))}</span> : null}
                   </li>
                 );
               })}
@@ -87,6 +92,9 @@ async function Overview({ locale }: { locale: string }) {
               {next.map((i) => <li key={i.id}><Link href={`/app/plan#item-${i.id}`} className="underline underline-offset-4">{tp(`titles.${i.template}`)}</Link>{i.scoreImpact > 0 ? <span className="text-fg-muted"> · {tc("impact", { points: i.scoreImpact })}</span> : null}</li>)}
             </ol>
           ) : <p className="mt-2 text-sm text-fg-muted">{plan ? t("allDone") : t("afterCheckUp")}</p>}
+          {first && plan && first.projected > plan.checkup.result.overall ? (
+            <p className="mt-2 text-sm">{t("scoreAfterStep", { from: plan.checkup.result.overall, to: first.projected })}</p>
+          ) : null}
           {progress ? (
             <div className="mt-3">
               <ProgressBar pct={progress.pct} label={t("planProgress", { done: progress.done, total: progress.total })} />
