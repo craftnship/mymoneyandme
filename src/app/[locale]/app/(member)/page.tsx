@@ -9,6 +9,7 @@ import { openItems, planProgress } from "@/lib/checkup/progress";
 import { listGoals } from "@/lib/goals/store";
 import { projectGoal } from "@/lib/goals/math";
 import { RunCheckUp } from "@/components/app/checkup/RunCheckUp";
+import { NextProfileStep } from "@/components/app/data/NextProfileStep";
 import { formatDate, ProgressBar, ScoreGauge, statusClass, statusLabel } from "@/components/app/checkup/ui";
 
 type SearchParams = Promise<Record<string, string | string[] | undefined>>;
@@ -43,6 +44,8 @@ async function Overview({ locale }: { locale: string }) {
           <p className="mt-2 text-fg-muted">{t("addDataBody")} <Link href="/app/data" className="underline underline-offset-4 font-medium">{t("addData")}</Link></p>
         ) : null}
       </Card>
+
+      {incomes.length ? <NextProfileStep user={user} /> : null}
 
       {plan && result ? (
         <Card className="grid gap-6 sm:grid-cols-[auto_1fr] items-center">

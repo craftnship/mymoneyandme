@@ -137,3 +137,20 @@ describe("buildSnapshot", () => {
     expect(missingFields(undefined, 2)).toEqual(["monthlyIncome", "monthlyExpenses"]);
   });
 });
+
+describe("quick-start cover answers", () => {
+  const income = [item("income", "salary", { netMonthly: 100000, frequency: "monthly" } as Payload<"income">)];
+  it("counts a no as known zero cover", () => {
+    const s = buildSnapshot({ ...user, hasTermCover: false, hasHealthCover: false }, [self], income, [], NOW);
+    expect(s.provided).toContain("lifeCover");
+    expect(s.provided).toContain("healthCover");
+    expect(s.lifeCover).toBe(0);
+  });
+  it("leaves yes or not sure unknown until a policy is added", () => {
+    for (const answer of [true, null, undefined]) {
+      const s = buildSnapshot({ ...user, hasTermCover: answer, hasHealthCover: answer }, [self], income, [], NOW);
+      expect(s.provided).not.toContain("lifeCover");
+      expect(s.provided).not.toContain("healthCover");
+    }
+  });
+});

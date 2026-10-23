@@ -173,4 +173,13 @@ export const MIGRATIONS: Migration[] = [
       `ALTER TABLE checkups MODIFY created_at DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3)`,
     ],
   },
+  {
+    // The short quick start asks yes / no / not sure about term and health
+    // cover (NULL = not sure), and the rest of the profile one question at a
+    // time; profile_steps lists the questions answered or skipped.
+    id: "0003_short_quick_start",
+    statements: [
+      `ALTER TABLE users ADD COLUMN has_term_cover TINYINT(1) NULL, ADD COLUMN has_health_cover TINYINT(1) NULL, ADD COLUMN profile_steps VARCHAR(255) NULL`,
+    ],
+  },
 ];

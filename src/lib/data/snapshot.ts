@@ -24,6 +24,9 @@ import { monthsBetween } from "../goals/math";
  * - Life cover is the sum of term and endowment sums assured across earners.
  * - A will is not captured yet, so `willInPlace` is left undefined; the engine
  *   then relies on its age-and-dependants rule.
+ * - A quick-start "no" to term or health cover, with no policy of that kind
+ *   entered, counts as known cover of zero; "yes" or "not sure" without a
+ *   policy leaves the cover unknown until the policy is added.
  */
 export type SnapshotUser = {
   dob: string | null;
@@ -31,6 +34,8 @@ export type SnapshotUser = {
   dependants: number;
   cityTier: 1 | 2 | 3;
   retirementAge: number | null;
+  hasTermCover?: boolean | null;
+  hasHealthCover?: boolean | null;
 };
 
 /** Snapshot fields in the order that most improves confidence when added. */
@@ -158,9 +163,9 @@ export function buildSnapshot(user: SnapshotUser, members: Member[], items: Fina
   // Insurance
   const policies = by("insurance");
   const lifeCover = policies.filter((p) => LIFE_TYPES.has(p.type)).reduce((s, p) => s + p.payload.sumAssured, 0);
-  if (policies.some((p) => LIFE_TYPES.has(p.type))) provided.add("lifeCover");
+  if (policies.some((p) => LIFE_TYPES.has(p.type)) || user.hasTermCover === false) provided.add("lifeCover");
   const healthCover = healthCoverPerHousehold(policies, activeMembers);
-  if (policies.some((p) => HEALTH_FLOATER_TYPES.has(p.type) || HEALTH_INDIVIDUAL_TYPES.has(p.type))) provided.add("healthCover");
+  if (policies.some((p) => HEALTH_FLOATER_TYPES.has(p.type) || HEALTH_INDIVIDUAL_TYPES.has(p.type)) || user.hasHealthCover === false) provided.add("healthCover");
 
   // Nominations: known only when at least one item records the flag.
   const nominationFlags = [...assets, ...invs, ...policies].map((i) => (i.payload as { nomineeSet?: boolean }).nomineeSet).filter((v): v is boolean => v !== undefined);

@@ -26,7 +26,7 @@
     },
     "welcome": {
       "title": "Quick start",
-      "intro": "A few facts to produce your first look. Everything here can be refined later under My data.",
+      "intro": "Four quick answers for your first look. Leave anything you are unsure about; you can fill it in later under My data.",
       "editIntro": "Update the household facts that drive your check-up.",
       "dob": "Date of birth",
       "gender": "Gender",
@@ -47,14 +47,35 @@
       "monthlyExpensesHint": "Everything you spend in a typical month, including EMIs and rent.",
       "submit": "Show my first look",
       "saveProfile": "Save profile",
+      "first": {
+        "emergencySavings": "Savings you could use in an emergency",
+        "emergencySavingsHint": "Bank balances, FDs and liquid funds. Leave blank if you are not sure.",
+        "termCover": "Do you have term life insurance?",
+        "healthCover": "Does your family have health insurance of its own, beyond any employer plan?",
+        "yes": "Yes",
+        "no": "No",
+        "notSure": "Not sure"
+      },
+      "step": {
+        "title": "One more question",
+        "intro": "Each answer sharpens your score and plan. Skip any you would rather answer later.",
+        "progress": "Question {n} of {total}",
+        "skip": "Skip for now",
+        "why": {
+          "dob": "Used for your retirement timeline and the equity share that suits your age.",
+          "employment": "Self-employed and business incomes need a bigger emergency fund."
+        }
+      },
       "look": {
         "title": "Your first look",
-        "approx": "Approximate. Based on income and expenses only; add savings, loans and insurance for a real score.",
+        "approx": "Approximate, from what you have told us so far. Anything you have not filled in is left out of the score, not counted as zero.",
         "savingsRate": "Savings rate",
         "savingsRateHint": "Share of take-home income left after expenses.",
         "emergency": "Emergency fund",
         "emergencyUnknown": "Not yet known",
         "emergencyHint": "Add your cash, bank balances and fixed deposits to see how many months of expenses they cover.",
+        "emergencyMonths": "{months} months",
+        "emergencyMonthsHint": "Of essential expenses covered by your savings. Six months is the usual target.",
         "score": "Provisional score",
         "scoreHint": "{grade} · out of 100",
         "addData": "Complete my data",
@@ -125,20 +146,111 @@
       "backTo": "Back to {family}"
     },
     "families": {
-      "income": { "title": "Income", "one": "income source", "unit": "per month" },
-      "expenses": { "title": "Expenses", "one": "expense", "unit": "per month" },
-      "assets": { "title": "Assets", "one": "asset", "unit": "current value" },
-      "investments": { "title": "Investments", "one": "investment", "unit": "current value" },
-      "loans": { "title": "Loans", "one": "loan", "unit": "outstanding" },
-      "insurance": { "title": "Insurance", "one": "policy", "unit": "sum assured" }
+      "income": {
+        "title": "Income",
+        "one": "income source",
+        "unit": "per month"
+      },
+      "expenses": {
+        "title": "Expenses",
+        "one": "expense",
+        "unit": "per month"
+      },
+      "assets": {
+        "title": "Assets",
+        "one": "asset",
+        "unit": "current value"
+      },
+      "investments": {
+        "title": "Investments",
+        "one": "investment",
+        "unit": "current value"
+      },
+      "loans": {
+        "title": "Loans",
+        "one": "loan",
+        "unit": "outstanding"
+      },
+      "insurance": {
+        "title": "Insurance",
+        "one": "policy",
+        "unit": "sum assured"
+      }
     },
     "types": {
-      "income": { "salary": "Salary", "business": "Business income", "rental": "Rental", "interestDividends": "Interest and dividends", "pension": "Pension", "freelance": "Freelance", "other": "Other" },
-      "expenses": { "housing": "Housing", "food": "Food", "utilities": "Utilities", "transport": "Transport", "education": "Education", "healthcare": "Healthcare", "insurancePremiums": "Insurance premiums", "lifestyle": "Lifestyle", "subscriptions": "Subscriptions", "dependants": "Dependants", "charity": "Charity", "other": "Other" },
-      "assets": { "cash": "Cash and bank balance", "fixedDeposit": "Fixed deposit", "realEstateSelf": "Home (self-occupied)", "realEstateLetOut": "Property (let out)", "land": "Land", "gold": "Gold and jewellery", "vehicle": "Vehicle", "businessEquity": "Business equity", "employeeStock": "Employee stock", "epf": "EPF", "ppf": "PPF", "nps": "NPS", "receivable": "Receivable" },
-      "investments": { "mutualFundEquity": "Equity mutual fund", "mutualFundDebt": "Debt mutual fund", "mutualFundHybrid": "Hybrid mutual fund", "stocks": "Stocks", "etf": "ETF", "bonds": "Bonds", "governmentScheme": "Government scheme", "crypto": "Crypto (high risk)", "ulip": "ULIP", "insuranceSavings": "Insurance-linked savings", "alternative": "Alternative" },
-      "loans": { "home": "Home loan", "car": "Car loan", "personal": "Personal loan", "education": "Education loan", "gold": "Gold loan", "creditCard": "Credit card balance", "family": "Loan from family", "bnpl": "Buy now, pay later" },
-      "insurance": { "termLife": "Term life", "endowment": "Endowment or ULIP", "healthIndividual": "Health (individual)", "healthFloater": "Health (family floater)", "healthEmployer": "Health (employer)", "criticalIllness": "Critical illness", "personalAccident": "Personal accident", "motor": "Motor", "home": "Home", "travel": "Travel" }
+      "income": {
+        "salary": "Salary",
+        "business": "Business income",
+        "rental": "Rental",
+        "interestDividends": "Interest and dividends",
+        "pension": "Pension",
+        "freelance": "Freelance",
+        "other": "Other"
+      },
+      "expenses": {
+        "housing": "Housing",
+        "food": "Food",
+        "utilities": "Utilities",
+        "transport": "Transport",
+        "education": "Education",
+        "healthcare": "Healthcare",
+        "insurancePremiums": "Insurance premiums",
+        "lifestyle": "Lifestyle",
+        "subscriptions": "Subscriptions",
+        "dependants": "Dependants",
+        "charity": "Charity",
+        "other": "Other"
+      },
+      "assets": {
+        "cash": "Cash and bank balance",
+        "fixedDeposit": "Fixed deposit",
+        "realEstateSelf": "Home (self-occupied)",
+        "realEstateLetOut": "Property (let out)",
+        "land": "Land",
+        "gold": "Gold and jewellery",
+        "vehicle": "Vehicle",
+        "businessEquity": "Business equity",
+        "employeeStock": "Employee stock",
+        "epf": "EPF",
+        "ppf": "PPF",
+        "nps": "NPS",
+        "receivable": "Receivable"
+      },
+      "investments": {
+        "mutualFundEquity": "Equity mutual fund",
+        "mutualFundDebt": "Debt mutual fund",
+        "mutualFundHybrid": "Hybrid mutual fund",
+        "stocks": "Stocks",
+        "etf": "ETF",
+        "bonds": "Bonds",
+        "governmentScheme": "Government scheme",
+        "crypto": "Crypto (high risk)",
+        "ulip": "ULIP",
+        "insuranceSavings": "Insurance-linked savings",
+        "alternative": "Alternative"
+      },
+      "loans": {
+        "home": "Home loan",
+        "car": "Car loan",
+        "personal": "Personal loan",
+        "education": "Education loan",
+        "gold": "Gold loan",
+        "creditCard": "Credit card balance",
+        "family": "Loan from family",
+        "bnpl": "Buy now, pay later"
+      },
+      "insurance": {
+        "termLife": "Term life",
+        "endowment": "Endowment or ULIP",
+        "healthIndividual": "Health (individual)",
+        "healthFloater": "Health (family floater)",
+        "healthEmployer": "Health (employer)",
+        "criticalIllness": "Critical illness",
+        "personalAccident": "Personal accident",
+        "motor": "Motor",
+        "home": "Home",
+        "travel": "Travel"
+      }
     },
     "fields": {
       "label": "Name or source",
@@ -191,18 +303,76 @@
       "revolving": "Tick for credit-card balances you do not clear in full."
     },
     "options": {
-      "frequency": { "monthly": "Monthly", "quarterly": "Quarterly", "yearly": "Yearly" },
-      "liquidity": { "liquid": "Liquid", "nearLiquid": "Near-liquid", "illiquid": "Illiquid" },
-      "assetClass": { "equity": "Equity", "debt": "Debt", "gold": "Gold", "realEstate": "Real estate", "other": "Other" },
-      "risk": { "low": "Low", "medium": "Medium", "high": "High" },
-      "lenderType": { "bank": "Bank", "nbfc": "NBFC", "employer": "Employer", "family": "Family or friends", "other": "Other" },
-      "rateType": { "fixed": "Fixed", "floating": "Floating" },
-      "insurerType": { "private": "Private insurer", "public": "Public insurer (LIC, PSU)", "employer": "Employer" },
-      "confidence": { "entered": "Entered", "imported": "Imported", "verified": "Verified" },
-      "relation": { "self": "Self", "spouse": "Spouse or partner", "child": "Child", "parent": "Parent", "other": "Other" },
-      "gender": { "female": "Female", "male": "Male", "other": "Other", "preferNot": "Prefer not to say" },
-      "maritalStatus": { "single": "Single", "married": "Married", "divorced": "Divorced", "widowed": "Widowed" },
-      "employment": { "salaried": "Salaried", "selfEmployed": "Self-employed", "business": "Business owner", "retired": "Retired", "student": "Student", "homemaker": "Homemaker" }
+      "frequency": {
+        "monthly": "Monthly",
+        "quarterly": "Quarterly",
+        "yearly": "Yearly"
+      },
+      "liquidity": {
+        "liquid": "Liquid",
+        "nearLiquid": "Near-liquid",
+        "illiquid": "Illiquid"
+      },
+      "assetClass": {
+        "equity": "Equity",
+        "debt": "Debt",
+        "gold": "Gold",
+        "realEstate": "Real estate",
+        "other": "Other"
+      },
+      "risk": {
+        "low": "Low",
+        "medium": "Medium",
+        "high": "High"
+      },
+      "lenderType": {
+        "bank": "Bank",
+        "nbfc": "NBFC",
+        "employer": "Employer",
+        "family": "Family or friends",
+        "other": "Other"
+      },
+      "rateType": {
+        "fixed": "Fixed",
+        "floating": "Floating"
+      },
+      "insurerType": {
+        "private": "Private insurer",
+        "public": "Public insurer (LIC, PSU)",
+        "employer": "Employer"
+      },
+      "confidence": {
+        "entered": "Entered",
+        "imported": "Imported",
+        "verified": "Verified"
+      },
+      "relation": {
+        "self": "Self",
+        "spouse": "Spouse or partner",
+        "child": "Child",
+        "parent": "Parent",
+        "other": "Other"
+      },
+      "gender": {
+        "female": "Female",
+        "male": "Male",
+        "other": "Other",
+        "preferNot": "Prefer not to say"
+      },
+      "maritalStatus": {
+        "single": "Single",
+        "married": "Married",
+        "divorced": "Divorced",
+        "widowed": "Widowed"
+      },
+      "employment": {
+        "salaried": "Salaried",
+        "selfEmployed": "Self-employed",
+        "business": "Business owner",
+        "retired": "Retired",
+        "student": "Student",
+        "homemaker": "Homemaker"
+      }
     }
   }
 }
