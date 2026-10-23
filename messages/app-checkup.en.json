@@ -394,6 +394,7 @@
       "afterCheckUp": "Appears after your first check-up.",
       "nextSteps": "Next steps",
       "allDone": "Every plan item is done or parked. Re-run the check-up to refresh it.",
+      "scoreAfterStep": "Finish step 1 and your score could go from {from} to about {to}.",
       "planProgress": "{done} of {total} plan items done",
       "viewPlan": "See the plan",
       "goals": "Goals",

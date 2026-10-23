@@ -6,6 +6,7 @@ import { requireHousehold } from "@/lib/auth/current";
 import { listItems } from "@/lib/data/store";
 import { planForHousehold } from "@/lib/checkup/planStore";
 import { openItems, planProgress } from "@/lib/checkup/progress";
+import { pickReminder } from "@/lib/reminders/pick";
 import { listGoals } from "@/lib/goals/store";
 import { projectGoal } from "@/lib/goals/math";
 import { RunCheckUp } from "@/components/app/checkup/RunCheckUp";
@@ -34,6 +35,7 @@ async function Overview({ locale }: { locale: string }) {
   const onTrack = projected.filter((p) => p.onTrack).length;
   const next = plan ? openItems(plan.items).slice(0, 3) : [];
   const progress = plan ? planProgress(plan.items) : null;
+  const first = plan ? pickReminder(plan.checkup.result.overall, plan.items) : null;
   const result = plan?.checkup.result;
 
   return (
@@ -90,6 +92,9 @@ async function Overview({ locale }: { locale: string }) {
               {next.map((i) => <li key={i.id}><Link href={`/app/plan#item-${i.id}`} className="underline underline-offset-4">{tp(`titles.${i.template}`)}</Link>{i.scoreImpact > 0 ? <span className="text-fg-muted"> · {tc("impact", { points: i.scoreImpact })}</span> : null}</li>)}
             </ol>
           ) : <p className="mt-2 text-sm text-fg-muted">{plan ? t("allDone") : t("afterCheckUp")}</p>}
+          {first && plan && first.projected > plan.checkup.result.overall ? (
+            <p className="mt-2 text-sm">{t("scoreAfterStep", { from: plan.checkup.result.overall, to: first.projected })}</p>
+          ) : null}
           {progress ? (
             <div className="mt-3">
               <ProgressBar pct={progress.pct} label={t("planProgress", { done: progress.done, total: progress.total })} />

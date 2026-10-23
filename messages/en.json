@@ -674,6 +674,7 @@
       "existsNotice": "If this email is new, your account is ready; otherwise sign in with it or reset your password.",
       "passwordHint": "At least {min} characters. A short sentence you will remember works well.",
       "terms": "I agree to the <terms>terms of use</terms> and <privacy>privacy policy</privacy>.",
+      "consentPlanReminders": "Email me once a month with the next step in my plan (optional).",
       "consentAnalytics": "Help improve the site with anonymous usage analytics (optional).",
       "consentMarketing": "Email me the weekly digest and product updates (optional).",
       "resetSent": "If that email has an account, a reset link is on its way. It works for one hour.",

@@ -123,8 +123,8 @@ export async function markEmailVerified(userId: string): Promise<void> {
   await execute("UPDATE users SET email_verified_at = COALESCE(email_verified_at, NOW()) WHERE id = ?", [userId]);
 }
 
-export type ConsentKind = "analytics" | "marketing" | "peerComparison" | "personalisation";
-export const CONSENT_KINDS: ConsentKind[] = ["analytics", "marketing", "peerComparison", "personalisation"];
+export type ConsentKind = "analytics" | "marketing" | "peerComparison" | "personalisation" | "planReminders";
+export const CONSENT_KINDS: ConsentKind[] = ["planReminders", "analytics", "marketing", "peerComparison", "personalisation"];
 
 export async function recordConsents(userId: string, consents: Partial<Record<ConsentKind, boolean>>): Promise<void> {
   for (const kind of CONSENT_KINDS) {
@@ -136,7 +136,7 @@ export async function recordConsents(userId: string, consents: Partial<Record<Co
 /** Latest decision per consent kind. */
 export async function currentConsents(userId: string): Promise<Record<ConsentKind, boolean>> {
   const rows = await query<Row & { kind: ConsentKind; granted: number }>("SELECT kind, granted FROM consents WHERE user_id = ? ORDER BY recorded_at ASC, id ASC", [userId]);
-  const out: Record<ConsentKind, boolean> = { analytics: false, marketing: false, peerComparison: false, personalisation: false };
+  const out: Record<ConsentKind, boolean> = { analytics: false, marketing: false, peerComparison: false, personalisation: false, planReminders: false };
   for (const r of rows) out[r.kind] = Boolean(r.granted);
   return out;
 }

@@ -65,6 +65,10 @@ export function SignUpForm() {
         </span>
       </label>
       <label className="flex gap-2 text-sm">
+        <input type="checkbox" name="planReminders" className="mt-1" />
+        <span>{t("consentPlanReminders")}</span>
+      </label>
+      <label className="flex gap-2 text-sm">
         <input type="checkbox" name="analytics" className="mt-1" />
         <span>{t("consentAnalytics")}</span>
       </label>

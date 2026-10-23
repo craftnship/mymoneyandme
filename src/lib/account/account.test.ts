@@ -84,7 +84,7 @@ describe.skipIf(!url)("account settings: purge, consents, export", () => {
     const { user } = await seedUser("c@example.in");
     await recordConsents(user.id, { analytics: false, peerComparison: true });
     await recordConsents(user.id, { peerComparison: false });
-    expect(await currentConsents(user.id)).toEqual({ analytics: false, marketing: false, peerComparison: false, personalisation: false });
+    expect(await currentConsents(user.id)).toEqual({ analytics: false, marketing: false, peerComparison: false, personalisation: false, planReminders: false });
     expect((await query("SELECT id FROM consents WHERE user_id = ?", [user.id])).length).toBe(4);
     const decided = await consentDecidedAt(user.id);
     expect(decided.analytics).toBeInstanceOf(Date);

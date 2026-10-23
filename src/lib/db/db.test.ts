@@ -37,7 +37,7 @@ describe.skipIf(!url)("database schema and user repository", () => {
     const u = (await findUserByEmail("asha@example.in"))!;
     await recordConsents(u.id, { analytics: true, marketing: false });
     await recordConsents(u.id, { analytics: false });
-    expect(await currentConsents(u.id)).toEqual({ analytics: false, marketing: false, peerComparison: false, personalisation: false });
+    expect(await currentConsents(u.id)).toEqual({ analytics: false, marketing: false, peerComparison: false, personalisation: false, planReminders: false });
     expect((await query("SELECT id FROM consents WHERE user_id = ?", [u.id])).length).toBe(3);
   });
 
