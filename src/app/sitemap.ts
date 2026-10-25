@@ -27,6 +27,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const c of CALCULATORS) push(`/calculators/${c.slug}`, routing.locales, 0.7);
   for (const t of ["adults", "kids", "women"]) push(`/learn/${t}`, routing.locales, 0.8);
   for (const m of allModules()) {
+    // Modules without a single published chapter are noindex "coming soon" shells and stay out of the sitemap.
+    if (!m.chapters.some((c) => c.translations.some((t) => t.state === "published"))) continue;
     push(`/learn/${m.track}/${m.slug}`, routing.locales, 0.7);
     for (const c of m.chapters) {
       const locales = availableLocales(c.translations).filter((l) => (routing.locales as readonly string[]).includes(l));

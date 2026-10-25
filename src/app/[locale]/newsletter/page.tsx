@@ -3,12 +3,14 @@ import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { Notice, PageTitle } from "@/components/ui";
+import { pageAlternates } from "@/lib/seo";
 
 type SearchParams = Promise<Record<string, string | string[] | undefined>>;
 
-export async function generateMetadata() {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const t = await getTranslations("newsletter");
-  return { title: t("title") };
+  return { title: t("title"), description: t("pageIntro"), alternates: pageAlternates(locale, "/newsletter") };
 }
 
 /** Landing page for confirmation and unsubscribe links; the status comes from the query string. */

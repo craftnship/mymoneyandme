@@ -71,6 +71,7 @@
     "copied": "Copied",
     "availableIn": "Available in",
     "allArticles": "All articles",
+    "listDescription": "Plain-language articles on budgeting, loans, insurance, investing and retirement for Indian households. Free, no ads, no product pitches.",
     "category": {
       "markets": "Markets",
       "personalFinance": "Personal finance",
@@ -141,6 +142,7 @@
   "calc": {
     "title": "Calculators",
     "intro": "Every calculator uses the same engine and the same India rule pack. Defaults are assumptions you can change.",
+    "describe": "{name}: enter {inputs} and see {result}. Defaults come from the India rule pack and every one can be changed. Free, no sign-up.",
     "count": "{count} calculators",
     "assumptions": "Assumptions",
     "assumptionsNote": "Defaults come from the India rule pack {version}. Change any of them.",

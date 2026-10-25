@@ -2,10 +2,12 @@ import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { modulesForTrack } from "@/lib/content/store";
 import { Card, PageTitle } from "@/components/ui";
+import { pageAlternates } from "@/lib/seo";
 
-export async function generateMetadata() {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const t = await getTranslations("learn");
-  return { title: t("title"), description: t("intro") };
+  return { title: t("title"), description: t("intro"), alternates: pageAlternates(locale, "/learn") };
 }
 
 export default async function LearnPage() {

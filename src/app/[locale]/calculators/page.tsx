@@ -2,10 +2,12 @@ import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { CALCULATORS, CALCULATOR_GROUPS } from "@/lib/calculators";
 import { PageTitle } from "@/components/ui";
+import { pageAlternates } from "@/lib/seo";
 
-export async function generateMetadata() {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const t = await getTranslations("calc");
-  return { title: t("title"), description: t("intro") };
+  return { title: t("title"), description: t("intro"), alternates: pageAlternates(locale, "/calculators") };
 }
 
 export default async function CalculatorsPage() {

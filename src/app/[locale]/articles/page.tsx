@@ -5,12 +5,14 @@ import { allArticles } from "@/lib/content/store";
 import { ARTICLE_CATEGORIES, normaliseArticleQuery, searchArticles, type ArticleQuery } from "@/lib/content/search";
 import { ArticleCard } from "@/components/ArticleCard";
 import { PageTitle } from "@/components/ui";
+import { pageAlternates } from "@/lib/seo";
 
 type SearchParams = Promise<Record<string, string | string[] | undefined>>;
 
-export async function generateMetadata() {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const t = await getTranslations("article");
-  return { title: t("allArticles") };
+  return { title: t("allArticles"), description: t("listDescription"), alternates: pageAlternates(locale, "/articles") };
 }
 
 /**

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getRulePack } from "@/lib/rulepack";
 import { PageTitle } from "@/components/ui";
 import { Prose } from "@/components/Prose";
+import { pageAlternates } from "@/lib/seo";
 
 const PAGES = ["disclaimer", "privacy", "terms", "grievance", "accessibility"] as const;
 type Page = (typeof PAGES)[number];
@@ -14,12 +15,12 @@ export function generateStaticParams() {
   return PAGES.map((page) => ({ page }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ page: string }> }) {
-  const { page } = await params;
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; page: string }> }) {
+  const { locale, page } = await params;
   if (!PAGES.includes(page as Page)) return {};
   const t = await getTranslations("legal");
   const body = t(`${page as Page}Body`);
-  return { title: t(page as Page), description: body.split(/\n/)[0].slice(0, 160) };
+  return { title: t(page as Page), description: body.split(/\n/)[0].slice(0, 160), alternates: pageAlternates(locale, `/legal/${page}`) };
 }
 
 export default async function LegalPage({ params }: { params: Promise<{ locale: string; page: string }> }) {

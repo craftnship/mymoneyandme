@@ -5,6 +5,7 @@ import { localeMeta } from "@/i18n/routing";
 import { allModules, getModule, moduleFullyTranslated, moduleTitle, resolveTranslation } from "@/lib/content/store";
 import type { Track } from "@/lib/content/types";
 import { Notice, PageTitle, Pill } from "@/components/ui";
+import { pageAlternates } from "@/lib/seo";
 
 export function generateStaticParams() {
   return allModules().map((m) => ({ track: m.track, module: m.slug }));
@@ -15,7 +16,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const m = getModule(track as Track, slug);
   if (!m) return {};
   const title = moduleTitle(m, locale);
-  return { title: title.title, description: title.summary };
+  const anyPublished = m.chapters.some((c) => c.translations.some((x) => x.state === "published"));
+  // Modules with no chapter body yet are "coming soon" shells: keep them out of the index until there is something to read.
+  return { title: title.title, description: title.summary, alternates: pageAlternates(locale, `/learn/${track}/${slug}`), robots: anyPublished ? undefined : { index: false, follow: true } };
 }
 
 export default async function ModulePage({ params }: { params: Promise<{ locale: string; track: string; module: string }> }) {

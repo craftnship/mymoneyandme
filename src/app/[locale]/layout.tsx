@@ -21,7 +21,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     alternates: {
       languages: Object.fromEntries(routing.locales.map((l) => [l, `/${l}`])),
     },
-    openGraph: { siteName: t("name"), locale, type: "website" },
+    openGraph: { siteName: t("name"), locale, type: "website", images: [{ url: "/og/default.png", width: 1200, height: 630, alt: t("name") }] },
+    twitter: { card: "summary_large_image" },
     manifest: "/manifest.webmanifest",
   };
 }

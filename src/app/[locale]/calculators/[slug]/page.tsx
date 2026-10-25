@@ -2,19 +2,21 @@ import { Suspense } from "react";
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Link } from "@/i18n/navigation";
-import { CALCULATORS, decodeInputs, getCalculator, type CalculatorDef } from "@/lib/calculators";
+import { CALCULATORS, calculatorDescription, decodeInputs, getCalculator, type CalculatorDef } from "@/lib/calculators";
 import { allArticles, resolveTranslation } from "@/lib/content/store";
 import { CalculatorEmbed } from "@/components/CalculatorEmbed";
+import { jsonLd, pageAlternates } from "@/lib/seo";
 
 export function generateStaticParams() {
   return CALCULATORS.map((c) => ({ slug: c.slug }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
-  if (!getCalculator(slug)) return {};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }) {
+  const { locale, slug } = await params;
+  const def = getCalculator(slug);
+  if (!def) return {};
   const t = await getTranslations("calc");
-  return { title: t(`names.${slug}`), description: t("intro") };
+  return { title: t(`names.${slug}`), description: calculatorDescription(def, t), alternates: pageAlternates(locale, `/calculators/${slug}`) };
 }
 
 /**
@@ -36,9 +38,21 @@ export default async function CalculatorPage({ params, searchParams }: { params:
   const related = def.relatedArticle ? allArticles().find((a) => a.slug === def.relatedArticle) : undefined;
   const relatedT = related ? resolveTranslation(related.translations, locale) : undefined;
   const siblings = CALCULATORS.filter((c) => c.group === def.group && c.slug !== def.slug).slice(0, 6);
+  const structured = jsonLd({
+    "@type": "WebApplication",
+    name: t(`names.${slug}`),
+    description: calculatorDescription(def, t),
+    applicationCategory: "FinanceApplication",
+    operatingSystem: "Any",
+    inLanguage: locale,
+    isAccessibleForFree: true,
+    offers: { "@type": "Offer", price: "0", priceCurrency: "INR" },
+    provider: { "@type": "Organization", name: "My Money & Me" },
+  });
 
   return (
     <div className="space-y-8">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: structured }} />
       <p className="text-sm text-fg-muted">
         <Link href="/calculators" className="underline underline-offset-4">{t("title")}</Link> / {t(`group.${def.group}`)}
       </p>

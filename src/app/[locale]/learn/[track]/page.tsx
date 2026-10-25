@@ -5,6 +5,7 @@ import { localeMeta } from "@/i18n/routing";
 import { moduleFullyTranslated, moduleTitle, modulesForTrack } from "@/lib/content/store";
 import type { Track } from "@/lib/content/types";
 import { Card, PageTitle, Pill } from "@/components/ui";
+import { pageAlternates } from "@/lib/seo";
 
 const TRACKS: Track[] = ["adults", "kids", "women"];
 
@@ -12,11 +13,11 @@ export function generateStaticParams() {
   return TRACKS.map((track) => ({ track }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ track: string }> }) {
-  const { track } = await params;
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; track: string }> }) {
+  const { locale, track } = await params;
   if (!TRACKS.includes(track as Track)) return {};
   const t = await getTranslations("learn");
-  return { title: `${t(`track.${track as Track}.title`)} · ${t("title")}`, description: t(`track.${track as Track}.body`) };
+  return { title: `${t(`track.${track as Track}.title`)} · ${t("title")}`, description: t(`track.${track as Track}.body`), alternates: pageAlternates(locale, `/learn/${track}`) };
 }
 
 export default async function TrackPage({ params }: { params: Promise<{ locale: string; track: string }> }) {
