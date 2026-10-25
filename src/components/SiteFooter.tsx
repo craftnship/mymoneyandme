@@ -21,6 +21,11 @@ export async function SiteFooter() {
           <p className="font-semibold text-fg">{ts("name")}</p>
           <p className="mt-2">{t("educational")}</p>
           <p className="mt-2">{t("free")}</p>
+          <p className="mt-3">
+            <Link href="/about" className="text-fg underline underline-offset-2">
+              {t("about")}
+            </Link>
+          </p>
         </div>
         <div>
           <p className="font-semibold text-fg">{t("legal")}</p>
