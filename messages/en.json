@@ -2,7 +2,7 @@
   "site": {
     "name": "My Money & Me",
     "tagline": "Money, taught from first principles",
-    "description": "Free financial education for India: articles, a learning hub for adults, kids and women, and 50+ calculators. No ads, no sign-up, no product pitches.",
+    "description": "Free financial education for India: articles, a learning hub for adults, kids and women, and 60 calculators. No ads, no sign-up, no product pitches.",
     "skipToContent": "Skip to content"
   },
   "nav": {
@@ -28,11 +28,12 @@
     "grievance": "Grievance officer",
     "accessibility": "Accessibility",
     "rulePack": "India rule pack {version}, effective {date}",
-    "contact": "hello@mymoneyandme.in"
+    "contact": "hello@mymoneyandme.in",
+    "about": "About"
   },
   "home": {
     "heroTitle": "Learn money. Check your health. Leave with a plan.",
-    "heroBody": "Free, in your language, in under twenty minutes. No advisor needed.",
+    "heroBody": "Free, in English and Tamil, in under twenty minutes. No advisor needed.",
     "startLearning": "Start learning",
     "runCheckup": "Run a quick check-up",
     "latest": "Latest articles",
@@ -70,6 +71,7 @@
     "copied": "Copied",
     "availableIn": "Available in",
     "allArticles": "All articles",
+    "listDescription": "Plain-language articles on budgeting, loans, insurance, investing and retirement for Indian households. Free, no ads, no product pitches.",
     "category": {
       "markets": "Markets",
       "personalFinance": "Personal finance",
@@ -94,6 +96,8 @@
     "filterAll": "All",
     "clearFilters": "Clear filters",
     "noResults": "No articles match. Try a different word or clear the filters.",
+    "moreInEnglish": "More in English",
+    "moreInEnglishIntro": "These articles are not translated into {language} yet. They open in English.",
     "resultsCount": "{count, plural, =0 {No articles} one {# article} other {# articles}}"
   },
   "learn": {
@@ -109,6 +113,12 @@
     },
     "level": "Ages {level}",
     "comingSoon": "Coming soon",
+    "chaptersReady": "{ready} of {total} chapters ready to read",
+    "moduleChaptersReady": "{ready, plural, =0 {No chapters yet} one {# of {total} chapters ready} other {# of {total} chapters ready}}",
+    "startHere": "Start here: {title}",
+    "readyModules": "Ready to read",
+    "plannedModules": "{count, plural, one {# module planned} other {# modules planned}}",
+    "plannedIntro": "These modules are written next. Their chapters are not published yet, so they are listed here rather than mixed in above.",
     "chapterOf": "Chapter {index} of {total}",
     "nextChapter": "Next chapter",
     "previousChapter": "Previous chapter",
@@ -140,6 +150,7 @@
   "calc": {
     "title": "Calculators",
     "intro": "Every calculator uses the same engine and the same India rule pack. Defaults are assumptions you can change.",
+    "describe": "{name}: enter {inputs} and see {result}. Defaults come from the India rule pack and every one can be changed. Free, no sign-up.",
     "count": "{count} calculators",
     "assumptions": "Assumptions",
     "assumptionsNote": "Defaults come from the India rule pack {version}. Change any of them.",
@@ -611,10 +622,12 @@
     "grievance": "Grievance officer",
     "accessibility": "Accessibility statement",
     "disclaimerBody": "My Money & Me provides educational content and tools only. Nothing on this site is investment, insurance, tax or legal advice, and nothing is a recommendation to buy or sell any product. We never name a specific fund, bank or insurer. Calculators and the check-up use the assumptions shown and the India rule pack version displayed on each result; outcomes are not guaranteed. Consult a SEBI-registered investment adviser or a qualified professional before acting.",
-    "privacyBody": "We collect no personal data on the public site beyond anonymised, aggregated analytics. Calculator inputs and quick-check answers stay in your browser. When accounts launch, financial data will be encrypted, exportable and deletable by you at any time, held in an Indian data region, and never sold or used for advertising. Children under 18 cannot hold accounts; parents manage child profiles that hold no contact data.",
-    "termsBody": "The site is free to use. Content is original and may be shared with attribution and a link. You agree not to misrepresent the site's tools as advice, scrape content at scale, or attempt to disrupt the service.",
-    "grievanceBody": "For grievances under the Information Technology Act and the DPDP Act, write to grievance@mymoneyandme.in. We acknowledge within 48 hours and resolve within the statutory period.",
-    "accessibilityBody": "We aim for WCAG 2.2 AA across every language, with keyboard-operable calculators, 16 px minimum body text, high-contrast and dyslexia-friendly modes planned. Report an accessibility problem to hello@mymoneyandme.in."
+    "privacyBody": "My Money & Me is built and run by one person in India. This notice says what we collect, why, where it lives and how you control it. It applies to the public site, the weekly digest and member accounts.\n\n## On the public site\n- You can read every article, chapter and calculator without an account.\n- Calculator inputs and quick check-up answers are kept in your own browser so they are there when you come back. The quick check-up sends your answers to our server once to compute the score; they are not stored.\n- We run no advertising, no third-party trackers and, at present, no analytics script at all. The optional \"anonymous usage analytics\" choice in your account settings takes effect only if we add such a tool, and it would never carry financial figures.\n- Our hosting provider keeps standard web-server logs (IP address, page requested, time) for security for a short period, as every host does.\n- Cookies: one that remembers your language and, once you sign in, one that holds your session. Nothing else.\n\n## The weekly digest\n- We store only your email address, after you confirm it by clicking the link we send (double opt-in).\n- Every digest has an unsubscribe link. Unsubscribing removes your address.\n\n## Member accounts\nWhat we store, and only because the check-up needs it:\n- Sign-in details: name, email, a hash of your password (we never see the password itself) and, if you add one, the public half of a passkey.\n- Profile answers you choose to give: date of birth, gender, marital status, city and state, city tier, employment type, retirement age and the two yes-or-no health questions.\n- Household members and your financial items: income, expenses, assets, investments, loans and insurance policies. Financial items are encrypted at rest with AES-256-GCM; the key is held outside the database.\n- Check-up results and history, plan progress, goals, and your consent choices with the date of each decision.\n- Sessions: device type, the approximate IP address (the last part is removed before storage) and sign-in time, so you can see where you are signed in and end any session.\n\nWhy we hold it: to compute your financial health score and plan, and for nothing else. The legal basis is your consent at sign-up and the service you asked for. We do not sell data, share it with anyone, use it for advertising or profile you for third parties.\n\nWhere it lives: on our hosting provider's servers (Hostinger), in a single database for this site. Emails are sent from our own mailbox.\n\n## How long, and how to delete\n- Data stays while your account exists. Sessions end after 30 minutes idle or 30 days at most.\n- You can delete your account from Settings, Privacy and data. We email a confirmation link; once you click it the account is locked and permanently erased after 30 days. Signing in during those 30 days cancels the deletion.\n- If the member app is ever withdrawn, you will have at least 30 days' notice and an export.\n\n## Your rights\n- Download everything we hold about you as JSON, or your financial items as CSV, at any time from Settings.\n- Correct any detail in the app, withdraw a consent from Settings, or delete the account as above.\n- Raise a concern with our grievance officer (see the Grievance officer page). If you are not satisfied, you may approach the Data Protection Board of India under the Digital Personal Data Protection Act, 2023.\n\n## Children\nAccounts are for adults. A child appears only as a household member added by a parent, with a name and age and no contact details.\n\n## Emails we send\nVerification, password reset and deletion confirmation emails are part of running an account. The monthly plan reminder and the weekly digest are sent only if you opted in, and each one has a link to stop them.\n\n## Changes\nWhen this notice changes we update the date at the top. Material changes to what we collect are announced on the site before they take effect.",
+    "termsBody": "These are the terms for using mymoneyandme.in. By using the site or creating an account you agree to them.\n\n## What the site is\n- My Money & Me is free educational content and tools about personal finance in India.\n- Nothing here is investment, insurance, tax or legal advice, and nothing is a recommendation to buy or sell any product. The Disclaimer page says more. Decisions you take, and their outcomes, are yours.\n- Calculators, the check-up and the plan use the assumptions shown and the India rule pack version named on each result. They can be wrong, out of date or not fit your situation.\n\n## Accounts\n- Accounts are for people aged 18 or over. One account per person.\n- Keep your password and passkeys to yourself. You are responsible for what happens under your sign-in until you tell us it was compromised.\n- Give accurate details. The score is only as good as the numbers you enter.\n- We may suspend or close an account used to attack the service, scrape content, impersonate someone or break the law. Where we can, we tell you by email first.\n- You can close your account at any time from Settings; see the Privacy notice for how deletion works.\n\n## Content and copying\n- Articles, chapters and calculator explanations are original. You may quote or share them with attribution and a link back.\n- Do not copy the site at scale, republish whole pages, or present our tools as advice from you or anyone else.\n\n## Availability\n- The site is provided as is. We aim for it to be up and correct, but we promise neither.\n- Features may change or be withdrawn. If the member app is withdrawn you will get at least 30 days' notice and a way to export your data.\n\n## Liability\nTo the extent Indian law allows, My Money & Me is not liable for any loss arising from use of the site, its content or its tools.\n\n## Law\nThese terms are governed by the laws of India.\n\n## Contact\nhello@mymoneyandme.in",
+    "grievanceBody": "This page is published under the Information Technology (Intermediary Guidelines and Digital Media Ethics Code) Rules, 2021 and the Digital Personal Data Protection Act, 2023.\n\n## Grievance officer\nThe site is run by its founder, who also acts as grievance officer.\n\n- Email: hello@mymoneyandme.in with the subject \"Grievance\"\n- Or write from the email address on your account, so we can verify it is you.\n\n## What to include\n- What happened, the page or feature involved, and when.\n- What you would like us to do (correct, delete, explain, stop an email).\n\n## Timelines\n- We acknowledge within 48 hours.\n- We resolve within 30 days, and sooner where the law requires a shorter period.\n- Requests to delete personal data follow the 30-day process in the Privacy notice.\n\n## If you are not satisfied\nFor matters under the Digital Personal Data Protection Act, 2023 you may approach the Data Protection Board of India once it is constituted and taking complaints.",
+    "accessibilityBody": "We want every person to be able to learn money here, in their own language, with whatever device or assistive technology they use.\n\n## Standard\nWe aim for WCAG 2.1 level AA across the site in every language it ships in.\n\n## What we have done\n- Keyboard-operable calculators, sliders paired with typed inputs, visible focus styles, a skip-to-content link, one heading hierarchy per page, and a minimum body text size of 16 px.\n- Every page declares its language so screen readers switch voice between English and Tamil.\n- Last check: 25 October 2026, an automated WCAG 2.1 A and AA scan of 16 page types in both languages plus a manual keyboard pass. No automated violations were found.\n\n## Known gaps\n- Quiz feedback uses colour (green and red) with no icon yet.\n- Calculator charts are drawn as SVG without a text summary; the year-by-year table under each chart holds the same figures.\n- Some inline links inside chapter text are smaller than the 24 px target size on phones.\n- The Tamil typeface is not yet shipped as a web font, so rendering depends on the device.\n\nWe are working through these. High-contrast and dyslexia-friendly modes are planned.\n\n## Tell us\nIf something does not work for you, email hello@mymoneyandme.in with the page and what happened. We reply within five working days.",
+    "updated": "Last updated {date}",
+    "contactLine": "Questions about any of this: hello@mymoneyandme.in"
   },
   "common": {
     "loading": "Loading",
@@ -697,6 +710,11 @@
       "signUpTitle": "Create your account",
       "signUpIntro": "Free, no card needed. Your financial details are encrypted and never sold.",
       "privacyNote": "We ask only for what the check-up needs. You can export or delete everything from settings at any time.",
+      "signUpWhat": "What you get",
+      "signUpBenefit1": "A financial health score across protection, emergency fund, debt, savings and retirement.",
+      "signUpBenefit2": "A plan with your next three steps, updated whenever your details change.",
+      "signUpBenefit3": "Goals, family members and policies in one private place, in English or Tamil.",
+      "dismiss": "Hide for now",
       "forgotTitle": "Reset password",
       "forgotIntro": "Enter your email and we will send a one-hour link to choose a new password.",
       "resetTitle": "Choose a new password",
@@ -732,5 +750,10 @@
       "startData": "Add my details",
       "goSettings": "Settings"
     }
+  },
+  "about": {
+    "title": "About My Money & Me",
+    "intro": "A free place to learn money, check your financial health and leave with a plan. Built in India, for India, in English and Tamil.",
+    "body": "## Why it exists\nFinancial education in India is mostly sold, not taught. Most explanations end in a product pitch, and the honest ones assume you already know the words. My Money & Me starts from first principles, uses Indian numbers and rules, and never recommends a fund, bank or insurer.\n\n## What is here\n- Articles on everyday money questions, in plain language.\n- A learning hub with three tracks: adults, kids, and women. Each chapter is short, has an embedded calculator where it helps, and ends with a quiz.\n- 60 calculators that all share one engine and one India rule pack, so the SIP calculator and the retirement calculator never disagree with each other.\n- A financial health check-up that scores eight dimensions and turns the result into one ordered plan.\n\n## Who runs it\nOne person, with help from AI tools for drafting and code. Chapters and articles are written from first principles and reviewed before publishing. Tamil versions drafted with AI are labelled until a person has reviewed them.\n\n## How it is funded\nBy voluntary donations and nothing else. There are no ads, no affiliate links and no sponsored content. We do not sell data or financial products.\n\n## How the numbers stay honest\nTax slabs, scheme rates, insurance norms and the scoring weights live in a versioned India rule pack. Every calculator result and check-up names the version it used, so you can tell when something was last updated.\n\n## What is next\nMore chapters in every track, more Indian languages, and a better member app. The order is decided by what readers ask for.\n\n## Contact\nhello@mymoneyandme.in"
   }
 }

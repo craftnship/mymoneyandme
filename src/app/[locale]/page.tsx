@@ -7,11 +7,34 @@ import { ArticleCard } from "@/components/ArticleCard";
 import { NewsTicker } from "@/components/NewsTicker";
 import { NewsList } from "@/components/NewsList";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
+import { jsonLd, pageAlternates } from "@/lib/seo";
 
 const TRACK_IMAGES = { adults: "/images/home/track-adults.svg", kids: "/images/home/track-kids.svg", women: "/images/home/track-women.svg" } as const;
 
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return { alternates: pageAlternates(locale, "") };
+}
+
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
+  const ts = await getTranslations("site");
+  const base = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mymoneyandme.in";
+  const structured = jsonLd({
+    "@graph": [
+      { "@type": "Organization", "@id": `${base}/#org`, name: ts("name"), url: base, logo: `${base}/icon.svg`, email: "hello@mymoneyandme.in" },
+      {
+        "@type": "WebSite",
+        "@id": `${base}/#site`,
+        name: ts("name"),
+        description: ts("description"),
+        url: `${base}/${locale}`,
+        inLanguage: locale,
+        publisher: { "@id": `${base}/#org` },
+        potentialAction: { "@type": "SearchAction", target: { "@type": "EntryPoint", urlTemplate: `${base}/${locale}/articles?q={search_term_string}` }, "query-input": "required name=search_term_string" },
+      },
+    ],
+  });
   const t = await getTranslations("home");
   const tc = await getTranslations("calc");
   const articles = allArticles();
@@ -23,6 +46,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
   return (
     <div className="space-y-12">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: structured }} />
       <NewsTicker items={news} locale={locale} />
 
       <section className="relative overflow-hidden rounded-card border border-border bg-accent-soft grid lg:grid-cols-[1.05fr_1fr] items-center">

@@ -31,7 +31,7 @@ async function Profile({ locale }: { locale: string }) {
     name: user.name, preferredName: user.preferredName ?? "", dob: user.dob ?? "", gender: user.gender ?? "", maritalStatus: user.maritalStatus ?? "",
     city: user.city ?? "", state: user.state ?? "", pin: user.pin ?? "", cityTier: String(user.cityTier), locale: user.locale, numberFormat: user.numberFormat,
     employment: user.employment, retirementAge: user.retirementAge ? String(user.retirementAge) : "", riskProfile: isRiskProfile(user.riskProfile) ? user.riskProfile : null,
-    smoker: flag(health.smoker), existingConditions: flag(health.existingConditions),
+    smoker: flag(health.smoker), existingConditions: flag(health.existingConditions), hasWill: flag(user.hasWill),
   };
   return (
     <Card>

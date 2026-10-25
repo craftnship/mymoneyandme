@@ -42,7 +42,7 @@ export async function updateProfile(_prev: ActionState, form: FormData): Promise
     name: str(form, "name"), preferredName: str(form, "preferredName"), dob: str(form, "dob"), gender: str(form, "gender"), maritalStatus: str(form, "maritalStatus"),
     city: str(form, "city"), state: str(form, "state"), pin: str(form, "pin"), cityTier: str(form, "cityTier") || "1", locale: str(form, "displayLocale") || user.locale,
     numberFormat: str(form, "numberFormat") || "indian", employment: str(form, "employment") || "salaried", retirementAge: str(form, "retirementAge"),
-    smoker: str(form, "smoker"), existingConditions: str(form, "existingConditions"),
+    smoker: str(form, "smoker"), existingConditions: str(form, "existingConditions"), hasWill: str(form, "hasWill"),
   });
   if (!parsed.success) {
     const issue = parsed.error.issues[0];
@@ -55,6 +55,7 @@ export async function updateProfile(_prev: ActionState, form: FormData): Promise
     name: p.name, preferred_name: p.preferredName, dob: p.dob, gender: p.gender, marital_status: p.maritalStatus, city: p.city, state: p.state, pin: p.pin,
     city_tier: Number(p.cityTier), locale: p.locale, number_format: p.numberFormat, employment: p.employment, retirement_age: p.retirementAge,
     smoker: p.smoker === null ? null : p.smoker ? 1 : 0, existing_conditions: p.existingConditions === null ? null : p.existingConditions ? 1 : 0,
+    has_will: p.hasWill === null ? null : p.hasWill ? 1 : 0,
   });
   await audit(user.id, "profileUpdated", "user", user.id);
   if (p.locale !== user.locale) {

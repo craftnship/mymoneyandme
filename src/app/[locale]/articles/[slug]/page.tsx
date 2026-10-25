@@ -6,6 +6,7 @@ import { allArticles, availableLocales, getArticle, readingMinutes, resolveTrans
 import { BlockRenderer } from "@/components/BlockRenderer";
 import { Notice, Pill } from "@/components/ui";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
+import { pageAlternates } from "@/lib/seo";
 
 export function generateStaticParams() {
   return allArticles().map((a) => ({ slug: a.slug }));
@@ -20,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: r.translation.seoTitle ?? r.translation.title,
     description: r.translation.seoDescription ?? r.translation.excerpt,
-    alternates: { languages: Object.fromEntries(availableLocales(article.translations).map((l) => [l, `/${l}/articles/${article.slug}`])) },
+    alternates: pageAlternates(locale, `/articles/${article.slug}`, availableLocales(article.translations).filter((l) => (routing.locales as readonly string[]).includes(l))),
     openGraph: { type: "article", publishedTime: article.publishedAt, modifiedTime: article.updatedAt },
   };
 }

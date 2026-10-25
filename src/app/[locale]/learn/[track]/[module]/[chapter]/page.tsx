@@ -1,11 +1,12 @@
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Link } from "@/i18n/navigation";
-import { localeMeta } from "@/i18n/routing";
-import { allModules, getChapter, moduleTitle, resolveTranslation } from "@/lib/content/store";
+import { localeMeta, routing } from "@/i18n/routing";
+import { allModules, availableLocales, getChapter, moduleTitle, resolveTranslation } from "@/lib/content/store";
 import type { Track } from "@/lib/content/types";
 import { BlockRenderer } from "@/components/BlockRenderer";
 import { Notice } from "@/components/ui";
+import { jsonLd, pageAlternates } from "@/lib/seo";
 
 export function generateStaticParams() {
   return allModules().flatMap((m) =>
@@ -18,7 +19,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const hit = getChapter(track as Track, mod, chapter);
   if (!hit) return {};
   const r = resolveTranslation(hit.chapter.translations, locale);
-  return r ? { title: r.translation.title, description: r.translation.excerpt } : {};
+  if (!r) return {};
+  const locales = availableLocales(hit.chapter.translations).filter((l) => (routing.locales as readonly string[]).includes(l));
+  return { title: r.translation.title, description: r.translation.excerpt, alternates: pageAlternates(locale, `/learn/${track}/${mod}/${chapter}`, locales), openGraph: { type: "article" } };
 }
 
 export default async function ChapterPage({ params }: { params: Promise<{ locale: string; track: string; module: string; chapter: string }> }) {
@@ -34,8 +37,20 @@ export default async function ChapterPage({ params }: { params: Promise<{ locale
   const prev = module.chapters.slice(0, index).reverse().find((c) => resolveTranslation(c.translations, locale));
   const next = module.chapters.slice(index + 1).find((c) => resolveTranslation(c.translations, locale));
 
+  const structured = jsonLd({
+    "@type": "Article",
+    headline: r.translation.title,
+    description: r.translation.excerpt,
+    inLanguage: r.locale,
+    isPartOf: { "@type": "Course", name: title.title, provider: { "@type": "Organization", name: "My Money & Me" } },
+    author: { "@type": "Organization", name: "My Money & Me" },
+    ...(r.translation.publishedAt ? { datePublished: r.translation.publishedAt } : {}),
+    ...(r.translation.updatedAt ? { dateModified: r.translation.updatedAt } : {}),
+  });
+
   return (
     <article className="max-w-3xl mx-auto">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: structured }} />
       <p className="text-sm text-fg-muted">
         <Link href={`/learn/${module.track}`} className="underline underline-offset-4">{t(`track.${module.track}.title`)}</Link>
         {" / "}

@@ -183,4 +183,10 @@ export const MIGRATIONS: Migration[] = [
       `ALTER TABLE users ADD COLUMN has_term_cover TINYINT(1) NULL, ADD COLUMN has_health_cover TINYINT(1) NULL, ADD COLUMN profile_steps VARCHAR(255) NULL, ADD COLUMN last_reminder_at DATETIME NULL`,
     ],
   },
+  {
+    // Whether a will exists was never captured, so the tax-and-hygiene dimension
+    // relied on the age-and-dependants exemption alone. NULL = not answered.
+    id: "0004_has_will",
+    statements: [`ALTER TABLE users ADD COLUMN has_will TINYINT(1) NULL`],
+  },
 ];

@@ -52,6 +52,7 @@ export const profileSchema = z.object({
   retirementAge: z.string().trim().refine((s) => s === "" || /^\d{2}$/.test(s), "retirementAge").transform((s) => (s ? Number(s) : null)).refine((n) => n === null || (n >= 40 && n <= 80), "retirementAge"),
   smoker: z.enum(["", "yes", "no"]).transform((s) => (s === "" ? null : s === "yes")),
   existingConditions: z.enum(["", "yes", "no"]).transform((s) => (s === "" ? null : s === "yes")),
+  hasWill: z.enum(["", "yes", "no"]).transform((s) => (s === "" ? null : s === "yes")),
 });
 export type ProfileInput = z.infer<typeof profileSchema>;
 

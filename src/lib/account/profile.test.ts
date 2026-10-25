@@ -4,13 +4,13 @@ import { approximateIp, describeDevice } from "./device";
 
 const valid = {
   name: "Priya", preferredName: "", dob: "1990-05-20", gender: "preferNot", maritalStatus: "", city: "Chennai", state: "TN", pin: "600001", cityTier: "1",
-  locale: "ta", numberFormat: "indian", employment: "salaried", retirementAge: "60", smoker: "", existingConditions: "no",
+  locale: "ta", numberFormat: "indian", employment: "salaried", retirementAge: "60", smoker: "", existingConditions: "no", hasWill: "yes",
 };
 
 describe("profile validation", () => {
   it("accepts a full profile and normalises blanks to null", () => {
     const p = profileSchema.parse(valid);
-    expect(p).toMatchObject({ preferredName: null, maritalStatus: null, state: "TN", pin: "600001", retirementAge: 60, smoker: null, existingConditions: false, locale: "ta" });
+    expect(p).toMatchObject({ preferredName: null, maritalStatus: null, state: "TN", pin: "600001", retirementAge: 60, smoker: null, existingConditions: false, hasWill: true, locale: "ta" });
   });
 
   it("rejects bad PIN, retirement age, under-18 dates and unknown states", () => {

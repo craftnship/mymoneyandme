@@ -25,6 +25,7 @@ export type User = {
   riskProfile: string | null;
   hasTermCover: boolean | null; // quick start answer; null = not asked or not sure
   hasHealthCover: boolean | null;
+  hasWill: boolean | null; // profile answer; null = not answered
   profileSteps: string[]; // profile questions answered or skipped
   role: string;
   deletionRequestedAt: Date | null;
@@ -34,10 +35,10 @@ export type User = {
 type UserRow = Row & {
   id: string; email: string; email_verified_at: Date | null; name: string; preferred_name: string | null; dob: Date | string | null; gender: string | null;
   marital_status: string | null; dependants: number; city: string | null; state: string | null; pin: string | null; city_tier: number; locale: string;
-  number_format: string; employment: string; retirement_age: number | null; risk_profile: string | null; has_term_cover: number | null; has_health_cover: number | null; profile_steps: string | null; role: string; deletion_requested_at: Date | null; created_at: Date;
+  number_format: string; employment: string; retirement_age: number | null; risk_profile: string | null; has_term_cover: number | null; has_health_cover: number | null; has_will: number | null; profile_steps: string | null; role: string; deletion_requested_at: Date | null; created_at: Date;
 };
 
-const COLS = "id, email, email_verified_at, name, preferred_name, dob, gender, marital_status, dependants, city, state, pin, city_tier, locale, number_format, employment, retirement_age, risk_profile, has_term_cover, has_health_cover, profile_steps, role, deletion_requested_at, created_at";
+const COLS = "id, email, email_verified_at, name, preferred_name, dob, gender, marital_status, dependants, city, state, pin, city_tier, locale, number_format, employment, retirement_age, risk_profile, has_term_cover, has_health_cover, has_will, profile_steps, role, deletion_requested_at, created_at";
 
 const flag = (v: number | null) => (v === null || v === undefined ? null : Boolean(v));
 
@@ -47,7 +48,7 @@ function toUser(r: UserRow): User {
     id: r.id, email: r.email, emailVerifiedAt: r.email_verified_at, name: r.name, preferredName: r.preferred_name, dob, gender: r.gender,
     maritalStatus: r.marital_status, dependants: r.dependants, city: r.city, state: r.state, pin: r.pin, cityTier: (r.city_tier as 1 | 2 | 3) || 1,
     locale: r.locale, numberFormat: r.number_format === "international" ? "international" : "indian", employment: r.employment as EmploymentType,
-    retirementAge: r.retirement_age, riskProfile: r.risk_profile, hasTermCover: flag(r.has_term_cover), hasHealthCover: flag(r.has_health_cover),
+    retirementAge: r.retirement_age, riskProfile: r.risk_profile, hasTermCover: flag(r.has_term_cover), hasHealthCover: flag(r.has_health_cover), hasWill: flag(r.has_will),
     profileSteps: r.profile_steps ? r.profile_steps.split(",").filter(Boolean) : [], role: r.role, deletionRequestedAt: r.deletion_requested_at, createdAt: r.created_at,
   };
 }
@@ -72,7 +73,7 @@ export async function createUser(input: { email: string; passwordHash: string | 
   return (await findUserById(id))!;
 }
 
-export async function updateUser(id: string, fields: Partial<Record<"name" | "preferred_name" | "dob" | "gender" | "marital_status" | "dependants" | "city" | "state" | "pin" | "city_tier" | "locale" | "number_format" | "employment" | "retirement_age" | "risk_profile" | "smoker" | "existing_conditions" | "has_term_cover" | "has_health_cover" | "profile_steps", string | number | null>>): Promise<void> {
+export async function updateUser(id: string, fields: Partial<Record<"name" | "preferred_name" | "dob" | "gender" | "marital_status" | "dependants" | "city" | "state" | "pin" | "city_tier" | "locale" | "number_format" | "employment" | "retirement_age" | "risk_profile" | "smoker" | "existing_conditions" | "has_term_cover" | "has_health_cover" | "has_will" | "profile_steps", string | number | null>>): Promise<void> {
   const keys = Object.keys(fields);
   if (!keys.length) return;
   await execute(`UPDATE users SET ${keys.map((k) => `${k} = ?`).join(", ")} WHERE id = ?`, [...keys.map((k) => fields[k as keyof typeof fields] ?? null), id]);

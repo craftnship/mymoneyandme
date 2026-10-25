@@ -107,6 +107,15 @@ describe("missing data is unknown, not zero", () => {
     expect(r.strengths).not.toContain("goals");
     expect(r.risks).not.toContain("goals");
   });
+  it("does not score hygiene as Good from the under-40 will exemption alone", () => {
+    const r = runCheckUp({ ...firstLook, age: 30, dependants: 0 });
+    expect(status(r, "hygiene")).toBe("unknown");
+    expect(r.strengths).not.toContain("hygiene");
+  });
+  it("scores hygiene once the will question is answered", () => {
+    const r = runCheckUp({ ...firstLook, age: 30, dependants: 0, willInPlace: false, nominationsSet: true });
+    expect(status(r, "hygiene")).not.toBe("unknown");
+  });
   it("leaves unentered insurance, retirement and nominations unscored instead of Act · 0", () => {
     const r = runCheckUp(firstLook);
     for (const k of ["insurance", "retirement", "hygiene"]) expect(status(r, k)).toBe("unknown");

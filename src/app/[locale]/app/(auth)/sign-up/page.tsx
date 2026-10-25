@@ -12,8 +12,16 @@ export default async function SignUpPage() {
   return (
     <>
       <PageTitle title={t("signUpTitle")} intro={t("signUpIntro")} />
-      <div className="mb-6"><Notice tone="info">{t("privacyNote")}</Notice></div>
+      <section aria-labelledby="signup-what" className="mb-6 rounded-xl border border-accent/30 bg-accent-soft px-4 py-3 text-sm">
+        <h2 id="signup-what" className="font-semibold">{t("signUpWhat")}</h2>
+        <ul className="mt-2 list-disc ps-5 space-y-1">
+          <li>{t("signUpBenefit1")}</li>
+          <li>{t("signUpBenefit2")}</li>
+          <li>{t("signUpBenefit3")}</li>
+        </ul>
+      </section>
       <SignUpForm />
+      <div className="mt-6"><Notice tone="info">{t("privacyNote")}</Notice></div>
     </>
   );
 }

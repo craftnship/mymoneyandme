@@ -192,8 +192,10 @@ export function unknownMetrics(h: HouseholdSnapshot): Set<string> {
     if (!groups.every((g) => g.some((f) => have.has(f)))) unknown.add(metric);
   }
   if (h.nominationsSet === undefined) unknown.add("nominationsSet");
+  // Under 40 with no dependants a will is not expected, but that exemption alone must not
+  // read as "paperwork in place": with nominations also unknown the dimension stays unscored.
   const willExempt = h.age < 40 && h.dependants === 0;
-  if (h.willInPlace === undefined && !willExempt) unknown.add("willInPlace");
+  if (h.willInPlace === undefined && (!willExempt || h.nominationsSet === undefined)) unknown.add("willInPlace");
   return unknown;
 }
 

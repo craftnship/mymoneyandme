@@ -22,8 +22,8 @@ import { monthsBetween } from "../goals/math";
  *   least-covered member, because every member needs cover. A policy with an
  *   empty covered-member list is taken to cover the whole household.
  * - Life cover is the sum of term and endowment sums assured across earners.
- * - A will is not captured yet, so `willInPlace` is left undefined; the engine
- *   then relies on its age-and-dependants rule.
+ * - `willInPlace` comes from the profile answer; unanswered leaves it undefined
+ *   and the engine falls back to its age-and-dependants rule.
  * - A quick-start "no" to term or health cover, with no policy of that kind
  *   entered, counts as known cover of zero; "yes" or "not sure" without a
  *   policy leaves the cover unknown until the policy is added.
@@ -36,6 +36,7 @@ export type SnapshotUser = {
   retirementAge: number | null;
   hasTermCover?: boolean | null;
   hasHealthCover?: boolean | null;
+  hasWill?: boolean | null;
 };
 
 /** Snapshot fields in the order that most improves confidence when added. */
@@ -201,7 +202,7 @@ export function buildSnapshot(user: SnapshotUser, members: Member[], items: Fina
     healthCover,
     goals: mappedGoals.length ? mappedGoals : undefined,
     nominationsSet,
-    willInPlace: undefined,
+    willInPlace: user.hasWill ?? undefined,
     monthlyRetirementSip,
     provided: SNAPSHOT_FIELDS.filter((f) => provided.has(f)),
   };

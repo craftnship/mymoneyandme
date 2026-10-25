@@ -80,3 +80,16 @@ export function decodeInputs(def: CalculatorDef, params: URLSearchParams | Recor
   }
   return out;
 }
+
+type Translate = (key: string, values?: Record<string, string | number>) => string;
+
+/**
+ * A one-line meta description built from the calculator's own inputs and
+ * headline output, so each of the 60 pages has a unique, translated summary
+ * without a hand-written sentence per calculator.
+ */
+export function calculatorDescription(def: CalculatorDef, t: Translate): string {
+  const inputs = def.inputs.slice(0, 3).map((i) => t(`labels.${i.label}`).toLowerCase());
+  const result = def.outputs.find((o) => o.headline) ?? def.outputs[0];
+  return t("describe", { name: t(`names.${def.slug}`), inputs: inputs.join(", "), result: t(`labels.${result.label}`).toLowerCase() });
+}

@@ -9,7 +9,7 @@ import { Saved, SettingsError, selectClass } from "./common";
 
 export type ProfileValues = {
   name: string; preferredName: string; dob: string; gender: string; maritalStatus: string; city: string; state: string; pin: string; cityTier: string;
-  locale: string; numberFormat: string; employment: string; retirementAge: string; riskProfile: string | null; smoker: "" | "yes" | "no"; existingConditions: "" | "yes" | "no";
+  locale: string; numberFormat: string; employment: string; retirementAge: string; riskProfile: string | null; smoker: "" | "yes" | "no"; existingConditions: "" | "yes" | "no"; hasWill: "" | "yes" | "no";
 };
 
 const LOCALE_NAMES: Record<string, string> = { en: "English", ta: "தமிழ்" };
@@ -29,7 +29,7 @@ export function ProfileForm({ initial }: { initial: ProfileValues }) {
     </Field>
   );
 
-  const yesNo = (name: "smoker" | "existingConditions", label: string) => (
+  const yesNo = (name: "smoker" | "existingConditions" | "hasWill", label: string) => (
     <fieldset>
       <legend className="text-sm font-medium mb-1">{label}</legend>
       <div className="flex flex-wrap gap-3 text-sm">
@@ -109,6 +109,12 @@ export function ProfileForm({ initial }: { initial: ProfileValues }) {
           {yesNo("smoker", t("smoker"))}
           {yesNo("existingConditions", t("existingConditions"))}
         </div>
+      </section>
+
+      <section className="space-y-4">
+        <h2 className="text-lg font-semibold">{t("estate")}</h2>
+        <p className="text-sm text-fg-muted">{t("estateHint")}</p>
+        {yesNo("hasWill", t("hasWill"))}
       </section>
 
       <SettingsError error={state.error} />

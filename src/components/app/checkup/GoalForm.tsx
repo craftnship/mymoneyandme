@@ -18,7 +18,7 @@ export function GoalForm({ members, goal, minDate }: { members: MemberOption[]; 
   const [template, setTemplate] = useState(goal?.template ?? "custom");
   const [inflation, setInflation] = useState(goal ? String(goal.payload.inflationPct) : String(defaultInflationPct("custom")));
   const [targetDate, setTargetDate] = useState(goal?.targetDate ?? dateYearsFromNow(getTemplate("custom").horizonYearsHint));
-  const [name, setName] = useState(goal?.name ?? "");
+  const [name, setName] = useState(goal?.name ?? t("template.custom"));
 
   const pickTemplate = (key: string) => {
     setTemplate(key);
