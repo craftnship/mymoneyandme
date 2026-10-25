@@ -1,0 +1,62 @@
+{
+  "admin": {
+    "title": "Authoring",
+    "intro": "Every article, chapter and news item on the site, with the state of each language.",
+    "nav": {
+      "label": "Authoring sections",
+      "overview": "Content",
+      "backToSite": "Back to my account"
+    },
+    "role": {
+      "admin": "Admin",
+      "editor": "Editor"
+    },
+    "access": {
+      "needsPasskeyTitle": "Sign in with your passkey to open authoring",
+      "needsPasskeyBody": "Authoring only opens on a session started with a passkey, so a password alone can never publish to the site. Sign out, then sign in again with “Use a passkey”.",
+      "noPasskey": "No passkey yet? Add one under Settings, Security first.",
+      "openSecurity": "Open security settings"
+    },
+    "source": {
+      "database": "Content is served from the database. Changes to the JSON files in the repository are copied in on the next start, except for items edited here.",
+      "notConfigured": "The database is not set up (DATABASE_URL is missing), so the site is serving the JSON files and nothing can be edited here yet.",
+      "unavailable": "The database could not be reached, so the site is serving the JSON files. Check the server log; nothing can be edited until it is back."
+    },
+    "comingNext": "Editing arrives in the next update. For now this page shows what is on the site and which languages are ready.",
+    "summary": "{articles, plural, one {# article} other {# articles}} · {chapters, plural, one {# chapter} other {# chapters}} ({written} written) · {news} news items",
+    "articles": {
+      "heading": "Articles",
+      "title": "Title",
+      "category": "Category",
+      "published": "Published",
+      "languages": "Languages",
+      "owner": "Kept in",
+      "view": "View"
+    },
+    "learn": {
+      "heading": "Learning hub",
+      "module": "Module",
+      "chapters": "Chapters",
+      "publishedIn": "Published in {language}"
+    },
+    "news": {
+      "heading": "News",
+      "date": "Date",
+      "title": "Title",
+      "source": "Source"
+    },
+    "owner": {
+      "json": "JSON file",
+      "admin": "Authoring",
+      "files": "JSON file"
+    },
+    "state": {
+      "draft": "Draft",
+      "inReview": "In review",
+      "approved": "Approved",
+      "published": "Published",
+      "missing": "Not started",
+      "aiDraft": "AI draft"
+    }
+  }
+}

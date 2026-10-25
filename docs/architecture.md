@@ -20,7 +20,10 @@ src/
     calculators/          math.ts (shared finance maths), tax.ts (slabs, HRA), formulas.ts
                           (formula families), definitions.ts (60 JSON-shaped calculators), index.ts (runner)
     checkup/              engine.ts (metrics + declarative scoring), plan.ts (priority checklist)
-    content/              types.ts (blocks, translations), store.ts (JSON loader, fallback rules)
+    content/              types.ts (blocks, translations), store.ts (cached reads, fallback rules),
+                          json.ts (the /content files), rows.ts + db.ts (database tables, JSON sync),
+                          source.ts (database first, files as fallback)
+    auth/                 sessions, passwords, passkeys; roles.ts + admin.ts (authoring console access)
     format.ts             INR formatting, lakh/crore vs international grouping
   components/             server components for layout/content, client components for calculators,
                           quiz, quick check, language switcher
@@ -35,8 +38,10 @@ messages/                 UI strings per locale (ICU MessageFormat); English is 
 - **Calculators are definitions + formula families.** A definition lists inputs (with rule-pack references for defaults), outputs and a chart kind; it names a formula family. New calculators in an existing family need no code. Formulas run in the browser for instant feedback and on the server for saved results, from the same module.
 - **Scores are computed on the server.** Clients post a snapshot to `/api/checkup/*` and receive a result stamped with the rule-pack version (section 18). The quick check is the same engine with defaults for missing fields and a low confidence label.
 - **Content is one source, many labelled translations.** A translation carries `state`, `aiDraft` and `outOfDate`. Readers see their language when published, else the source with a banner; modules list as fully translated only when every published chapter exists in that language.
+- **Content lives in the database, the files are the seed and the fallback.** Every process syncs `/content` into the `content_items` and `content_translations` tables on its first read: new files are added, changed files replace their rows, removed files archive them. Rows edited in the authoring console (`origin = 'admin'`) are never overwritten by a file. Reads go through one `"use cache"` snapshot tagged `content` (5-minute revalidation as the backstop); a publish clears the tag. Without `DATABASE_URL`, or when MySQL is down, the site serves the files.
+- **The authoring console is staff-only and passkey-only.** `/[locale]/admin` checks the `users.role` (`admin` or `editor`) and that the session was started with a passkey, on the server for every page and action. `ADMIN_EMAILS` promotes a verified account to `admin`; members get a 404.
 - **Language is the only locale dimension.** Currency INR, financial year April–March, Indian number grouping by default with a per-visitor toggle.
-- **Static where possible.** Cache Components prerender every public page per locale; only the shareable calculator inputs (query string) and the API routes are request-time.
+- **Static where possible.** Cache Components prerender every public page per locale; only the shareable calculator inputs (query string), the member app, the authoring console and the API routes are request-time.
 
 ## Conventions
 

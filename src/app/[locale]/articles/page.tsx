@@ -29,7 +29,7 @@ async function FilteredFeed({ locale, searchParams }: { locale: string; searchPa
 
 async function Feed({ locale, query }: { locale: string; query: ArticleQuery }) {
   const t = await getTranslations("article");
-  const results = searchArticles(allArticles(), locale, query);
+  const results = searchArticles(await allArticles(), locale, query);
   const filtered = Boolean(query.q || query.category);
   // Articles in the reader's language come first; untranslated ones follow under their own heading rather than
   // being mixed in with a small "English" pill, so a Tamil reader sees what is actually in Tamil at a glance.

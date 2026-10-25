@@ -15,7 +15,7 @@ export async function POST(req: Request) {
     const user = await findUserById(userId);
     if (!user) throw new Error("unknownUser");
     await clearLoginFailures(userId);
-    await createSession(userId);
+    await createSession(userId, "passkey");
     return NextResponse.json({ ok: true });
   } catch (e) {
     return NextResponse.json({ error: e instanceof Error ? e.message : "failed" }, { status: 400 });

@@ -189,4 +189,53 @@ export const MIGRATIONS: Migration[] = [
     id: "0004_has_will",
     statements: [`ALTER TABLE users ADD COLUMN has_will TINYINT(1) NULL`],
   },
+  {
+    // Authoring console, phase 1: articles, modules, chapters and news move
+    // into the database (src/lib/content/rows.ts maps the JSON shape). Rows
+    // with origin 'json' mirror /content and are refreshed when a file
+    // changes; rows edited in the admin become 'admin' and are never
+    // overwritten. sessions.auth_method lets the admin require a passkey.
+    id: "0005_content",
+    statements: [
+      `CREATE TABLE IF NOT EXISTS content_items (
+        id VARCHAR(191) PRIMARY KEY,
+        kind VARCHAR(16) NOT NULL,
+        slug VARCHAR(191) NOT NULL,
+        parent_id VARCHAR(191) NULL,
+        position INT NOT NULL DEFAULT 0,
+        settings LONGTEXT NOT NULL,
+        origin VARCHAR(8) NOT NULL DEFAULT 'json',
+        json_hash CHAR(64) NULL,
+        created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+        updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+        updated_by CHAR(36) NULL,
+        archived_at DATETIME NULL,
+        INDEX idx_content_kind (kind, archived_at),
+        INDEX idx_content_parent (parent_id)
+      ) DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci`,
+      `CREATE TABLE IF NOT EXISTS content_translations (
+        item_id VARCHAR(191) NOT NULL,
+        locale VARCHAR(8) NOT NULL,
+        title VARCHAR(500) NOT NULL,
+        summary TEXT NOT NULL,
+        state VARCHAR(16) NOT NULL,
+        ai_draft TINYINT(1) NOT NULL DEFAULT 0,
+        published_at VARCHAR(32) NULL,
+        body LONGTEXT NOT NULL,
+        updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+        updated_by CHAR(36) NULL,
+        PRIMARY KEY (item_id, locale)
+      ) DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci`,
+      `CREATE TABLE IF NOT EXISTS content_revisions (
+        id BIGINT AUTO_INCREMENT PRIMARY KEY,
+        item_id VARCHAR(191) NOT NULL,
+        locale VARCHAR(8) NULL,
+        snapshot LONGTEXT NOT NULL,
+        saved_by CHAR(36) NULL,
+        saved_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+        INDEX idx_revisions_item (item_id, saved_at)
+      ) DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci`,
+      `ALTER TABLE sessions ADD COLUMN auth_method VARCHAR(16) NULL`,
+    ],
+  },
 ];

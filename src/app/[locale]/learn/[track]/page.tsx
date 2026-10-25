@@ -25,7 +25,7 @@ export default async function TrackPage({ params }: { params: Promise<{ locale: 
   if (!TRACKS.includes(track as Track)) notFound();
   const tr = track as Track;
   const t = await getTranslations("learn");
-  const mods = modulesForTrack(tr);
+  const mods = await modulesForTrack(tr);
   // Modules with nothing published yet sit in a collapsed list at the end, so the track reads as what can be read today.
   const ready = mods.filter((m) => publishedChapters(m).length > 0);
   const planned = mods.filter((m) => publishedChapters(m).length === 0);

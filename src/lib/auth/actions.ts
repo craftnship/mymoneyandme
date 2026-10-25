@@ -18,6 +18,7 @@ import {
 import { getCurrentUser } from "./current";
 import { purgeDueDeletions } from "../account/purge";
 import { clearDeletionRequest } from "../account/store";
+import { safeNext } from "./next";
 
 /**
  * Account Server Actions. Every action re-checks the session itself and returns
@@ -78,7 +79,7 @@ export async function signUp(_prev: ActionState, form: FormData): Promise<Action
     const token = await issueEmailToken(user.id, "verify", 48);
     await sendVerificationEmail(user.email, locale, token).catch(() => undefined);
   }
-  await createSession(user.id);
+  await createSession(user.id, "password");
   redirect(appPath(locale, "/app/welcome"));
 }
 
@@ -112,9 +113,9 @@ export async function signIn(_prev: ActionState, form: FormData): Promise<Action
   await clearLoginFailures(user.id);
   // Signing in during the grace period cancels a pending deletion, as the confirmation email promises.
   if (user.deletionRequestedAt) await clearDeletionRequest(user.id);
-  await createSession(user.id);
+  await createSession(user.id, "password");
   await audit(user.id, "signIn", "user", user.id);
-  redirect(next && next.startsWith(`/${locale}/app`) ? next : appPath(locale));
+  redirect(safeNext(next, locale) ?? appPath(locale));
 }
 
 export async function signOut(form: FormData): Promise<void> {
@@ -160,7 +161,7 @@ export async function resetPassword(_prev: ActionState, form: FormData): Promise
   await revokeAllSessions(userId);
   await audit(userId, "passwordReset", "user", userId);
   const user = await findUserById(userId);
-  if (user) await createSession(user.id);
+  if (user) await createSession(user.id, "emailLink");
   redirect(appPath(locale));
 }
 

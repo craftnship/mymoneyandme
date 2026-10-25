@@ -35,7 +35,7 @@ export default async function CalculatorPage({ params, searchParams }: { params:
   if (!def) notFound();
   const t = await getTranslations("calc");
   const ta = await getTranslations("article");
-  const related = def.relatedArticle ? allArticles().find((a) => a.slug === def.relatedArticle) : undefined;
+  const related = def.relatedArticle ? (await allArticles()).find((a) => a.slug === def.relatedArticle) : undefined;
   const relatedT = related ? resolveTranslation(related.translations, locale) : undefined;
   const siblings = CALCULATORS.filter((c) => c.group === def.group && c.slug !== def.slug).slice(0, 6);
   const structured = jsonLd({

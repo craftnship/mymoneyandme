@@ -8,13 +8,13 @@ import { Notice, Pill } from "@/components/ui";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { pageAlternates } from "@/lib/seo";
 
-export function generateStaticParams() {
-  return allArticles().map((a) => ({ slug: a.slug }));
+export async function generateStaticParams() {
+  return (await allArticles()).map((a) => ({ slug: a.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }) {
   const { locale, slug } = await params;
-  const article = getArticle(slug);
+  const article = await getArticle(slug);
   if (!article) return {};
   const r = resolveTranslation(article.translations, locale);
   if (!r) return {};
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 export default async function ArticlePage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
   const { locale, slug } = await params;
-  const article = getArticle(slug);
+  const article = await getArticle(slug);
   if (!article) notFound();
   const r = resolveTranslation(article.translations, locale);
   if (!r) notFound();
