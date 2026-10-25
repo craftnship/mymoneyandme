@@ -68,9 +68,24 @@ export type Article = {
   publishedAt: string;
   updatedAt?: string;
   pinned?: boolean; // hero slot
+  cover?: string; // illustration under /public, shown on cards and the home page
   relatedCalculator?: string;
   relatedChapter?: string;
   translations: Translation[];
+};
+
+/**
+ * A short dated update on the home page news column: rate changes, deadlines,
+ * scheme notices. Hand-curated in content/news.json, each item linking to the
+ * source it was checked against. Unlike articles there is no translation
+ * workflow; a missing language falls back to the default one.
+ */
+export type NewsItem = {
+  id: string;
+  date: string;
+  category: ArticleCategory;
+  source: { name: string; url: string };
+  translations: { locale: Locale; title: string; summary: string }[];
 };
 
 export type Track = "adults" | "kids" | "women";

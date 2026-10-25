@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img">
+  <rect width="1200" height="675" fill="#264653"/>
+  <g fill="#ffffff" opacity=".9">
+    <path d="M150 0 l-6 40 M260 30 l-6 40 M380 0 l-6 40 M520 40 l-6 40 M640 0 l-6 40 M780 30 l-6 40 M900 0 l-6 40 M1040 40 l-6 40 M90 110 l-6 40 M330 120 l-6 40 M1100 120 l-6 40" stroke="#a8dadc" stroke-width="5" stroke-linecap="round"/>
+  </g>
+  <ellipse cx="600" cy="640" rx="520" ry="60" fill="#1d3640"/>
+  <!-- umbrella -->
+  <path d="M300 330 C 300 170 900 170 900 330 C 860 300 810 300 775 330 C 740 300 680 300 650 330 C 620 300 580 300 550 330 C 520 300 460 300 425 330 C 390 300 340 300 300 330Z" fill="#e76f51"/>
+  <path d="M600 190 C 560 210 550 280 550 330 M600 190 C 640 210 650 280 650 330" stroke="#c95a3f" stroke-width="6" fill="none"/>
+  <rect x="594" y="150" width="12" height="44" rx="6" fill="#c95a3f"/>
+  <path d="M600 330 V 540 C 600 580 650 580 650 545" stroke="#fdf3e1" stroke-width="14" fill="none" stroke-linecap="round"/>
+  <!-- piggy bank -->
+  <g transform="translate(430 430)">
+    <ellipse cx="170" cy="110" rx="160" ry="105" fill="#f4a3b4"/>
+    <circle cx="300" cy="90" r="38" fill="#ee8ea2"/>
+    <circle cx="300" cy="80" r="7" fill="#7a3346"/><circle cx="314" cy="98" r="5" fill="#7a3346"/><circle cx="292" cy="100" r="5" fill="#7a3346"/>
+    <path d="M220 10 l30 -40 l20 50z" fill="#ee8ea2"/>
+    <circle cx="250" cy="60" r="8" fill="#3b1b24"/>
+    <rect x="130" y="10" width="80" height="12" rx="6" fill="#7a3346"/>
+    <rect x="60" y="190" width="36" height="44" rx="10" fill="#ee8ea2"/><rect x="220" y="190" width="36" height="44" rx="10" fill="#ee8ea2"/>
+    <path d="M14 100 c -30 -10 -30 -40 0 -40" stroke="#ee8ea2" stroke-width="10" fill="none" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(600 400)"><circle r="30" fill="#f6b84b" stroke="#c9861f" stroke-width="4"/></g>
+</svg>

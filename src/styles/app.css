@@ -91,3 +91,34 @@ input[type="range"] {
   header, footer, nav, .no-print { display: none !important; }
   body { background: #fff; color: #000; }
 }
+
+/* Home page news ticker: two copies of the row slide left by one copy's width, so the loop is seamless. */
+.ticker-track {
+  animation: ticker 40s linear infinite;
+}
+.ticker:hover .ticker-track,
+.ticker:focus-within .ticker-track {
+  animation-play-state: paused;
+}
+[dir="rtl"] .ticker-track {
+  animation-name: ticker-rtl;
+}
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes ticker-rtl {
+  from { transform: translateX(0); }
+  to { transform: translateX(50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ticker { overflow-x: auto; }
+  .ticker-track { animation: none; }
+  .ticker-track > ul[aria-hidden] { display: none; }
+}
+
+/* Tamil words run long; at the Latin size the hero title wraps to six lines and crowds out the illustration. */
+:lang(ta) .hero-title {
+  font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+  line-height: 1.45;
+}

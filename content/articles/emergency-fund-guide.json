@@ -5,6 +5,7 @@
   "category": "personalFinance",
   "format": "explainer",
   "tags": ["emergency fund", "saving", "beginner"],
+  "cover": "/images/articles/emergency-fund.svg",
   "author": "My Money & Me",
   "publishedAt": "2026-10-08",
   "relatedCalculator": "emergency-fund",

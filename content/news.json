@@ -1,0 +1,56 @@
+[
+  {
+    "id": "news-2026-10-07-repo-rate",
+    "date": "2026-10-07",
+    "category": "economy",
+    "source": { "name": "SCC Online", "url": "https://www.scconline.com/blog/post/2026/10/09/rbi-hikes-repo-rate-to-5-50-percent-october-2026/" },
+    "translations": [
+      {
+        "locale": "en",
+        "title": "RBI raises the repo rate to 5.50%",
+        "summary": "The first hike in this cycle, up 0.25% from 5.25%, with the stance moved to \"calibrated tightening\". Floating-rate home and car loan EMIs are likely to rise when your bank resets its rate; fixed deposit rates may edge up too."
+      },
+      {
+        "locale": "ta",
+        "title": "ரெப்போ விகிதத்தை 5.50% ஆக உயர்த்தியது ரிசர்வ் வங்கி",
+        "summary": "5.25% இலிருந்து 0.25% உயர்வு, கொள்கை நிலைப்பாடு \"அளவான இறுக்கம்\" என மாற்றப்பட்டது. வங்கி தன் விகிதத்தை மாற்றும்போது மாறும் வட்டி வீட்டுக் கடன், வாகனக் கடன் EMI உயரக்கூடும்; நிலை வைப்பு வட்டியும் சற்று உயரலாம்."
+      }
+    ]
+  },
+  {
+    "id": "news-2026-09-30-small-savings",
+    "date": "2026-09-30",
+    "category": "personalFinance",
+    "source": { "name": "Business Today", "url": "https://www.businesstoday.in/personal-finance/story/small-savings-scheme-interest-rates-unchanged-for-q3-fy27-check-ppf-scss-ssy-rates-558892-2026-09-30" },
+    "translations": [
+      {
+        "locale": "en",
+        "title": "Small savings rates unchanged for October to December",
+        "summary": "PPF stays at 7.1%, Sukanya Samriddhi and the Senior Citizens Savings Scheme at 8.2%, NSC at 7.7%, Kisan Vikas Patra at 7.5% and the Post Office Monthly Income Scheme at 7.4%."
+      },
+      {
+        "locale": "ta",
+        "title": "அக்டோபர் முதல் டிசம்பர் வரை சிறு சேமிப்பு வட்டி மாற்றமில்லை",
+        "summary": "PPF 7.1%, செல்வமகள் சேமிப்புத் திட்டம் மற்றும் மூத்த குடிமக்கள் சேமிப்புத் திட்டம் 8.2%, NSC 7.7%, கிசான் விகாஸ் பத்திரம் 7.5%, அஞ்சலக மாத வருமானத் திட்டம் 7.4% என அப்படியே தொடர்கின்றன."
+      }
+    ]
+  },
+  {
+    "id": "news-2026-09-29-itr-audit-deadline",
+    "date": "2026-09-29",
+    "category": "tax",
+    "source": { "name": "News On AIR", "url": "https://newsonair.gov.in/cbdt-extends-i-t-return-filing-deadline-for-audit-cases-to-november-21/" },
+    "translations": [
+      {
+        "locale": "en",
+        "title": "Tax audit cases get until 21 November to file returns",
+        "summary": "For AY 2026-27, the CBDT moved the return deadline for taxpayers whose accounts need an audit from 31 October to 21 November, and the audit report deadline from 30 September to 21 October. Salaried filers are not affected."
+      },
+      {
+        "locale": "ta",
+        "title": "தணிக்கை தேவைப்படுவோர் வருமான வரிக் கணக்கை நவம்பர் 21 வரை தாக்கல் செய்யலாம்",
+        "summary": "2026-27 மதிப்பீட்டு ஆண்டுக்கு, கணக்குத் தணிக்கை தேவைப்படும் வரி செலுத்துவோருக்கான கடைசி தேதியை அக்டோபர் 31 இலிருந்து நவம்பர் 21 ஆகவும், தணிக்கை அறிக்கைக்கான தேதியை செப்டம்பர் 30 இலிருந்து அக்டோபர் 21 ஆகவும் CBDT நீட்டித்துள்ளது. சம்பளதாரர்களுக்கு இது பொருந்தாது."
+      }
+    ]
+  }
+]

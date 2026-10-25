@@ -1,5 +1,7 @@
 import { describe, expect, it } from "vitest";
-import { allArticles, allModules, moduleFullyTranslated, resolveTranslation } from "./store";
+import fs from "node:fs";
+import path from "node:path";
+import { allArticles, allModules, allNews, moduleFullyTranslated, newsText, resolveTranslation } from "./store";
 import { searchArticles } from "./search";
 import { CALCULATORS } from "@/lib/calculators";
 import type { Block, Translation } from "./types";
@@ -125,5 +127,27 @@ describe("content store", () => {
     expect(searchArticles(all, "ta", { q: "budget" }).some((a) => a.slug === "the-50-30-20-budget")).toBe(true);
     expect(searchArticles(all, "en", { q: "zzzz-no-such-term" })).toHaveLength(0);
     for (const a of searchArticles(all, "en", { category: "loans" })) expect(a.category).toBe("loans");
+  });
+
+  it("points every article cover at a file in /public", () => {
+    for (const a of allArticles()) {
+      if (a.cover) expect(fs.existsSync(path.join(process.cwd(), "public", a.cover)), `${a.slug}: missing cover ${a.cover}`).toBe(true);
+    }
+  });
+
+  it("loads news newest first, sourced, in English and Tamil", () => {
+    const news = allNews();
+    expect(news.length).toBeGreaterThan(0);
+    expect(new Set(news.map((n) => n.id)).size).toBe(news.length);
+    for (let i = 1; i < news.length; i++) expect(news[i - 1].date >= news[i].date).toBe(true);
+    for (const n of news) {
+      expect(n.date, `${n.id}: date`).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+      expect(n.source.url, `${n.id}: source`).toMatch(/^https:\/\//);
+      for (const locale of ["en", "ta"]) {
+        const text = n.translations.find((t) => t.locale === locale);
+        expect(text?.title && text.summary, `${n.id}: ${locale} title and summary`).toBeTruthy();
+      }
+    }
+    expect(newsText(news[0], "hi").locale).toBe("en");
   });
 });

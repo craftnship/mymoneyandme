@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import type { Article, Chapter, Module, Track, Translation } from "./types";
+import type { Article, Chapter, Module, NewsItem, Track, Translation } from "./types";
 import { routing } from "@/i18n/routing";
 
 const ROOT = path.join(process.cwd(), "content");
@@ -22,6 +22,24 @@ export function allArticles(): Article[] {
   }
   return articleCache;
 }
+
+let newsCache: NewsItem[] | null = null;
+
+/** Newest first. */
+export function allNews(): NewsItem[] {
+  if (!newsCache || process.env.NODE_ENV !== "production") {
+    const file = path.join(ROOT, "news.json");
+    const items = fs.existsSync(file) ? (JSON.parse(fs.readFileSync(file, "utf8")) as NewsItem[]) : [];
+    newsCache = items.sort((a, b) => b.date.localeCompare(a.date));
+  }
+  return newsCache;
+}
+
+export function newsText(item: NewsItem, locale: string) {
+  return item.translations.find((t) => t.locale === locale) ?? item.translations.find((t) => t.locale === routing.defaultLocale) ?? item.translations[0];
+}
+
+export const DEFAULT_COVER = "/images/articles/default.svg";
 
 export function allModules(): Module[] {
   if (!moduleCache || process.env.NODE_ENV !== "production") {
