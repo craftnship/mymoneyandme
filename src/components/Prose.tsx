@@ -5,7 +5,12 @@
  * without a second content format.
  */
 export function Prose({ text, className = "" }: { text: string; className?: string }) {
-  const blocks = text.split(/\n\s*\n/).map((b) => b.trim()).filter(Boolean);
+  // A heading line may be followed directly by its first paragraph; split it off so the body is never part of the h2.
+  const blocks = text
+    .split(/\n\s*\n/)
+    .flatMap((b) => (b.trimStart().startsWith("## ") && b.includes("\n") ? [b.slice(0, b.indexOf("\n")), b.slice(b.indexOf("\n") + 1)] : [b]))
+    .map((b) => b.trim())
+    .filter(Boolean);
   return (
     <div className={`space-y-4 leading-relaxed ${className}`}>
       {blocks.map((block, i) => {
