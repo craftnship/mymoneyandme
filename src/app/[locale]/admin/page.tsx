@@ -57,6 +57,9 @@ export default async function AdminHome({ params }: { params: Promise<{ locale: 
         <div className="space-y-3">
           <Notice tone={from === "database" ? "tip" : "warning"}>{t(`source.${from === "database" ? "database" : problem ?? "unavailable"}`)}</Notice>
           <Notice tone="info">{t("comingNext")}</Notice>
+          {from === "database" ? (
+            <Link href="/admin/articles/new" className="inline-block rounded-lg bg-accent text-white px-4 py-2 text-sm font-medium hover:bg-accent-strong">{t("articles.new")}</Link>
+          ) : null}
           <p className="text-sm text-fg-muted">{t("summary", { articles: articles.length, chapters: chapters.length, written, news: news.length })}</p>
         </div>
       </div>
@@ -80,8 +83,13 @@ export default async function AdminHome({ params }: { params: Promise<{ locale: 
                 return (
                   <tr key={a.id} className="border-t border-border">
                     <td className={td}>
-                      <Link href={`/articles/${a.slug}`} className="font-medium underline-offset-4 hover:underline">{source?.title ?? a.slug}</Link>
-                      <div className="text-xs text-fg-muted">{a.slug}</div>
+                      {from === "database" ? (
+                        <Link href={`/admin/articles/${a.id}`} className="font-medium underline-offset-4 hover:underline">{source?.title || a.slug}</Link>
+                      ) : <span className="font-medium">{source?.title || a.slug}</span>}
+                      <div className="text-xs text-fg-muted">
+                        {a.slug}
+                        {a.translations.some((tr) => tr.state === "published") ? <> · <Link href={`/articles/${a.slug}`} className="underline underline-offset-4">{t("articles.view")}</Link></> : null}
+                      </div>
                     </td>
                     <td className={td}>{ta(`category.${a.category}`)}</td>
                     <td className={`${td} whitespace-nowrap`}>{f.dateTime(new Date(a.publishedAt), { dateStyle: "medium" })}</td>

@@ -59,3 +59,34 @@ describe.skipIf(!url)("content in the database", () => {
     expect(rows).toHaveLength(0);
   });
 });
+
+describe.skipIf(!url)("saving from the authoring console", () => {
+  afterAll(async () => {
+    const p = await getPool();
+    await p.end();
+    _resetForTests();
+  });
+
+  it("saves an article as admin-owned, keeps a revision, and survives the next JSON sync", async () => {
+    const { saveArticle, articleForEdit, listRevisions, slugTaken } = await import("./admin");
+    const json = readJsonContent();
+    await syncFromJson(json);
+    const original = json.articles[0];
+    const edited = { ...original, tags: ["edited in console"], translations: original.translations.map((t) => (t.locale === "en" ? { ...t, title: "Edited title" } : t)) };
+    await saveArticle(edited, "00000000-0000-0000-0000-000000000001");
+    const back = await articleForEdit(original.id);
+    expect(back?.tags).toEqual(["edited in console"]);
+    expect(back?.translations.find((t) => t.locale === "en")?.title).toBe("Edited title");
+    expect((await listRevisions(original.id)).length).toBeGreaterThanOrEqual(1);
+    expect(await syncFromJson(json)).toEqual({ inserted: 0, updated: 0, archived: 0 });
+    expect((await loadFromDb()).articles.find((a) => a.id === original.id)?.tags).toEqual(["edited in console"]);
+    expect(await slugTaken(original.slug, original.id)).toBe(false);
+    expect(await slugTaken(original.slug, "art-other")).toBe(true);
+
+    const fresh = { ...original, id: "art-new1", slug: "a-brand-new-article", translations: [{ ...original.translations[0], state: "draft" as const }] };
+    await saveArticle(fresh, "00000000-0000-0000-0000-000000000001");
+    expect((await loadFromDb()).articles.find((a) => a.id === "art-new1")?.translations).toHaveLength(1);
+    await execute("DELETE FROM content_items WHERE id IN (?, ?)", [itemId.article(original), "article:art-new1"]);
+    await execute("DELETE FROM content_translations WHERE item_id IN (?, ?)", [itemId.article(original), "article:art-new1"]);
+  });
+});
