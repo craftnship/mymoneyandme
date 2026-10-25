@@ -99,6 +99,20 @@ export function moduleTitle(module: Module, locale: string) {
   return module.translations.find((t) => t.locale === locale) ?? module.translations.find((t) => t.locale === routing.defaultLocale) ?? module.translations[0];
 }
 
+/** Chapters with at least one published translation; the counts the learn pages show so "coming soon" is never counted as ready. */
+export function publishedChapters(module: Module): Chapter[] {
+  return module.chapters.filter((c) => c.translations.some((t) => t.state === "published"));
+}
+
+/** The first readable chapter of a track, in module order: where a visitor who has nothing picked should start. */
+export function firstPublishedChapter(track: Track): { module: Module; chapter: Chapter } | undefined {
+  for (const mod of modulesForTrack(track)) {
+    const chapter = publishedChapters(mod)[0];
+    if (chapter) return { module: mod, chapter };
+  }
+  return undefined;
+}
+
 /** A module is listed in a language only when all its published chapters exist in it (section 12). */
 export function moduleFullyTranslated(module: Module, locale: string) {
   return module.chapters.every((c) => c.translations.some((t) => t.locale === locale && t.state === "published"));

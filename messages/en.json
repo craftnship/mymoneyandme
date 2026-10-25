@@ -16,6 +16,12 @@
     "menu": "Menu",
     "signIn": "Sign in",
     "comingSoon": "Coming soon",
+    "chaptersReady": "{ready} of {total} chapters ready to read",
+    "moduleChaptersReady": "{ready, plural, =0 {No chapters yet} one {# of {total} chapters ready} other {# of {total} chapters ready}}",
+    "startHere": "Start here: {title}",
+    "readyModules": "Ready to read",
+    "plannedModules": "{count, plural, one {# module planned} other {# modules planned}}",
+    "plannedIntro": "These modules are written next. Their chapters are not published yet, so they are listed here rather than mixed in above.",
     "account": "My account"
   },
   "footer": {
