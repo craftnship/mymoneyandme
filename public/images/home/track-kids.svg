@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img">
+  <rect width="800" height="450" fill="#fdf3e1"/>
+  <circle cx="650" cy="90" r="60" fill="#f6b84b"/>
+  <rect y="360" width="800" height="90" fill="#f6dfb4"/>
+  <!-- jar of coins -->
+  <g transform="translate(150 130)">
+    <rect x="0" y="20" width="200" height="230" rx="40" fill="#a8dadc" opacity=".6" stroke="#264653" stroke-width="6"/>
+    <rect x="20" y="0" width="160" height="30" rx="10" fill="#264653"/>
+    <g fill="#f6b84b" stroke="#c9861f" stroke-width="3"><ellipse cx="60" cy="220" rx="34" ry="12"/><ellipse cx="140" cy="220" rx="34" ry="12"/><ellipse cx="100" cy="200" rx="34" ry="12"/><ellipse cx="60" cy="180" rx="34" ry="12"/><ellipse cx="140" cy="180" rx="34" ry="12"/><ellipse cx="100" cy="160" rx="34" ry="12"/></g>
+  </g>
+  <!-- blocks -->
+  <g transform="translate(430 230)">
+    <rect width="110" height="110" rx="10" fill="#e76f51"/><rect x="120" width="110" height="110" rx="10" fill="#0f6e56"/><rect x="60" y="-115" width="110" height="110" rx="10" fill="#264653"/>
+    <circle cx="55" cy="55" r="24" fill="#fdf3e1"/><path d="M155 30 l40 50 h-80z" fill="#fdf3e1"/><rect x="95" y="-85" width="40" height="50" fill="#fdf3e1"/>
+  </g>
+</svg>

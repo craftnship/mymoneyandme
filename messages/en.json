@@ -46,7 +46,12 @@
     "trackKidsBody": "Stories, games and printable workbooks for ages 8 to 16.",
     "trackWomenBody": "Independence, protection and rights, written with women contributors.",
     "readMore": "Read",
-    "minRead": "{minutes} min read"
+    "minRead": "{minutes} min read",
+    "tickerLabel": "Latest",
+    "topStory": "Top story",
+    "newsTitle": "Money news",
+    "newsSource": "Source: {name}",
+    "newsNote": "Short summaries of rate changes, deadlines and scheme notices, checked against the linked source on the date shown."
   },
   "article": {
     "aiTranslated": "This article was translated by AI and has not yet been reviewed by a person.",

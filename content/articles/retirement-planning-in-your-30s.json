@@ -5,6 +5,7 @@
   "category": "personalFinance",
   "format": "explainer",
   "tags": ["retirement", "SIP", "compounding"],
+  "cover": "/images/articles/retirement.svg",
   "author": "My Money & Me",
   "publishedAt": "2026-10-01",
   "relatedCalculator": "retirement-corpus",

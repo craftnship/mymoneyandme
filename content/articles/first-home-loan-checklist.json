@@ -5,6 +5,7 @@
   "category": "loans",
   "format": "howTo",
   "tags": ["home loan", "real estate"],
+  "cover": "/images/articles/home-loan.svg",
   "author": "My Money & Me",
   "publishedAt": "2026-10-05",
   "relatedCalculator": "emi",

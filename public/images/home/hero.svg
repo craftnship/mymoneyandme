@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9efe7"/><stop offset="1" stop-color="#fdf3e1"/></linearGradient>
+    <linearGradient id="coin" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f7c35f"/><stop offset="1" stop-color="#e09a2b"/></linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#sky)"/>
+  <circle cx="930" cy="210" r="120" fill="#f6b84b" opacity=".9"/>
+  <circle cx="930" cy="210" r="170" fill="#f6b84b" opacity=".18"/>
+  <path d="M0 650 C 220 560 380 600 560 640 S 920 560 1200 610 V900 H0Z" fill="#9fd3bf"/>
+  <path d="M0 720 C 260 660 470 700 700 730 S 1050 690 1200 700 V900 H0Z" fill="#5fb08f"/>
+  <path d="M0 800 C 300 760 600 790 1200 770 V900 H0Z" fill="#0f6e56"/>
+  <!-- house -->
+  <g transform="translate(150 430)">
+    <rect x="20" y="110" width="240" height="190" fill="#fffaf0"/>
+    <path d="M0 120 L140 10 L280 120 Z" fill="#e76f51"/>
+    <rect x="115" y="190" width="56" height="110" rx="6" fill="#264653"/>
+    <rect x="45" y="150" width="50" height="46" rx="4" fill="#a8dadc"/>
+    <rect x="190" y="150" width="50" height="46" rx="4" fill="#a8dadc"/>
+    <rect x="200" y="40" width="30" height="60" fill="#c95a3f"/>
+  </g>
+  <!-- growth bars -->
+  <g transform="translate(520 380)">
+    <rect x="0" y="230" width="70" height="120" rx="10" fill="#264653" opacity=".85"/>
+    <rect x="95" y="170" width="70" height="180" rx="10" fill="#264653" opacity=".9"/>
+    <rect x="190" y="90" width="70" height="260" rx="10" fill="#264653"/>
+    <path d="M10 200 L130 140 L220 60 L300 10" fill="none" stroke="#e76f51" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M300 10 l-52 8 l34 38 z" fill="#e76f51"/>
+  </g>
+  <!-- coin stacks -->
+  <g transform="translate(860 500)">
+    <g fill="url(#coin)" stroke="#c9861f" stroke-width="3">
+      <ellipse cx="60" cy="230" rx="60" ry="18"/><ellipse cx="60" cy="210" rx="60" ry="18"/><ellipse cx="60" cy="190" rx="60" ry="18"/>
+      <ellipse cx="60" cy="170" rx="60" ry="18"/><ellipse cx="60" cy="150" rx="60" ry="18"/>
+      <ellipse cx="190" cy="230" rx="60" ry="18"/><ellipse cx="190" cy="210" rx="60" ry="18"/><ellipse cx="190" cy="190" rx="60" ry="18"/>
+      <ellipse cx="190" cy="170" rx="60" ry="18"/><ellipse cx="190" cy="150" rx="60" ry="18"/><ellipse cx="190" cy="130" rx="60" ry="18"/>
+      <ellipse cx="190" cy="110" rx="60" ry="18"/><ellipse cx="190" cy="90" rx="60" ry="18"/>
+    </g>
+    <!-- sprout -->
+    <path d="M190 72 C 190 40 190 20 190 0" stroke="#0f6e56" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <path d="M190 30 C 150 30 130 0 130 -20 C 170 -20 190 5 190 30Z" fill="#2f9c78"/>
+    <path d="M190 14 C 230 14 255 -15 255 -40 C 210 -40 190 -10 190 14Z" fill="#3fb58c"/>
+  </g>
+  <!-- big rupee coin -->
+  <g transform="translate(470 170)">
+    <circle r="92" fill="url(#coin)" stroke="#c9861f" stroke-width="6"/>
+    <circle r="72" fill="none" stroke="#fff3d6" stroke-width="4" opacity=".7"/>
+    <path d="M-34 -42 H34 M-34 -18 H34 M-34 -42 C 20 -42 26 6 -30 6 L 26 52" fill="none" stroke="#8a5a12" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g fill="#fff" opacity=".9"><ellipse cx="180" cy="170" rx="80" ry="26"/><ellipse cx="230" cy="150" rx="60" ry="28"/><ellipse cx="700" cy="110" rx="70" ry="22"/><ellipse cx="740" cy="95" rx="46" ry="22"/></g>
+</svg>
