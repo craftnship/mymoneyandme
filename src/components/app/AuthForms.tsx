@@ -68,14 +68,6 @@ export function SignUpForm() {
         <input type="checkbox" name="planReminders" className="mt-1" />
         <span>{t("consentPlanReminders")}</span>
       </label>
-      <label className="flex gap-2 text-sm">
-        <input type="checkbox" name="analytics" className="mt-1" />
-        <span>{t("consentAnalytics")}</span>
-      </label>
-      <label className="flex gap-2 text-sm">
-        <input type="checkbox" name="marketing" className="mt-1" />
-        <span>{t("consentMarketing")}</span>
-      </label>
       <FormError error={state.error} />
       <SubmitButton label={t("createAccount")} pending={pending} />
       <p className="text-sm text-fg-muted">
