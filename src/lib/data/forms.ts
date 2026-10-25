@@ -28,6 +28,26 @@ export const quickStartSchema = z.object({
 });
 export type QuickStartInput = z.infer<typeof quickStartSchema>;
 
+/** The short first-run form: the two amounts, savings if known, and yes / no / not sure on cover. */
+const coverAnswer = z.enum(["yes", "no", "notSure"]).default("notSure");
+export const firstLookSchema = z.object({
+  monthlyIncome: z.coerce.number().min(0).max(1e9),
+  monthlyExpenses: z.coerce.number().min(0).max(1e9),
+  emergencySavings: z.coerce.number().min(0).max(1e12).optional(),
+  termCover: coverAnswer,
+  healthCover: coverAnswer,
+});
+export type FirstLookInput = z.infer<typeof firstLookSchema>;
+
+/** Each profile question asked one at a time after the first look. */
+export const profileStepSchemas = {
+  dob: z.object({ dob: pastDate }),
+  employment: z.object({ employment: z.enum(EMPLOYMENT) }),
+  dependants: z.object({ dependants: z.coerce.number().int().min(0).max(20) }),
+  cityTier: z.object({ cityTier: z.coerce.number().pipe(z.union([z.literal(1), z.literal(2), z.literal(3)])) }),
+} as const;
+export type ProfileStep = keyof typeof profileStepSchemas;
+
 export const memberSchema = z.object({
   name: z.string().trim().min(1).max(100),
   relation: z.enum(RELATIONS),
@@ -83,6 +103,18 @@ export function parseQuickStart(form: FormData, opts: { requireAmounts: boolean 
   if (opts.requireAmounts && raw.monthlyIncome === undefined) fieldErrors.monthlyIncome ??= "required";
   if (opts.requireAmounts && raw.monthlyExpenses === undefined) fieldErrors.monthlyExpenses ??= "required";
   return r.success && !Object.keys(fieldErrors).length ? { ok: true, data: r.data } : { ok: false, fieldErrors };
+}
+
+export function parseFirstLook(form: FormData): Parsed<FirstLookInput> {
+  const raw = { monthlyIncome: str(form, "monthlyIncome"), monthlyExpenses: str(form, "monthlyExpenses"), emergencySavings: str(form, "emergencySavings"), termCover: str(form, "termCover"), healthCover: str(form, "healthCover") };
+  const r = firstLookSchema.safeParse(raw);
+  return r.success ? { ok: true, data: r.data } : { ok: false, fieldErrors: errorsOf(r) };
+}
+
+export function parseProfileStep<K extends ProfileStep>(step: K, form: FormData): Parsed<z.infer<(typeof profileStepSchemas)[K]>> {
+  const raw = { dob: str(form, "dob"), employment: str(form, "employment"), dependants: str(form, "dependants"), cityTier: str(form, "cityTier") };
+  const r = profileStepSchemas[step].safeParse(raw);
+  return r.success ? { ok: true, data: r.data as z.infer<(typeof profileStepSchemas)[K]> } : { ok: false, fieldErrors: errorsOf(r) };
 }
 
 export function parseMember(form: FormData): Parsed<MemberInput> {

@@ -53,7 +53,7 @@ export async function buildExport(user: User, household: { id: string; name: str
     profile: {
       id: user.id, email: user.email, emailVerifiedAt: user.emailVerifiedAt, name: user.name, preferredName: user.preferredName, dob: user.dob, gender: user.gender,
       maritalStatus: user.maritalStatus, dependants: user.dependants, city: user.city, state: user.state, pin: user.pin, cityTier: user.cityTier, locale: user.locale,
-      numberFormat: user.numberFormat, employment: user.employment, retirementAge: user.retirementAge, riskProfile: user.riskProfile, smoker: health.smoker,
+      numberFormat: user.numberFormat, employment: user.employment, retirementAge: user.retirementAge, riskProfile: user.riskProfile, hasTermCover: user.hasTermCover, hasHealthCover: user.hasHealthCover, smoker: health.smoker,
       existingConditions: health.existingConditions, deletionRequestedAt: user.deletionRequestedAt, createdAt: user.createdAt,
     },
     household: { id: household.id, name: household.name },

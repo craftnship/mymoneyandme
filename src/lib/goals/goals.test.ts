@@ -99,6 +99,16 @@ describe("check-up progress helpers", () => {
     expect(Math.abs(d.dimensions[0].delta)).toBeGreaterThanOrEqual(Math.abs(d.dimensions[7].delta));
   });
 
+  it("does not count a dimension that was unscored in either run as movement", () => {
+    const partial = runCheckUp({ ...base, provided: ["monthlyIncome", "monthlyExpenses", "liquidAssets", "monthlyEmi"] });
+    const fuller = runCheckUp({ ...base, lifeCover: 15000000, healthCover: 1000000, provided: ["monthlyIncome", "monthlyExpenses", "liquidAssets", "monthlyEmi", "lifeCover", "healthCover"] });
+    const d = diffCheckUps(partial, fuller);
+    const ins = d.dimensions.find((x) => x.key === "insurance")!;
+    expect(ins.statusFrom).toBe("unknown");
+    expect(ins.delta).toBe(0);
+    expect(d.improved).not.toContain("insurance");
+  });
+
   it("tracks progress, skips snoozed items until their date and projects the next three", () => {
     const items: PlanItemWithStatus[] = buildPlan(weak, base.monthlyIncome).map((i) => ({ ...i, status: "todo", skipReason: null, snoozedUntil: null, updatedAt: null }));
     expect(items.length).toBeGreaterThan(3);

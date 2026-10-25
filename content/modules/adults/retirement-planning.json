@@ -24,10 +24,212 @@
         {
           "locale": "en",
           "title": "How much is enough",
-          "excerpt": "",
-          "blocks": [],
-          "state": "draft",
-          "aiDraft": false
+          "excerpt": "How the retirement corpus is worked out, what the big number assumes, and how to close the gap.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Your retirement corpus is the money you need on the day you stop working so that, invested sensibly, it pays your expenses until the end of your life. The number is usually large, often several crore, and that is mostly inflation at work. It looks less frightening once you see how it is built and how long you have to get there."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "How the number is built"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Start with today's monthly household expenses, excluding EMIs that will end before you retire.",
+                "Grow them by inflation until your retirement age. At 6% a year, prices roughly double every 12 years.",
+                "Work out the sum that, earning a modest return after retirement, can pay those rising expenses every year until about age 85."
+              ],
+              "ordered": true
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "A worked example"
+            },
+            {
+              "type": "paragraph",
+              "text": "Meena is 35 and her household spends ₹50,000 a month. She plans to retire at 60. At 6% inflation, the same life will cost about ₹2,15,000 a month by then. To pay that, rising with inflation, for 25 years while the money earns 7%, she needs a corpus of about ₹5.8 crore at 60."
+            },
+            {
+              "type": "paragraph",
+              "text": "That sounds impossible until you count time. EPF, PPF and NPS already count towards it. A SIP of about ₹30,000 a month for 25 years at 10% grows to roughly ₹4 crore; raising it by 10% each year closes the rest of the gap."
+            },
+            {
+              "type": "callout",
+              "tone": "info",
+              "text": "The check-up uses these same assumptions: 6% inflation, retirement at 60 unless you set your own age, life to 85, 10% returns before retirement and 7% after. Change any of them in the calculator below to see how much the number moves."
+            },
+            {
+              "type": "calculator",
+              "slug": "retirement-corpus"
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "A quick cross-check"
+            },
+            {
+              "type": "paragraph",
+              "text": "Multiply your expected yearly expenses in the first year of retirement by 25 to 30. For Meena that is ₹25.8 lakh a year, so ₹6.4 crore to ₹7.7 crore. If the detailed figure and the quick one are in the same range, the plan is reasonable."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Closing the gap"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Start now: five years of delay raises the monthly SIP needed by about three-quarters.",
+                "Raise the SIP with every salary hike, by at least 10% a year.",
+                "Count EPF, PPF and NPS, and keep up voluntary contributions where the tax break helps.",
+                "Do not dip into retirement money for other goals; give those their own SIPs.",
+                "Working a few years longer, or cutting retirement spending, shrinks the corpus sharply."
+              ]
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "The corpus is today's expenses, grown by inflation, funded for 25 years or more of retirement.",
+                "A large number is normal; time and a rising SIP do most of the work.",
+                "Re-check it every year as income, expenses and savings change."
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "At 6% inflation, roughly how long does it take for prices to double?",
+                  "options": [
+                    "6 years",
+                    "12 years",
+                    "25 years"
+                  ],
+                  "answer": 1
+                },
+                {
+                  "q": "Which quick check gives a rough retirement corpus?",
+                  "options": [
+                    "10 times annual expenses",
+                    "25 to 30 times first-year retirement expenses",
+                    "100 times monthly salary"
+                  ],
+                  "answer": 1
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": false,
+          "publishedAt": "2026-10-22"
+        },
+        {
+          "locale": "ta",
+          "title": "எவ்வளவு போதும்",
+          "excerpt": "ஓய்வூதிய நிதி எப்படிக் கணக்கிடப்படுகிறது, அந்தப் பெரிய எண் எதை அனுமானிக்கிறது, இடைவெளியை எப்படி நிரப்புவது.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "ஓய்வூதிய நிதி (retirement corpus) என்பது நீங்கள் வேலையை நிறுத்தும் நாளில் தேவைப்படும் பணம்; அதை விவேகமாக முதலீடு செய்தால், வாழ்நாள் முழுவதும் உங்கள் செலவுகளைச் சமாளிக்கும். அந்த எண் பொதுவாகப் பெரியது, பெரும்பாலும் பல கோடிகள்; அதற்குப் பெரும்பாலும் பணவீக்கமே காரணம். அது எப்படிக் கட்டமைக்கப்படுகிறது, அதை அடைய உங்களுக்கு எவ்வளவு காலம் இருக்கிறது என்பதைப் பார்த்தால் அது அவ்வளவு பயமுறுத்துவதாகத் தெரியாது."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "எண் எப்படிக் கட்டமைக்கப்படுகிறது"
+            },
+            {
+              "type": "list",
+              "items": [
+                "இன்றைய மாதக் குடும்பச் செலவுகளிலிருந்து தொடங்குங்கள்; ஓய்வுக்கு முன் முடிந்துவிடும் EMI களைத் தவிர்த்து.",
+                "உங்கள் ஓய்வு வயது வரை அவற்றைப் பணவீக்கத்தால் வளர்க்கவும். ஆண்டுக்கு 6% இல், விலைகள் சுமார் 12 ஆண்டுகளுக்கு ஒருமுறை இரட்டிப்பாகின்றன.",
+                "ஓய்வுக்குப் பிறகு மிதமான வருமானம் ஈட்டியபடி, சுமார் 85 வயது வரை ஒவ்வொரு ஆண்டும் உயரும் அந்தச் செலவுகளைச் செலுத்தக்கூடிய தொகையைக் கணக்கிடுங்கள்."
+              ],
+              "ordered": true
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "ஒரு எடுத்துக்காட்டு"
+            },
+            {
+              "type": "paragraph",
+              "text": "மீனாவுக்கு 35 வயது; அவரது குடும்பம் மாதம் ₹50,000 செலவிடுகிறது. அவர் 60 வயதில் ஓய்வு பெறத் திட்டமிடுகிறார். 6% பணவீக்கத்தில், அதே வாழ்க்கைக்கு அப்போது மாதம் சுமார் ₹2,15,000 செலவாகும். பணம் 7% ஈட்டும்போது, பணவீக்கத்துடன் உயரும் அந்தச் செலவை 25 ஆண்டுகள் செலுத்த, 60 வயதில் அவருக்குச் சுமார் ₹5.8 கோடி நிதி தேவை."
+            },
+            {
+              "type": "paragraph",
+              "text": "காலத்தைக் கணக்கில் கொள்ளும் வரை அது சாத்தியமற்றதாகத் தோன்றும். EPF, PPF மற்றும் NPS ஏற்கனவே இதில் சேர்கின்றன. 10% வருமானத்தில் 25 ஆண்டுகளுக்கு மாதம் சுமார் ₹30,000 SIP சுமார் ₹4 கோடியாக வளரும்; ஒவ்வொரு ஆண்டும் அதை 10% உயர்த்தினால் மீதமுள்ள இடைவெளி நிரம்பும்."
+            },
+            {
+              "type": "callout",
+              "tone": "info",
+              "text": "நிதி ஆரோக்கியச் சோதனையும் இதே அனுமானங்களைப் பயன்படுத்துகிறது: 6% பணவீக்கம், நீங்கள் வேறு வயதை அமைக்காவிட்டால் 60 வயதில் ஓய்வு, 85 வயது வரை வாழ்க்கை, ஓய்வுக்கு முன் 10% மற்றும் பின் 7% வருமானம். எண் எவ்வளவு மாறுகிறது என்று பார்க்க, கீழே உள்ள கால்குலேட்டரில் இவற்றில் எதையும் மாற்றுங்கள்."
+            },
+            {
+              "type": "calculator",
+              "slug": "retirement-corpus"
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "ஒரு விரைவுச் சரிபார்ப்பு"
+            },
+            {
+              "type": "paragraph",
+              "text": "ஓய்வின் முதல் ஆண்டில் எதிர்பார்க்கும் ஆண்டுச் செலவை 25 முதல் 30 ஆல் பெருக்குங்கள். மீனாவுக்கு அது ஆண்டுக்கு ₹25.8 லட்சம், எனவே ₹6.4 கோடி முதல் ₹7.7 கோடி. விரிவான எண்ணும் விரைவு எண்ணும் ஒரே வரம்பில் இருந்தால், திட்டம் நியாயமானது."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "இடைவெளியை நிரப்புதல்"
+            },
+            {
+              "type": "list",
+              "items": [
+                "இப்போதே தொடங்குங்கள்: ஐந்து ஆண்டுத் தாமதம் தேவையான மாத SIP ஐ சுமார் முக்கால் மடங்கு அதிகரிக்கும்.",
+                "ஒவ்வொரு சம்பள உயர்விலும் SIP ஐ ஆண்டுக்குக் குறைந்தது 10% உயர்த்துங்கள்.",
+                "EPF, PPF மற்றும் NPS ஐக் கணக்கில் கொள்ளுங்கள்; வரிச் சலுகை உதவும் இடத்தில் தன்னார்வப் பங்களிப்புகளைத் தொடருங்கள்.",
+                "மற்ற இலக்குகளுக்காக ஓய்வூதியப் பணத்தைத் தொடாதீர்கள்; அவற்றுக்குத் தனி SIP கள் கொடுங்கள்.",
+                "சில ஆண்டுகள் கூடுதலாக வேலை செய்வது, அல்லது ஓய்வுக்காலச் செலவைக் குறைப்பது, தேவையான நிதியைக் கணிசமாகக் குறைக்கும்."
+              ]
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "ஓய்வூதிய நிதி என்பது பணவீக்கத்தால் வளர்ந்த இன்றைய செலவுகள், 25 அல்லது அதற்கு மேற்பட்ட ஆண்டு ஓய்வுக்காலத்திற்கு நிதியளிக்கப்பட்டது.",
+                "பெரிய எண் இயல்பானது; காலமும் உயரும் SIP உம் பெரும்பாலான வேலையைச் செய்கின்றன.",
+                "வருமானம், செலவுகள், சேமிப்பு மாறும்போது ஒவ்வொரு ஆண்டும் மீண்டும் சரிபாருங்கள்."
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "6% பணவீக்கத்தில், விலைகள் இரட்டிப்பாக சுமார் எவ்வளவு காலம் ஆகும்?",
+                  "options": [
+                    "6 ஆண்டுகள்",
+                    "12 ஆண்டுகள்",
+                    "25 ஆண்டுகள்"
+                  ],
+                  "answer": 1
+                },
+                {
+                  "q": "எந்த விரைவுச் சரிபார்ப்பு தோராயமான ஓய்வூதிய நிதியைத் தருகிறது?",
+                  "options": [
+                    "ஆண்டுச் செலவின் 10 மடங்கு",
+                    "ஓய்வின் முதல் ஆண்டுச் செலவின் 25 முதல் 30 மடங்கு",
+                    "மாதச் சம்பளத்தின் 100 மடங்கு"
+                  ],
+                  "answer": 1
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": true,
+          "publishedAt": "2026-10-22"
         }
       ]
     },

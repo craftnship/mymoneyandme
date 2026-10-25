@@ -235,6 +235,10 @@
       "consents": "Your consent choices",
       "consentsIntro": "Each choice is recorded with its date so you can always see what you agreed to. Nothing is sold, and no advertising is based on your finances.",
       "consent": {
+        "planReminders": {
+          "label": "Monthly plan reminder by email",
+          "hint": "Once a month, the next open step in your plan and what finishing it could do for your score. No figures beyond that."
+        },
         "analytics": {
           "label": "Anonymous usage analytics",
           "hint": "Which pages and features are used, without any financial figures."

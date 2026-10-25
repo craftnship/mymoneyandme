@@ -52,10 +52,260 @@
         {
           "locale": "en",
           "title": "Asset allocation",
-          "excerpt": "",
-          "blocks": [],
-          "state": "draft",
-          "aiDraft": false
+          "excerpt": "How to split money between equity, debt and gold, why it matters more than picking funds, and when to rebalance.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Asset allocation is how you split long-term money between equity, debt, gold and cash. It decides most of the return you get and most of the swings you have to sit through, far more than which fund you pick. Get the split right and a plain index fund and a PPF account can do the rest."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "What each asset does"
+            },
+            {
+              "type": "table",
+              "header": [
+                "Asset",
+                "Job in the portfolio",
+                "Typical long-run return"
+              ],
+              "rows": [
+                [
+                  "Equity (shares, equity funds)",
+                  "Growth that beats inflation over 7 years or more; falls 30% or more in bad years",
+                  "About 11% to 12% a year"
+                ],
+                [
+                  "Debt (PPF, EPF, FDs, debt funds, bonds)",
+                  "Stability and predictable income",
+                  "About 6.5% to 7.5% a year"
+                ],
+                [
+                  "Gold (gold ETFs, sovereign gold bonds)",
+                  "A hedge when markets and the rupee are under stress",
+                  "About 8% a year, with long flat spells"
+                ],
+                [
+                  "Cash (savings, liquid funds)",
+                  "The emergency fund; not a long-term investment",
+                  "About 3% to 5% a year"
+                ]
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "A starting split"
+            },
+            {
+              "type": "paragraph",
+              "text": "A common rule of thumb is to hold 100 minus your age as a percentage in equity, kept between 30% and 80%. At 30 that is 70% equity; at 55 it is 45%. The check-up uses this rule to compare with your own mix. Adjust it for how you feel when markets fall: if a 30% drop would make you sell, hold less equity."
+            },
+            {
+              "type": "paragraph",
+              "text": "Money also has a time horizon. Money needed within three years should be in debt or cash, whatever your age. Money for five years or more can carry the equity share. Your house is where you live, so leave it out of the split."
+            },
+            {
+              "type": "callout",
+              "tone": "tip",
+              "text": "Inside the equity share, a low-cost Nifty 50 or Nifty 500 index fund is enough for most people. Gold is optional; 5% to 10% is plenty."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Rebalancing"
+            },
+            {
+              "type": "paragraph",
+              "text": "Markets move the split for you. After a strong year for shares, 60% equity can become 70%. Once a year, or when the mix drifts more than 10 percentage points from your target, bring it back."
+            },
+            {
+              "type": "list",
+              "items": [
+                "First, point new SIPs and bonuses at the under-weight asset; this costs nothing in tax.",
+                "If that is not enough, move money between funds, watching exit loads and capital-gains tax.",
+                "Do not rebalance every month. Once a year is enough."
+              ],
+              "ordered": true
+            },
+            {
+              "type": "calculator",
+              "slug": "sip"
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "The split between equity, debt and gold matters more than which fund you choose.",
+                "Start near 100 minus your age in equity, between 30% and 80%, and keep short-term money out of equity.",
+                "Rebalance yearly, using new money first."
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "Using the 100 minus age rule, about how much equity suits a 40-year-old?",
+                  "options": [
+                    "40%",
+                    "60%",
+                    "100%"
+                  ],
+                  "answer": 1
+                },
+                {
+                  "q": "Money for a car you will buy in 18 months belongs in:",
+                  "options": [
+                    "An equity fund",
+                    "Debt or cash",
+                    "Gold"
+                  ],
+                  "answer": 1
+                },
+                {
+                  "q": "What is the cheapest way to rebalance?",
+                  "options": [
+                    "Sell the over-weight fund every month",
+                    "Direct new SIPs to the under-weight asset",
+                    "Stop all SIPs for a year"
+                  ],
+                  "answer": 1
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": false,
+          "publishedAt": "2026-10-22"
+        },
+        {
+          "locale": "ta",
+          "title": "சொத்து ஒதுக்கீடு (Asset allocation)",
+          "excerpt": "ஈக்விட்டி, கடன் சார்ந்த முதலீடு மற்றும் தங்கத்திற்கு இடையே பணத்தை எப்படிப் பிரிப்பது, ஃபண்டைத் தேர்வு செய்வதை விட அது ஏன் முக்கியம், எப்போது மறுசமநிலைப்படுத்துவது.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "சொத்து ஒதுக்கீடு என்பது நீண்டகாலப் பணத்தை ஈக்விட்டி, கடன் சார்ந்த முதலீடு (debt), தங்கம் மற்றும் ரொக்கத்திற்கு இடையே எப்படிப் பிரிக்கிறீர்கள் என்பது. நீங்கள் பெறும் வருமானத்தின் பெரும்பகுதியையும் நீங்கள் தாங்க வேண்டிய ஏற்ற இறக்கங்களின் பெரும்பகுதியையும் அதுவே தீர்மானிக்கிறது; எந்த ஃபண்டைத் தேர்வு செய்கிறீர்கள் என்பதை விட மிக அதிகமாக. பிரிவைச் சரியாக வைத்தால், ஒரு சாதாரண இண்டெக்ஸ் ஃபண்டும் ஒரு PPF கணக்கும் மீதியைச் செய்துவிடும்."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "ஒவ்வொரு சொத்தும் என்ன செய்கிறது"
+            },
+            {
+              "type": "table",
+              "header": [
+                "சொத்து",
+                "போர்ட்ஃபோலியோவில் அதன் வேலை",
+                "வழக்கமான நீண்டகால வருமானம்"
+              ],
+              "rows": [
+                [
+                  "ஈக்விட்டி (பங்குகள், ஈக்விட்டி ஃபண்டுகள்)",
+                  "7 ஆண்டுகள் அல்லது அதற்கு மேல் பணவீக்கத்தை வெல்லும் வளர்ச்சி; மோசமான ஆண்டுகளில் 30% அல்லது அதற்கு மேல் சரியும்",
+                  "ஆண்டுக்கு சுமார் 11% முதல் 12%"
+                ],
+                [
+                  "கடன் சார்ந்தவை (PPF, EPF, FD, டெட் ஃபண்டுகள், பத்திரங்கள்)",
+                  "நிலைத்தன்மையும் கணிக்கக்கூடிய வருமானமும்",
+                  "ஆண்டுக்கு சுமார் 6.5% முதல் 7.5%"
+                ],
+                [
+                  "தங்கம் (கோல்டு ETF, சாவரின் கோல்டு பாண்டுகள்)",
+                  "சந்தைகளும் ரூபாயும் அழுத்தத்தில் இருக்கும்போது பாதுகாப்பு",
+                  "ஆண்டுக்கு சுமார் 8%, நீண்ட தேக்க காலங்களுடன்"
+                ],
+                [
+                  "ரொக்கம் (சேமிப்புக் கணக்கு, லிக்விட் ஃபண்டுகள்)",
+                  "அவசர நிதி; நீண்டகால முதலீடு அல்ல",
+                  "ஆண்டுக்கு சுமார் 3% முதல் 5%"
+                ]
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "ஒரு தொடக்கப் பிரிவு"
+            },
+            {
+              "type": "paragraph",
+              "text": "பொதுவான ஒரு எளிய விதி: 100 கழித்தல் உங்கள் வயது என்ற சதவீதத்தை ஈக்விட்டியில் வைத்திருங்கள், 30% முதல் 80% வரம்பிற்குள். 30 வயதில் அது 70% ஈக்விட்டி; 55 வயதில் 45%. உங்கள் சொந்தக் கலவையுடன் ஒப்பிட நிதி ஆரோக்கியச் சோதனை இந்த விதியைப் பயன்படுத்துகிறது. சந்தைகள் சரியும்போது நீங்கள் எப்படி உணர்கிறீர்கள் என்பதற்கேற்ப மாற்றுங்கள்: 30% சரிவு உங்களை விற்க வைக்கும் என்றால், குறைவான ஈக்விட்டி வைத்திருங்கள்."
+            },
+            {
+              "type": "paragraph",
+              "text": "பணத்திற்குக் கால அளவும் உண்டு. மூன்று ஆண்டுகளுக்குள் தேவைப்படும் பணம், உங்கள் வயது எதுவானாலும், கடன் சார்ந்த முதலீட்டிலோ ரொக்கத்திலோ இருக்க வேண்டும். ஐந்து ஆண்டுகள் அல்லது அதற்கு மேல் தேவைப்படாத பணம் ஈக்விட்டி பங்கைச் சுமக்கலாம். உங்கள் வீடு நீங்கள் வசிக்கும் இடம்; அதை இந்தப் பிரிவில் சேர்க்க வேண்டாம்."
+            },
+            {
+              "type": "callout",
+              "tone": "tip",
+              "text": "ஈக்விட்டி பங்கிற்குள், குறைந்த செலவுள்ள ஒரு Nifty 50 அல்லது Nifty 500 இண்டெக்ஸ் ஃபண்டே பெரும்பாலானவர்களுக்குப் போதும். தங்கம் விருப்பத்திற்குரியது; 5% முதல் 10% போதுமானது."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "மறுசமநிலைப்படுத்துதல் (Rebalancing)"
+            },
+            {
+              "type": "paragraph",
+              "text": "சந்தைகள் உங்கள் பிரிவைத் தாமாகவே நகர்த்துகின்றன. பங்குகளுக்கு ஒரு வலுவான ஆண்டிற்குப் பிறகு, 60% ஈக்விட்டி 70% ஆகலாம். ஆண்டுக்கு ஒருமுறை, அல்லது கலவை உங்கள் இலக்கிலிருந்து 10 சதவீதப் புள்ளிகளுக்கு மேல் விலகும்போது, அதைத் திரும்பக் கொண்டு வாருங்கள்."
+            },
+            {
+              "type": "list",
+              "items": [
+                "முதலில், புதிய SIP களையும் போனஸ்களையும் குறைவாக உள்ள சொத்திற்குத் திருப்புங்கள்; இதற்கு வரிச் செலவு இல்லை.",
+                "அது போதவில்லை என்றால், எக்ஸிட் லோடு மற்றும் மூலதன ஆதாய வரியைக் கவனித்து ஃபண்டுகளுக்கு இடையே பணத்தை நகர்த்துங்கள்.",
+                "ஒவ்வொரு மாதமும் மறுசமநிலைப்படுத்த வேண்டாம். ஆண்டுக்கு ஒருமுறை போதும்."
+              ],
+              "ordered": true
+            },
+            {
+              "type": "calculator",
+              "slug": "sip"
+            },
+            {
+              "type": "takeaways",
+              "items": [
+                "எந்த ஃபண்டைத் தேர்வு செய்கிறீர்கள் என்பதை விட ஈக்விட்டி, கடன் சார்ந்தவை, தங்கம் இடையேயான பிரிவே முக்கியம்.",
+                "30% முதல் 80% வரம்பிற்குள், 100 கழித்தல் உங்கள் வயது அளவு ஈக்விட்டியில் தொடங்குங்கள்; குறுகியகாலப் பணத்தை ஈக்விட்டியிலிருந்து விலக்கி வையுங்கள்.",
+                "புதிய பணத்தை முதலில் பயன்படுத்தி, ஆண்டுதோறும் மறுசமநிலைப்படுத்துங்கள்."
+              ]
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "100 கழித்தல் வயது விதிப்படி, 40 வயதானவருக்கு சுமார் எவ்வளவு ஈக்விட்டி பொருந்தும்?",
+                  "options": [
+                    "40%",
+                    "60%",
+                    "100%"
+                  ],
+                  "answer": 1
+                },
+                {
+                  "q": "18 மாதங்களில் நீங்கள் வாங்கப்போகும் காருக்கான பணம் எங்கே இருக்க வேண்டும்:",
+                  "options": [
+                    "ஈக்விட்டி ஃபண்டில்",
+                    "கடன் சார்ந்த முதலீடு அல்லது ரொக்கத்தில்",
+                    "தங்கத்தில்"
+                  ],
+                  "answer": 1
+                },
+                {
+                  "q": "மறுசமநிலைப்படுத்த மலிவான வழி எது?",
+                  "options": [
+                    "ஒவ்வொரு மாதமும் அதிகமாக உள்ள ஃபண்டை விற்பது",
+                    "புதிய SIP களைக் குறைவாக உள்ள சொத்திற்குத் திருப்புவது",
+                    "ஒரு வருடத்திற்கு எல்லா SIP களையும் நிறுத்துவது"
+                  ],
+                  "answer": 1
+                }
+              ]
+            }
+          ],
+          "state": "published",
+          "aiDraft": true,
+          "publishedAt": "2026-10-22"
         }
       ]
     },

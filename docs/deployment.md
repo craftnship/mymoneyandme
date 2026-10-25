@@ -37,7 +37,8 @@ Set these in hPanel (Websites, Manage, Node.js, Environment variables) or throug
 | `NEXT_PUBLIC_SITE_URL` | Canonical origin for metadata, sitemap and confirmation links | `https://mymoneyandme.in` |
 | `DATABASE_URL` | MySQL on the same server: newsletter subscribers and the member-app tables | `mysql://u567978051_mmapp:<password>@127.0.0.1:3306/u567978051_mmapp` |
 | `DATA_ENCRYPTION_KEY` | 32-byte key (64 hex characters) for the AES-256-GCM encryption of financial data at rest. Generate once with `node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"`, keep a copy in a password manager: losing it makes every stored household's data unreadable. Accounts are disabled until it is set | |
-| `CRON_SECRET` | Optional bearer token that protects `GET /api/cron/purge` (purges accounts whose 30-day deletion grace has passed); the same purge also runs opportunistically on sign-in | |
+| `CRON_SECRET` | Optional bearer token that protects `GET /api/cron/purge` and `GET /api/cron/reminders` (purges accounts whose 30-day deletion grace has passed); the same purge also runs opportunistically on sign-in | |
+| `REMINDERS_ENABLED` | Set to `true` to send the monthly plan reminder to members who opted in (sign-up checkbox or Settings, Privacy). Needs SMTP set up; call `GET /api/cron/reminders` once a day with the `CRON_SECRET` bearer token. Each member gets at most one every 28 days. Left unset, the route answers 503 and nothing is sent | |
 | `SMTP_HOST` | Hostinger mail | `smtp.hostinger.com` |
 | `SMTP_PORT` | | `465` |
 | `SMTP_USER` | The sending mailbox | `hello@mymoneyandme.in` |

@@ -72,7 +72,9 @@ describe.skipIf(!url)("check-up, plan and goal stores", () => {
     expect(await previousCheckUp(householdId, first.id)).toBeUndefined();
     const diff = diffCheckUps(prev!.result, latest!.result);
     expect(diff.overall.delta).toBe(second.result.overall - first.result.overall);
-    expect(diff.improved).toContain("insurance");
+    // Insurance had no data the first time, so it moves from unknown to scored rather than counting as improved.
+    expect(diff.dimensions.find((d) => d.key === "insurance")).toMatchObject({ statusFrom: "unknown", delta: 0 });
+    expect(diff.improved).not.toContain("insurance");
 
     const raw = await query("SELECT inputs_enc, result_enc, overall FROM checkups WHERE id = ?", [second.id]);
     expect(String(raw[0].inputs_enc)).not.toContain("150000");

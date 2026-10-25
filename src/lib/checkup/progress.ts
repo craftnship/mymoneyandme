@@ -29,7 +29,10 @@ export function diffCheckUps(a: CheckUpResult, b: CheckUpResult): CheckUpDiff {
   const dimensions: DimensionDelta[] = b.dimensions.map((d) => {
     const prev = a.dimensions.find((x) => x.key === d.key);
     const from = prev?.score ?? 0;
-    return { key: d.key, from, to: d.score, delta: d.score - from, statusFrom: prev?.status ?? "act", statusTo: d.status };
+    const statusFrom = prev?.status ?? "unknown";
+    // A dimension that was or is unscored has no meaningful movement: 0 → 60 would only mean data was added.
+    const comparable = statusFrom !== "unknown" && d.status !== "unknown";
+    return { key: d.key, from, to: d.score, delta: comparable ? d.score - from : 0, statusFrom, statusTo: d.status };
   });
   dimensions.sort((x, y) => Math.abs(y.delta) - Math.abs(x.delta));
   return {
