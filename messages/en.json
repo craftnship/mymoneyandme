@@ -2,7 +2,7 @@
   "site": {
     "name": "My Money & Me",
     "tagline": "Money, taught from first principles",
-    "description": "Free financial education for India: articles, a learning hub for adults, kids and women, and 50+ calculators. No ads, no sign-up, no product pitches.",
+    "description": "Free financial education for India: articles, a learning hub for adults, kids and women, and 60 calculators. No ads, no sign-up, no product pitches.",
     "skipToContent": "Skip to content"
   },
   "nav": {
@@ -33,7 +33,7 @@
   },
   "home": {
     "heroTitle": "Learn money. Check your health. Leave with a plan.",
-    "heroBody": "Free, in your language, in under twenty minutes. No advisor needed.",
+    "heroBody": "Free, in English and Tamil, in under twenty minutes. No advisor needed.",
     "startLearning": "Start learning",
     "runCheckup": "Run a quick check-up",
     "latest": "Latest articles",
