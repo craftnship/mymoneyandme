@@ -54,7 +54,8 @@
         "healthCover": "Does your family have health insurance of its own, beyond any employer plan?",
         "yes": "Yes",
         "no": "No",
-        "notSure": "Not sure"
+        "notSure": "Not sure",
+        "prefilled": "We filled in your answers from the quick check on this device. Change anything that is not right."
       },
       "step": {
         "title": "One more question",

@@ -91,7 +91,7 @@ export async function firstLook(_prev: DataActionState, form: FormData): Promise
   redirect(`/${locale}/app/welcome?look=1`);
 }
 
-/** Answers or skips one profile question (form field `skip` set means skip). */
+/** Answers or skips one profile question: the `skip` field, or saving with the answer left blank, both skip. */
 export async function answerProfileStep(_prev: DataActionState, form: FormData): Promise<DataActionState> {
   const locale = localeSchema.parse(form.get("locale"));
   const { user } = await requireHousehold(locale);
@@ -99,7 +99,8 @@ export async function answerProfileStep(_prev: DataActionState, form: FormData):
   if (!(step in profileStepSchemas)) return { error: "generic" };
   const key = step as ProfileStep;
   const steps = withStepDone(user.profileSteps, key);
-  if (form.get("skip")) {
+  const answer = form.get(key);
+  if (form.get("skip") || answer === null || String(answer).trim() === "") {
     await updateUser(user.id, { profile_steps: steps });
   } else {
     const parsed = parseProfileStep(key, form);
