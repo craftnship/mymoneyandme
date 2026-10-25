@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { readJsonContent } from "./json";
-import { addTranslation, emptyArticle, insertBlock, moveBlock, newBlock, removeBlock, setBlockShared, setBlockText, slugify, stampPublishDates } from "./editing";
-import { articleSchema, publishProblems } from "./schema";
+import { addTranslation, emptyArticle, emptyChapter, emptyNews, estimateMinutes, insertBlock, moveBlock, moveItem, newBlock, removeBlock, setBlockShared, setBlockText, slugify, stampPublishDates } from "./editing";
+import { articleSchema, chapterSchema, moduleEditSchema, newsSchema, publishProblems } from "./schema";
 import type { Article } from "./types";
 
 const CALCS = new Set(["sip", "emergency-fund"]);
@@ -77,5 +77,43 @@ describe("article validation", () => {
     expect(publishProblems(fixed, fixed, CALCS)).toEqual([]);
     const ta = { ...fixed, locale: "ta", blocks: [{ type: "paragraph" as const, text: "வணக்கம்" }] };
     expect(publishProblems(ta, fixed, CALCS)).toEqual([{ code: "structureDiffers", locale: "ta", block: 1 }]);
+  });
+});
+
+describe("chapters, modules and news", () => {
+  const json = readJsonContent();
+
+  it("edits a chapter with the same mirrored operations, the default language as source", () => {
+    let c = addTranslation({ ...emptyChapter("budgets", "Budgets"), sourceLocale: "en" }, "ta");
+    c = insertBlock(c, 1, newBlock("quiz"));
+    expect(c.translations.map((t) => t.blocks.map((b) => b.type))).toEqual([["paragraph", "quiz"], ["paragraph", "quiz"]]);
+    expect(c.slug).toBe("budgets");
+  });
+
+  it("accepts every chapter, module and news item in /content", () => {
+    for (const m of json.modules) {
+      for (const c of m.chapters) expect(chapterSchema.safeParse(c).success, `${m.slug}/${c.slug}`).toBe(true);
+      const edit = { track: m.track, slug: m.slug, difficulty: m.difficulty, estimatedHours: m.estimatedHours, translations: m.translations, chapterOrder: m.chapters.map((c) => c.slug) };
+      expect(moduleEditSchema.safeParse(edit).success, m.slug).toBe(true);
+    }
+    for (const n of json.news) expect(newsSchema.safeParse(n).success, n.id).toBe(true);
+  });
+
+  it("refuses news without a real source link or text", () => {
+    const n = { ...emptyNews("news-x", "2026-10-25"), source: { name: "RBI", url: "https://rbi.org.in/press" }, translations: [{ locale: "en", title: "Repo rate", summary: "Up 0.25%." }] };
+    expect(newsSchema.safeParse(n).success).toBe(true);
+    expect(newsSchema.safeParse({ ...n, source: { ...n.source, url: "javascript:alert(1)" } }).success).toBe(false);
+    expect(newsSchema.safeParse({ ...n, translations: [{ locale: "en", title: " ", summary: "x" }] }).success).toBe(false);
+  });
+
+  it("moves list items one place and ignores moves past either end", () => {
+    expect(moveItem(["a", "b", "c"], 2, -1)).toEqual(["a", "c", "b"]);
+    expect(moveItem(["a", "b"], 0, -1)).toEqual(["a", "b"]);
+  });
+
+  it("estimates reading time from the text", () => {
+    const words = Array.from({ length: 1000 }, () => "word").join(" ");
+    expect(estimateMinutes({ ...emptyChapter("x", "X").translations[0], blocks: [{ type: "paragraph", text: words }] })).toBe(5);
+    expect(estimateMinutes(emptyChapter("x", "X").translations[0])).toBe(1);
   });
 });

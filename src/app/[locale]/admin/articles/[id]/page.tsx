@@ -4,6 +4,7 @@ import { Link } from "@/i18n/navigation";
 import { adminAccess } from "@/lib/auth/admin";
 import { databaseConfigured } from "@/lib/db";
 import { articleForEdit, listRevisions } from "@/lib/content/admin";
+import { itemId } from "@/lib/content/rows";
 import { ArticleEditor } from "@/components/admin/ArticleEditor";
 import { editorOptions } from "@/components/admin/editorData";
 import { Notice } from "@/components/ui";
@@ -17,7 +18,7 @@ export default async function EditArticlePage({ params }: { params: Promise<{ lo
   if (!databaseConfigured()) return <Notice tone="warning">{t("errors.notConfigured")}</Notice>;
   const article = await articleForEdit(id).catch(() => undefined);
   if (!article) notFound();
-  const [options, revisions] = await Promise.all([editorOptions(locale), listRevisions(id)]);
+  const [options, revisions] = await Promise.all([editorOptions(locale), listRevisions(itemId.article({ id }))]);
   const title = article.translations.find((tr) => tr.locale === article.sourceLocale)?.title || article.slug;
   return (
     <div className="space-y-4">

@@ -22,7 +22,7 @@
       "notConfigured": "The database is not set up (DATABASE_URL is missing), so the site is serving the JSON files and nothing can be edited here yet.",
       "unavailable": "The database could not be reached, so the site is serving the JSON files. Check the server log; nothing can be edited until it is back."
     },
-    "comingNext": "Articles can be written, translated and published here. Chapters and news are edited in the next update; until then they come from the JSON files.",
+    "comingNext": "Articles, chapters, modules and news are all edited here. Coming next: images inside the body, scheduled publishing, restoring an earlier version and exporting all content.",
     "summary": "{articles, plural, one {# article} other {# articles}} · {chapters, plural, one {# chapter} other {# chapters}} ({written} written) · {news} news items",
     "articles": {
       "heading": "Articles",
@@ -38,13 +38,15 @@
       "heading": "Learning hub",
       "module": "Module",
       "chapters": "Chapters",
-      "publishedIn": "Published in {language}"
+      "publishedIn": "Published in {language}",
+      "hint": "Open a module to edit its title, put its chapters in order, or add and edit chapters."
     },
     "news": {
       "heading": "News",
       "date": "Date",
       "title": "Title",
-      "source": "Source"
+      "source": "Source",
+      "new": "Add news item"
     },
     "owner": {
       "json": "JSON file",
@@ -161,7 +163,7 @@
       "saved": "Saved. Published languages are live now.",
       "unsaved": "Unsaved changes",
       "lastSaved": "Last saved {when} by {who} · {count, plural, one {# saved version} other {# saved versions}}",
-      "neverSaved": "Not edited here yet: this article still matches its JSON file. Saving moves it to authoring for good.",
+      "neverSaved": "Not edited here yet: this still matches its JSON file. Saving moves it to authoring for good.",
       "previewBanner": "Preview of the last save in {language} ({state}). Readers only see published languages.",
       "errors": {
         "invalid": "This can't be published yet:",
@@ -176,7 +178,9 @@
           "forbidden": "Your session has ended or lacks a passkey. Sign in again with your passkey.",
           "notConfigured": "The database is not available, so images can't be uploaded right now.",
           "failed": "The upload failed. Try again."
-        }
+        },
+        "notFound": "This item no longer exists. Go back to the content list and open it again.",
+        "invalidFields": "Something is missing or not allowed: check the web address (lowercase letters, numbers and hyphens) and the other settings."
       },
       "problems": {
         "titleMissing": "{language}: add a title.",
@@ -187,6 +191,43 @@
         "unknownCalculator": "{language}: block {block} points to a calculator that does not exist.",
         "structureDiffers": "{language}: block {block} does not match the source."
       }
+    },
+    "chapter": {
+      "newTitle": "New chapter",
+      "settings": "Chapter settings",
+      "readingMinutes": "Reading time (minutes)",
+      "estimate": "Estimate from text",
+      "slugHintNew": "Lowercase letters, numbers and hyphens. Part of the chapter's link, so it can't be changed after the first save.",
+      "slugHintFixed": "Part of the chapter's link; fixed once the chapter exists.",
+      "remove": "Remove chapter",
+      "removeConfirm": "Remove this chapter? It is not published in any language, so no reader link breaks. Its saved versions are kept."
+    },
+    "module": {
+      "settings": "Module",
+      "difficulty": "Difficulty",
+      "hours": "Estimated hours",
+      "required": "required",
+      "title": "Title",
+      "summary": "Summary",
+      "chapters": "Chapters",
+      "addChapter": "Add chapter",
+      "orderHint": "Use the arrows to change the order, then Save. Readers see chapters in this order.",
+      "noChapters": "No chapters yet.",
+      "moveUp": "Move {title} up",
+      "moveDown": "Move {title} down",
+      "textMissing": "Every language with a title also needs a summary, and English needs both."
+    },
+    "newsEditor": {
+      "newTitle": "New news item",
+      "date": "Date",
+      "sourceName": "Source name",
+      "sourceUrl": "Source link",
+      "sourceHint": "The page you checked the news against. Readers see it as the source.",
+      "languagesHint": "News is live in every language that has a title as soon as you save. Leave a language empty to show the English one there.",
+      "required": "required",
+      "incomplete": "Add a title and summary in English (and in any other language you start), a source name and a source link starting with https://.",
+      "remove": "Remove from site",
+      "removeConfirm": "Remove this news item from the site? Its saved versions are kept."
     }
   }
 }

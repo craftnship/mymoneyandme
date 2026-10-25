@@ -77,7 +77,7 @@ describe.skipIf(!url)("saving from the authoring console", () => {
     const back = await articleForEdit(original.id);
     expect(back?.tags).toEqual(["edited in console"]);
     expect(back?.translations.find((t) => t.locale === "en")?.title).toBe("Edited title");
-    expect((await listRevisions(original.id)).length).toBeGreaterThanOrEqual(1);
+    expect((await listRevisions(itemId.article(original))).length).toBeGreaterThanOrEqual(1);
     expect(await syncFromJson(json)).toEqual({ inserted: 0, updated: 0, archived: 0 });
     expect((await loadFromDb()).articles.find((a) => a.id === original.id)?.tags).toEqual(["edited in console"]);
     expect(await slugTaken(original.slug, original.id)).toBe(false);
@@ -88,5 +88,50 @@ describe.skipIf(!url)("saving from the authoring console", () => {
     expect((await loadFromDb()).articles.find((a) => a.id === "art-new1")?.translations).toHaveLength(1);
     await execute("DELETE FROM content_items WHERE id IN (?, ?)", [itemId.article(original), "article:art-new1"]);
     await execute("DELETE FROM content_translations WHERE item_id IN (?, ?)", [itemId.article(original), "article:art-new1"]);
+  });
+});
+
+describe.skipIf(!url)("chapters, modules and news from the authoring console", () => {
+  afterAll(async () => {
+    const p = await getPool();
+    await p.end();
+    _resetForTests();
+  });
+
+  it("adds a chapter at the end, reorders, archives, and none of it is undone by the next sync", async () => {
+    const { saveChapter, saveModule, moduleForEdit, archiveItem, saveNews, newsForEdit } = await import("./admin");
+    const { emptyChapter } = await import("./editing");
+    const json = readJsonContent();
+    await syncFromJson(json);
+    const file = json.modules.find((m) => m.chapters.length >= 2)!;
+    const user = "00000000-0000-0000-0000-000000000001";
+
+    await saveChapter(file, emptyChapter("a-new-chapter", "A new chapter"), user);
+    let mod = (await moduleForEdit(file.track, file.slug))!;
+    expect(mod.chapters.map((c) => c.slug)).toEqual([...file.chapters.map((c) => c.slug), "a-new-chapter"]);
+
+    const order = mod.chapters.map((c) => c.slug);
+    const reordered = [order[1], order[0], ...order.slice(2)];
+    await saveModule(mod, { track: mod.track, slug: mod.slug, difficulty: "advanced", estimatedHours: 9, translations: [{ locale: "en", title: "Renamed", summary: "S" }], chapterOrder: reordered }, user);
+    expect(await syncFromJson(json)).toEqual({ inserted: 0, updated: 0, archived: 0 });
+    mod = (await moduleForEdit(file.track, file.slug))!;
+    expect(mod.chapters.map((c) => c.slug)).toEqual(reordered);
+    expect(mod.translations).toEqual([{ locale: "en", title: "Renamed", summary: "S" }]);
+    expect(mod.difficulty).toBe("advanced");
+    expect(mod.order).toBe(file.order);
+
+    await archiveItem(itemId.chapter(file, { slug: "a-new-chapter" }), user);
+    await syncFromJson(json);
+    expect((await moduleForEdit(file.track, file.slug))!.chapters.map((c) => c.slug)).not.toContain("a-new-chapter");
+
+    const news = { id: "news-console", date: "2026-10-25", category: "economy" as const, source: { name: "RBI", url: "https://rbi.org.in" }, translations: [{ locale: "en", title: "T", summary: "S" }] };
+    await saveNews(news, user);
+    expect(await newsForEdit("news-console")).toEqual(news);
+    await archiveItem(itemId.news(news), user);
+    expect(await newsForEdit("news-console")).toBeUndefined();
+
+    const keys = [itemId.module(file), ...order.map((slug) => itemId.chapter(file, { slug })), itemId.news(news)];
+    await execute(`DELETE FROM content_translations WHERE item_id IN (${keys.map(() => "?").join(", ")})`, keys);
+    await execute(`DELETE FROM content_items WHERE id IN (${keys.map(() => "?").join(", ")})`, keys);
   });
 });

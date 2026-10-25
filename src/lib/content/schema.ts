@@ -1,5 +1,5 @@
 import { z } from "zod";
-import type { Article, Block, Translation } from "./types";
+import type { Article, Block, Chapter, NewsItem, Translation } from "./types";
 import { isArticleCategory } from "./categories";
 
 /**
@@ -63,6 +63,33 @@ export const articleSchema: z.ZodType<Article> = z.object({
   relatedChapter: z.string().regex(/^(adults|kids|women)\/[a-z0-9-]+\/[a-z0-9-]+$/).max(200).optional(),
   translations: z.array(translationSchema).min(1).max(12),
 }) as z.ZodType<Article>;
+
+export const chapterSchema: z.ZodType<Chapter> = z.object({
+  slug: z.string().regex(SLUG_PATTERN).max(100),
+  readingMinutes: z.number().int().min(1).max(240),
+  translations: z.array(translationSchema).min(1).max(12),
+}) as z.ZodType<Chapter>;
+
+const shortText = z.object({ locale: z.string().regex(/^[a-z]{2}$/), title: z.string().trim().min(1).max(300), summary: z.string().trim().min(1).max(1000) });
+
+/** What the module page edits; the rest of a module (order, prerequisites, check-up link) is kept as it is. */
+export const moduleEditSchema = z.object({
+  track: z.enum(["adults", "kids", "women"]),
+  slug: z.string().regex(SLUG_PATTERN).max(100),
+  difficulty: z.enum(["beginner", "intermediate", "advanced"]),
+  estimatedHours: z.number().min(0.5).max(200),
+  translations: z.array(shortText).min(1).max(12),
+  chapterOrder: z.array(z.string().regex(SLUG_PATTERN).max(100)).max(100),
+});
+export type ModuleEdit = z.infer<typeof moduleEditSchema>;
+
+export const newsSchema: z.ZodType<NewsItem> = z.object({
+  id: z.string().regex(/^[a-z0-9-]+$/).max(80),
+  date,
+  category: z.string().refine(isArticleCategory),
+  source: z.object({ name: z.string().trim().min(1).max(100), url: z.string().url().max(500).regex(/^https?:\/\//) }),
+  translations: z.array(shortText).min(1).max(12),
+}) as z.ZodType<NewsItem>;
 
 /** Every piece of reader-facing text in a block, for the "nothing left empty" check. */
 export function blockTexts(b: Block): string[] {

@@ -104,7 +104,8 @@ export default async function AdminHome({ params }: { params: Promise<{ locale: 
       </section>
 
       <section>
-        <h2 className="text-xl font-semibold mb-3">{t("learn.heading")}</h2>
+        <h2 className="text-xl font-semibold mb-1">{t("learn.heading")}</h2>
+        {from === "database" ? <p className="text-sm text-fg-muted mb-3">{t("learn.hint")}</p> : null}
         <div className="space-y-6">
           {TRACKS.map((track) => {
             const mods = modules.filter((m) => m.track === track);
@@ -125,7 +126,7 @@ export default async function AdminHome({ params }: { params: Promise<{ locale: 
                       {mods.map((m) => (
                         <tr key={m.slug} className="border-t border-border">
                           <td className={td}>
-                            <Link href={`/learn/${m.track}/${m.slug}`} className="font-medium underline-offset-4 hover:underline">{moduleTitle(m, locale)?.title ?? m.slug}</Link>
+                            <Link href={from === "database" ? `/admin/learn/${m.track}/${m.slug}` : `/learn/${m.track}/${m.slug}`} className="font-medium underline-offset-4 hover:underline">{moduleTitle(m, locale)?.title ?? m.slug}</Link>
                           </td>
                           <td className={td}>{m.chapters.length}</td>
                           {LOCALES.map((l) => (
@@ -144,7 +145,10 @@ export default async function AdminHome({ params }: { params: Promise<{ locale: 
       </section>
 
       <section>
-        <h2 className="text-xl font-semibold mb-3">{t("news.heading")}</h2>
+        <div className="flex flex-wrap items-center gap-3 mb-3">
+          <h2 className="text-xl font-semibold me-auto">{t("news.heading")}</h2>
+          {from === "database" ? <Link href="/admin/news/new" className="rounded-lg border border-border px-3 py-1.5 text-sm hover:bg-accent-soft">{t("news.new")}</Link> : null}
+        </div>
         <div className="overflow-x-auto rounded-card border border-border">
           <table className="w-full text-sm">
             <thead className="bg-bg-elevated">
@@ -160,7 +164,11 @@ export default async function AdminHome({ params }: { params: Promise<{ locale: 
               {news.map((n) => (
                 <tr key={n.id} className="border-t border-border">
                   <td className={`${td} whitespace-nowrap`}>{f.dateTime(new Date(n.date), { dateStyle: "medium" })}</td>
-                  <td className={td}>{(n.translations.find((tr) => tr.locale === routing.defaultLocale) ?? n.translations[0])?.title}</td>
+                  <td className={td}>
+                    {from === "database" ? (
+                      <Link href={`/admin/news/${n.id}`} className="underline-offset-4 hover:underline">{(n.translations.find((tr) => tr.locale === routing.defaultLocale) ?? n.translations[0])?.title}</Link>
+                    ) : (n.translations.find((tr) => tr.locale === routing.defaultLocale) ?? n.translations[0])?.title}
+                  </td>
                   {LOCALES.map((l) => (
                     <td key={l} className={td}><StateLabel state={n.translations.some((tr) => tr.locale === l) ? "published" : "missing"} aiDraft={false} /></td>
                   ))}
