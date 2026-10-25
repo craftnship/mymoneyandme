@@ -102,6 +102,8 @@
     "filterAll": "All",
     "clearFilters": "Clear filters",
     "noResults": "No articles match. Try a different word or clear the filters.",
+    "moreInEnglish": "More in English",
+    "moreInEnglishIntro": "These articles are not translated into {language} yet. They open in English.",
     "resultsCount": "{count, plural, =0 {No articles} one {# article} other {# articles}}"
   },
   "learn": {
