@@ -1,6 +1,6 @@
-import { NextResponse } from "next/server";
 import { unsubscribe } from "@/lib/newsletter";
 import { getStore } from "@/lib/newsletter/store";
+import { seeOther } from "@/lib/redirect";
 
 /** One-click unsubscribe link carried in every digest. */
 export async function GET(req: Request) {
@@ -8,5 +8,5 @@ export async function GET(req: Request) {
   const token = url.searchParams.get("token") ?? "";
   const store = await getStore();
   const result = store ? await unsubscribe(store, token).catch(() => ({ outcome: "invalid" as const, locale: "en" })) : { outcome: "invalid" as const, locale: "en" };
-  return NextResponse.redirect(new URL(`/${result.locale}/newsletter?status=${result.outcome}`, url.origin), 303);
+  return seeOther(`/${result.locale}/newsletter?status=${result.outcome}`);
 }

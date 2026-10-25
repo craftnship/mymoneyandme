@@ -1,11 +1,14 @@
-import { NextResponse } from "next/server";
 import { routing } from "@/i18n/routing";
-import { audit, consumeEmailToken, markEmailVerified } from "@/lib/auth/users";
+import { audit, consumeEmailToken, emailVerifiedByToken, markEmailVerified } from "@/lib/auth/users";
 import { execute } from "@/lib/db";
+import { seeOther } from "@/lib/redirect";
 
 /**
  * Email link target for account verification and deletion confirmation. The
  * token is single-use; the result lands on a localised page in the member app.
+ * Mail scanners (Outlook Safe Links among them) open links before the reader
+ * does, so a verify link whose token is already spent still reports
+ * "verified" while it is unexpired and the account is verified.
  */
 export async function GET(req: Request) {
   const url = new URL(req.url);
@@ -20,6 +23,8 @@ export async function GET(req: Request) {
       await markEmailVerified(userId);
       await audit(userId, "emailVerified", "user", userId);
       status = "verified";
+    } else if (!userId && purpose === "verify" && token && (await emailVerifiedByToken(token))) {
+      status = "verified";
     } else if (userId) {
       await execute("UPDATE users SET deletion_requested_at = NOW() WHERE id = ?", [userId]);
       await execute("DELETE FROM sessions WHERE user_id = ?", [userId]);
@@ -30,5 +35,5 @@ export async function GET(req: Request) {
     status = "invalid";
   }
   const dest = purpose === "delete" ? `/${locale}/app/sign-in?status=${status}` : `/${locale}/app?status=${status}`;
-  return NextResponse.redirect(new URL(dest, url.origin), 303);
+  return seeOther(dest);
 }

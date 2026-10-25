@@ -120,6 +120,15 @@ export async function consumeEmailToken(token: string, purpose: TokenPurpose): P
   return r.user_id;
 }
 
+/** True when an unexpired verify token, used or not, belongs to an account whose email is verified. */
+export async function emailVerifiedByToken(token: string): Promise<boolean> {
+  const r = await one<Row & { id: string }>(
+    "SELECT u.id FROM email_tokens t JOIN users u ON u.id = t.user_id WHERE t.token_hash = ? AND t.purpose = 'verify' AND t.expires_at > NOW() AND u.email_verified_at IS NOT NULL",
+    [sha256(token)],
+  );
+  return Boolean(r);
+}
+
 export async function setRole(userId: string, role: string): Promise<void> {
   await execute("UPDATE users SET role = ? WHERE id = ?", [role, userId]);
 }
