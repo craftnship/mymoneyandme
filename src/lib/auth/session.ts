@@ -17,13 +17,16 @@ const TOUCH_EVERY_MS = 5 * 60 * 1000;
 
 export type SessionInfo = { id: string; userAgent: string | null; ip: string | null; createdAt: Date; lastSeenAt: Date; current: boolean };
 
-export async function createSession(userId: string): Promise<void> {
+/** How the session was started; the admin only accepts passkey sessions. */
+export type AuthMethod = "password" | "passkey" | "emailLink";
+
+export async function createSession(userId: string, method: AuthMethod): Promise<void> {
   const token = randomToken(32);
   const h = await headers();
   const id = newId();
   await execute(
-    "INSERT INTO sessions (id, user_id, token_hash, user_agent, ip, expires_at) VALUES (?, ?, ?, ?, ?, DATE_ADD(NOW(), INTERVAL ? DAY))",
-    [id, userId, sha256(token), (h.get("user-agent") ?? "").slice(0, 255) || null, (h.get("x-forwarded-for")?.split(",")[0].trim() ?? "").slice(0, 64) || null, ABSOLUTE_DAYS],
+    "INSERT INTO sessions (id, user_id, token_hash, user_agent, ip, auth_method, expires_at) VALUES (?, ?, ?, ?, ?, ?, DATE_ADD(NOW(), INTERVAL ? DAY))",
+    [id, userId, sha256(token), (h.get("user-agent") ?? "").slice(0, 255) || null, (h.get("x-forwarded-for")?.split(",")[0].trim() ?? "").slice(0, 64) || null, method, ABSOLUTE_DAYS],
   );
   const jar = await cookies();
   jar.set(SESSION_COOKIE, token, {
@@ -54,6 +57,14 @@ export async function getSessionUserId(): Promise<string | null> {
   }
   if (idleFor > TOUCH_EVERY_MS) await execute("UPDATE sessions SET last_seen_at = NOW() WHERE id = ?", [row.id]);
   return row.user_id;
+}
+
+/** How the current session was started; null for sessions created before this was recorded. */
+export async function currentAuthMethod(): Promise<AuthMethod | null> {
+  const token = (await cookies()).get(SESSION_COOKIE)?.value;
+  if (!token) return null;
+  const row = await one<Row & { auth_method: AuthMethod | null }>("SELECT auth_method FROM sessions WHERE token_hash = ?", [sha256(token)]);
+  return row?.auth_method ?? null;
 }
 
 export async function currentSessionId(): Promise<string | null> {

@@ -10,14 +10,14 @@ const PUBLIC_APP = new Set(["sign-in", "sign-up", "forgot", "reset"]);
 
 /**
  * Detects the visitor's language from the cookie or Accept-Language header and
- * redirects bare paths to the prefixed version (section 13). For /app pages it
- * also performs the optimistic auth check: no session cookie at all means a
+ * redirects bare paths to the prefixed version (section 13). For /app and
+ * /admin pages it also performs the optimistic auth check: no session cookie at all means a
  * redirect to sign-in without touching the database. Pages still verify the
  * session properly; this only keeps obvious misses cheap.
  */
 export default function proxy(req: NextRequest) {
-  const m = req.nextUrl.pathname.match(/^\/([a-z]{2})\/app(?:\/([^/]+))?/);
-  if (m && !PUBLIC_APP.has(m[2] ?? "") && !req.cookies.get(SESSION_COOKIE)) {
+  const m = req.nextUrl.pathname.match(/^\/([a-z]{2})\/(app|admin)(?:\/([^/]+))?/);
+  if (m && !(m[2] === "app" && PUBLIC_APP.has(m[3] ?? "")) && !req.cookies.get(SESSION_COOKIE)) {
     const url = req.nextUrl.clone();
     url.pathname = `/${m[1]}/app/sign-in`;
     url.search = `?next=${encodeURIComponent(req.nextUrl.pathname)}`;

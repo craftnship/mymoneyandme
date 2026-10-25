@@ -1,8 +1,8 @@
 /**
  * Content model (sections 4, 5, 12, 19). One source document fans out into
- * labelled translations that publish independently. In Phase 1 content lives
- * as JSON in /content so authoring is a pull request; the authoring console
- * (Phase 3) writes the same shape to the database.
+ * labelled translations that publish independently. The JSON files in
+ * /content seed the database (see ./rows.ts and ./db.ts), which the
+ * authoring console edits in the same shape.
  */
 export type Locale = string;
 

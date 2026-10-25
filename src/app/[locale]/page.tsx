@@ -37,8 +37,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   });
   const t = await getTranslations("home");
   const tc = await getTranslations("calc");
-  const articles = allArticles();
-  const news = allNews().slice(0, 5);
+  const articles = await allArticles();
+  const news = (await allNews()).slice(0, 5);
   const lead = articles.find((a) => a.pinned) ?? articles[0];
   const rest = articles.filter((a) => a !== lead);
   const featured = CALCULATORS.filter((c) => c.featured);

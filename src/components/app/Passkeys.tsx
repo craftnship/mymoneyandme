@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import { browserSupportsWebAuthn, startAuthentication, startRegistration } from "@simplewebauthn/browser";
+import { safeNext } from "@/lib/auth/next";
 
 /** Sign in with a passkey (discoverable credential). Hidden where the browser has no WebAuthn. */
 export function PasskeyButton({ next }: { next?: string }) {
@@ -21,7 +22,7 @@ export function PasskeyButton({ next }: { next?: string }) {
       const response = await startAuthentication({ optionsJSON: opt.options });
       const res = await fetch("/api/auth/passkey/login/verify", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ challengeId: opt.challengeId, response }) });
       if (!res.ok) throw new Error("failed");
-      router.push(next && next.startsWith(`/${locale}/app`) ? next : `/${locale}/app`);
+      router.push(safeNext(next, locale) ?? `/${locale}/app`);
       router.refresh();
     } catch {
       setState("error");

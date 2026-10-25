@@ -740,7 +740,8 @@
       "goals": "Goals",
       "plan": "Plan",
       "settings": "Settings",
-      "memberMenu": "Member menu"
+      "memberMenu": "Member menu",
+      "admin": "Authoring"
     },
     "dashboard": {
       "title": "Overview",

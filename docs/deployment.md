@@ -39,6 +39,7 @@ Set these in hPanel (Websites, Manage, Node.js, Environment variables) or throug
 | `DATA_ENCRYPTION_KEY` | 32-byte key (64 hex characters) for the AES-256-GCM encryption of financial data at rest. Generate once with `node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"`, keep a copy in a password manager: losing it makes every stored household's data unreadable. Accounts are disabled until it is set | |
 | `CRON_SECRET` | Optional bearer token that protects `GET /api/cron/purge` and `GET /api/cron/reminders` (purges accounts whose 30-day deletion grace has passed); the same purge also runs opportunistically on sign-in | |
 | `REMINDERS_ENABLED` | Set to `true` to send the monthly plan reminder to members who opted in (sign-up checkbox or Settings, Privacy). Needs SMTP set up; call `GET /api/cron/reminders` once a day with the `CRON_SECRET` bearer token. Each member gets at most one every 28 days. Left unset, the route answers 503 and nothing is sent | |
+| `ADMIN_EMAILS` | Comma-separated addresses that get the `admin` role for the authoring console at `/en/admin`. The account must exist with a verified email; it is promoted the next time it opens the console. The console only opens on a session started with a passkey, so add one under Settings, Security first. Removing an address does not demote the account | `santhoshcse@live.com` |
 | `SMTP_HOST` | Hostinger mail | `smtp.hostinger.com` |
 | `SMTP_PORT` | | `465` |
 | `SMTP_USER` | The sending mailbox | `hello@mymoneyandme.in` |
@@ -48,6 +49,8 @@ Set these in hPanel (Websites, Manage, Node.js, Environment variables) or throug
 Without `DATABASE_URL` and the SMTP settings the public site runs fine; the newsletter form and the member sign-up report that they are not available. The member app additionally needs `DATA_ENCRYPTION_KEY`; the account pages say "Accounts are not available right now" until it is set.
 
 Create the database in hPanel (Websites, Manage, Databases) or with the API's "Create account database"; the name and user are prefixed with the account username. The app creates its tables on first use (`newsletter_subscribers`, and the member-app tables listed in `src/lib/db/migrations.ts`, tracked in `schema_migrations`). Node.js apps must connect to `127.0.0.1`, not `localhost`.
+
+Content (articles, modules, chapters, news) is also stored there: on first use the app imports the JSON files from `content/` into `content_items` and `content_translations`, and on every later start it copies in files that changed, leaving items edited in the authoring console alone. If the build can reach the database it prerenders from it; if not, it prerenders from the files and the running site switches to the database within five minutes. Hostinger's daily database backups now cover content written in the console.
 
 ## Domain
 

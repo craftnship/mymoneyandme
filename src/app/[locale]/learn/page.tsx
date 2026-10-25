@@ -14,15 +14,14 @@ export default async function LearnPage({ params }: { params: Promise<{ locale: 
   const { locale } = await params;
   const t = await getTranslations("learn");
   const tracks = ["adults", "kids", "women"] as const;
+  const data = await Promise.all(tracks.map(async (track) => ({ track, mods: await modulesForTrack(track), first: await firstPublishedChapter(track) })));
   return (
     <div>
       <PageTitle title={t("title")} intro={t("intro")} />
       <div className="grid gap-4 md:grid-cols-3">
-        {tracks.map((track) => {
-          const mods = modulesForTrack(track);
+        {data.map(({ track, mods, first }) => {
           const total = mods.reduce((s, m) => s + m.chapters.length, 0);
           const ready = mods.reduce((s, m) => s + publishedChapters(m).length, 0);
-          const first = firstPublishedChapter(track);
           const firstTitle = first ? resolveTranslation(first.chapter.translations, locale)?.translation.title : undefined;
           return (
             <Card key={track} className="flex h-full flex-col hover:border-accent transition-colors">

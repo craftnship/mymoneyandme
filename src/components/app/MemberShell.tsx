@@ -5,6 +5,7 @@ import { signOut } from "@/lib/auth/actions";
 import { Notice } from "@/components/ui";
 import { ResendVerification } from "./ResendVerification";
 import { DismissibleNotice } from "./DismissibleNotice";
+import { isStaff } from "@/lib/auth/roles";
 
 /** Signed-in frame: sub-navigation, verification nudge, sign-out. Server component; must render inside <Suspense>. */
 export async function MemberShell({ locale, children }: { locale: string; children: React.ReactNode }) {
@@ -17,6 +18,7 @@ export async function MemberShell({ locale, children }: { locale: string; childr
     { href: "/app/goals", label: t("goals") },
     { href: "/app/plan", label: t("plan") },
     { href: "/app/settings", label: t("settings") },
+    ...(isStaff(user.role) ? [{ href: "/admin", label: t("admin") }] : []),
   ] as const;
   return (
     <div className="space-y-6">

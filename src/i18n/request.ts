@@ -16,7 +16,7 @@ function deepMerge(base: Messages, override: Messages): Messages {
 
 // Member-app areas keep their strings in their own files so the public-site
 // file stays small; each file holds one top-level namespace.
-const AREAS = ["app-data", "app-checkup", "app-settings"] as const;
+const AREAS = ["app-data", "app-checkup", "app-settings", "admin"] as const;
 
 async function loadMessages(locale: string): Promise<Messages> {
   let merged: Messages = (await import(`../../messages/${locale}.json`)).default;

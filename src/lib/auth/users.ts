@@ -120,6 +120,10 @@ export async function consumeEmailToken(token: string, purpose: TokenPurpose): P
   return r.user_id;
 }
 
+export async function setRole(userId: string, role: string): Promise<void> {
+  await execute("UPDATE users SET role = ? WHERE id = ?", [role, userId]);
+}
+
 export async function markEmailVerified(userId: string): Promise<void> {
   await execute("UPDATE users SET email_verified_at = COALESCE(email_verified_at, NOW()) WHERE id = ?", [userId]);
 }

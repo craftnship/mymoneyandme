@@ -1,7 +1,8 @@
 import { describe, expect, it } from "vitest";
 import fs from "node:fs";
 import path from "node:path";
-import { allArticles, allModules, allNews, moduleFullyTranslated, newsText, resolveTranslation } from "./store";
+import { moduleFullyTranslated, newsText, resolveTranslation } from "./store";
+import { readJsonContent } from "./json";
 import { searchArticles } from "./search";
 import { CALCULATORS } from "@/lib/calculators";
 import type { Block, Translation } from "./types";
@@ -12,6 +13,10 @@ const PLACEHOLDER_KEYS = new Set([
   "nps_80ccd1b_limit", "standard_deduction_new", "standard_deduction_old", "rebate_87a_limit_new", "ppf_rate", "epf_rate",
   "ssy_rate", "scss_rate", "nsc_rate", "financial_year", "rulepack_version",
 ]);
+const content = readJsonContent();
+const allArticles = () => content.articles;
+const allModules = () => content.modules;
+const allNews = () => content.news;
 const CALC_SLUGS = new Set(CALCULATORS.map((c) => c.slug));
 
 function textOf(b: Block): string[] {

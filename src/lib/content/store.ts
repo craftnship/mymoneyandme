@@ -1,38 +1,38 @@
-import fs from "node:fs";
-import path from "node:path";
+import { cacheLife, cacheTag } from "next/cache";
 import type { Article, Chapter, Module, NewsItem, Track, Translation } from "./types";
 import { routing } from "@/i18n/routing";
+import { loadContent } from "./source";
+import type { ContentSnapshot } from "./json";
 
-const ROOT = path.join(process.cwd(), "content");
+/** Cache tag on every content read; the admin clears it when something is published. */
+export const CONTENT_TAG = "content";
 
-function readJsonDir<T>(dir: string): T[] {
-  if (!fs.existsSync(dir)) return [];
-  return fs
-    .readdirSync(dir)
-    .filter((f) => f.endsWith(".json"))
-    .map((f) => JSON.parse(fs.readFileSync(path.join(dir, f), "utf8")) as T);
+/**
+ * All content, cached across requests. A publish clears the tag at once; the
+ * five-minute revalidation is the backstop when a clear does not reach every
+ * process. In development the cache only lasts seconds so file edits show up.
+ */
+async function snapshot(): Promise<ContentSnapshot> {
+  "use cache";
+  cacheTag(CONTENT_TAG);
+  if (process.env.NODE_ENV === "production") cacheLife({ stale: 60, revalidate: 300, expire: 86400 });
+  else cacheLife("seconds");
+  return (await loadContent()).snapshot;
 }
-
-let articleCache: Article[] | null = null;
-let moduleCache: Module[] | null = null;
-
-export function allArticles(): Article[] {
-  if (!articleCache || process.env.NODE_ENV !== "production") {
-    articleCache = readJsonDir<Article>(path.join(ROOT, "articles")).sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
-  }
-  return articleCache;
-}
-
-let newsCache: NewsItem[] | null = null;
 
 /** Newest first. */
-export function allNews(): NewsItem[] {
-  if (!newsCache || process.env.NODE_ENV !== "production") {
-    const file = path.join(ROOT, "news.json");
-    const items = fs.existsSync(file) ? (JSON.parse(fs.readFileSync(file, "utf8")) as NewsItem[]) : [];
-    newsCache = items.sort((a, b) => b.date.localeCompare(a.date));
-  }
-  return newsCache;
+export async function allArticles(): Promise<Article[]> {
+  return (await snapshot()).articles;
+}
+
+/** Newest first. */
+export async function allNews(): Promise<NewsItem[]> {
+  return (await snapshot()).news;
+}
+
+/** In curriculum order. */
+export async function allModules(): Promise<Module[]> {
+  return (await snapshot()).modules;
 }
 
 export function newsText(item: NewsItem, locale: string) {
@@ -41,28 +41,20 @@ export function newsText(item: NewsItem, locale: string) {
 
 export const DEFAULT_COVER = "/images/articles/default.svg";
 
-export function allModules(): Module[] {
-  if (!moduleCache || process.env.NODE_ENV !== "production") {
-    const tracks: Track[] = ["adults", "kids", "women"];
-    moduleCache = tracks.flatMap((t) => readJsonDir<Module>(path.join(ROOT, "modules", t))).sort((a, b) => a.order - b.order);
-  }
-  return moduleCache;
+export async function getArticle(slug: string) {
+  return (await allArticles()).find((a) => a.slug === slug || a.translations.some((t) => t.slug === slug));
 }
 
-export function getArticle(slug: string) {
-  return allArticles().find((a) => a.slug === slug || a.translations.some((t) => t.slug === slug));
+export async function modulesForTrack(track: Track) {
+  return (await allModules()).filter((m) => m.track === track);
 }
 
-export function modulesForTrack(track: Track) {
-  return allModules().filter((m) => m.track === track);
+export async function getModule(track: Track, slug: string) {
+  return (await allModules()).find((m) => m.track === track && m.slug === slug);
 }
 
-export function getModule(track: Track, slug: string) {
-  return allModules().find((m) => m.track === track && m.slug === slug);
-}
-
-export function getChapter(track: Track, moduleSlug: string, chapterSlug: string): { module: Module; chapter: Chapter; index: number } | undefined {
-  const mod = getModule(track, moduleSlug);
+export async function getChapter(track: Track, moduleSlug: string, chapterSlug: string): Promise<{ module: Module; chapter: Chapter; index: number } | undefined> {
+  const mod = await getModule(track, moduleSlug);
   if (!mod) return undefined;
   const index = mod.chapters.findIndex((c) => c.slug === chapterSlug);
   if (index < 0) return undefined;
@@ -105,8 +97,8 @@ export function publishedChapters(module: Module): Chapter[] {
 }
 
 /** The first readable chapter of a track, in module order: where a visitor who has nothing picked should start. */
-export function firstPublishedChapter(track: Track): { module: Module; chapter: Chapter } | undefined {
-  for (const mod of modulesForTrack(track)) {
+export async function firstPublishedChapter(track: Track): Promise<{ module: Module; chapter: Chapter } | undefined> {
+  for (const mod of await modulesForTrack(track)) {
     const chapter = publishedChapters(mod)[0];
     if (chapter) return { module: mod, chapter };
   }

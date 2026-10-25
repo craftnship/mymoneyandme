@@ -7,13 +7,13 @@ import type { Track } from "@/lib/content/types";
 import { Notice, PageTitle, Pill } from "@/components/ui";
 import { pageAlternates } from "@/lib/seo";
 
-export function generateStaticParams() {
-  return allModules().map((m) => ({ track: m.track, module: m.slug }));
+export async function generateStaticParams() {
+  return (await allModules()).map((m) => ({ track: m.track, module: m.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; track: string; module: string }> }) {
   const { locale, track, module: slug } = await params;
-  const m = getModule(track as Track, slug);
+  const m = await getModule(track as Track, slug);
   if (!m) return {};
   const title = moduleTitle(m, locale);
   const anyPublished = m.chapters.some((c) => c.translations.some((x) => x.state === "published"));
@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 export default async function ModulePage({ params }: { params: Promise<{ locale: string; track: string; module: string }> }) {
   const { locale, track, module: slug } = await params;
-  const m = getModule(track as Track, slug);
+  const m = await getModule(track as Track, slug);
   if (!m) notFound();
   const t = await getTranslations("learn");
   const title = moduleTitle(m, locale);

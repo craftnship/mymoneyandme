@@ -8,15 +8,15 @@ import { BlockRenderer } from "@/components/BlockRenderer";
 import { Notice } from "@/components/ui";
 import { jsonLd, pageAlternates } from "@/lib/seo";
 
-export function generateStaticParams() {
-  return allModules().flatMap((m) =>
+export async function generateStaticParams() {
+  return (await allModules()).flatMap((m) =>
     m.chapters.filter((c) => c.translations.some((t) => t.state === "published")).map((c) => ({ track: m.track, module: m.slug, chapter: c.slug })),
   );
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; track: string; module: string; chapter: string }> }) {
   const { locale, track, module: mod, chapter } = await params;
-  const hit = getChapter(track as Track, mod, chapter);
+  const hit = await getChapter(track as Track, mod, chapter);
   if (!hit) return {};
   const r = resolveTranslation(hit.chapter.translations, locale);
   if (!r) return {};
@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 export default async function ChapterPage({ params }: { params: Promise<{ locale: string; track: string; module: string; chapter: string }> }) {
   const { locale, track, module: mod, chapter } = await params;
-  const hit = getChapter(track as Track, mod, chapter);
+  const hit = await getChapter(track as Track, mod, chapter);
   if (!hit) notFound();
   const r = resolveTranslation(hit.chapter.translations, locale);
   if (!r) notFound();
