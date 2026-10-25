@@ -32,11 +32,11 @@ Node 22 and pnpm 10.
 
 ## Not yet built
 
-Household invites, CSV import and document uploads in the member app, Google and Apple sign-in, editing in the authoring console (phase 1, the staff-only content list, is done), the admin console, donations, notifications, and the remaining seven languages. `docs/roadmap.md` lists them in order with what each needs.
+Household invites, CSV import and document uploads in the member app, Google and Apple sign-in, chapter and news editing in the authoring console (articles are done), the admin console, donations, notifications, and the remaining seven languages. `docs/roadmap.md` lists them in order with what each needs.
 
 ## Editing content
 
-The authoring console at `/en/admin` lists every article, chapter and news item with its language states; editing arrives in its next phase. Access needs a staff role (`ADMIN_EMAILS` grants `admin` to a verified account, see `docs/deployment.md`) and a session started with a passkey. Until editing ships, content is still added through the JSON files below: each deploy copies changed files into the database, except for items edited in the console.
+The authoring console at `/en/admin` lists every article, chapter and news item with its language states. Articles are written there: English and Tamil side by side, blocks that stay in step across languages, cover image upload, a preview per language, and a publish check that refuses empty text or a Tamil copy whose blocks differ from the source. A save is live on the site at once and kept as a revision. Access needs a staff role (`ADMIN_EMAILS` grants `admin` to a verified account, see `docs/deployment.md`) and a session started with a passkey. Chapters and news are still added through the JSON files below until their editor ships: each deploy copies changed files into the database, except for items edited in the console.
 
 - Add an article: new JSON file in `content/articles/` following an existing one. `{placeholders}` such as `{section_80c_limit}` resolve against the rule pack at render time.
 - Add a chapter body: edit the module file in `content/modules/<track>/`, set the translation `state` to `published`.

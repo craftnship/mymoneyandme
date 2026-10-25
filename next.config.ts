@@ -6,6 +6,8 @@ const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 const nextConfig: NextConfig = {
   cacheComponents: true,
   partialPrefetching: true,
+  // Cover uploads in the authoring console go up to 2 MB (src/lib/media/image.ts) plus form overhead.
+  experimental: { serverActions: { bodySizeLimit: "3mb" } },
   async headers() {
     // Secure headers baseline (section 14); CSP is added once the asset list settles.
     return [

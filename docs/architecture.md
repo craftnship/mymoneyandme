@@ -22,7 +22,9 @@ src/
     checkup/              engine.ts (metrics + declarative scoring), plan.ts (priority checklist)
     content/              types.ts (blocks, translations), store.ts (cached reads, fallback rules),
                           json.ts (the /content files), rows.ts + db.ts (database tables, JSON sync),
-                          source.ts (database first, files as fallback)
+                          source.ts (database first, files as fallback), schema.ts + editing.ts
+                          (console validation and language-mirrored edits), admin.ts + actions.ts (saves)
+    media/                image checks and the media table behind /media/<id>
     auth/                 sessions, passwords, passkeys; roles.ts + admin.ts (authoring console access)
     format.ts             INR formatting, lakh/crore vs international grouping
   components/             server components for layout/content, client components for calculators,

@@ -28,7 +28,7 @@ export default function proxy(req: NextRequest) {
 
 export const config = {
   matcher: [
-    // Skip API routes, Next internals, static files and the sitemap/robots files.
-    "/((?!api|_next|_vercel|.*\\..*).*)",
+    // Skip API routes, uploaded images (/media), Next internals, static files and the sitemap/robots files.
+    "/((?!api|media|_next|_vercel|.*\\..*).*)",
   ],
 };

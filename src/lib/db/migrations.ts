@@ -238,4 +238,23 @@ export const MIGRATIONS: Migration[] = [
       `ALTER TABLE sessions ADD COLUMN auth_method VARCHAR(16) NULL`,
     ],
   },
+  {
+    // Authoring console, phase 2: uploaded images (article covers for now).
+    // Kept in the database because every Hostinger build replaces
+    // public_html, which would delete files saved on disk.
+    id: "0006_media",
+    statements: [
+      `CREATE TABLE IF NOT EXISTS media (
+        id CHAR(36) PRIMARY KEY,
+        file_name VARCHAR(255) NOT NULL,
+        mime VARCHAR(40) NOT NULL,
+        bytes INT NOT NULL,
+        width INT NULL,
+        height INT NULL,
+        data MEDIUMBLOB NOT NULL,
+        uploaded_by CHAR(36) NULL,
+        uploaded_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+      )`,
+    ],
+  },
 ];

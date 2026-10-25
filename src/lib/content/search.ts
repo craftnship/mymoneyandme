@@ -1,21 +1,8 @@
 import type { Article, ArticleCategory } from "./types";
+import { ARTICLE_CATEGORIES, isArticleCategory } from "./categories";
+
+export { ARTICLE_CATEGORIES, isArticleCategory };
 import { resolveTranslation } from "./store";
-
-export const ARTICLE_CATEGORIES: ArticleCategory[] = [
-  "personalFinance",
-  "markets",
-  "tax",
-  "insurance",
-  "loans",
-  "realEstate",
-  "economy",
-  "womenAndMoney",
-  "kidsAndMoney",
-];
-
-export function isArticleCategory(value: unknown): value is ArticleCategory {
-  return typeof value === "string" && (ARTICLE_CATEGORIES as string[]).includes(value);
-}
 
 export type ArticleQuery = { q?: string; category?: ArticleCategory };
 

@@ -50,7 +50,7 @@ Without `DATABASE_URL` and the SMTP settings the public site runs fine; the news
 
 Create the database in hPanel (Websites, Manage, Databases) or with the API's "Create account database"; the name and user are prefixed with the account username. The app creates its tables on first use (`newsletter_subscribers`, and the member-app tables listed in `src/lib/db/migrations.ts`, tracked in `schema_migrations`). Node.js apps must connect to `127.0.0.1`, not `localhost`.
 
-Content (articles, modules, chapters, news) is also stored there: on first use the app imports the JSON files from `content/` into `content_items` and `content_translations`, and on every later start it copies in files that changed, leaving items edited in the authoring console alone. If the build can reach the database it prerenders from it; if not, it prerenders from the files and the running site switches to the database within five minutes. Hostinger's daily database backups now cover content written in the console.
+Content (articles, modules, chapters, news) is also stored there: on first use the app imports the JSON files from `content/` into `content_items` and `content_translations`, and on every later start it copies in files that changed, leaving items edited in the authoring console alone. If the build can reach the database it prerenders from it; if not, it prerenders from the files and the running site switches to the database within five minutes. Images uploaded in the console (PNG, JPEG or WebP, up to 2 MB) are stored in the `media` table and served from `/media/<id>`, so they survive redeploys and are covered by the same backups. Hostinger's daily database backups now cover content written in the console.
 
 ## Domain
 
