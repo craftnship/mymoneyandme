@@ -8,7 +8,7 @@ import { ARTICLE_CATEGORIES } from "@/lib/content/categories";
 import { slugify } from "@/lib/content/editing";
 import { saveArticleAction, uploadImageAction } from "@/lib/content/actions";
 import { fieldClass } from "./BlockFields";
-import { SaveBar, TranslatedBody, btn, useEditor, type Calc, type Lang } from "./editorParts";
+import { RestoredNotice, SaveBar, TranslatedBody, btn, useEditor, type Calc, type Lang } from "./editorParts";
 
 type Option = { value: string; label: string };
 
@@ -16,19 +16,19 @@ type Option = { value: string; label: string };
  * The article editor: settings on top, then every language side by side,
  * block by block. Saving sends the whole article to saveArticleAction.
  */
-export function ArticleEditor({ initial, isNew, langs, calculators, chapters }: { initial: Article; isNew: boolean; langs: Lang[]; calculators: Calc[]; chapters: Option[] }) {
+export function ArticleEditor({ initial, isNew, langs, calculators, chapters, restored }: { initial: Article; isNew: boolean; langs: Lang[]; calculators: Calc[]; chapters: Option[]; restored?: string }) {
   const t = useTranslations("admin.editor");
   const ta = useTranslations("article");
   const ui = useLocale();
   const router = useRouter();
-  const { value: article, update, dirty, status, setStatus, pending, save } = useEditor(initial);
+  const { value: article, update, dirty, status, setStatus, pending, save } = useEditor(initial, Boolean(restored));
   const [uploading, setUploading] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
   const source = article.translations.find((tr) => tr.locale === article.sourceLocale) ?? article.translations[0];
 
   const onSave = () =>
     save(() => saveArticleAction(ui, JSON.stringify(article), isNew), (res) => {
-      if (isNew) router.replace(`/admin/articles/${res.id}`);
+      if (isNew || restored) router.replace(`/admin/articles/${res.id}`);
       else router.refresh();
     });
 
@@ -46,6 +46,7 @@ export function ArticleEditor({ initial, isNew, langs, calculators, chapters }: 
 
   return (
     <div className="space-y-8 pb-24">
+      <RestoredNotice text={restored} />
       {/* Settings shared by every language */}
       <section className="rounded-card border border-border p-5 space-y-4">
         <h2 className="text-lg font-semibold">{t("settings")}</h2>

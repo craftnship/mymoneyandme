@@ -1,5 +1,6 @@
 import type { Article, Block, Chapter, NewsItem, Translation } from "./types";
 import { blockTexts } from "./schema";
+import { indiaDate, isScheduled } from "./schedule";
 
 /**
  * Pure editing operations for the authoring console. Structure (which blocks,
@@ -14,7 +15,7 @@ export type Doc = { sourceLocale: string; translations: Translation[] };
 
 export type BlockType = Block["type"];
 
-export const BLOCK_TYPES: BlockType[] = ["paragraph", "heading", "list", "callout", "quote", "table", "calculator", "takeaways", "faq", "glossary", "quiz", "activity"];
+export const BLOCK_TYPES: BlockType[] = ["paragraph", "heading", "list", "callout", "quote", "table", "calculator", "takeaways", "faq", "glossary", "quiz", "activity", "image"];
 
 export function newBlock(type: BlockType, calculator = "sip"): Block {
   switch (type) {
@@ -30,6 +31,7 @@ export function newBlock(type: BlockType, calculator = "sip"): Block {
     case "quiz": return { type, questions: [{ q: "", options: ["", ""], answer: 0 }] };
     case "activity": return { type, text: "" };
     case "faq": return { type, items: [{ q: "", a: "" }] };
+    case "image": return { type, src: "", alt: "" };
   }
 }
 
@@ -44,6 +46,7 @@ export function blankCopy(b: Block): Block {
     case "quiz": return { ...b, questions: b.questions.map((q) => ({ q: "", options: q.options.map(() => ""), answer: q.answer, ...(q.explanation !== undefined ? { explanation: "" } : {}) })) };
     case "faq": return { ...b, items: b.items.map(() => ({ q: "", a: "" })) };
     case "calculator": return { ...b };
+    case "image": return { ...b, alt: "", caption: b.caption !== undefined ? "" : undefined };
   }
 }
 
@@ -103,12 +106,17 @@ export function patchTranslation<D extends Doc>(article: D, locale: string, patc
  * gets today's date, and the article's own date (which orders the feed) is
  * its earliest published language.
  */
-export function stampTranslationDates(translations: Translation[], today: string): Translation[] {
-  return translations.map((t) => (t.state === "published" && !t.publishedAt ? { ...t, publishedAt: today } : t));
+export function stampTranslationDates(translations: Translation[], today: string, now = new Date()): Translation[] {
+  return translations.map((t) => {
+    if (t.state !== "published") return t.publishAt ? { ...t, publishAt: undefined } : t;
+    // A language waiting for its scheduled time is dated by that time, whatever it had before.
+    if (isScheduled(t, now)) return { ...t, publishedAt: indiaDate(t.publishAt!) };
+    return t.publishedAt ? t : { ...t, publishedAt: today };
+  });
 }
 
-export function stampPublishDates(article: Article, today: string): Article {
-  const translations = stampTranslationDates(article.translations, today);
+export function stampPublishDates(article: Article, today: string, now = new Date()): Article {
+  const translations = stampTranslationDates(article.translations, today, now);
   const dates = translations.filter((t) => t.state === "published" && t.publishedAt).map((t) => t.publishedAt!).sort();
   return { ...article, translations, publishedAt: dates[0] ?? article.publishedAt };
 }
@@ -162,4 +170,41 @@ export function moveItem<T>(list: T[], index: number, delta: -1 | 1): T[] {
 export function estimateMinutes(t: Translation): number {
   const words = t.blocks.flatMap(blockTexts).join(" ").split(/\s+/).filter(Boolean).length;
   return Math.max(1, Math.round(words / 200));
+}
+
+/** The non-empty pieces of text a translation holds: title, summary and every block's text. */
+function texts(t: Translation): string[] {
+  return [t.title, t.excerpt, ...t.blocks.flatMap(blockTexts)].map((x) => x.trim()).filter(Boolean);
+}
+
+/** True when `after` holds text that `before` did not: someone typed. Removing, moving or adding empty blocks does not count. */
+function gainedText(before: Translation, after: Translation): boolean {
+  const had = new Set(texts(before));
+  return texts(after).some((x) => !had.has(x));
+}
+
+/**
+ * Flags translations that fell behind their source. When a save adds or
+ * rewrites text in the source language, every other language that gained no
+ * text of its own in the same save is marked out of date; a language that
+ * did counts as caught up. Structure changes alone (which every language
+ * gets at once) change nothing, and otherwise the flag stays as the editor
+ * sent it, so it can be cleared by hand.
+ */
+export function markOutOfDate<D extends Doc>(before: D | undefined, after: D): D {
+  if (!before) return after;
+  const old = new Map(before.translations.map((t) => [t.locale, t]));
+  const sourceBefore = old.get(after.sourceLocale);
+  const sourceAfter = after.translations.find((t) => t.locale === after.sourceLocale);
+  const sourceChanged = Boolean(sourceBefore && sourceAfter && gainedText(sourceBefore, sourceAfter));
+  return {
+    ...after,
+    translations: after.translations.map((t) => {
+      if (t.locale === after.sourceLocale) return t.outOfDate ? { ...t, outOfDate: undefined } : t;
+      const prev = old.get(t.locale);
+      if (prev && gainedText(prev, t)) return { ...t, outOfDate: undefined };
+      if (sourceChanged) return { ...t, outOfDate: true };
+      return t.outOfDate ? t : { ...t, outOfDate: undefined };
+    }),
+  };
 }

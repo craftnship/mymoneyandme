@@ -32,7 +32,7 @@ Node 22 and pnpm 10.
 
 ## Not yet built
 
-Household invites, CSV import and document uploads in the member app, Google and Apple sign-in, images inside the body, scheduled publishing and restoring revisions in the authoring console, the admin console, donations, notifications, and the remaining seven languages. `docs/roadmap.md` lists them in order with what each needs.
+Household invites, CSV import and document uploads in the member app, Google and Apple sign-in, one-click Tamil AI drafts and reviewer roles in the authoring console, the admin console, donations, notifications, and the remaining seven languages. `docs/roadmap.md` lists them in order with what each needs.
 
 ## Editing content
 
@@ -41,6 +41,9 @@ Articles, chapters, modules and news are all edited in the authoring console at 
 - Articles and chapters: English and Tamil side by side, blocks that stay in step across languages (quizzes included), a preview per language, and a publish check that refuses empty text or a Tamil copy whose blocks differ from the source. Articles also take a cover image.
 - Modules: title and summary per language, difficulty and hours, chapter order, and "Add chapter". A chapter's web address is fixed after its first save; a chapter that is not published in any language can be removed.
 - News: date, category, source name and link, and a title and summary per language. Every language with a title is live on save; news can be removed from the site.
+
+- Everywhere: an image block (upload once, alt text and an optional caption per language), "Publish at" to schedule a language for a later time (India time), an "out of date" flag on a translation when the source text changes after it, and a history of saved versions with what changed since and "Restore this version".
+- "Export all content" on the overview downloads everything, drafts included, as one JSON file in the same shape as `content/`.
 
 A save is live on the site at once and kept as a revision. Access needs a staff role (`ADMIN_EMAILS` grants `admin` to a verified account, see `docs/deployment.md`) and a session started with a passkey. The JSON files under `content/` are only the seed and fallback now: each deploy copies changed files into the database, except for items edited in the console, so edit there rather than in the files. `{placeholders}` such as `{section_80c_limit}` resolve against the rule pack at render time.
 

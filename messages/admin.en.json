@@ -22,7 +22,7 @@
       "notConfigured": "The database is not set up (DATABASE_URL is missing), so the site is serving the JSON files and nothing can be edited here yet.",
       "unavailable": "The database could not be reached, so the site is serving the JSON files. Check the server log; nothing can be edited until it is back."
     },
-    "comingNext": "Articles, chapters, modules and news are all edited here. Coming next: images inside the body, scheduled publishing, restoring an earlier version and exporting all content.",
+    "comingNext": "Everything in the plan is here: articles, chapters, modules and news, images, scheduling, history and export. Still optional: one-click Tamil AI drafts and reviewer roles.",
     "summary": "{articles, plural, one {# article} other {# articles}} · {chapters, plural, one {# chapter} other {# chapters}} ({written} written) · {news} news items",
     "articles": {
       "heading": "Articles",
@@ -59,7 +59,9 @@
       "approved": "Approved",
       "published": "Published",
       "missing": "Not started",
-      "aiDraft": "AI draft"
+      "aiDraft": "AI draft",
+      "scheduled": "Scheduled",
+      "outOfDate": "Out of date"
     },
     "editor": {
       "back": "← All content",
@@ -118,7 +120,8 @@
         "faq": "Questions and answers",
         "glossary": "Glossary",
         "quiz": "Quiz",
-        "activity": "Activity"
+        "activity": "Activity",
+        "image": "Image"
       },
       "fields": {
         "heading": "Heading text",
@@ -134,7 +137,9 @@
         "question": "Question {n}",
         "answer": "Answer {n}",
         "option": "Option {n}",
-        "explanation": "Explanation shown after answering (optional)"
+        "explanation": "Explanation shown after answering (optional)",
+        "alt": "Alt text: what the image shows, for people who can't see it",
+        "caption": "Caption"
       },
       "toolbar": {
         "level": "Heading level",
@@ -156,7 +161,11 @@
         "termNoun": "term",
         "questionNoun": "question",
         "questionShort": "Q{n} answer",
-        "correctAnswer": "Correct answer for question {n}"
+        "correctAnswer": "Correct answer for question {n}",
+        "uploading": "Uploading…",
+        "uploadImage": "Upload image",
+        "replaceImage": "Replace image",
+        "caption": "Caption"
       },
       "save": "Save",
       "saving": "Saving…",
@@ -189,8 +198,14 @@
         "emptyText": "{language}: block {block} has empty text.",
         "quizAnswer": "{language}: block {block} has a quiz answer that is not one of its options.",
         "unknownCalculator": "{language}: block {block} points to a calculator that does not exist.",
-        "structureDiffers": "{language}: block {block} does not match the source."
-      }
+        "structureDiffers": "{language}: block {block} does not match the source.",
+        "imageMissing": "{language}: block {block} has no image yet."
+      },
+      "publishAt": "Publish at (optional, India time)",
+      "publishAtHint": "Leave empty to publish on save. With a time, readers see this language from then on; until then it stays hidden.",
+      "outOfDate": "The source language changed after this translation was last edited. Check it against the source.",
+      "markUpToDate": "Mark as up to date",
+      "restoredNotice": "You are looking at the version saved {when}. Nothing has changed on the site yet: Save to make it the current version, or leave the page to keep the current one."
     },
     "chapter": {
       "newTitle": "New chapter",
@@ -228,6 +243,27 @@
       "incomplete": "Add a title and summary in English (and in any other language you start), a source name and a source link starting with https://.",
       "remove": "Remove from site",
       "removeConfirm": "Remove this news item from the site? Its saved versions are kept."
+    },
+    "export": "Export all content",
+    "exportHint": "Downloads every article, module, chapter and news item, drafts included, as one JSON file in the same shape as the files in the repository. Uploaded images stay on the site and are referenced by link.",
+    "history": {
+      "heading": "{count, plural, one {# saved version} other {# saved versions}}",
+      "current": "current",
+      "compare": "Compare and restore",
+      "back": "← Back to the editor",
+      "title": "Version saved {when}",
+      "intro": "Saved by {who}. The table shows what is different now compared with this version.",
+      "gone": "This item has been removed from the site, so there is nothing to compare with.",
+      "restore": "Restore this version",
+      "restoreHint": "Opens the editor with this version loaded. Nothing changes on the site until you save there.",
+      "same": "This version is the same as the current one.",
+      "what": "What",
+      "then": "In this version",
+      "now": "Now",
+      "absent": "not there",
+      "setting": "Setting: {field}",
+      "field": "{language}: {field}",
+      "block": "{language}: block {n} ({type})"
     }
   }
 }

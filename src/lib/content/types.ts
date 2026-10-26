@@ -18,7 +18,8 @@ export type Block =
   | { type: "glossary"; terms: { term: string; definition: string }[] }
   | { type: "quiz"; questions: QuizQuestion[] }
   | { type: "activity"; text: string } // kids workbook-only block (section 12)
-  | { type: "faq"; items: { q: string; a: string }[] };
+  | { type: "faq"; items: { q: string; a: string }[] }
+  | { type: "image"; src: string; alt: string; caption?: string }; // src shared across languages, alt and caption per language
 
 export type QuizQuestion = {
   q: string;
@@ -41,6 +42,7 @@ export type Translation = {
   aiDraft: boolean; // "AI-translated, not yet reviewed" label
   outOfDate?: boolean; // source changed after this translation
   publishedAt?: string;
+  publishAt?: string; // ISO time with offset: published, but hidden from readers until then
   updatedAt?: string;
 };
 

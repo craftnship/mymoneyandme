@@ -191,3 +191,15 @@ export async function listRevisions(key: string, limit = 10): Promise<Revision[]
   );
   return rows.map((r) => ({ id: r.id, savedAt: r.saved_at, savedBy: r.saved_by ? names.get(r.saved_by) ?? null : null }));
 }
+
+export type SavedRevision = Revision & { itemKey: string; snapshot: unknown };
+
+export async function getRevision(id: number): Promise<SavedRevision | undefined> {
+  const [r] = await query<Row & { id: number; item_id: string; snapshot: string | object; saved_at: Date; saved_by: string | null }>(
+    "SELECT id, item_id, snapshot, saved_at, saved_by FROM content_revisions WHERE id = ?",
+    [id],
+  );
+  if (!r) return undefined;
+  const [who] = r.saved_by ? await query<Row & { name: string }>("SELECT name FROM users WHERE id = ?", [r.saved_by]) : [];
+  return { id: r.id, itemKey: r.item_id, snapshot: typeof r.snapshot === "string" ? JSON.parse(r.snapshot) : r.snapshot, savedAt: r.saved_at, savedBy: who?.name ?? null };
+}

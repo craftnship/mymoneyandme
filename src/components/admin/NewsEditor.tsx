@@ -6,7 +6,7 @@ import type { ArticleCategory, NewsItem } from "@/lib/content/types";
 import { ARTICLE_CATEGORIES } from "@/lib/content/categories";
 import { removeItemAction, saveNewsAction } from "@/lib/content/actions";
 import { fieldClass } from "./BlockFields";
-import { SaveBar, btn, useEditor, type Lang } from "./editorParts";
+import { RestoredNotice, SaveBar, btn, useEditor, type Lang } from "./editorParts";
 
 /**
  * A news item: date, category, the source it was checked against, and a
@@ -14,13 +14,13 @@ import { SaveBar, btn, useEditor, type Lang } from "./editorParts";
  * with a title is live on save; a language left empty falls back to the
  * default one.
  */
-export function NewsEditor({ initial, isNew, langs, sourceLocale }: { initial: NewsItem; isNew: boolean; langs: Lang[]; sourceLocale: string }) {
+export function NewsEditor({ initial, isNew, langs, sourceLocale, restored }: { initial: NewsItem; isNew: boolean; langs: Lang[]; sourceLocale: string; restored?: string }) {
   const t = useTranslations("admin.newsEditor");
   const te = useTranslations("admin.editor");
   const ta = useTranslations("article");
   const ui = useLocale();
   const router = useRouter();
-  const { value: item, update, dirty, setDirty, status, setStatus, pending, save } = useEditor(initial);
+  const { value: item, update, dirty, setDirty, status, setStatus, pending, save } = useEditor(initial, Boolean(restored));
   const text = (code: string) => item.translations.find((x) => x.locale === code) ?? { locale: code, title: "", summary: "" };
   const patch = (code: string, p: { title?: string; summary?: string }) =>
     update((n) => ({ ...n, translations: [...n.translations.filter((x) => x.locale !== code), { ...text(code), ...p }].sort((a, b) => (a.locale === sourceLocale ? -1 : b.locale === sourceLocale ? 1 : a.locale.localeCompare(b.locale))) }));
@@ -32,7 +32,7 @@ export function NewsEditor({ initial, isNew, langs, sourceLocale }: { initial: N
       return;
     }
     save(() => saveNewsAction(ui, JSON.stringify({ ...item, translations }), isNew), (res) => {
-      if (isNew) router.replace(`/admin/news/${res.id}`);
+      if (isNew || restored) router.replace(`/admin/news/${res.id}`);
       else router.refresh();
     });
   };
@@ -49,6 +49,7 @@ export function NewsEditor({ initial, isNew, langs, sourceLocale }: { initial: N
 
   return (
     <div className="space-y-8 pb-24">
+      <RestoredNotice text={restored} />
       <section className="rounded-card border border-border p-5 space-y-4">
         <div className="grid gap-4 sm:grid-cols-2">
           <label className="block text-sm">
