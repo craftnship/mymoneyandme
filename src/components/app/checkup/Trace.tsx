@@ -126,7 +126,7 @@ export async function RuleSources({ version, keys }: { version?: string; keys?: 
       <ul className="mt-2 space-y-1.5">
         {entries.map(([key, s]) => (
           <li key={key}>
-            <span className="font-medium">{t.has(`key.${key}`) ? t(`key.${key}` as "key.assumptions") : key}</span>:{" "}
+            <span className="font-medium">{t.has(`key.${key.replace(/\./g, "-")}`) ? t(`key.${key.replace(/\./g, "-")}` as "key.assumptions") : key}</span>:{" "}
             {s.url ? <a href={s.url} rel="noopener noreferrer" target="_blank" className="underline underline-offset-2">{s.title}</a> : s.title}
             {" "}<span className="text-fg-muted">({t("verified", { date: s.verifiedOn })})</span>
             {s.note ? <span className="block text-fg-muted">{s.note}</span> : null}

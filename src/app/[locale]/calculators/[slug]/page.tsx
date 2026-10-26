@@ -6,6 +6,7 @@ import { CALCULATORS, calculatorDescription, decodeInputs, getCalculator, type C
 import { allArticles, resolveTranslation } from "@/lib/content/store";
 import { CalculatorEmbed } from "@/components/CalculatorEmbed";
 import { jsonLd, pageAlternates } from "@/lib/seo";
+import { RuleSources } from "@/components/app/checkup/Trace";
 
 export function generateStaticParams() {
   return CALCULATORS.map((c) => ({ slug: c.slug }));
@@ -71,6 +72,11 @@ export default async function CalculatorPage({ params, searchParams }: { params:
           </ul>
         </section>
       ) : null}
+      <section className="rounded-card border border-border p-5 text-sm">
+        <p className="font-semibold">{t("sourcesTitle")}</p>
+        <p className="mt-1 text-fg-muted">{t("sourcesIntro")}</p>
+        <RuleSources keys={def.group === "tax" ? ["tax"] : def.group === "fixedIncome" || def.group === "retirement" ? ["schemes", "assumptions"] : def.group === "insurance" ? ["insurance", "assumptions"] : ["assumptions"]} />
+      </section>
       {siblings.length ? (
         <section>
           <h2 className="font-semibold mb-2">{t("related")}</h2>

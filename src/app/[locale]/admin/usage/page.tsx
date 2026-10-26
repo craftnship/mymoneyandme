@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { adminAccess } from "@/lib/auth/admin";
@@ -21,6 +22,16 @@ function delta(now: number, before: number): string {
 /** Usage counts for the people running the site: no amounts, no names, only what members and visitors did. */
 export default async function UsagePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
+  const t = await getTranslations("admin.usage");
+  return (
+    <Suspense fallback={<PageTitle title={t("title")} intro={t("intro")} />}>
+      <UsageBody locale={locale} />
+    </Suspense>
+  );
+}
+
+/** The session check and the report read request-time data, so they live under the Suspense boundary. */
+async function UsageBody({ locale }: { locale: string }) {
   const access = await adminAccess(locale);
   if (!access.ok) notFound();
   const t = await getTranslations("admin.usage");
