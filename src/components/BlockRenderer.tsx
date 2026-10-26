@@ -73,6 +73,14 @@ export async function BlockRenderer({ blocks, kids = false }: { blocks: Block[];
                 ))}
               </div>
             );
+          case "image":
+            return b.src ? (
+              <figure key={i} className="space-y-2">
+                {/* eslint-disable-next-line @next/next/no-img-element -- uploads are served as-is from /media */}
+                <img src={b.src} alt={b.alt} loading="lazy" className="w-full rounded-card border border-border" />
+                {b.caption ? <figcaption className="text-sm text-fg-muted">{p(b.caption)}</figcaption> : null}
+              </figure>
+            ) : null;
           default:
             return null;
         }

@@ -7,7 +7,7 @@ import { searchArticles } from "./search";
 import { CALCULATORS } from "@/lib/calculators";
 import type { Block, Translation } from "./types";
 
-const BLOCK_TYPES = new Set(["heading", "paragraph", "list", "callout", "quote", "table", "calculator", "takeaways", "glossary", "quiz", "activity", "faq"]);
+const BLOCK_TYPES = new Set(["heading", "paragraph", "list", "callout", "quote", "table", "calculator", "takeaways", "glossary", "quiz", "activity", "faq", "image"]);
 const PLACEHOLDER_KEYS = new Set([
   "inflation_default", "inflation_education", "return_equity", "return_debt", "section_80c_limit", "section_80d_self",
   "nps_80ccd1b_limit", "standard_deduction_new", "standard_deduction_old", "rebate_87a_limit_new", "ppf_rate", "epf_rate",
@@ -28,6 +28,7 @@ function textOf(b: Block): string[] {
     case "quiz": return b.questions.flatMap((q) => [q.q, ...q.options, q.explanation ?? ""]);
     case "faq": return b.items.flatMap((i) => [i.q, i.a]);
     case "calculator": return [];
+    case "image": return [b.alt, b.caption ?? ""];
   }
 }
 

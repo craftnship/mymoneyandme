@@ -6,19 +6,19 @@ import type { Chapter } from "@/lib/content/types";
 import { estimateMinutes, slugify, type ChapterDoc } from "@/lib/content/editing";
 import { removeItemAction, saveChapterAction } from "@/lib/content/actions";
 import { fieldClass } from "./BlockFields";
-import { SaveBar, TranslatedBody, btn, useEditor, type Calc, type Lang } from "./editorParts";
+import { RestoredNotice, SaveBar, TranslatedBody, btn, useEditor, type Calc, type Lang } from "./editorParts";
 
 /**
  * The chapter editor: the article editor's languages and body (quizzes
  * included) with a chapter's own two settings. A new chapter picks its web
  * address once; it is part of the chapter's link and never changes after.
  */
-export function ChapterEditor({ initial, isNew, track, moduleSlug, sourceLocale, langs, calculators }: { initial: Chapter; isNew: boolean; track: string; moduleSlug: string; sourceLocale: string; langs: Lang[]; calculators: Calc[] }) {
+export function ChapterEditor({ initial, isNew, track, moduleSlug, sourceLocale, langs, calculators, restored }: { initial: Chapter; isNew: boolean; track: string; moduleSlug: string; sourceLocale: string; langs: Lang[]; calculators: Calc[]; restored?: string }) {
   const t = useTranslations("admin.chapter");
   const te = useTranslations("admin.editor");
   const ui = useLocale();
   const router = useRouter();
-  const { value: doc, update, dirty, setDirty, status, setStatus, pending, save } = useEditor<ChapterDoc>({ ...initial, sourceLocale });
+  const { value: doc, update, dirty, setDirty, status, setStatus, pending, save } = useEditor<ChapterDoc>({ ...initial, sourceLocale }, Boolean(restored));
   const source = doc.translations.find((tr) => tr.locale === sourceLocale) ?? doc.translations[0];
   const base = `/admin/learn/${track}/${moduleSlug}`;
   const removable = !isNew && !initial.translations.some((tr) => tr.state === "published");
@@ -26,7 +26,7 @@ export function ChapterEditor({ initial, isNew, track, moduleSlug, sourceLocale,
   const onSave = () => {
     const { slug, readingMinutes, translations } = doc;
     save(() => saveChapterAction(ui, track, moduleSlug, JSON.stringify({ slug, readingMinutes, translations }), isNew), (res) => {
-      if (isNew) router.replace(`${base}/${res.id}`);
+      if (isNew || restored) router.replace(`${base}/${res.id}`);
       else router.refresh();
     });
   };
@@ -42,6 +42,7 @@ export function ChapterEditor({ initial, isNew, track, moduleSlug, sourceLocale,
 
   return (
     <div className="space-y-8 pb-24">
+      <RestoredNotice text={restored} />
       <section className="rounded-card border border-border p-5 space-y-4">
         <h2 className="text-lg font-semibold">{t("settings")}</h2>
         <div className="grid gap-4 sm:grid-cols-2">

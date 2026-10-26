@@ -9,6 +9,7 @@ import type { SaveResult } from "@/lib/content/actions";
 import {
   BLOCK_TYPES, addTranslation, insertBlock, moveBlock, newBlock, patchTranslation, removeBlock, setBlockShared, setBlockText, type BlockType, type Doc,
 } from "@/lib/content/editing";
+import { fromIndiaInput, toIndiaInput } from "@/lib/content/schedule";
 import { BlockFields, fieldClass } from "./BlockFields";
 import { BlockToolbar } from "./BlockToolbar";
 
@@ -25,10 +26,11 @@ const STATES: Translation["state"][] = ["draft", "inReview", "published"];
 
 export type Status = { tone: "ok" | "error"; text: string; problems?: Problem[] };
 
-export function useEditor<T>(initial: T) {
+/** `startDirty` for a restored version: it is not saved until the person saves it. */
+export function useEditor<T>(initial: T, startDirty = false) {
   const t = useTranslations("admin.editor");
   const [value, setValue] = useState(initial);
-  const [dirty, setDirty] = useState(false);
+  const [dirty, setDirty] = useState(startDirty);
   const [status, setStatus] = useState<Status | null>(null);
   const [pending, start] = useTransition();
 
@@ -63,6 +65,11 @@ export function useEditor<T>(initial: T) {
     });
 
   return { value, update, dirty, setDirty, status, setStatus, pending, save };
+}
+
+/** Shown above an editor opened with an earlier version loaded in. */
+export function RestoredNotice({ text }: { text?: string }) {
+  return text ? <div role="status" className="rounded-card border border-warn/40 bg-warn-soft p-4 text-sm">{text}</div> : null;
 }
 
 export function SaveBar({ onSave, pending, dirty, status, langs, extra }: { onSave: () => void; pending: boolean; dirty: boolean; status: Status | null; langs: Lang[]; extra?: React.ReactNode }) {
@@ -140,6 +147,19 @@ export function TranslatedBody<D extends Doc>({ doc, update, langs, calculators,
                     ))}
                   </div>
                 </fieldset>
+                {tr.state === "published" ? (
+                  <label className="block text-sm">
+                    <span className="block mb-1">{t("publishAt")}</span>
+                    <input type="datetime-local" value={toIndiaInput(tr.publishAt)} onChange={(e) => patch({ publishAt: fromIndiaInput(e.target.value) })} className={fieldClass} />
+                    <span className="block text-xs text-fg-muted mt-1">{t("publishAtHint")}</span>
+                  </label>
+                ) : null}
+                {tr.outOfDate ? (
+                  <div role="note" className="rounded-lg border border-warn/40 bg-warn-soft p-2 text-sm">
+                    <p>{t("outOfDate")}</p>
+                    <button type="button" className={`${btn} mt-2`} onClick={() => patch({ outOfDate: undefined })}>{t("markUpToDate")}</button>
+                  </div>
+                ) : null}
                 <label className="flex items-center gap-2 text-sm">
                   <input type="checkbox" checked={tr.aiDraft} onChange={(e) => patch({ aiDraft: e.target.checked })} />
                   {t("aiDraft")}

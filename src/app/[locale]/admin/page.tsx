@@ -9,19 +9,21 @@ import { itemId } from "@/lib/content/rows";
 import { loadContent } from "@/lib/content/source";
 import { moduleTitle } from "@/lib/content/store";
 import { TRACKS } from "@/lib/content/json";
+import { isScheduled } from "@/lib/content/schedule";
 import type { Translation } from "@/lib/content/types";
 import { Notice, PageTitle, Pill } from "@/components/ui";
 
 const LOCALES = routing.locales as readonly string[];
 
-function StatePill({ translation }: { translation?: Pick<Translation, "state" | "aiDraft"> }) {
-  return <StateLabel state={translation?.state ?? "missing"} aiDraft={translation?.aiDraft ?? false} />;
+function StatePill({ translation, now }: { translation?: Pick<Translation, "state" | "aiDraft" | "publishAt" | "outOfDate">; now: Date }) {
+  const state = !translation ? "missing" : isScheduled(translation, now) ? "scheduled" : translation.state;
+  return <StateLabel state={state} aiDraft={translation?.aiDraft ?? false} outOfDate={translation?.outOfDate ?? false} />;
 }
 
-async function StateLabel({ state, aiDraft }: { state: Translation["state"] | "missing"; aiDraft: boolean }) {
+async function StateLabel({ state, aiDraft, outOfDate = false }: { state: Translation["state"] | "missing" | "scheduled"; aiDraft: boolean; outOfDate?: boolean }) {
   const t = await getTranslations("admin.state");
   const tone = state === "published" ? "accent" : state === "missing" ? "neutral" : "warn";
-  return <Pill tone={tone}>{t(state)}{aiDraft ? ` · ${t("aiDraft")}` : ""}</Pill>;
+  return <Pill tone={tone}>{t(state)}{aiDraft ? ` · ${t("aiDraft")}` : ""}{outOfDate ? ` · ${t("outOfDate")}` : ""}</Pill>;
 }
 
 async function Owner({ meta }: { meta?: ItemMeta }) {
@@ -45,6 +47,7 @@ export default async function AdminHome({ params }: { params: Promise<{ locale: 
     databaseConfigured() ? itemMeta().catch(() => new Map<string, ItemMeta>()) : Promise.resolve(new Map<string, ItemMeta>()),
   ]);
   const { articles, modules, news } = snapshot;
+  const now = new Date();
   const chapters = modules.flatMap((m) => m.chapters);
   const written = chapters.filter((c) => c.translations.some((tr) => tr.state === "published")).length;
   const th = "px-3 py-2 text-start font-medium text-fg-muted";
@@ -57,6 +60,9 @@ export default async function AdminHome({ params }: { params: Promise<{ locale: 
         <div className="space-y-3">
           <Notice tone={from === "database" ? "tip" : "warning"}>{t(`source.${from === "database" ? "database" : problem ?? "unavailable"}`)}</Notice>
           <Notice tone="info">{t("comingNext")}</Notice>
+          {from === "database" ? (
+            <a href={`/api/admin/export?locale=${locale}`} download className="me-2 inline-block rounded-lg border border-border px-4 py-2 text-sm hover:bg-accent-soft" title={t("exportHint")}>{t("export")}</a>
+          ) : null}
           {from === "database" ? (
             <Link href="/admin/articles/new" className="inline-block rounded-lg bg-accent text-white px-4 py-2 text-sm font-medium hover:bg-accent-strong">{t("articles.new")}</Link>
           ) : null}
@@ -93,7 +99,7 @@ export default async function AdminHome({ params }: { params: Promise<{ locale: 
                     </td>
                     <td className={td}>{ta(`category.${a.category}`)}</td>
                     <td className={`${td} whitespace-nowrap`}>{f.dateTime(new Date(a.publishedAt), { dateStyle: "medium" })}</td>
-                    {LOCALES.map((l) => <td key={l} className={td}><StatePill translation={a.translations.find((tr) => tr.locale === l)} /></td>)}
+                    {LOCALES.map((l) => <td key={l} className={td}><StatePill now={now} translation={a.translations.find((tr) => tr.locale === l)} /></td>)}
                     <td className={td}><Owner meta={meta.get(itemId.article(a))} /></td>
                   </tr>
                 );

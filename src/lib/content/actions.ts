@@ -9,7 +9,7 @@ import { databaseConfigured, newId } from "@/lib/db";
 import { CALCULATORS } from "@/lib/calculators";
 import { saveImage, type UploadError } from "@/lib/media/store";
 import { archiveItem, articleForEdit, chapterExists, chapterForEdit, moduleForEdit, newsForEdit, saveArticle, saveChapter, saveModule, saveNews, slugTaken } from "./admin";
-import { stampPublishDates, stampTranslationDates } from "./editing";
+import { markOutOfDate, stampPublishDates, stampTranslationDates } from "./editing";
 import { itemId } from "./rows";
 import { articleSchema, chapterSchema, moduleEditSchema, newsSchema, publishProblems, type Problem } from "./schema";
 import { CONTENT_TAG } from "./store";
@@ -82,6 +82,7 @@ export async function saveArticleAction(locale: string, payload: string, isNew: 
     const before = await articleForEdit(article.id);
     if (!before) return { ok: false, error: "invalid" };
     previousSlug = before.slug;
+    article = markOutOfDate(before, article);
   }
 
   const source = article.translations.find((t) => t.locale === article.sourceLocale);
@@ -145,7 +146,10 @@ export async function saveChapterAction(locale: string, track: string, moduleSlu
   const exists = mod.chapters.some((c) => c.slug === parsed.data.slug);
   if (isNew ? exists || (await chapterExists(mod, parsed.data.slug)) : !exists) return { ok: false, error: isNew ? "slugTaken" : "notFound" };
 
-  const chapter = { ...parsed.data, translations: stampTranslationDates(parsed.data.translations, todayInIndia()) };
+  const before = mod.chapters.find((c) => c.slug === parsed.data.slug);
+  const sourceLocale = routing.defaultLocale;
+  const marked = markOutOfDate(before && { ...before, sourceLocale }, { ...parsed.data, sourceLocale });
+  const chapter = { slug: marked.slug, readingMinutes: marked.readingMinutes, translations: stampTranslationDates(marked.translations, todayInIndia()) };
   const source = chapter.translations.find((x) => x.locale === routing.defaultLocale) ?? chapter.translations[0];
   const problems = chapter.translations.filter((x) => x.state === "published").flatMap((x) => publishProblems(x, source, CALC_SLUGS));
   if (problems.length > 0) return { ok: false, error: "invalid", problems };

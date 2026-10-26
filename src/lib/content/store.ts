@@ -3,6 +3,7 @@ import type { Article, Chapter, Module, NewsItem, Track, Translation } from "./t
 import { routing } from "@/i18n/routing";
 import { loadContent } from "./source";
 import type { ContentSnapshot } from "./json";
+import { applySchedule } from "./schedule";
 
 /** Cache tag on every content read; the admin clears it when something is published. */
 export const CONTENT_TAG = "content";
@@ -17,7 +18,8 @@ async function snapshot(): Promise<ContentSnapshot> {
   cacheTag(CONTENT_TAG);
   if (process.env.NODE_ENV === "production") cacheLife({ stale: 60, revalidate: 300, expire: 86400 });
   else cacheLife("seconds");
-  return (await loadContent()).snapshot;
+  // Scheduled languages stay hidden until their time; the revalidation above (or the publish cron) brings them in.
+  return applySchedule((await loadContent()).snapshot, new Date());
 }
 
 /** Newest first. */

@@ -8,6 +8,8 @@ import { isArticleCategory } from "./categories";
  * before it reaches the database.
  */
 const text = z.string().max(20000);
+/** Images ship with the code (/images) or were uploaded in the console (/media). */
+const IMAGE_PATH = z.string().regex(/^\/(images|media)\/[\w./-]+$/).max(200);
 const line = z.string().max(500);
 
 export const blockSchema: z.ZodType<Block> = z.discriminatedUnion("type", [
@@ -26,6 +28,8 @@ export const blockSchema: z.ZodType<Block> = z.discriminatedUnion("type", [
   }),
   z.object({ type: z.literal("activity"), text }),
   z.object({ type: z.literal("faq"), items: z.array(z.object({ q: line, a: text })).max(50) }),
+  // An empty src is a draft that has no image yet; publishProblems refuses it.
+  z.object({ type: z.literal("image"), src: z.union([z.literal(""), IMAGE_PATH]), alt: line, caption: line.optional() }),
 ]) as z.ZodType<Block>;
 
 const date = z.string().regex(/^\d{4}-\d{2}-\d{2}$/);
@@ -41,6 +45,7 @@ export const translationSchema: z.ZodType<Translation> = z.object({
   state: z.enum(["draft", "inReview", "approved", "published"]),
   aiDraft: z.boolean(),
   outOfDate: z.boolean().optional(),
+  publishAt: z.string().datetime({ offset: true }).optional(),
   publishedAt: date.optional(),
   updatedAt: date.optional(),
 }) as z.ZodType<Translation>;
@@ -58,7 +63,7 @@ export const articleSchema: z.ZodType<Article> = z.object({
   publishedAt: date,
   updatedAt: date.optional(),
   pinned: z.boolean().optional(),
-  cover: z.string().regex(/^\/(images|media)\/[\w./-]+$/).max(200).optional(),
+  cover: IMAGE_PATH.optional(),
   relatedCalculator: z.string().regex(/^[a-z0-9-]+$/).max(80).optional(),
   relatedChapter: z.string().regex(/^(adults|kids|women)\/[a-z0-9-]+\/[a-z0-9-]+$/).max(200).optional(),
   translations: z.array(translationSchema).min(1).max(12),
@@ -102,12 +107,13 @@ export function blockTexts(b: Block): string[] {
     case "quiz": return b.questions.flatMap((q) => [q.q, ...q.options]);
     case "faq": return b.items.flatMap((i) => [i.q, i.a]);
     case "calculator": return [];
+    case "image": return b.caption !== undefined ? [b.alt, b.caption] : [b.alt];
   }
 }
 
 export type Problem =
   | { code: "titleMissing" | "excerptMissing" | "noBlocks"; locale: string }
-  | { code: "emptyText" | "quizAnswer" | "unknownCalculator" | "structureDiffers"; locale: string; block: number };
+  | { code: "emptyText" | "quizAnswer" | "unknownCalculator" | "imageMissing" | "structureDiffers"; locale: string; block: number };
 
 /**
  * What stops a translation from being published: an empty title, excerpt or
@@ -125,6 +131,7 @@ export function publishProblems(t: Translation, source: Translation | undefined,
     if (blockTexts(b).some((s) => !s.trim()) || (b.type !== "calculator" && blockTexts(b).length === 0)) out.push({ code: "emptyText", locale: t.locale, block: i });
     if (b.type === "quiz" && b.questions.some((q) => q.answer >= q.options.length)) out.push({ code: "quizAnswer", locale: t.locale, block: i });
     if (b.type === "calculator" && !calculators.has(b.slug)) out.push({ code: "unknownCalculator", locale: t.locale, block: i });
+    if (b.type === "image" && !b.src) out.push({ code: "imageMissing", locale: t.locale, block: i });
   });
   if (source && source !== t) {
     const n = Math.max(source.blocks.length, t.blocks.length);

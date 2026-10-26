@@ -90,6 +90,13 @@ export function BlockFields({ block, onChange, calculatorName, lang, dir }: { bl
           ))}
         </div>
       );
+    case "image":
+      return (
+        <div className="space-y-2">
+          <Line {...common} label={t("alt")} placeholder={t("alt")} value={block.alt} onChange={(alt) => set({ alt })} />
+          {block.caption !== undefined ? <Line {...common} label={t("caption")} placeholder={t("caption")} value={block.caption} onChange={(caption) => set({ caption })} /> : null}
+        </div>
+      );
     case "quiz":
       return (
         <div className="space-y-4">

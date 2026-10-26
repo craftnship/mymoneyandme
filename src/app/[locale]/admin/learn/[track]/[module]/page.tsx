@@ -4,7 +4,9 @@ import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { adminAccess } from "@/lib/auth/admin";
 import { databaseConfigured } from "@/lib/db";
-import { moduleForEdit } from "@/lib/content/admin";
+import { listRevisions, moduleForEdit } from "@/lib/content/admin";
+import { itemId } from "@/lib/content/rows";
+import { RevisionList } from "@/components/admin/RevisionList";
 import { isTrack } from "@/lib/content/json";
 import { moduleTitle } from "@/lib/content/store";
 import { ModuleEditor } from "@/components/admin/ModuleEditor";
@@ -20,7 +22,7 @@ export default async function EditModulePage({ params }: { params: Promise<{ loc
   if (!databaseConfigured()) return <Notice tone="warning">{t("editor.errors.notConfigured")}</Notice>;
   const mod = await moduleForEdit(track, slug).catch(() => undefined);
   if (!mod) notFound();
-  const { langs } = await editorOptions(locale);
+  const [{ langs }, revisions] = await Promise.all([editorOptions(locale), listRevisions(itemId.module(mod))]);
   const chapters = mod.chapters.map((c) => ({
     slug: c.slug,
     title: (c.translations.find((tr) => tr.locale === locale) ?? c.translations.find((tr) => tr.locale === routing.defaultLocale) ?? c.translations[0])?.title ?? c.slug,
@@ -34,6 +36,7 @@ export default async function EditModulePage({ params }: { params: Promise<{ loc
       <h1 className="text-3xl font-semibold tracking-tight">{moduleTitle(mod, locale)?.title ?? slug}</h1>
       <Link href={`/learn/${track}/${slug}`} className="inline-block text-sm underline underline-offset-4">{t("articles.view")}</Link>
       <ModuleEditor key={JSON.stringify([mod.translations, chapters.map((c) => c.slug), mod.difficulty, mod.estimatedHours])} module={mod} chapters={chapters} langs={langs} sourceLocale={routing.defaultLocale} />
+      <RevisionList revisions={revisions} />
     </div>
   );
 }

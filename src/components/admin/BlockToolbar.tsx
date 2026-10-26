@@ -1,7 +1,9 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useRef, useState } from "react";
+import { useLocale, useTranslations } from "next-intl";
 import type { Block } from "@/lib/content/types";
+import { uploadImageAction } from "@/lib/content/actions";
 
 /**
  * The settings a block shares across every language (heading level, list
@@ -92,7 +94,46 @@ export function BlockToolbar({ block, onShared, calculators }: { block: Block; o
           ))}
         </span>
       );
+    case "image":
+      return <ImageControls block={block} onShared={onShared} />;
     default:
       return null;
   }
+}
+
+/** Upload or replace the picture (the same file in every language) and switch the caption on or off. */
+function ImageControls({ block, onShared }: { block: Extract<Block, { type: "image" }>; onShared: (change: (b: Block) => Block) => void }) {
+  const t = useTranslations("admin.editor.toolbar");
+  const te = useTranslations("admin.editor.errors.upload");
+  const ui = useLocale();
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const ref = useRef<HTMLInputElement>(null);
+  const upload = async (file: File | undefined) => {
+    if (!file) return;
+    setBusy(true);
+    setError(null);
+    const form = new FormData();
+    form.set("file", file);
+    const res = await uploadImageAction(ui, form);
+    setBusy(false);
+    if (ref.current) ref.current.value = "";
+    if (res.ok) onShared((b) => (b.type === "image" ? { ...b, src: res.url } : b));
+    else setError(te(res.error));
+  };
+  return (
+    <span className="flex flex-wrap items-center gap-2">
+      {/* eslint-disable-next-line @next/next/no-img-element -- a thumbnail of the upload */}
+      {block.src ? <img src={block.src} alt="" className="h-12 w-20 rounded border border-border object-cover" /> : null}
+      <label className={`${btn} cursor-pointer`}>
+        {busy ? t("uploading") : block.src ? t("replaceImage") : t("uploadImage")}
+        <input ref={ref} type="file" accept="image/png,image/jpeg,image/webp" className="sr-only" disabled={busy} onChange={(e) => upload(e.target.files?.[0])} />
+      </label>
+      <label className="flex items-center gap-1 text-xs">
+        <input type="checkbox" checked={block.caption !== undefined} onChange={(e) => { const on = e.target.checked; onShared((b) => (b.type === "image" ? { ...b, caption: on ? (b.caption ?? "") : undefined } : b)); }} />
+        {t("caption")}
+      </label>
+      {error ? <span role="alert" className="text-xs text-danger">{error}</span> : null}
+    </span>
+  );
 }
