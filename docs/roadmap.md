@@ -10,7 +10,7 @@ Phases follow section 20 of the feature document. Months are indicative for a so
 | One article and one chapter in two languages | Done: 50/30/20 article and Budgeting chapter in English and Tamil (AI-draft labelled) |
 | Rule-pack format validated with India check-up rules | Done: `rulepacks/india-2025-26.v1.json`, zod schema, 8 dimensions, tests |
 | Auth with passkeys | Done in Phase 3: email + password with breach check, email verification, database sessions, passkeys |
-| CMS skeleton | Content model done; content moved into MySQL with the JSON files as seed and fallback; authoring console phase 1 (staff roles, passkey-only /admin with the content list) and phase 2 (article editor with images, preview and revisions) done, chapter and news editing next |
+| CMS skeleton | Content model done; content moved into MySQL with the JSON files as seed and fallback; authoring console phase 1 (staff roles, passkey-only /admin with the content list) phase 2 (article editor with images, preview and revisions) and phase 3 (chapter, module and news editing) done; phase 4 (images in the body, scheduled publishing, restoring revisions, export) next |
 
 ## Phase 2: Public site — in progress
 

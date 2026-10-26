@@ -11,6 +11,7 @@ export type ContentSnapshot = { articles: Article[]; modules: Module[]; news: Ne
 
 const ROOT = path.join(process.cwd(), "content");
 export const TRACKS: Track[] = ["adults", "kids", "women"];
+export const isTrack = (s: string): s is Track => (TRACKS as string[]).includes(s);
 
 function readJsonDir<T>(dir: string): T[] {
   if (!fs.existsSync(dir)) return [];
