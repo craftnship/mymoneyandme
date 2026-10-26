@@ -1,5 +1,5 @@
 import type { EmploymentType, HouseholdSnapshot } from "../checkup/engine";
-import { HIGH_COST_RATE_PCT, type FinancialItem, type Payload } from "./model";
+import { HIGH_COST_RATE_PCT, type Family, type FinancialItem, type Payload } from "./model";
 import type { Member } from "./store";
 import type { Goal } from "../goals/model";
 import { monthsBetween } from "../goals/math";
@@ -86,8 +86,33 @@ function isLockedIn(lockInUntil: string | undefined, now: Date): boolean {
   return Boolean(lockInUntil) && new Date(`${lockInUntil}T00:00:00Z`).getTime() > now.getTime();
 }
 
+/** Which data families feed each snapshot field, for "edit the source" links. */
+export const FIELD_FAMILIES: Record<SnapshotField, Family[]> = {
+  monthlyIncome: ["income"],
+  monthlyExpenses: ["expenses", "loans"],
+  liquidAssets: ["assets", "investments"],
+  lifeCover: ["insurance"],
+  healthCover: ["insurance"],
+  monthlyEmi: ["loans"],
+  investments: ["investments", "assets"],
+  retirementCorpus: ["assets", "investments"],
+  age: [],
+  goals: [],
+  nominationsSet: ["assets", "investments", "insurance"],
+  dependants: [],
+  retirementAge: [],
+  monthlyRetirementSip: ["investments"],
+  employment: [],
+  cityTier: [],
+};
+
 export function buildSnapshot(user: SnapshotUser, members: Member[], items: FinancialItem[], goals: Goal[], now = new Date()): HouseholdSnapshot {
   const provided = new Set<SnapshotField>();
+  // A field is an estimate when any item feeding it was marked as one.
+  const estimated = new Set<SnapshotField>();
+  const estimate = (item: Pick<FinancialItem, "confidence">, ...fields: SnapshotField[]) => { if (item.confidence === "estimate") for (const f of fields) estimated.add(f); };
+  let dataAsOf: Date | undefined;
+  for (const i of items) if (!dataAsOf || i.updatedAt > dataAsOf) dataAsOf = i.updatedAt;
   const by = <F extends FinancialItem["family"]>(family: F) => items.filter((i): i is FinancialItem<F> => i.family === family);
 
   const age = ageFromDob(user.dob, now);
@@ -106,6 +131,7 @@ export function buildSnapshot(user: SnapshotUser, members: Member[], items: Fina
   const incomes = by("income");
   const monthlyIncome = incomes.reduce((s, i) => s + perMonth(i.payload.netMonthly, i.payload.frequency), 0);
   if (incomes.length) provided.add("monthlyIncome");
+  for (const i of incomes) estimate(i, "monthlyIncome");
 
   // Expenses and loans
   const expenses = by("expenses");
@@ -121,6 +147,8 @@ export function buildSnapshot(user: SnapshotUser, members: Member[], items: Fina
     .filter((l) => (l.payload.interestPct ?? 0) > HIGH_COST_RATE_PCT || (l.type === "creditCard" && l.payload.revolving))
     .reduce((s, l) => s + l.payload.outstanding, 0);
   if (loans.length) provided.add("monthlyEmi");
+  for (const e of expenses) estimate(e, "monthlyExpenses");
+  for (const l of loans) estimate(l, "monthlyEmi", "monthlyExpenses");
 
   // Assets
   const assets = by("assets");
@@ -130,11 +158,11 @@ export function buildSnapshot(user: SnapshotUser, members: Member[], items: Fina
   let anyInvestment = false;
   for (const a of assets) {
     const v = a.payload.currentValue;
-    if (RETIREMENT_ASSET_TYPES.has(a.type)) retirementCorpus += v;
-    else if (LIQUID_ASSET_TYPES.has(a.type) && a.payload.liquidity !== "illiquid") liquidAssets += v;
-    else if (REAL_ESTATE_TYPES.has(a.type)) { investments.realEstate += v; anyInvestment = true; }
-    else if (a.type === "gold") { investments.gold += v; anyInvestment = true; }
-    else { investments.other += v; anyInvestment = true; }
+    if (RETIREMENT_ASSET_TYPES.has(a.type)) { retirementCorpus += v; estimate(a, "retirementCorpus"); }
+    else if (LIQUID_ASSET_TYPES.has(a.type) && a.payload.liquidity !== "illiquid") { liquidAssets += v; estimate(a, "liquidAssets"); }
+    else if (REAL_ESTATE_TYPES.has(a.type)) { investments.realEstate += v; anyInvestment = true; estimate(a, "investments"); }
+    else if (a.type === "gold") { investments.gold += v; anyInvestment = true; estimate(a, "investments"); }
+    else { investments.other += v; anyInvestment = true; estimate(a, "investments"); }
   }
   if (assets.some((a) => LIQUID_ASSET_TYPES.has(a.type))) provided.add("liquidAssets");
   if (assets.some((a) => RETIREMENT_ASSET_TYPES.has(a.type))) provided.add("retirementCorpus");
@@ -148,6 +176,7 @@ export function buildSnapshot(user: SnapshotUser, members: Member[], items: Fina
       retirementCorpus += p.currentValue;
       monthlyRetirementSip += p.sipMonthly;
       provided.add("retirementCorpus");
+      estimate(i, "retirementCorpus", "monthlyRetirementSip");
       if (p.sipMonthly > 0) provided.add("monthlyRetirementSip");
       continue;
     }
@@ -155,9 +184,11 @@ export function buildSnapshot(user: SnapshotUser, members: Member[], items: Fina
     if (p.assetClass === "debt" && p.risk === "low" && !isLockedIn(p.lockInUntil, now)) {
       liquidAssets += p.currentValue;
       provided.add("liquidAssets");
+      estimate(i, "liquidAssets");
       continue;
     }
     investments[p.assetClass] += p.currentValue;
+    estimate(i, "investments");
   }
   if (anyInvestment) provided.add("investments");
 
@@ -166,6 +197,7 @@ export function buildSnapshot(user: SnapshotUser, members: Member[], items: Fina
   const lifeCover = policies.filter((p) => LIFE_TYPES.has(p.type)).reduce((s, p) => s + p.payload.sumAssured, 0);
   if (policies.some((p) => LIFE_TYPES.has(p.type)) || user.hasTermCover === false) provided.add("lifeCover");
   const healthCover = healthCoverPerHousehold(policies, activeMembers);
+  for (const p of policies) estimate(p, LIFE_TYPES.has(p.type) ? "lifeCover" : "healthCover");
   if (policies.some((p) => HEALTH_FLOATER_TYPES.has(p.type) || HEALTH_INDIVIDUAL_TYPES.has(p.type)) || user.hasHealthCover === false) provided.add("healthCover");
 
   // Nominations: known only when at least one item records the flag.
@@ -205,6 +237,8 @@ export function buildSnapshot(user: SnapshotUser, members: Member[], items: Fina
     willInPlace: user.hasWill ?? undefined,
     monthlyRetirementSip,
     provided: SNAPSHOT_FIELDS.filter((f) => provided.has(f)),
+    estimated: SNAPSHOT_FIELDS.filter((f) => estimated.has(f)),
+    dataAsOf: dataAsOf?.toISOString(),
   };
 }
 

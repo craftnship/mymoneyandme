@@ -257,4 +257,22 @@ export const MIGRATIONS: Migration[] = [
       )`,
     ],
   },
+  {
+    // Product usage (companion spec section 29): anonymous counts of public
+    // actions such as calculator runs and quick checks. No user id, amount or
+    // IP is stored; member actions are counted from audit_events instead,
+    // which gets an index on (action, at) for the usage report.
+    id: "0007_usage_events",
+    statements: [
+      `CREATE TABLE IF NOT EXISTS events (
+        id BIGINT AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(40) NOT NULL,
+        detail VARCHAR(80) NULL,
+        locale VARCHAR(8) NULL,
+        at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+        INDEX idx_events_name (name, at)
+      )`,
+      `ALTER TABLE audit_events ADD INDEX idx_audit_action (action, at)`,
+    ],
+  },
 ];

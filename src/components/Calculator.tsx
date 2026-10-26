@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import type { CalculatorDef, InputDef } from "@/lib/calculators/types";
 import { encodeInputs, runCalculator } from "@/lib/calculators";
@@ -20,6 +20,17 @@ export function Calculator({ def, defaults, initial, compact = false }: Props) {
   const [inputs, setInputs] = useState<Record<string, number>>(initial);
   const [grouping, setGrouping] = useStoredState<Grouping>("mm.grouping", "indian");
   const [copied, setCopied] = useState(false);
+  // One anonymous "calculator used" event per page view, sent the first time an input changes (section 29 of the companion spec).
+  const counted = useRef(false);
+  const change = (next: Record<string, number>) => {
+    setInputs(next);
+    if (counted.current) return;
+    counted.current = true;
+    try {
+      const body = JSON.stringify({ name: "calculatorUsed", detail: def.slug, locale });
+      if (!navigator.sendBeacon?.("/api/events", new Blob([body], { type: "application/json" }))) void fetch("/api/events", { method: "POST", headers: { "content-type": "application/json" }, body, keepalive: true }).catch(() => undefined);
+    } catch {}
+  };
 
   // Live recalculation on every change (section 6); the formula is cheap enough
   // to run synchronously on each render.
@@ -52,14 +63,14 @@ export function Calculator({ def, defaults, initial, compact = false }: Props) {
     <div className={`mt-4 grid gap-6 ${compact ? "" : "lg:grid-cols-[1fr_1.1fr]"}`}>
       <div className={`space-y-4 ${compact ? "order-2" : ""}`}>
         {regular.map((input) => (
-          <Field key={input.key} input={input} value={inputs[input.key]} grouping={grouping} onChange={(v) => setInputs({ ...inputs, [input.key]: v })} />
+          <Field key={input.key} input={input} value={inputs[input.key]} grouping={grouping} onChange={(v) => change({ ...inputs, [input.key]: v })} />
         ))}
         {assumptions.length ? (
           <details className="rounded-xl border border-border p-3" open={!compact}>
             <summary className="cursor-pointer font-medium text-sm">{compact && allRegular.length > 3 ? t("moreInputs") : t("assumptions")}</summary>
             <div className="mt-3 space-y-4">
               {assumptions.map((input) => (
-                <Field key={input.key} input={input} value={inputs[input.key]} grouping={grouping} onChange={(v) => setInputs({ ...inputs, [input.key]: v })} />
+                <Field key={input.key} input={input} value={inputs[input.key]} grouping={grouping} onChange={(v) => change({ ...inputs, [input.key]: v })} />
               ))}
             </div>
           </details>

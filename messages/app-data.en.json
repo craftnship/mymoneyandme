@@ -343,6 +343,7 @@
         "employer": "Employer"
       },
       "confidence": {
+        "estimate": "Estimate",
         "entered": "Entered",
         "imported": "Imported",
         "verified": "Verified"
@@ -374,6 +375,17 @@
         "student": "Student",
         "homemaker": "Homemaker"
       }
+    },
+    "quality": {
+      "title": "{count, plural, one {1 thing to check} other {# things to check}}",
+      "intro": "Your score is only as good as the data behind it. Each line links to the item to fix.",
+      "stale": "{name}: last valued {months} months ago. Update the value or the valuation date.",
+      "duplicate": "{name}: {count} entries with the same type and amount ({amount}). Keep one unless they are really separate.",
+      "zero": "{name}: amount is ₹0. If you are not sure of the figure, enter a rough number and mark it as an estimate; a zero is read as nothing.",
+      "loanNoEmi": "{name}: outstanding balance but no EMI, so the debt score cannot see the monthly load.",
+      "ended": "{name}: ended on {date}. Archive it or update the end date.",
+      "fix": "Fix",
+      "review": "Review"
     }
   }
 }

@@ -43,6 +43,7 @@ export async function AdminShell({ locale, children }: { locale: string; childre
       <div className="flex items-center gap-2 border-b border-border pb-3">
         <nav aria-label={t("nav.label")} className="-mx-1 flex min-w-0 flex-1 items-center gap-1 overflow-x-auto px-1 [scrollbar-width:none]">
           <Link href="/admin" className="px-3 py-1.5 rounded-lg text-sm font-medium whitespace-nowrap text-fg bg-accent-soft">{t("nav.overview")}</Link>
+          {access.role === "admin" ? <Link href="/admin/usage" className="px-3 py-1.5 rounded-lg text-sm font-medium text-fg-muted whitespace-nowrap hover:text-fg hover:bg-accent-soft">{t("nav.usage")}</Link> : null}
           <Link href="/app" className="px-3 py-1.5 rounded-lg text-sm font-medium text-fg-muted whitespace-nowrap hover:text-fg hover:bg-accent-soft">{t("nav.backToSite")}</Link>
         </nav>
         <Pill tone="accent">{t(`role.${access.role}`)}</Pill>

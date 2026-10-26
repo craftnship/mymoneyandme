@@ -6,6 +6,8 @@ import { requireHousehold } from "@/lib/auth/current";
 import { completeness, completenessHref } from "@/lib/data/completeness";
 import { listItems, listMembers } from "@/lib/data/store";
 import { familyTotals, softWarnings, type SoftWarning } from "@/lib/data/summary";
+import { dataQuality } from "@/lib/data/quality";
+import { QualityList } from "@/components/app/data/QualityList";
 import { formatINR, formatINRCompact } from "@/lib/format";
 
 export async function generateMetadata() {
@@ -42,6 +44,7 @@ async function Body({ locale }: { locale: string }) {
   const totals = familyTotals(items);
   const warnings = softWarnings(items);
   const c = completeness(user, members, items);
+  const issues = dataQuality(items);
   return (
     <div className="space-y-6">
       {warnings.length ? (
@@ -67,6 +70,8 @@ async function Body({ locale }: { locale: string }) {
           <div className="h-full bg-accent" style={{ width: `${c.percent}%` }} />
         </div>
       </Card>
+
+      <QualityList issues={issues} />
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {totals.map((f) => (

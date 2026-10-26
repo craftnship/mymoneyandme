@@ -154,3 +154,17 @@ describe("quick-start cover answers", () => {
     }
   });
 });
+
+describe("buildSnapshot provenance", () => {
+  it("records which fields rest on estimates and when the data was last saved", () => {
+    const income = item("income", "salary", { label: "", netMonthly: 90000, frequency: "monthly", taxable: true });
+    const expenses = { ...item("expenses", "other", { label: "", monthly: 50000, fixed: true, essential: true, inflationLinked: true }), confidence: "estimate" as const, updatedAt: new Date("2026-10-01T00:00:00Z") };
+    const loan = item("loans", "home", { label: "", outstanding: 2000000, emi: 20000, lenderType: "bank", rateType: "floating", prepaymentPenalty: false, insured: false, revolving: false });
+    const s = buildSnapshot(user, [self], [income, expenses, loan], [], NOW);
+    expect(s.estimated).toEqual(["monthlyExpenses"]);
+    expect(s.dataAsOf).toBe(NOW.toISOString());
+    const older = buildSnapshot(user, [self], [expenses], [], NOW);
+    expect(older.dataAsOf).toBe("2026-10-01T00:00:00.000Z");
+    expect(buildSnapshot(user, [self], [], [], NOW).dataAsOf).toBeUndefined();
+  });
+});
