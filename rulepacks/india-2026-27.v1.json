@@ -1,0 +1,701 @@
+{
+  "version": "india-2026-27.v1",
+  "country": "IN",
+  "currency": "INR",
+  "effectiveFrom": "2026-04-01",
+  "financialYear": "2026-27",
+  "assessmentYear": "2027-28",
+  "reviewedOn": "2026-10-26",
+  "notes": "Tax year 2026-27 (1 April 2026 to 31 March 2027), the first year under the Income-tax Act, 2025, which replaced the 1961 Act on 1 April 2026. Union Budget 2026-27 left personal income-tax slabs, the standard deduction and the section 87A rebate unchanged. Section numbers moved: the new-regime rates are section 202 (was 115BAC), the 80C-style investment deduction is section 123, and home-loan interest on a self-occupied house is section 22 (was 24(b)); the old labels are kept as keys so content and calculators keep working. Every figure below carries an entry in `sources` with the page it was checked against and the date. Figures still need a certified financial planner's sign-off before they are quoted as advice; edit this file (or stage a new version) rather than engine code when a rate changes.",
+  "assumptions": {
+    "inflationGeneral": 0.06,
+    "inflationEducation": 0.1,
+    "inflationHealthcare": 0.12,
+    "inflationLifestyle": 0.07,
+    "returnEquity": 0.12,
+    "returnDebt": 0.07,
+    "returnGold": 0.08,
+    "returnRealEstate": 0.07,
+    "returnLiquid": 0.045,
+    "returnBalanced": 0.1,
+    "returnPostRetirement": 0.07,
+    "salaryGrowth": 0.08,
+    "lifeExpectancy": 85,
+    "defaultRetirementAge": 60,
+    "safeWithdrawalRate": 0.04
+  },
+  "tax": {
+    "newRegime": {
+      "slabs": [
+        {
+          "upTo": 400000,
+          "rate": 0
+        },
+        {
+          "upTo": 800000,
+          "rate": 0.05
+        },
+        {
+          "upTo": 1200000,
+          "rate": 0.1
+        },
+        {
+          "upTo": 1600000,
+          "rate": 0.15
+        },
+        {
+          "upTo": 2000000,
+          "rate": 0.2
+        },
+        {
+          "upTo": 2400000,
+          "rate": 0.25
+        },
+        {
+          "upTo": null,
+          "rate": 0.3
+        }
+      ],
+      "standardDeduction": 75000,
+      "rebate87A": {
+        "incomeLimit": 1200000,
+        "maxRebate": 60000
+      },
+      "surchargeCap": 0.25
+    },
+    "oldRegime": {
+      "slabs": [
+        {
+          "upTo": 250000,
+          "rate": 0
+        },
+        {
+          "upTo": 500000,
+          "rate": 0.05
+        },
+        {
+          "upTo": 1000000,
+          "rate": 0.2
+        },
+        {
+          "upTo": null,
+          "rate": 0.3
+        }
+      ],
+      "standardDeduction": 50000,
+      "rebate87A": {
+        "incomeLimit": 500000,
+        "maxRebate": 12500
+      },
+      "deductionLimits": {
+        "section80C": 150000,
+        "section80D_self": 25000,
+        "section80D_selfSenior": 50000,
+        "section80D_parents": 25000,
+        "section80D_parentsSenior": 50000,
+        "section80CCD1B": 50000,
+        "section24b_homeLoanInterest": 200000
+      }
+    },
+    "cess": 0.04,
+    "surcharge": [
+      {
+        "above": 5000000,
+        "rate": 0.1
+      },
+      {
+        "above": 10000000,
+        "rate": 0.15
+      },
+      {
+        "above": 20000000,
+        "rate": 0.25
+      },
+      {
+        "above": 50000000,
+        "rate": 0.37
+      }
+    ],
+    "capitalGains": {
+      "equityLTCG": {
+        "rate": 0.125,
+        "exemption": 125000,
+        "holdingMonths": 12
+      },
+      "equitySTCG": {
+        "rate": 0.2
+      },
+      "debtMutualFund": {
+        "note": "Taxed at slab rate for units bought after 2023-04-01"
+      },
+      "propertyLTCG": {
+        "rate": 0.125,
+        "holdingMonths": 24
+      }
+    }
+  },
+  "schemes": {
+    "ppf": {
+      "rate": 0.071,
+      "maxPerYear": 150000,
+      "minPerYear": 500,
+      "tenureYears": 15
+    },
+    "epf": {
+      "rate": 0.0825,
+      "employeeShare": 0.12,
+      "employerShare": 0.12,
+      "epsShare": 0.0833,
+      "wageCeiling": 15000
+    },
+    "nps": {
+      "equityCapAfter50": 0.75,
+      "annuityMin": 0.4,
+      "exitAge": 60
+    },
+    "ssy": {
+      "rate": 0.082,
+      "maxPerYear": 150000,
+      "minPerYear": 250,
+      "depositYears": 15,
+      "maturityYears": 21
+    },
+    "nsc": {
+      "rate": 0.077,
+      "tenureYears": 5
+    },
+    "scss": {
+      "rate": 0.082,
+      "maxDeposit": 3000000,
+      "tenureYears": 5,
+      "minAge": 60
+    },
+    "postOfficeMIS": {
+      "rate": 0.074,
+      "maxSingle": 900000,
+      "maxJoint": 1500000
+    },
+    "postOfficeTD": {
+      "rates": {
+        "1": 0.069,
+        "2": 0.07,
+        "3": 0.071,
+        "5": 0.075
+      }
+    },
+    "kvp": {
+      "rate": 0.075,
+      "doublesInMonths": 115
+    },
+    "gratuity": {
+      "daysPerYear": 15,
+      "daysInMonth": 26,
+      "maxTaxFree": 2000000,
+      "minServiceYears": 5
+    }
+  },
+  "insurance": {
+    "termCoverMultipleOfIncome": {
+      "min": 10,
+      "max": 15
+    },
+    "healthCoverByCityTier": {
+      "tier1": 1000000,
+      "tier2": 700000,
+      "tier3": 500000
+    },
+    "maxPremiumShareOfIncome": 0.1
+  },
+  "scoring": {
+    "grades": [
+      {
+        "min": 85,
+        "grade": "excellent"
+      },
+      {
+        "min": 70,
+        "grade": "good"
+      },
+      {
+        "min": 50,
+        "grade": "fair"
+      },
+      {
+        "min": 0,
+        "grade": "needsAttention"
+      }
+    ],
+    "dimensions": [
+      {
+        "key": "cashflow",
+        "weight": 15,
+        "rules": [
+          {
+            "metric": "savingsRate",
+            "points": [
+              {
+                "gte": 0.3,
+                "score": 100
+              },
+              {
+                "gte": 0.2,
+                "score": 80
+              },
+              {
+                "gte": 0.1,
+                "score": 50
+              },
+              {
+                "gte": 0,
+                "score": 20
+              }
+            ],
+            "share": 0.6
+          },
+          {
+            "metric": "essentialShare",
+            "points": [
+              {
+                "lte": 0.5,
+                "score": 100
+              },
+              {
+                "lte": 0.65,
+                "score": 65
+              },
+              {
+                "lte": 0.8,
+                "score": 35
+              },
+              {
+                "gte": 0,
+                "score": 10
+              }
+            ],
+            "share": 0.4
+          }
+        ]
+      },
+      {
+        "key": "emergency",
+        "weight": 15,
+        "rules": [
+          {
+            "metric": "emergencyMonths",
+            "points": [
+              {
+                "gte": 6,
+                "score": 100
+              },
+              {
+                "gte": 3,
+                "score": 65
+              },
+              {
+                "gte": 1,
+                "score": 30
+              },
+              {
+                "gte": 0,
+                "score": 0
+              }
+            ],
+            "share": 1
+          }
+        ],
+        "targetMonths": {
+          "salariedDualIncome": 3,
+          "salaried": 6,
+          "selfEmployed": 9
+        }
+      },
+      {
+        "key": "debt",
+        "weight": 15,
+        "rules": [
+          {
+            "metric": "emiToIncome",
+            "points": [
+              {
+                "lte": 0.2,
+                "score": 100
+              },
+              {
+                "lte": 0.35,
+                "score": 75
+              },
+              {
+                "lte": 0.5,
+                "score": 35
+              },
+              {
+                "gte": 0,
+                "score": 5
+              }
+            ],
+            "share": 0.6
+          },
+          {
+            "metric": "highCostDebtShare",
+            "points": [
+              {
+                "lte": 0,
+                "score": 100
+              },
+              {
+                "lte": 0.1,
+                "score": 60
+              },
+              {
+                "lte": 0.3,
+                "score": 25
+              },
+              {
+                "gte": 0,
+                "score": 0
+              }
+            ],
+            "share": 0.4
+          }
+        ]
+      },
+      {
+        "key": "insurance",
+        "weight": 15,
+        "rules": [
+          {
+            "metric": "lifeCoverMultiple",
+            "points": [
+              {
+                "gte": 10,
+                "score": 100
+              },
+              {
+                "gte": 5,
+                "score": 55
+              },
+              {
+                "gte": 1,
+                "score": 25
+              },
+              {
+                "gte": 0,
+                "score": 0
+              }
+            ],
+            "share": 0.5
+          },
+          {
+            "metric": "healthCoverRatio",
+            "points": [
+              {
+                "gte": 1,
+                "score": 100
+              },
+              {
+                "gte": 0.5,
+                "score": 55
+              },
+              {
+                "gte": 0.01,
+                "score": 25
+              },
+              {
+                "gte": 0,
+                "score": 0
+              }
+            ],
+            "share": 0.5
+          }
+        ]
+      },
+      {
+        "key": "investments",
+        "weight": 15,
+        "rules": [
+          {
+            "metric": "allocationDrift",
+            "points": [
+              {
+                "lte": 0.1,
+                "score": 100
+              },
+              {
+                "lte": 0.2,
+                "score": 65
+              },
+              {
+                "lte": 0.35,
+                "score": 35
+              },
+              {
+                "gte": 0,
+                "score": 10
+              }
+            ],
+            "share": 0.6
+          },
+          {
+            "metric": "idleCashShare",
+            "points": [
+              {
+                "lte": 0.1,
+                "score": 100
+              },
+              {
+                "lte": 0.25,
+                "score": 60
+              },
+              {
+                "lte": 0.5,
+                "score": 30
+              },
+              {
+                "gte": 0,
+                "score": 5
+              }
+            ],
+            "share": 0.4
+          }
+        ],
+        "targetEquityByAge": {
+          "formula": "100 - age",
+          "min": 0.3,
+          "max": 0.8
+        }
+      },
+      {
+        "key": "retirement",
+        "weight": 10,
+        "rules": [
+          {
+            "metric": "retirementReadiness",
+            "points": [
+              {
+                "gte": 1.0,
+                "score": 100
+              },
+              {
+                "gte": 0.7,
+                "score": 65
+              },
+              {
+                "gte": 0.4,
+                "score": 35
+              },
+              {
+                "gte": 0,
+                "score": 10
+              }
+            ],
+            "share": 1
+          }
+        ]
+      },
+      {
+        "key": "goals",
+        "weight": 10,
+        "rules": [
+          {
+            "metric": "goalReadiness",
+            "points": [
+              {
+                "gte": 0.8,
+                "score": 100
+              },
+              {
+                "gte": 0.5,
+                "score": 60
+              },
+              {
+                "gte": 0.2,
+                "score": 30
+              },
+              {
+                "gte": 0,
+                "score": 10
+              }
+            ],
+            "share": 1
+          }
+        ]
+      },
+      {
+        "key": "hygiene",
+        "weight": 5,
+        "rules": [
+          {
+            "metric": "nominationsSet",
+            "points": [
+              {
+                "gte": 1,
+                "score": 100
+              },
+              {
+                "gte": 0,
+                "score": 0
+              }
+            ],
+            "share": 0.5
+          },
+          {
+            "metric": "willInPlace",
+            "points": [
+              {
+                "gte": 1,
+                "score": 100
+              },
+              {
+                "gte": 0,
+                "score": 0
+              }
+            ],
+            "share": 0.5
+          }
+        ]
+      }
+    ],
+    "lifeStageWeightAdjustments": {
+      "student": {
+        "retirement": -5,
+        "cashflow": 5
+      },
+      "earlyCareer": {
+        "retirement": -3,
+        "emergency": 3
+      },
+      "family": {},
+      "preRetirement": {
+        "retirement": 10,
+        "goals": -5,
+        "cashflow": -5
+      },
+      "retired": {
+        "retirement": 15,
+        "insurance": -5,
+        "debt": -5,
+        "goals": -5
+      }
+    }
+  },
+  "disclaimer": {
+    "en": "This is educational content, not regulated financial advice. My Money & Me never recommends a specific fund, bank or insurer. Results depend on the assumptions shown; review them with a SEBI-registered adviser before acting.",
+    "ta": "இது கல்வி நோக்கத்திற்கான தகவல் மட்டுமே; ஒழுங்குமுறைப்படுத்தப்பட்ட நிதி ஆலோசனை அல்ல. My Money & Me எந்த ஒரு குறிப்பிட்ட நிதி, வங்கி அல்லது காப்பீட்டு நிறுவனத்தையும் பரிந்துரைக்காது. முடிவுகள் காட்டப்பட்ட அனுமானங்களைப் பொறுத்தவை; செயல்படும் முன் SEBI பதிவு பெற்ற ஆலோசகருடன் சரிபார்க்கவும்."
+  },
+  "sources": {
+    "tax.newRegime.slabs": {
+      "url": "https://www.incometaxindia.gov.in/w/section-202-78",
+      "title": "Income-tax Act, 2025, section 202 (new regime rates)",
+      "verifiedOn": "2026-10-26",
+      "note": "Unchanged by Budget 2026-27: nil to 4 L, 5% to 8 L, 10% to 12 L, 15% to 16 L, 20% to 20 L, 25% to 24 L, 30% above."
+    },
+    "tax.newRegime.standardDeduction": {
+      "url": "https://www.bajajfinserv.in/income-tax-changes-for-fy-2026-27",
+      "title": "Income tax changes for FY 2026-27",
+      "verifiedOn": "2026-10-26",
+      "note": "₹75,000 for salaried taxpayers, unchanged."
+    },
+    "tax.newRegime.rebate87A": {
+      "url": "https://www.moneylife.in/article/budget-202627-no-change-in-incometax-slabs-fm-offers-compliance-relief-for-individuals/79540.html",
+      "title": "Budget 2026-27: no change in income-tax slabs",
+      "verifiedOn": "2026-10-26",
+      "note": "Rebate of up to ₹60,000 continues for normal income up to ₹12 L; not available on income taxed at special rates (equity gains, lottery)."
+    },
+    "tax.newRegime.surchargeCap": {
+      "url": "https://www.taxaj.com/learn/new-incometax-slab-rates/",
+      "title": "Income tax slab rates for tax year 2026-27",
+      "verifiedOn": "2026-10-26",
+      "note": "Surcharge under the new regime is capped at 25%; the 37% tier applies only under the old regime."
+    },
+    "tax.oldRegime": {
+      "url": "https://www.bajajfinserv.in/income-tax-changes-for-fy-2026-27",
+      "title": "Income tax changes for FY 2026-27",
+      "verifiedOn": "2026-10-26",
+      "note": "Slabs (nil to 2.5 L, 5% to 5 L, 20% to 10 L, 30% above), ₹50,000 standard deduction, ₹12,500 rebate up to ₹5 L and the 80C / 80D / 80CCD(1B) / 24(b) limits are unchanged. Residents aged 60 to 80 have a ₹3 L basic exemption and 80 and above ₹5 L; the calculator uses the under-60 slabs."
+    },
+    "tax.cess": {
+      "url": "https://www.taxaj.com/learn/new-incometax-slab-rates/",
+      "title": "Income tax slab rates for tax year 2026-27",
+      "verifiedOn": "2026-10-26",
+      "note": "Health and education cess 4% on tax plus surcharge under both regimes."
+    },
+    "tax.capitalGains": {
+      "url": "https://upstox.com/news/personal-finance/tax/income-tax-slab-rate-2026-27-union-budget-changes-live-updates/liveblog-188650/",
+      "title": "Union Budget 2026-27 income-tax changes",
+      "verifiedOn": "2026-10-26",
+      "note": "Equity LTCG 12.5% above ₹1.25 L and STCG 20% carried over from Budget 2024. Budget 2026-27 moved share buybacks to capital-gains taxation and raised STT on futures (0.05%) and options (0.15% on premium) from 1 April 2026."
+    },
+    "schemes.ppf": {
+      "url": "https://dea.gov.in/budget-division/475",
+      "title": "Department of Economic Affairs, small savings interest rates (OM F. No. 1/4/2019-NS of 30 September 2026)",
+      "verifiedOn": "2026-10-26",
+      "note": "7.1% for 1 October to 31 December 2026, unchanged since April 2023. Rates are reset every quarter; check again in January 2027."
+    },
+    "schemes.nsc": {
+      "url": "https://dea.gov.in/budget-division/475",
+      "title": "Department of Economic Affairs, small savings interest rates",
+      "verifiedOn": "2026-10-26",
+      "note": "7.7% for October to December 2026."
+    },
+    "schemes.ssy": {
+      "url": "https://dea.gov.in/budget-division/475",
+      "title": "Department of Economic Affairs, small savings interest rates",
+      "verifiedOn": "2026-10-26",
+      "note": "8.2% for October to December 2026."
+    },
+    "schemes.scss": {
+      "url": "https://dea.gov.in/budget-division/475",
+      "title": "Department of Economic Affairs, small savings interest rates",
+      "verifiedOn": "2026-10-26",
+      "note": "8.2% for October to December 2026; deposit limit ₹30 L."
+    },
+    "schemes.postOfficeMIS": {
+      "url": "https://dea.gov.in/budget-division/475",
+      "title": "Department of Economic Affairs, small savings interest rates",
+      "verifiedOn": "2026-10-26",
+      "note": "7.4% for October to December 2026."
+    },
+    "schemes.postOfficeTD": {
+      "url": "https://dea.gov.in/budget-division/475",
+      "title": "Department of Economic Affairs, small savings interest rates",
+      "verifiedOn": "2026-10-26",
+      "note": "1 year 6.9%, 2 years 7.0%, 3 years 7.1%, 5 years 7.5% for October to December 2026."
+    },
+    "schemes.kvp": {
+      "url": "https://dea.gov.in/budget-division/475",
+      "title": "Department of Economic Affairs, small savings interest rates",
+      "verifiedOn": "2026-10-26",
+      "note": "7.5%, doubles in 115 months."
+    },
+    "schemes.epf": {
+      "url": "https://www.outlookmoney.com/retirement/pension/epf-rates-unchanged-at-825-per-cent-for-2025-26-announces-epfo",
+      "title": "EPFO retains 8.25% for 2025-26",
+      "verifiedOn": "2026-10-26",
+      "note": "8.25% is the rate declared for 2025-26 and ratified by the government; the 2026-27 rate is usually declared by the Central Board of Trustees around February and should be updated then."
+    },
+    "schemes.nps": {
+      "url": "https://www.pfrda.org.in/",
+      "title": "PFRDA",
+      "verifiedOn": "2026-10-26",
+      "note": "Equity cap of 75% after 50 under auto choice, at least 40% annuitised at exit, normal exit at 60. Not re-verified against a 2026 circular."
+    },
+    "schemes.gratuity": {
+      "url": "https://labour.gov.in/",
+      "title": "Payment of Gratuity Act, 1972",
+      "verifiedOn": "2026-10-26",
+      "note": "15 days' wages per completed year on a 26-day month; tax-free limit ₹20 L for private-sector employees. Not changed in 2026."
+    },
+    "insurance": {
+      "url": "",
+      "title": "My Money & Me editorial rule",
+      "verifiedOn": "2026-10-26",
+      "note": "Term cover of 10 to 15 times annual income and health cover by city tier are planning conventions, not regulations; a reviewer may change them."
+    },
+    "assumptions": {
+      "url": "",
+      "title": "My Money & Me editorial assumptions",
+      "verifiedOn": "2026-10-26",
+      "note": "Inflation, return, life-expectancy and withdrawal assumptions are planning defaults shown on every result; members can change them in each calculator."
+    }
+  }
+}

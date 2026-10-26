@@ -39,6 +39,14 @@ export const dimensionSchema = z.object({
 
 const slabSchema = z.object({ upTo: z.number().nullable(), rate: z.number() });
 
+/** Where a figure was checked and when, so every number on the site can be traced to a page. */
+export const sourceSchema = z.object({
+  url: z.string(),
+  title: z.string(),
+  verifiedOn: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+  note: z.string().optional(),
+});
+
 export const rulePackSchema = z.object({
   version: z.string(),
   country: z.literal("IN"),
@@ -46,6 +54,8 @@ export const rulePackSchema = z.object({
   effectiveFrom: z.string(),
   financialYear: z.string(),
   assessmentYear: z.string(),
+  /** Date the whole pack was last reviewed; shown next to traced numbers. */
+  reviewedOn: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
   notes: z.string().optional(),
   assumptions: z.object({
     inflationGeneral: z.number(),
@@ -69,6 +79,8 @@ export const rulePackSchema = z.object({
       slabs: z.array(slabSchema),
       standardDeduction: z.number(),
       rebate87A: z.object({ incomeLimit: z.number(), maxRebate: z.number() }),
+      /** Highest surcharge rate under this regime (25% under the new regime). */
+      surchargeCap: z.number().optional(),
     }),
     oldRegime: z.object({
       slabs: z.array(slabSchema),
@@ -92,6 +104,8 @@ export const rulePackSchema = z.object({
     lifeStageWeightAdjustments: z.record(z.string(), z.record(z.string(), z.number())),
   }),
   disclaimer: z.record(z.string(), z.string()),
+  /** Keyed by the dotted path of the figure (`tax.newRegime.slabs`, `schemes.ppf`). */
+  sources: z.record(z.string(), sourceSchema).optional(),
 });
 
 export type RulePack = z.infer<typeof rulePackSchema>;
@@ -100,3 +114,4 @@ export type DimensionKey = Dimension["key"];
 export type Rule = z.infer<typeof ruleSchema>;
 export type Band = z.infer<typeof bandSchema>;
 export type TaxSlab = z.infer<typeof slabSchema>;
+export type RuleSource = z.infer<typeof sourceSchema>;

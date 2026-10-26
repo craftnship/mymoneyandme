@@ -39,6 +39,9 @@ export function computeRegime(
   const afterRebate = slabTax - rebate;
   let surchargeRate = 0;
   for (const s of pack.tax.surcharge) if (taxableIncome > s.above) surchargeRate = s.rate;
+  // The new regime caps the surcharge (25% from 2023-24); the 37% tier is old-regime only.
+  const cap = regime === "new" ? pack.tax.newRegime.surchargeCap : undefined;
+  if (cap !== undefined) surchargeRate = Math.min(surchargeRate, cap);
   const surcharge = afterRebate * surchargeRate;
   const cess = (afterRebate + surcharge) * pack.tax.cess;
   return {
