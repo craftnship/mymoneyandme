@@ -16,7 +16,7 @@ export function LanguageSwitcher() {
     <label className="inline-flex items-center gap-2 text-sm">
       <span className="sr-only">{t("langSwitch")}</span>
       <select
-        className="rounded-lg border border-border bg-bg-elevated px-2 py-1.5 text-sm"
+        className="rounded-lg border border-border bg-bg-elevated px-1.5 sm:px-2 py-1.5 text-[0.8125rem] sm:text-sm"
         value={locale}
         onChange={(e) => {
           const next = e.target.value;

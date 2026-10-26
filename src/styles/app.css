@@ -4,6 +4,8 @@
   Design tokens. The brand palette is a placeholder until the design language is
   chosen (decision log, section 21); every colour is a token so a swap is one edit.
   Body text is 16 px minimum (section 13), Indic scripts get a taller line height.
+  Noto Sans and Noto Sans Tamil are self-hosted (imported in the locale layout), so
+  every device renders the same pair instead of its own system fallback.
 */
 :root {
   --bg: #fbfaf7;
@@ -20,7 +22,7 @@
   --danger-soft: #fdecea;
   --info-soft: #e8f0fb;
   --radius: 14px;
-  --font-sans: "Noto Sans", "Noto Sans Tamil", "Noto Sans Devanagari", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-sans: "Noto Sans Variable", "Noto Sans Tamil Variable", "Noto Sans", "Noto Sans Tamil", "Noto Sans Devanagari", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
@@ -76,6 +78,75 @@ body {
 
 :lang(ta), :lang(hi), :lang(te), :lang(kn), :lang(ml), :lang(bn), :lang(mr), :lang(gu) {
   line-height: 1.75;
+}
+
+/* The tall Indic line height suits running text; on headings it leaves big gaps between wrapped lines. */
+:is(:lang(ta), :lang(hi), :lang(te), :lang(kn), :lang(ml), :lang(bn), :lang(mr), :lang(gu)) :is(h1, h2, h3, h4) {
+  line-height: 1.4;
+}
+
+/*
+  Long-form reading (articles and chapters). The column is 42rem: at 18px that is
+  about 70 characters a line, the range the leading reading sites keep to.
+  Tamil glyphs sit smaller than Latin at the same size, so Tamil body text goes up
+  a step and titles come down one so they stay on two lines.
+*/
+.reading-column {
+  max-width: 42rem;
+}
+.reading {
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+.reading p, .reading li {
+  text-wrap: pretty;
+}
+.reading h2, .reading h3, .reading-title {
+  text-wrap: balance;
+}
+.reading h2 {
+  scroll-margin-top: 5.5rem;
+}
+.reading-kids {
+  font-size: 1.25rem;
+}
+:lang(ta) .reading {
+  font-size: 1.1875rem;
+}
+:lang(ta) .reading-kids {
+  font-size: 1.3125rem;
+}
+:lang(ta) .reading-title {
+  font-size: clamp(1.625rem, 3vw, 2rem);
+}
+
+/* Glossary popovers: native popovers open centred; keep them small and readable. */
+.gloss-term {
+  text-decoration: underline dotted;
+  text-underline-offset: 0.2em;
+  cursor: help;
+}
+.gloss-pop {
+  max-width: min(22rem, calc(100vw - 2rem));
+  margin: auto;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-elevated);
+  color: var(--fg);
+  box-shadow: 0 10px 30px rgb(0 0 0 / 0.18);
+  font-size: 1rem;
+}
+.gloss-pop::backdrop {
+  background: rgb(0 0 0 / 0.15);
+}
+
+/* Chapter reading progress, under the sticky header. */
+.read-progress {
+  transform-origin: 0 50%;
+}
+[dir="rtl"] .read-progress {
+  transform-origin: 100% 50%;
 }
 
 :focus-visible {

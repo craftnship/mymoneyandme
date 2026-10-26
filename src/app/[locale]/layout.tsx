@@ -5,6 +5,8 @@ import { notFound } from "next/navigation";
 import { routing, localeMeta } from "@/i18n/routing";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import "@fontsource-variable/noto-sans";
+import "@fontsource-variable/noto-sans-tamil";
 import "../globals.css";
 
 export function generateStaticParams() {

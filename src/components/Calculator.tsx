@@ -38,8 +38,10 @@ export function Calculator({ def, defaults, initial, compact = false }: Props) {
   };
 
   const headline = def.outputs.find((o) => o.headline) ?? def.outputs[0];
-  const regular = def.inputs.filter((i) => !i.assumption);
-  const assumptions = def.inputs.filter((i) => i.assumption);
+  // Inside an article or chapter the calculator sits lighter: the answer first, the three main inputs, and the rest behind one toggle.
+  const allRegular = def.inputs.filter((i) => !i.assumption);
+  const regular = compact ? allRegular.slice(0, 3) : allRegular;
+  const assumptions = compact ? [...allRegular.slice(3), ...def.inputs.filter((i) => i.assumption)] : def.inputs.filter((i) => i.assumption);
 
   const share = async () => {
     const url = `${location.origin}${location.pathname}?${encodeInputs(inputs)}`;
@@ -48,13 +50,13 @@ export function Calculator({ def, defaults, initial, compact = false }: Props) {
 
   return (
     <div className={`mt-4 grid gap-6 ${compact ? "" : "lg:grid-cols-[1fr_1.1fr]"}`}>
-      <div className="space-y-4">
+      <div className={`space-y-4 ${compact ? "order-2" : ""}`}>
         {regular.map((input) => (
           <Field key={input.key} input={input} value={inputs[input.key]} grouping={grouping} onChange={(v) => setInputs({ ...inputs, [input.key]: v })} />
         ))}
         {assumptions.length ? (
           <details className="rounded-xl border border-border p-3" open={!compact}>
-            <summary className="cursor-pointer font-medium text-sm">{t("assumptions")}</summary>
+            <summary className="cursor-pointer font-medium text-sm">{compact && allRegular.length > 3 ? t("moreInputs") : t("assumptions")}</summary>
             <div className="mt-3 space-y-4">
               {assumptions.map((input) => (
                 <Field key={input.key} input={input} value={inputs[input.key]} grouping={grouping} onChange={(v) => setInputs({ ...inputs, [input.key]: v })} />
@@ -76,16 +78,16 @@ export function Calculator({ def, defaults, initial, compact = false }: Props) {
         </div>
       </div>
 
-      <div className="space-y-4">
+      <div className={`space-y-4 ${compact ? "order-1" : ""}`}>
         <div className="rounded-card bg-accent-soft border border-accent/20 p-5">
           <p className="text-sm text-accent-strong font-medium">{t(`labels.${headline.label}`)}</p>
-          <p className="text-3xl sm:text-4xl font-semibold tracking-tight mt-1" aria-live="polite">{fmt(result.values[headline.key], headline.kind)}</p>
+          <p className="text-3xl sm:text-4xl font-semibold tracking-tight tabular-nums mt-1" aria-live="polite">{fmt(result.values[headline.key], headline.kind)}</p>
         </div>
         <dl className="grid grid-cols-2 gap-3">
           {def.outputs.filter((o) => o !== headline).map((o) => (
             <div key={o.key} className="rounded-xl border border-border p-3">
               <dt className="text-xs text-fg-muted">{t(`labels.${o.label}`)}</dt>
-              <dd className="font-semibold mt-0.5">{fmt(result.values[o.key], o.kind)}</dd>
+              <dd className="font-semibold mt-0.5 tabular-nums">{fmt(result.values[o.key], o.kind)}</dd>
             </div>
           ))}
         </dl>

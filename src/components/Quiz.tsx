@@ -23,8 +23,8 @@ export function Quiz({ questions }: { questions: QuizQuestion[] }) {
                 const correct = checked && oi === q.answer;
                 const wrong = checked && selected && oi !== q.answer;
                 return (
-                  <label key={oi} className={`flex items-center gap-2 rounded-lg border px-3 py-2 cursor-pointer ${correct ? "border-accent bg-accent-soft" : wrong ? "border-danger bg-danger-soft" : "border-border"}`}>
-                    <input type="radio" name={`q${qi}`} checked={selected} onChange={() => { setAnswers({ ...answers, [qi]: oi }); setChecked(false); }} />
+                  <label key={oi} className={`flex items-center gap-3 rounded-lg border px-3 py-2.5 cursor-pointer ${correct ? "border-accent bg-accent-soft" : wrong ? "border-danger bg-danger-soft" : "border-border"}`}>
+                    <input type="radio" className="size-5 shrink-0 accent-[var(--accent)]" name={`q${qi}`} checked={selected} onChange={() => { setAnswers({ ...answers, [qi]: oi }); setChecked(false); }} />
                     <span>{opt}</span>
                   </label>
                 );
