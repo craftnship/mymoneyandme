@@ -98,7 +98,14 @@
     "noResults": "No articles match. Try a different word or clear the filters.",
     "moreInEnglish": "More in English",
     "moreInEnglishIntro": "These articles are not translated into {language} yet. They open in English.",
-    "resultsCount": "{count, plural, =0 {No articles} one {# article} other {# articles}}"
+    "resultsCount": "{count, plural, =0 {No articles} one {# article} other {# articles}}",
+    "callout": {
+      "info": "Note",
+      "tip": "Tip",
+      "warning": "Watch out"
+    },
+    "by": "By {author}",
+    "aiTag": "AI-translated, not yet reviewed"
   },
   "learn": {
     "title": "Learning hub",
@@ -145,7 +152,15 @@
         "title": "Women",
         "body": "Nine modules on independence, protection, rights and planning for others."
       }
-    }
+    },
+    "onThisPage": "On this page",
+    "inThisModule": "Chapters in this module",
+    "chapterN": "Chapter {index}",
+    "nextModule": "Next module",
+    "minutes": "{count} min",
+    "continueReading": "Continue: {title}",
+    "readMark": "Read",
+    "modulesReady": "Modules you can read now"
   },
   "calc": {
     "title": "Calculators",
@@ -512,7 +527,8 @@
       "incomeTax": "Both regimes are computed on the same income: standard deduction, slab tax, section 87A rebate, surcharge and 4% cess. Deductions under 80C, 80D, 80CCD(1B) and 24(b) apply only in the old regime.",
       "termCover": "Needs-based: the present value of replacing income (growing with inflation) until retirement, plus loans and goals, minus liquid assets and existing cover.",
       "default": "Standard time-value-of-money formulas with the inputs and assumptions shown. Every result records the rule-pack version used."
-    }
+    },
+    "moreInputs": "Change all inputs"
   },
   "checkup": {
     "title": "Financial health check-up",

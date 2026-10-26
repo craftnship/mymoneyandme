@@ -23,7 +23,8 @@ export function PageTitle({ title, intro }: { title: string; intro?: string }) {
   );
 }
 
-export function Notice({ tone, children }: { tone: "info" | "tip" | "warning"; children: ReactNode }) {
+/** A tinted box. `size="body"` keeps the surrounding text size, for callouts inside articles and chapters. */
+export function Notice({ tone, children, size = "small" }: { tone: "info" | "tip" | "warning"; children: ReactNode; size?: "small" | "body" }) {
   const cls = tone === "warning" ? "bg-warn-soft border-warn/30" : tone === "tip" ? "bg-accent-soft border-accent/30" : "bg-info-soft border-border";
-  return <div className={`rounded-xl border px-4 py-3 text-sm ${cls}`}>{children}</div>;
+  return <div className={`rounded-xl border ${size === "body" ? "px-5 py-4" : "px-4 py-3 text-sm"} ${cls}`}>{children}</div>;
 }

@@ -12,7 +12,7 @@ export async function AccountLink() {
   const t = await getTranslations("nav");
   const signedIn = Boolean((await cookies()).get(SESSION_COOKIE));
   return (
-    <Link href={signedIn ? "/app" : "/app/sign-in"} className="rounded-lg border border-border px-3 py-1.5 text-sm font-medium whitespace-nowrap hover:bg-accent-soft">
+    <Link href={signedIn ? "/app" : "/app/sign-in"} className="rounded-lg border border-border px-2.5 sm:px-3 py-1.5 text-[0.8125rem] sm:text-sm font-medium whitespace-nowrap hover:bg-accent-soft">
       {signedIn ? t("account") : t("signIn")}
     </Link>
   );
