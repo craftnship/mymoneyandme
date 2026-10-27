@@ -6,9 +6,10 @@ import { archiveGoal, createGoal, getGoal, listGoals, updateGoal } from "../goal
 import { getCheckUp, latestCheckUp, listCheckUps, previousCheckUp, runAndStoreCheckUp } from "../checkup/store";
 import { planForHousehold, setPlanItemStatus } from "../checkup/planStore";
 import { exportItems } from "./export";
+import { listSnapshots, recordMonthlySnapshot } from "../snapshots/store";
 
 const url = process.env.DATABASE_URL;
-const TABLES = ["events", "audit_events", "plan_items", "checkups", "goals", "financial_items", "household_members", "households", "consents", "webauthn_challenges", "passkeys", "email_tokens", "sessions", "users"];
+const TABLES = ["monthly_snapshots", "events", "audit_events", "plan_items", "checkups", "goals", "financial_items", "household_members", "households", "consents", "webauthn_challenges", "passkeys", "email_tokens", "sessions", "users"];
 
 /**
  * Cross-user access (companion spec sections 5 and 32): every store call is
@@ -85,8 +86,15 @@ describe.skipIf(!url)("cross-user access is blocked", () => {
     expect(rows).toHaveLength(2);
   });
 
+  it("monthly snapshots: another household cannot read them", async () => {
+    const s = await recordMonthlySnapshot(asha.householdId, asha.userId);
+    expect(s?.takeHome).toBe(90000);
+    expect(await listSnapshots(bala.householdId)).toEqual([]);
+    expect((await listSnapshots(asha.householdId)).map((r) => r.snapshot.takeHome)).toEqual([90000]);
+  });
+
   it("every financial table row belongs to exactly one household", async () => {
-    for (const table of ["financial_items", "goals", "checkups", "plan_items", "household_members"]) {
+    for (const table of ["financial_items", "goals", "checkups", "plan_items", "household_members", "monthly_snapshots"]) {
       const orphans = await query(`SELECT COUNT(*) AS n FROM ${table} t LEFT JOIN households h ON h.id = t.household_id WHERE h.id IS NULL`);
       expect(Number(orphans[0].n), table).toBe(0);
     }

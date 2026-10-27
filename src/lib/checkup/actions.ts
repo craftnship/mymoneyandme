@@ -9,6 +9,7 @@ import { audit } from "../auth/users";
 import { runAndStoreCheckUp } from "./store";
 import { setPlanItemStatus } from "./planStore";
 import { PLAN_STATUSES } from "./progress";
+import { refreshSnapshot } from "../snapshots/store";
 
 /**
  * Check-up and plan Server Actions. Each one re-reads the session, scopes the
@@ -33,6 +34,7 @@ export async function runCheckUpAction(_prev: CheckUpActionState, form: FormData
   } catch {
     return { error: "generic" };
   }
+  await refreshSnapshot(household.id, user.id);
   refresh(); // the destination may be the page we are on; make the router refetch it
   redirect(`/${locale}/app/check-up?ran=${encodeURIComponent(id)}`);
 }

@@ -275,4 +275,20 @@ export const MIGRATIONS: Migration[] = [
       `ALTER TABLE audit_events ADD INDEX idx_audit_action (action, at)`,
     ],
   },
+  {
+    // Money snapshots (companion spec section 7): one encrypted row per
+    // household and month so the dashboard can show what changed and trends.
+    id: "0008_monthly_snapshots",
+    statements: [
+      `CREATE TABLE IF NOT EXISTS monthly_snapshots (
+        id CHAR(36) PRIMARY KEY,
+        household_id CHAR(36) NOT NULL,
+        month CHAR(7) NOT NULL,
+        payload_enc TEXT NOT NULL,
+        created_at DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+        updated_at DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3),
+        UNIQUE KEY uq_snapshot_month (household_id, month)
+      )`,
+    ],
+  },
 ];
