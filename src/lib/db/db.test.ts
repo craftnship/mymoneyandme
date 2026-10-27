@@ -7,7 +7,7 @@ const url = process.env.DATABASE_URL;
 describe.skipIf(!url)("database schema and user repository", () => {
   beforeAll(async () => {
     const p = await getPool();
-    for (const t of ["audit_events", "plan_items", "checkups", "goals", "financial_items", "household_members", "households", "consents", "webauthn_challenges", "passkeys", "email_tokens", "sessions", "users"]) await p.query(`DELETE FROM ${t}`);
+    for (const t of ["monthly_snapshots", "audit_events", "plan_items", "checkups", "goals", "financial_items", "household_members", "households", "consents", "webauthn_challenges", "passkeys", "email_tokens", "sessions", "users"]) await p.query(`DELETE FROM ${t}`);
   });
   afterAll(async () => {
     const p = await getPool();

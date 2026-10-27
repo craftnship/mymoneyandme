@@ -7,7 +7,7 @@ import { buildExport, exportItems, itemsToCsv } from "./export";
 import { clearDeletionRequest, consentDecidedAt, getHealthFlags } from "./store";
 
 const url = process.env.DATABASE_URL;
-const TABLES = ["events", "audit_events", "plan_items", "checkups", "goals", "financial_items", "household_members", "households", "consents", "webauthn_challenges", "passkeys", "email_tokens", "sessions", "users"];
+const TABLES = ["monthly_snapshots", "events", "audit_events", "plan_items", "checkups", "goals", "financial_items", "household_members", "households", "consents", "webauthn_challenges", "passkeys", "email_tokens", "sessions", "users"];
 
 async function seedUser(email: string) {
   const user = await createUser({ email, passwordHash: "x", name: "Priya", locale: "en" });

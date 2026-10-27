@@ -32,7 +32,7 @@ export async function purgeUser(userId: string): Promise<void> {
     const [households] = await conn.query<Row[]>("SELECT id FROM households WHERE owner_user_id = ?", [userId]);
     for (const h of households) {
       const hid = String(h.id);
-      for (const table of ["plan_items", "checkups", "goals", "financial_items", "household_members"]) {
+      for (const table of ["monthly_snapshots", "plan_items", "checkups", "goals", "financial_items", "household_members"]) {
         await conn.query(`DELETE FROM ${table} WHERE household_id = ?`, [hid]);
       }
       await conn.query("DELETE FROM households WHERE id = ?", [hid]);

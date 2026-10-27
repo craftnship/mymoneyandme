@@ -16,6 +16,7 @@ export async function MemberShell({ locale, children }: { locale: string; childr
     { href: "/app", label: t("dashboard") },
     { href: "/app/data", label: t("data") },
     { href: "/app/goals", label: t("goals") },
+    { href: "/app/net-worth", label: t("netWorth") },
     { href: "/app/plan", label: t("plan") },
     { href: "/app/settings", label: t("settings") },
     ...(isStaff(user.role) ? [{ href: "/admin", label: t("admin") }] : []),

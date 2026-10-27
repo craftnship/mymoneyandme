@@ -15,7 +15,7 @@ describe.skipIf(!url)("check-up, plan and goal stores", () => {
 
   beforeAll(async () => {
     const p = await getPool();
-    for (const t of ["audit_events", "plan_items", "checkups", "goals", "financial_items", "household_members", "households", "consents", "webauthn_challenges", "passkeys", "email_tokens", "sessions", "users"]) await p.query(`DELETE FROM ${t}`);
+    for (const t of ["monthly_snapshots", "audit_events", "plan_items", "checkups", "goals", "financial_items", "household_members", "households", "consents", "webauthn_challenges", "passkeys", "email_tokens", "sessions", "users"]) await p.query(`DELETE FROM ${t}`);
     const u = await createUser({ email: "priya@example.in", passwordHash: "x", name: "Priya", locale: "en" });
     userId = u.id;
     await updateUser(userId, { dob: "1990-05-01", dependants: 1, city_tier: 1 });

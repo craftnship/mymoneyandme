@@ -11,6 +11,7 @@ import { withStepDone } from "./profileSteps";
 import { syncDependants } from "./members";
 import { isFamily, type Family } from "./model";
 import { archiveItem, archiveMember, createItem, createMember, getItem, listItems, listMembers, updateItem, updateMember } from "./store";
+import { refreshSnapshot } from "../snapshots/store";
 
 /**
  * Data-capture Server Actions (sections 7 and 8). Each one re-reads the
@@ -56,6 +57,7 @@ export async function quickStart(_prev: DataActionState, form: FormData): Promis
   if (!hasExpenses && d.monthlyExpenses !== undefined) {
     await createItem(household.id, user.id, { family: "expenses", type: "other", payload: { label: "Monthly expenses", monthly: d.monthlyExpenses }, confidence: "estimate" });
   }
+  await refreshSnapshot(household.id, user.id);
   redirect(hasIncome ? `/${locale}/app/data` : `/${locale}/app/welcome?look=1`);
 }
 
@@ -88,6 +90,7 @@ export async function firstLook(_prev: DataActionState, form: FormData): Promise
   if (d.emergencySavings !== undefined && !existing.some((i) => i.family === "assets")) {
     await createItem(household.id, user.id, { family: "assets", type: "cash", memberId: self?.id ?? null, payload: { label: "Emergency savings", currentValue: d.emergencySavings, liquidity: "liquid" }, confidence: "estimate" });
   }
+  await refreshSnapshot(household.id, user.id);
   redirect(`/${locale}/app/welcome?look=1`);
 }
 
@@ -108,6 +111,7 @@ export async function answerProfileStep(_prev: DataActionState, form: FormData):
     const d = parsed.data as Record<string, string | number>;
     const column = { dob: "dob", employment: "employment", dependants: "dependants", cityTier: "city_tier" } as const;
     await updateUser(user.id, { [column[key]]: d[key], profile_steps: steps });
+    await refreshSnapshot((await requireHousehold(locale)).household.id, user.id);
   }
   refresh(); // the card lives on the page we are on; make the router refetch it
   return { ok: true };
@@ -129,6 +133,7 @@ export async function saveMember(_prev: DataActionState, form: FormData): Promis
     await createMember(household.id, user.id, m);
   }
   await syncDependants(household.id, user.id);
+  await refreshSnapshot(household.id, user.id);
   refresh(); // the destination may be the page we are on; make the router refetch it
   redirect(`/${locale}/app/data/members`);
 }
@@ -140,6 +145,7 @@ export async function archiveMemberAction(form: FormData): Promise<void> {
   if (id.success) {
     await archiveMember(household.id, user.id, id.data); // the store refuses the self row
     await syncDependants(household.id, user.id);
+    await refreshSnapshot(household.id, user.id);
   }
   refresh(); // the destination may be the page we are on; make the router refetch it
   redirect(`/${locale}/app/data/members`);
@@ -160,6 +166,7 @@ export async function saveItem(_prev: DataActionState, form: FormData): Promise<
   } else {
     await createItem(household.id, user.id, { family, ...parsed.data });
   }
+  await refreshSnapshot(household.id, user.id);
   refresh(); // the destination may be the page we are on; make the router refetch it
   redirect(`/${locale}/app/data/${family}`);
 }
@@ -173,6 +180,7 @@ export async function archiveItemAction(form: FormData): Promise<void> {
     const existing = await getItem(household.id, id.data);
     if (existing && existing.family === family) await archiveItem(household.id, user.id, id.data);
   }
+  await refreshSnapshot(household.id, user.id);
   refresh(); // the destination may be the page we are on; make the router refetch it
   redirect(`/${locale}/app/data/${family}`);
 }

@@ -1,0 +1,149 @@
+{
+  "appDashboard": {
+    "snapshot": {
+      "title": "This month's snapshot",
+      "asOf": "Data saved {date}",
+      "noSnapshot": "Your snapshot appears once you have added income or expenses.",
+      "perMonth": "per month",
+      "records": "See the records",
+      "sinceLastMonth": "Since last month ({month})",
+      "noPrevious": "Your first month. From next month this card shows what changed.",
+      "noChanges": "Nothing changed since last month.",
+      "field": {
+        "takeHome": "Take-home income",
+        "essentialSpend": "Essential spending",
+        "discretionarySpend": "Discretionary spending",
+        "emis": "Loan instalments",
+        "surplus": "Monthly surplus",
+        "assets": "Assets",
+        "liabilities": "Liabilities",
+        "netWorth": "Net worth",
+        "liquidNetWorth": "Liquid net worth",
+        "emergencyMonths": "Emergency cover",
+        "score": "Health score"
+      },
+      "months": "{count, plural, =1 {# month} other {# months}}",
+      "points": "{count, plural, =1 {# point} other {# points}}",
+      "netWorthView": "Net worth in detail"
+    },
+    "indicators": {
+      "title": "Six things to watch",
+      "intro": "Each one has a plain definition. Open it to see how the number is made and where to change the data behind it.",
+      "definition": "What this means",
+      "source": "Change the data",
+      "projected": "Projection",
+      "unknown": "Not enough data yet",
+      "status": { "good": "Good", "watch": "Watch", "act": "Act", "unknown": "Unknown" },
+      "emergency": {
+        "title": "Emergency fund",
+        "value": "{count, plural, =1 {# month} other {# months}} of essentials",
+        "definition": "Liquid savings (cash, bank balances, deposits and liquid funds with no lock-in) divided by one month of essential spending including loan instalments. Six months is the usual target; three for a dual-income household with stable jobs."
+      },
+      "cashflow": {
+        "title": "Cash flow",
+        "value": "{pct}% of income saved",
+        "definition": "Take-home income minus all spending and instalments, as a share of take-home. Twenty percent is a healthy floor; what is left is what can go to goals."
+      },
+      "debt": {
+        "title": "Debt burden",
+        "value": "{pct}% of income to instalments",
+        "definition": "All loan instalments divided by take-home income. Lenders stop at about 40%; under 30% leaves room for everything else. High-cost debt (over 15% or a revolving card balance) is flagged separately in the net worth view."
+      },
+      "goals": {
+        "title": "Goals",
+        "value": "{onTrack} of {total} on track",
+        "none": "No goals yet",
+        "definition": "A goal is on track when what is assigned to it plus its monthly investment, grown at the expected return of its mix, reaches the inflated target by the date. The share here counts goals, not rupees."
+      },
+      "retirement": {
+        "title": "Retirement",
+        "value": "{pct}% of the corpus needed",
+        "definition": "A projection: retirement savings and long-term investments grown to retirement age, plus the retirement SIP, against the corpus that would fund today's spending (inflated) from retirement to age 85. Over 100% means on course; it moves with every assumption in the rule pack."
+      },
+      "data": {
+        "title": "Data completeness",
+        "value": "{pct}% complete",
+        "definition": "How much of the profile and the six data families is filled in, weighted by what the check-up needs most. Every other indicator is only as good as this one."
+      }
+    },
+    "actions": {
+      "title": "Top three actions",
+      "impact": "about +{points} points",
+      "empty": "Run a check-up to get your actions.",
+      "allDone": "Every plan item is done or parked. Re-run the check-up to refresh it.",
+      "viewPlan": "See the whole plan"
+    },
+    "goalsTable": {
+      "title": "Goals",
+      "goal": "Goal",
+      "target": "Target on the date",
+      "date": "By",
+      "progress": "Progress",
+      "monthly": "Needed each month",
+      "status": "Status",
+      "onTrack": "On track",
+      "behind": "Behind",
+      "projectedNote": "Target and progress are projections at the expected return of each goal's mix.",
+      "empty": "No goals yet. A goal is an amount on a date; the planner does the rest.",
+      "add": "Add a goal",
+      "all": "See all goals"
+    },
+    "trends": {
+      "title": "Trends",
+      "intro": "One point per month, from your monthly snapshots.",
+      "waiting": "Trend lines appear once you have two months of snapshots. Your first one is saved; the next is taken automatically at the start of next month.",
+      "netWorth": "Net worth",
+      "surplus": "Monthly surplus",
+      "emergencyMonths": "Emergency cover (months)",
+      "score": "Health score",
+      "month": "Month",
+      "table": "Snapshots by month"
+    },
+    "netWorth": {
+      "title": "Net worth",
+      "intro": "What you own, what you owe, and how much of it you could reach in a week.",
+      "empty": "Add assets, investments or loans to see your net worth.",
+      "addAssets": "Add an asset",
+      "assets": "Assets",
+      "liabilities": "Liabilities",
+      "netWorth": "Net worth",
+      "liquidNetWorth": "Liquid net worth",
+      "liquid": "Liquid",
+      "illiquid": "Illiquid",
+      "liquidShare": "{pct}% of assets can be sold within a week",
+      "allocation": "Allocation by category",
+      "category": {
+        "cash": "Cash and deposits",
+        "equity": "Equity",
+        "debt": "Debt and bonds",
+        "gold": "Gold",
+        "realEstate": "Real estate",
+        "retirement": "Retirement accounts",
+        "business": "Business equity",
+        "vehicle": "Vehicles",
+        "other": "Other"
+      },
+      "share": "{pct}%",
+      "ofWhichLiquid": "{amount} liquid",
+      "items": "{count, plural, =1 {# record} other {# records}}",
+      "valued": "valued {date}",
+      "concentration": "Concentration",
+      "concentrationCategory": "{category} is {pct}% of your assets. Above 60% in one category, a bad year for that category is a bad year for you.",
+      "concentrationItem": "\"{label}\" alone is {pct}% of your assets. One holding above 40% is a concentration risk.",
+      "noConcentration": "No single category or holding dominates your assets.",
+      "liabilitiesTitle": "What you owe",
+      "loan": "Loan",
+      "outstanding": "Outstanding",
+      "rate": "Rate",
+      "emi": "Instalment",
+      "left": "Months left",
+      "highCost": "High cost",
+      "shortTerm": "Due within a year",
+      "noLoans": "No loans recorded.",
+      "liquidRule": "How liquid net worth is counted",
+      "liquidRuleBody": "Liquid net worth = assets you could turn into cash within about a week, minus what you must pay within a year. Counted in: cash, bank balances, fixed deposits, receivables, mutual funds, stocks, ETFs, bonds and gold that are not marked illiquid or locked in. Never counted, whatever was entered: your home and other property, land, vehicles, business equity, EPF, PPF, NPS, ULIPs, savings-type insurance and alternatives. Subtracted: credit-card and buy-now-pay-later balances, and any loan with twelve or fewer months left.",
+      "realEstateNote": "Real estate never counts as cash. It is in your net worth, not in your liquid net worth.",
+      "editRecord": "Edit"
+    }
+  }
+}
