@@ -6,6 +6,7 @@ import { requireHousehold } from "@/lib/auth/current";
 import { latestCheckUp, listCheckUps, previousCheckUp } from "@/lib/checkup/store";
 import { diffCheckUps } from "@/lib/checkup/progress";
 import { listItems } from "@/lib/data/store";
+import { dataQuality } from "@/lib/data/quality";
 import { CheckUpReport, WhatChanged } from "@/components/app/checkup/CheckUpReport";
 import { RunCheckUp } from "@/components/app/checkup/RunCheckUp";
 import { formatDate } from "@/components/app/checkup/ui";
@@ -21,7 +22,8 @@ async function Latest({ locale, searchParams }: { locale: string; searchParams: 
   const { household } = await requireHousehold(locale);
   const t = await getTranslations("appCheckup.checkup");
   const tc = await getTranslations("checkup");
-  const [latest, history, incomes, ran] = await Promise.all([latestCheckUp(household.id), listCheckUps(household.id), listItems(household.id, "income"), searchParams.then((p) => p.ran)]);
+  const [latest, history, items, ran] = await Promise.all([latestCheckUp(household.id), listCheckUps(household.id), listItems(household.id), searchParams.then((p) => p.ran)]);
+  const incomes = items.filter((i) => i.family === "income");
 
   if (!latest) {
     return (
@@ -44,7 +46,7 @@ async function Latest({ locale, searchParams }: { locale: string; searchParams: 
         <RunCheckUp />
         <Link href="/app/plan" className="rounded-lg border border-border px-4 py-2 font-medium hover:bg-accent-soft">{t("viewPlan")}</Link>
       </div>
-      <CheckUpReport checkup={latest} />
+      <CheckUpReport checkup={latest} qualityIssues={dataQuality(items).length} />
       {previous ? <WhatChanged diff={diffCheckUps(previous.result, latest.result)} previousDate={previous.createdAt} /> : <p className="text-sm text-fg-muted">{t("noPrevious")}</p>}
 
       <section aria-labelledby="history">

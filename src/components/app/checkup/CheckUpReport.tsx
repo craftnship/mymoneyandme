@@ -8,9 +8,10 @@ import type { StoredCheckUp } from "@/lib/checkup/store";
 import type { CheckUpDiff } from "@/lib/checkup/progress";
 import { missingFields } from "@/lib/data/snapshot";
 import { formatDate, formatMetric, ScoreGauge, statusClass, statusLabel } from "./ui";
+import { AboutNumbers, MetricTraces } from "./Trace";
 
 /** Full rendering of one stored check-up: score, confidence, eight dimension cards, risks and strengths. */
-export async function CheckUpReport({ checkup }: { checkup: StoredCheckUp }) {
+export async function CheckUpReport({ checkup, qualityIssues = 0 }: { checkup: StoredCheckUp; qualityIssues?: number }) {
   const t = await getTranslations("appCheckup.checkup");
   const tc = await getTranslations("checkup");
   const tw = await getTranslations("appCheckup.common");
@@ -68,6 +69,7 @@ export async function CheckUpReport({ checkup }: { checkup: StoredCheckUp }) {
                 </p>
               ) : null}
               <p className="mt-2 text-xs text-fg-muted">{tc(`dim.${d.key}.why`)} <Link href={chapterHref(DIMENSION_CHAPTERS[d.key])} className="underline underline-offset-4">{t("readChapter")}</Link></p>
+              {d.status !== "unknown" ? <MetricTraces metrics={Object.keys(d.metrics)} snapshot={snapshot} rulePackVersion={result.rulePackVersion} /> : null}
             </li>
           ))}
         </ul>
@@ -92,6 +94,8 @@ export async function CheckUpReport({ checkup }: { checkup: StoredCheckUp }) {
           ) : <p className="mt-2 text-sm text-fg-muted">{t("noStrengths")}</p>}
         </Card>
       </div>
+
+      <AboutNumbers snapshot={snapshot} rulePackVersion={result.rulePackVersion} qualityIssues={qualityIssues} />
     </div>
   );
 }

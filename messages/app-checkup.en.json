@@ -136,7 +136,8 @@
           "unknown": "Not scored yet: record whether nominees are set on your accounts and policies."
         }
       },
-      "addGoal": "Add a goal"
+      "addGoal": "Add a goal",
+      "rulePackOnly": "Rule pack {version}"
     },
     "plan": {
       "title": "Recommended plan",
@@ -284,6 +285,58 @@
           "2": "Re-run the check-up and compare with the previous one.",
           "3": "Re-run after any life event: marriage, a child, a new job or a home."
         }
+      },
+      "why": {
+        "summary": "Why this is here",
+        "rule": "Rule",
+        "metricsUsed": "Numbers used",
+        "benefitLabel": "Expected benefit",
+        "basisLabel": "Based on",
+        "basis": {
+          "entered": "figures you entered",
+          "estimates": "figures you marked as estimates",
+          "defaults": "standard planning rules, not your figures"
+        },
+        "firmUp": "Firm them up",
+        "reviewedLabel": "Rules",
+        "reviewed": "Rule pack {version}, reviewed {date}",
+        "dataAsOf": "data saved {date}",
+        "rules": {
+          "fix-overspend": "Expenses including EMIs are higher than take-home income.",
+          "clear-high-cost-debt": "Some debt costs more than 15% a year or is a revolving card balance.",
+          "raise-term-cover": "Life cover is below 10 times yearly take-home income.",
+          "raise-health-cover": "Health cover is below the recommended amount for your city.",
+          "set-nominations": "At least one account, investment or policy has no nominee recorded.",
+          "build-emergency-fund": "Liquid savings cover fewer than 6 months of essential expenses.",
+          "reduce-emi-load": "EMIs take more than 35% of take-home income.",
+          "raise-savings-rate": "Savings rate is below 20% of take-home income.",
+          "start-investing": "Nothing is invested yet, so the mix is far from the age-based target.",
+          "rebalance": "Equity share is more than 10 points away from the age-based target.",
+          "deploy-idle-cash": "Cash beyond six months of essentials is more than 10% of financial assets.",
+          "fund-goals": "Less than 80% of goal value is funded on the current path.",
+          "retirement-sip": "The projected corpus is below the corpus needed.",
+          "write-will": "No will, and you are 40 or older or have dependants.",
+          "fill-gaps": "One or more dimensions could not be scored from the data entered.",
+          "annual-review": "Always included: a yearly review keeps every figure current."
+        }
+      },
+      "benefit": {
+        "fixOverspend": "Stops the slide into debt; every rupee of surplus then funds the rest of the plan.",
+        "clearHighCostDebt": "Saves the interest you pay at 15% or more, which no safe investment can beat.",
+        "raiseTermCover": "Your family's income continues if you are not there; the premium is small at your age.",
+        "raiseHealthCover": "One hospital stay stops being a reason to borrow or sell investments.",
+        "setNominations": "Your family can claim what is theirs without a court process.",
+        "buildEmergencyFund": "A job gap or illness no longer forces a loan or a sold investment.",
+        "reduceEmiLoad": "Frees monthly cash flow and lowers the risk of a missed payment.",
+        "raiseSavingsRate": "Each extra 1% saved compounds for decades; 20% is the usual minimum.",
+        "startInvesting": "Money starts growing ahead of inflation instead of losing value in a savings account.",
+        "rebalance": "Keeps risk in line with your age, so a market fall does not hit harder than it should.",
+        "deployIdleCash": "Idle cash loses to inflation; put to work it could earn several percent more a year.",
+        "fundGoals": "Goals arrive on time instead of being cut or pushed out at the last minute.",
+        "retirementSip": "Closes the retirement gap while time is on your side; waiting raises the monthly amount.",
+        "writeWill": "Your wishes decide what happens to your assets, and your family avoids disputes.",
+        "fillGaps": "A fuller picture; unscored dimensions may hide the biggest risk.",
+        "annualReview": "Catches changes in income, prices and family early, before they derail the plan."
       }
     },
     "goals": {
@@ -402,6 +455,106 @@
       "noGoals": "No goals yet. A goal is an amount on a date; the planner does the rest.",
       "viewGoals": "See all goals",
       "addGoal": "Add a goal"
+    },
+    "trace": {
+      "summary": "How we calculated this",
+      "perMonth": "a month",
+      "defaulted": "default, not entered",
+      "estimate": "estimate",
+      "edit": "Edit",
+      "formula": {
+        "savingsRate": "(take-home income − monthly expenses including EMIs) ÷ take-home income.",
+        "essentialShare": "Essential expenses ÷ take-home income. Essentials are the expenses you marked essential plus EMIs; without that split, 60% of all expenses.",
+        "emergencyMonths": "Liquid savings ÷ essential monthly expenses. Liquid savings are cash, deposits and low-risk debt funds with no lock-in.",
+        "emiToIncome": "Total monthly EMIs ÷ take-home income.",
+        "highCostDebtShare": "Loans above 15% a year or revolving card balances ÷ all outstanding debt.",
+        "lifeCoverMultiple": "Life cover (term and endowment sums assured) ÷ yearly take-home income.",
+        "healthCoverRatio": "Health cover of the least-covered member ÷ the recommended cover for your city tier.",
+        "allocationDrift": "Difference between your equity share and the age-based target (100 − age, within the band below).",
+        "equityShare": "Equity investments ÷ all financial assets (cash, deposits and investments, excluding property).",
+        "targetEquity": "100 − age, as a percentage, kept within the band below.",
+        "idleCashShare": "Liquid savings beyond six months of essentials ÷ all financial assets.",
+        "retirementReadiness": "Projected corpus at retirement ÷ corpus needed. The corpus needed funds today's expenses, inflated to retirement, through to life expectancy.",
+        "projectedCorpus": "Retirement savings plus equity and debt investments grown at the balanced return, plus the retirement SIP, until retirement age.",
+        "corpusNeeded": "Today's yearly expenses inflated to retirement, then the lump sum that pays that rising amount every year until life expectancy.",
+        "goalReadiness": "For each goal: what assigned savings and the SIP grow to by the target date ÷ the inflated cost; totalled across goals.",
+        "nominationsSet": "Yes when every account, investment and policy you recorded has a nominee.",
+        "willInPlace": "From your profile answer. Under 40 with no dependants counts as not yet expected."
+      },
+      "input": {
+        "monthlyIncome": "Take-home income",
+        "monthlyExpenses": "Monthly expenses incl. EMIs",
+        "monthlyEssentialExpenses": "Essential expenses",
+        "liquidAssets": "Liquid savings",
+        "monthlyEmi": "Monthly EMIs",
+        "highCostDebt": "High-cost debt",
+        "totalDebt": "All debt",
+        "lifeCover": "Life cover",
+        "healthCover": "Health cover",
+        "cityTier": "City tier",
+        "equityShare": "Equity share",
+        "targetEquity": "Target equity share",
+        "age": "Age",
+        "financialAssets": "Financial assets",
+        "retirementAge": "Retirement age",
+        "retirementCorpus": "EPF, PPF, NPS and retirement-tagged investments",
+        "investments": "Equity and debt investments",
+        "monthlyRetirementSip": "Retirement SIP",
+        "goals": "Goals",
+        "nominationsSet": "Nominees recorded everywhere",
+        "dependants": "Dependants",
+        "employment": "Employment",
+        "projectedCorpus": "Projected corpus",
+        "corpusNeeded": "Corpus needed"
+      },
+      "assumption": {
+        "inflationGeneral": "Inflation (assumed)",
+        "returnBalanced": "Return before retirement (assumed)",
+        "returnPostRetirement": "Return after retirement (assumed)",
+        "lifeExpectancy": "Life expectancy (assumed)",
+        "termCoverMultiple": "Target life cover, times yearly income",
+        "healthCoverTarget": "Recommended health cover",
+        "targetEquityMin": "Lowest target equity",
+        "targetEquityMax": "Highest target equity"
+      },
+      "about": {
+        "title": "About these numbers",
+        "rulePack": "Scored with rule pack {version}, last reviewed on {date}.",
+        "dataAsOf": "Your data was last saved on {date}.",
+        "noData": "No financial data has been saved yet; every figure is a default.",
+        "estimated": "Based partly on figures you marked as estimates: {fields}.",
+        "noEstimates": "Every figure used was entered as a firm number.",
+        "missing": "Not entered, so defaults were used: {fields}."
+      },
+      "quality": {
+        "issues": "{count, plural, one {1 thing to check in your data.} other {# things to check in your data.}}",
+        "link": "Review"
+      },
+      "sources": {
+        "summary": "Where the rules come from",
+        "verified": "checked {date}",
+        "key": {
+          "tax-newRegime-slabs": "New-regime slabs",
+          "tax-newRegime-standardDeduction": "Standard deduction (new regime)",
+          "tax-newRegime-rebate87A": "Section 87A rebate",
+          "tax-newRegime-surchargeCap": "Surcharge cap (new regime)",
+          "tax-oldRegime": "Old regime",
+          "tax-cess": "Cess",
+          "tax-capitalGains": "Capital gains",
+          "schemes-ppf": "PPF",
+          "schemes-nsc": "NSC",
+          "schemes-ssy": "Sukanya Samriddhi",
+          "schemes-scss": "Senior Citizens Savings Scheme",
+          "schemes-postOfficeMIS": "Post office MIS",
+          "schemes-postOfficeTD": "Post office time deposits",
+          "schemes-kvp": "Kisan Vikas Patra",
+          "schemes-epf": "EPF",
+          "schemes-nps": "NPS",
+          "schemes-gratuity": "Gratuity",
+          "insurance": "Insurance targets",
+          "assumptions": "Planning assumptions"
+        }
+      }
     }
   }
 }

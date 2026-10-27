@@ -5,7 +5,8 @@
     "nav": {
       "label": "Authoring sections",
       "overview": "Content",
-      "backToSite": "Back to my account"
+      "backToSite": "Back to my account",
+      "usage": "Usage"
     },
     "role": {
       "admin": "Admin",
@@ -264,6 +265,40 @@
       "setting": "Setting: {field}",
       "field": "{language}: {field}",
       "block": "{language}: block {n} ({type})"
+    },
+    "usage": {
+      "title": "Usage",
+      "intro": "What members and visitors did: counts only, no names and no amounts. Member actions come from the audit log; calculator runs and quick checks are anonymous events.",
+      "noDatabase": "No database is configured, so there is nothing to count.",
+      "northStar": "North-star metric: members who completed at least one meaningful planning action in the month, such as a check-up, a plan step, a goal or a data update.",
+      "last30": "Last 30 days",
+      "previous": "previous 30 days: {count}",
+      "byMonth": "By month",
+      "month": "Month",
+      "metric": {
+        "activePlanners": "Active planners (north star)",
+        "signUps": "Sign-ups",
+        "signedIn": "Members who signed in",
+        "checkUps": "Check-ups run",
+        "stepsDone": "Plan steps done",
+        "goalsCreated": "Goals created",
+        "itemsSaved": "Data items saved",
+        "calculatorRuns": "Calculator runs",
+        "quickChecks": "Quick checks"
+      },
+      "activation": {
+        "title": "Activation (last 90 days)",
+        "intro": "Of the people who signed up, how many reached the first result.",
+        "signedUp": "Signed up",
+        "ranCheckUp": "Ran a check-up",
+        "createdGoal": "Created a goal",
+        "median": "Median time to first check-up",
+        "hours": "{count} h"
+      },
+      "topCalculators": "Most used calculators (30 days)",
+      "noCalculators": "No calculator runs recorded yet.",
+      "generated": "Generated {date} UTC",
+      "privacy": "No personal data is read for this page."
     }
   }
 }

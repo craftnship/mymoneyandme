@@ -48,7 +48,7 @@ async function List({ locale, family }: { locale: string; family: Family }) {
   const [items, members] = await Promise.all([listItems(household.id, family), listMembers(household.id)]);
   const t = await getTranslations("appData");
   const memberName = new Map(members.map((m) => [m.id, m.name]));
-  const confidenceTone = { entered: "neutral", imported: "warn", verified: "accent" } as const;
+  const confidenceTone = { estimate: "warn", entered: "neutral", imported: "neutral", verified: "accent" } as const;
   if (!items.length) return <Card><p className="text-sm text-fg-muted">{t("items.empty")}</p></Card>;
   return (
     <Card className="p-0">

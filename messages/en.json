@@ -528,7 +528,9 @@
       "termCover": "Needs-based: the present value of replacing income (growing with inflation) until retirement, plus loans and goals, minus liquid assets and existing cover.",
       "default": "Standard time-value-of-money formulas with the inputs and assumptions shown. Every result records the rule-pack version used."
     },
-    "moreInputs": "Change all inputs"
+    "moreInputs": "Change all inputs",
+    "sourcesTitle": "Where the figures come from",
+    "sourcesIntro": "Tax slabs, scheme rates and planning assumptions are kept in a dated rule pack with a source for each figure."
   },
   "checkup": {
     "title": "Financial health check-up",

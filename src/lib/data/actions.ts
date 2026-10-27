@@ -51,10 +51,10 @@ export async function quickStart(_prev: DataActionState, form: FormData): Promis
   const self = (await listMembers(household.id)).find((m) => m.relation === "self");
   if (!hasIncome && d.monthlyIncome !== undefined) {
     const type = d.employment === "retired" ? "pension" : BUSINESS_LIKE.has(d.employment) ? "business" : "salary";
-    await createItem(household.id, user.id, { family: "income", type, memberId: self?.id ?? null, payload: { netMonthly: d.monthlyIncome } });
+    await createItem(household.id, user.id, { family: "income", type, memberId: self?.id ?? null, payload: { netMonthly: d.monthlyIncome }, confidence: "estimate" });
   }
   if (!hasExpenses && d.monthlyExpenses !== undefined) {
-    await createItem(household.id, user.id, { family: "expenses", type: "other", payload: { label: "Monthly expenses", monthly: d.monthlyExpenses } });
+    await createItem(household.id, user.id, { family: "expenses", type: "other", payload: { label: "Monthly expenses", monthly: d.monthlyExpenses }, confidence: "estimate" });
   }
   redirect(hasIncome ? `/${locale}/app/data` : `/${locale}/app/welcome?look=1`);
 }
@@ -80,13 +80,13 @@ export async function firstLook(_prev: DataActionState, form: FormData): Promise
   // Seed each family once, so going back and submitting again does not double count.
   if (!existing.some((i) => i.family === "income")) {
     const type = user.employment === "retired" ? "pension" : BUSINESS_LIKE.has(user.employment) ? "business" : "salary";
-    await createItem(household.id, user.id, { family: "income", type, memberId: self?.id ?? null, payload: { netMonthly: d.monthlyIncome } });
+    await createItem(household.id, user.id, { family: "income", type, memberId: self?.id ?? null, payload: { netMonthly: d.monthlyIncome }, confidence: "estimate" });
   }
   if (!existing.some((i) => i.family === "expenses")) {
-    await createItem(household.id, user.id, { family: "expenses", type: "other", payload: { label: "Monthly expenses", monthly: d.monthlyExpenses } });
+    await createItem(household.id, user.id, { family: "expenses", type: "other", payload: { label: "Monthly expenses", monthly: d.monthlyExpenses }, confidence: "estimate" });
   }
   if (d.emergencySavings !== undefined && !existing.some((i) => i.family === "assets")) {
-    await createItem(household.id, user.id, { family: "assets", type: "cash", memberId: self?.id ?? null, payload: { label: "Emergency savings", currentValue: d.emergencySavings, liquidity: "liquid" } });
+    await createItem(household.id, user.id, { family: "assets", type: "cash", memberId: self?.id ?? null, payload: { label: "Emergency savings", currentValue: d.emergencySavings, liquidity: "liquid" }, confidence: "estimate" });
   }
   redirect(`/${locale}/app/welcome?look=1`);
 }

@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { CALCULATORS, getCalculator, resolveDefaults, runCalculator } from "./index";
 import { FORMULAS } from "./formulas";
-import { emi, fvLumpsum, fvSip, xirr } from "./math";
+import { amortisation, emi, fvLumpsum, fvSip, pvGrowingAnnuity, sipForTarget, tenureForEmi, xirr } from "./math";
 import { getRulePack } from "../rulepack";
 import { computeRegime, hraExemption } from "./tax";
 
@@ -29,6 +29,36 @@ describe("finance maths", () => {
   });
 });
 
+describe("finance maths edge cases", () => {
+  it("handles a zero rate without dividing by zero", () => {
+    expect(fvSip(1000, 0, 12)).toBe(12000);
+    expect(sipForTarget(12000, 0, 12)).toBe(1000);
+    expect(emi(120000, 0, 12)).toBe(10000);
+    expect(tenureForEmi(120000, 0, 10000)).toBe(12);
+    expect(fvLumpsum(1000, 0, 10)).toBe(1000);
+    expect(pvGrowingAnnuity(1000, 0.06, 0.06, 10)).toBe(10000);
+  });
+  it("handles zero and very short horizons", () => {
+    expect(fvSip(1000, 0.12, 0)).toBe(0);
+    expect(pvGrowingAnnuity(1000, 0.07, 0.06, 0)).toBe(0);
+    expect(amortisation(100000, 0.1, 1).months).toBe(1);
+  });
+  it("reports an EMI that never repays the loan as infinite tenure", () => {
+    expect(tenureForEmi(1000000, 0.12, 5000)).toBe(Infinity);
+  });
+  it("keeps a 40-year horizon finite", () => {
+    expect(Number.isFinite(fvSip(10000, 0.12, 480))).toBe(true);
+    expect(fvSip(10000, 0.12, 480)).toBeGreaterThan(1e8);
+  });
+  it("amortisation with an extra payment finishes earlier and pays less interest", () => {
+    const base = amortisation(1000000, 0.09, 120);
+    const extra = amortisation(1000000, 0.09, 120, 5000);
+    expect(extra.months).toBeLessThan(base.months);
+    expect(extra.totalInterest).toBeLessThan(base.totalInterest);
+    expect(base.rows[base.rows.length - 1].balance).toBeCloseTo(0, 4);
+  });
+});
+
 describe("India tax rules", () => {
   const pack = getRulePack();
   it("new regime: ₹12 L salary pays nothing after rebate and standard deduction", () => {
@@ -41,6 +71,28 @@ describe("India tax rules", () => {
   it("old regime: ₹10 L with 1.5 L under 80C", () => {
     // taxable 8 L → 12,500 + 60,000 = 72,500 + cess = 75,400
     expect(Math.round(computeRegime(pack, "old", 1000000, 150000).totalTax)).toBe(75400);
+  });
+  it("new regime: ₹7 L salary pays nothing and ₹12.75 L salary pays nothing", () => {
+    expect(computeRegime(pack, "new", 700000, 0).totalTax).toBe(0);
+    expect(computeRegime(pack, "new", 1275000, 0).totalTax).toBe(0);
+  });
+  it("new regime: ₹12.76 L salary owes tax once the rebate is lost", () => {
+    // taxable 12,01,000 → 20k + 40k + 150 = 60,150; above the rebate limit so no rebate
+    expect(Math.round(computeRegime(pack, "new", 1276000, 0).slabTax)).toBe(60150);
+    expect(computeRegime(pack, "new", 1276000, 0).rebate).toBe(0);
+  });
+  it("caps the new-regime surcharge at 25% while the old regime reaches 37%", () => {
+    const high = 60000000;
+    expect(computeRegime(pack, "new", high, 0).surcharge / (computeRegime(pack, "new", high, 0).slabTax)).toBeCloseTo(0.25, 6);
+    expect(computeRegime(pack, "old", high, 0).surcharge / (computeRegime(pack, "old", high, 0).slabTax)).toBeCloseTo(0.37, 6);
+  });
+  it("never returns negative tax or taxable income", () => {
+    const r = computeRegime(pack, "old", 30000, 500000);
+    expect(r.taxableIncome).toBe(0);
+    expect(r.totalTax).toBe(0);
+  });
+  it("scores the same ₹20 L salary identically under the 2025-26 pack", () => {
+    expect(Math.round(computeRegime(getRulePack("india-2025-26.v1"), "new", 2000000, 0).totalTax)).toBe(192400);
   });
   it("HRA exemption is the least of the three statutory amounts", () => {
     expect(hraExemption(600000, 240000, 300000, true)).toBe(240000);

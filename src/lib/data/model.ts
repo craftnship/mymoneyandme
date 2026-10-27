@@ -18,7 +18,11 @@ export const ITEM_TYPES: Record<Family, readonly string[]> = {
   insurance: ["termLife", "endowment", "healthIndividual", "healthFloater", "healthEmployer", "criticalIllness", "personalAccident", "motor", "home", "travel"],
 };
 
-export const CONFIDENCE = ["entered", "imported", "verified"] as const;
+/**
+ * How sure the member is of a figure. "estimate" marks a rough guess (the
+ * quick start uses it); the check-up says when a score rests on estimates.
+ */
+export const CONFIDENCE = ["estimate", "entered", "imported", "verified"] as const;
 export type Confidence = (typeof CONFIDENCE)[number];
 
 const inr = z.coerce.number().min(0).max(1e12);

@@ -36,6 +36,10 @@ export type HouseholdSnapshot = {
   monthlyRetirementSip?: number;
   /** Which fields were actually entered; missing ones use defaults and lower confidence. */
   provided?: string[];
+  /** Fields that rest at least partly on items the member marked as estimates. */
+  estimated?: string[];
+  /** When the newest item behind this snapshot was last saved (ISO), so a result can say how old its data is. */
+  dataAsOf?: string;
 };
 
 export type DimensionResult = {

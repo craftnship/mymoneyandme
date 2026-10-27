@@ -1,18 +1,35 @@
-import india from "../../../rulepacks/india-2025-26.v1.json";
-import { rulePackSchema, type RulePack } from "./schema";
+import india2025 from "../../../rulepacks/india-2025-26.v1.json";
+import india2026 from "../../../rulepacks/india-2026-27.v1.json";
+import { rulePackSchema, type RulePack, type RuleSource } from "./schema";
 
 // Every pack is validated once at module load so a malformed edit fails the
-// build instead of producing a silently wrong score.
+// build instead of producing a silently wrong score. Older packs stay
+// registered: a stored check-up is re-read with the version that scored it.
 const PACKS: Record<string, RulePack> = {
-  [india.version]: rulePackSchema.parse(india),
+  [india2025.version]: rulePackSchema.parse(india2025),
+  [india2026.version]: rulePackSchema.parse(india2026),
 };
 
-export const CURRENT_RULEPACK_VERSION = india.version;
+export const CURRENT_RULEPACK_VERSION = india2026.version;
+export const RULEPACK_VERSIONS = Object.keys(PACKS);
 
 export function getRulePack(version: string = CURRENT_RULEPACK_VERSION): RulePack {
   const pack = PACKS[version];
   if (!pack) throw new Error(`Unknown rule pack version: ${version}`);
   return pack;
+}
+
+/**
+ * The source behind a figure, looked up by its dotted path and then by each
+ * parent path, so `schemes.ppf.rate` falls back to the `schemes.ppf` entry.
+ */
+export function sourceFor(path: string, pack: RulePack = getRulePack()): RuleSource | undefined {
+  const parts = path.split(".");
+  for (let n = parts.length; n > 0; n--) {
+    const s = pack.sources?.[parts.slice(0, n).join(".")];
+    if (s) return s;
+  }
+  return undefined;
 }
 
 /**

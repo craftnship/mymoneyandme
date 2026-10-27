@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { runQuickCheck } from "@/lib/checkup/engine";
 import { buildPlan } from "@/lib/checkup/plan";
+import { recordEvent } from "@/lib/events/store";
 
 const schema = z.object({
   age: z.number().min(18).max(100),
@@ -19,5 +20,6 @@ export async function POST(req: Request) {
   if (!parsed.success) return NextResponse.json({ error: "Invalid input" }, { status: 400 });
   const checkup = runQuickCheck(parsed.data);
   const plan = buildPlan(checkup, parsed.data.monthlyIncome);
+  void recordEvent("quickCheckRun", null, req.headers.get("x-locale"));
   return NextResponse.json({ checkup, plan, approximate: true });
 }

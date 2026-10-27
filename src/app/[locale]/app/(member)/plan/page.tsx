@@ -7,10 +7,12 @@ import { planForHousehold } from "@/lib/checkup/planStore";
 import { isoDateFromNow, planProgress, projectedScore, type PlanItemWithStatus } from "@/lib/checkup/progress";
 import { chapterHref } from "@/lib/checkup/chapters";
 import { explainItem } from "@/lib/checkup/explain";
+import { traceItem } from "@/lib/checkup/trace";
+import { getRulePack } from "@/lib/rulepack";
 import { encodeInputs } from "@/lib/calculators";
 import { RunCheckUp } from "@/components/app/checkup/RunCheckUp";
 import { PlanItemControls } from "@/components/app/checkup/PlanItemControls";
-import { formatEffort, ScoreGauge } from "@/components/app/checkup/ui";
+import { formatDate, formatEffort, formatMetric, ScoreGauge } from "@/components/app/checkup/ui";
 
 export async function generateMetadata() {
   const t = await getTranslations("appCheckup.plan");
@@ -48,6 +50,10 @@ async function Checklist({ locale }: { locale: string }) {
   for (const item of plan.items) byBand.set(item.priority, [...(byBand.get(item.priority) ?? []), item]);
   const today = new Date().toISOString().slice(0, 10);
   const tomorrow = isoDateFromNow();
+  const pack = getRulePack(plan.checkup.result.rulePackVersion);
+  const tw = await getTranslations("appCheckup.common");
+  const tk = await getTranslations("appCheckup.checkup");
+  const words = { yes: tw("yes"), no: tw("no"), months: (count: number) => tw("monthsShort", { count }) };
 
   return (
     <div className="space-y-8">
@@ -86,6 +92,29 @@ async function Checklist({ locale }: { locale: string }) {
                     <ol className="mt-2 list-decimal ps-5 text-sm text-fg-muted space-y-0.5">
                       {([1, 2, 3] as const).map((n) => <li key={n}>{t(`how.${item.template}.${n}`)}</li>)}
                     </ol>
+                    {(() => {
+                      const trace = traceItem(item, plan.checkup.result.metrics, plan.checkup.snapshot, pack);
+                      return (
+                        <details className="mt-2 rounded-lg border border-border/70 bg-bg px-3 py-2 text-xs">
+                          <summary className="cursor-pointer font-medium">{t("why.summary")}</summary>
+                          <dl className="mt-2 space-y-1">
+                            <div><dt className="inline font-medium">{t("why.rule")}: </dt><dd className="inline">{t.has(`why.rules.${item.id}`) ? t(`why.rules.${item.id}` as "why.rules.annual-review") : item.rule}</dd></div>
+                            {trace.metrics.length ? (
+                              <div><dt className="inline font-medium">{t("why.metricsUsed")}: </dt><dd className="inline">{trace.metrics.map((m) => `${tk(`metric.${m.name}` as "metric.savingsRate")} ${formatMetric(m.name, m.value, words)}`).join(" · ")}</dd></div>
+                            ) : null}
+                            <div><dt className="inline font-medium">{t("why.benefitLabel")}: </dt><dd className="inline">{t(`benefit.${item.template}` as "benefit.annualReview")}</dd></div>
+                            <div>
+                              <dt className="inline font-medium">{t("why.basisLabel")}: </dt>
+                              <dd className="inline">
+                                {t(`why.basis.${trace.basis}`)}
+                                {trace.basis === "estimates" ? <> ({trace.estimatedFields.map((f) => tk(`field.${f}` as "field.monthlyIncome")).join(", ")}) · <Link href="/app/data" className="underline underline-offset-2">{t("why.firmUp")}</Link></> : null}
+                              </dd>
+                            </div>
+                            <div><dt className="inline font-medium">{t("why.reviewedLabel")}: </dt><dd className="inline">{pack.reviewedOn ? t("why.reviewed", { version: pack.version, date: pack.reviewedOn }) : pack.version}{plan.checkup.snapshot.dataAsOf ? ` · ${t("why.dataAsOf", { date: formatDate(plan.checkup.snapshot.dataAsOf) })}` : ""}</dd></div>
+                          </dl>
+                        </details>
+                      );
+                    })()}
                     <p className="mt-2 text-xs text-fg-muted">
                       {formatEffort(item.effortMinutes, t)}
                       {item.scoreImpact > 0 ? ` · ${tc("impact", { points: item.scoreImpact })}` : ""}

@@ -8,7 +8,7 @@ Phases follow section 20 of the feature document. Months are indicative for a so
 | --- | --- |
 | Design system with Indic support, RTL-ready | Tokens and layout in place; RTL `dir` wired through the locale table; brand palette is a placeholder until the design language is chosen |
 | One article and one chapter in two languages | Done: 50/30/20 article and Budgeting chapter in English and Tamil (AI-draft labelled) |
-| Rule-pack format validated with India check-up rules | Done: `rulepacks/india-2025-26.v1.json`, zod schema, 8 dimensions, tests |
+| Rule-pack format validated with India check-up rules | Done: `rulepacks/india-2025-26.v1.json` and `india-2026-27.v1.json` (current), zod schema, 8 dimensions, tests. Each figure in the current pack carries a source page and the date it was checked, shown on the check-up and the calculators |
 | Auth with passkeys | Done in Phase 3: email + password with breach check, email verification, database sessions, passkeys |
 | CMS skeleton | Content model done; content moved into MySQL with the JSON files as seed and fallback; authoring console phase 1 (staff roles, passkey-only /admin with the content list) phase 2 (article editor with images, preview and revisions) phase 3 (chapter, module and news editing) and phase 4 (image block, scheduled publishing, out-of-date translations, revision compare and restore, export) done; optional next: one-click Tamil AI drafts, reviewer roles |
 
@@ -35,12 +35,13 @@ Runs on the MySQL that comes with the hosting plan (no Postgres), with the schem
 | Gate criterion | Status |
 | --- | --- |
 | Accounts | Email + password (12+ characters, checked against known breaches), email verification and password reset from hello@mymoneyandme.in, database sessions (30-minute idle, 30-day absolute, remote sign-out), passkeys. Google, Apple and phone OTP wait for provider credentials |
-| Full data capture | Onboarding quick start, household members, six families (income, expenses, assets, investments, loans, insurance) with add, edit, archive, member assignment and confidence level. CSV/XLSX import, documents and household invites not yet built |
-| Check-up with 8 dimensions | Full check-up from stored data, history with "what changed", confidence with the fields that would raise it. Peer comparison and PDF export not yet built |
+| Full data capture | Onboarding quick start, household members, six families (income, expenses, assets, investments, loans, insurance) with add, edit, archive, member assignment and confidence level (estimate, entered, imported, verified; quick-start figures start as estimates). Data-quality checks on the overview: stale valuations, likely duplicates, zero amounts, loans without an EMI, ended policies. CSV/XLSX import, documents and household invites not yet built |
+| Check-up with 8 dimensions | Full check-up from stored data, history with "what changed", confidence with the fields that would raise it. Every scored number has a "How we calculated this" trace (formula in words, each input with its value, where to change it, whether it was entered, estimated or defaulted, and the assumptions used) and an "About these numbers" card (rule pack and review date, data age, estimates, missing fields, data-quality issues). Peer comparison and PDF export not yet built |
 | Goals | Templates, inflation, required monthly investment, on-track status, conflicts. Monte Carlo deferred to v2 |
-| Plan with checklist | Prioritised checklist with statuses, skip reasons and snooze; projected score for the next three items. Reminders and calendar export not yet built |
+| Plan with checklist | Prioritised checklist with statuses, skip reasons and snooze; projected score for the next three items; each item explains why it is there (rule, metrics used, expected benefit, whether it rests on entered figures or estimates). Reminders and calendar export not yet built |
 | Data export and deletion | JSON and CSV export; deletion by email confirmation with a 30-day grace, purged by `/api/cron/purge` or on sign-in |
-| Pen test closed, 500 beta households | Not started |
+| Pen test closed, 500 beta households | Cross-user access tests cover items, members, goals, check-ups and plans. Pen test and beta not started |
+| Usage counts | Privacy-first: anonymous `events` (calculator used, quick check run) and member actions from the audit log, summarised on `/admin/usage` (north star: members with a meaningful planning action in the month, activation funnel, top calculators). No amounts or names are read |
 
 ## Phase 4: Scale and v2 — not started
 
